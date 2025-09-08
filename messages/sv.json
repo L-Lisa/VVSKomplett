@@ -1,0 +1,55 @@
+{
+  "navigation": {
+    "home": "Hem",
+    "newInstallation": "Nyinstallation",
+    "pipeReplacement": "Stambyte",
+    "service": "Service",
+    "relining": "Relining",
+    "pipeFlushing": "Stamspolning",
+    "pipeCoating": "Stamfilmning",
+    "about": "Om oss",
+    "contact": "Kontakt"
+  },
+  "home": {
+    "title": "Komplett VVS i Stockholm AB",
+    "subtitle": "Din pålitliga VVS-partner i Stockholm",
+    "description": "Vi erbjuder professionella VVS-tjänster inklusive nyinstallation, stambyte, service och relining för både privatpersoner och företag."
+  },
+  "services": {
+    "newInstallation": {
+      "title": "Nyinstallation",
+      "description": "Professionell installation av nya VVS-system"
+    },
+    "pipeReplacement": {
+      "title": "Stambyte",
+      "description": "Komplett byte av rörsystem i fastigheter"
+    },
+    "service": {
+      "title": "Service",
+      "description": "Regelbunden service och underhåll av VVS-system"
+    },
+    "relining": {
+      "title": "Relining",
+      "description": "Modern relining-teknik för befintliga rör"
+    },
+    "pipeFlushing": {
+      "title": "Stamspolning",
+      "description": "Professionell rengöring av rörsystem"
+    },
+    "pipeCoating": {
+      "title": "Stamfilmning",
+      "description": "Skyddande filmning av rörsystem"
+    }
+  },
+  "about": {
+    "title": "Om oss",
+    "description": "Vi är en etablerad VVS-firma i Stockholm med många års erfarenhet av professionella VVS-tjänster."
+  },
+  "contact": {
+    "title": "Kontakt",
+    "description": "Kontakta oss för en kostnadsfri offert",
+    "phone": "Telefon",
+    "email": "E-post",
+    "address": "Adress"
+  }
+}

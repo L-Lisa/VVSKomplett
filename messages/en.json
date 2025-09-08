@@ -1,0 +1,55 @@
+{
+  "navigation": {
+    "home": "Home",
+    "newInstallation": "New Installation",
+    "pipeReplacement": "Pipe Replacement",
+    "service": "Service",
+    "relining": "Relining",
+    "pipeFlushing": "Pipe Flushing",
+    "pipeCoating": "Pipe Coating",
+    "about": "About Us",
+    "contact": "Contact"
+  },
+  "home": {
+    "title": "Komplett VVS i Stockholm AB",
+    "subtitle": "Your reliable plumbing partner in Stockholm",
+    "description": "We offer professional plumbing services including new installation, pipe replacement, service and relining for both private and commercial customers."
+  },
+  "services": {
+    "newInstallation": {
+      "title": "New Installation",
+      "description": "Professional installation of new plumbing systems"
+    },
+    "pipeReplacement": {
+      "title": "Pipe Replacement",
+      "description": "Complete replacement of pipe systems in buildings"
+    },
+    "service": {
+      "title": "Service",
+      "description": "Regular service and maintenance of plumbing systems"
+    },
+    "relining": {
+      "title": "Relining",
+      "description": "Modern relining technology for existing pipes"
+    },
+    "pipeFlushing": {
+      "title": "Pipe Flushing",
+      "description": "Professional cleaning of pipe systems"
+    },
+    "pipeCoating": {
+      "title": "Pipe Coating",
+      "description": "Protective coating of pipe systems"
+    }
+  },
+  "about": {
+    "title": "About Us",
+    "description": "We are an established plumbing company in Stockholm with many years of experience in professional plumbing services."
+  },
+  "contact": {
+    "title": "Contact",
+    "description": "Contact us for a free quote",
+    "phone": "Phone",
+    "email": "Email",
+    "address": "Address"
+  }
+}
