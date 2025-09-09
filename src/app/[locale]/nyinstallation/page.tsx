@@ -8,8 +8,8 @@ import Link from 'next/link';
 
 export const metadata = generateServiceMetadata({
   title: 'Nyinstallation av VVS i Stockholm – rätt från början',
-  description: 'Professionell installation av nya VVS-system i Stockholm. Certifierade montörer, Säker Vatten-standarder och full garanti. Kostnadsfri offert.',
-  keywords: 'VVS nyinstallation Stockholm, VVS-installation, badrumsrenovering, VVS-montörer, Säker Vatten',
+  description: 'Komplett nyinstallation för entreprenad, BRF, företag och privatpersoner. Vi projekterar och installerar hela VVS-system: värme, vatten, avlopp och ventilationens VVS-del.',
+  keywords: 'VVS nyinstallation Stockholm, VVS-installation, badrumsrenovering, VVS-montörer, Säker Vatten, entreprenad, BRF, företag',
   path: '/nyinstallation',
 });
 

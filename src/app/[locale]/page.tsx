@@ -19,17 +19,17 @@ import {
   Clock,
 } from 'lucide-react';
 import { Hero } from '@/components/content/hero';
-import { Features3 } from '@/components/content/features3';
 import { Testimonials3 } from '@/components/content/testimonials3';
 import { CTA } from '@/components/content/cta';
 import { generatePageMetadata } from '@/lib/metadata';
 import { generateLocalBusinessSchema } from '@/lib/schemas';
+import { MapPin, Award, Mail } from 'lucide-react';
 import Link from 'next/link';
 
 export const metadata = generatePageMetadata({
-  title: 'VVS i Stockholm – trygga lösningar för hem & fastighet',
-  description: 'Professionella VVS-tjänster i Stockholm. Nyinstallation, stambyte, relining och service av certifierade montörer. Säker Vatten, försäkrade arbeten och garanti.',
-  keywords: 'VVS Stockholm, VVS-installation, stambyte, relining, VVS-service, rörmokare Stockholm, VVS-montörer, VVS-renovering',
+  title: 'VVS i Stockholm för entreprenad, BRF, företag och privatpersoner',
+  description: 'Komplett VVS i Sthlm AB levererar trygga VVS-lösningar i Stor-Stockholm: nyinstallation, stambyte, relining, stamspolning, stamfilmning och service.',
+  keywords: 'VVS Stockholm, VVS-installation, stambyte, relining, VVS-service, rörmokare Stockholm, VVS-montörer, VVS-renovering, entreprenad, BRF, företag',
   path: '/',
 });
 
@@ -70,26 +70,6 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
     },
   ];
 
-  const features = [
-    {
-      icon: Shield,
-      title: t('home.features.sakerVatten.title'),
-      description: t('home.features.sakerVatten.description'),
-      href: '/om-oss'
-    },
-    {
-      icon: Wrench,
-      title: t('home.features.expertis.title'),
-      description: t('home.features.expertis.description'),
-      href: '/om-oss'
-    },
-    {
-      icon: Settings,
-      title: t('home.features.service.title'),
-      description: t('home.features.service.description'),
-      href: '/kontakt'
-    }
-  ];
 
   const testimonials = [
     {
@@ -141,16 +121,6 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
         priority={true}
       />
 
-      {/* Features Section */}
-      <section className="py-20">
-        <div className="container mx-auto px-4">
-          <h2 className="text-3xl md:text-4xl font-bold font-outfit text-center mb-12">
-            {t('home.whyChooseUs')}
-          </h2>
-          <Features3 features={features} />
-        </div>
-      </section>
-
       {/* Services Section */}
       <section className="py-20">
         <div className="container mx-auto px-4">
@@ -175,8 +145,15 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
                     <CardDescription className="text-base">
                       {t(`services.${service.key}.description`)}
                     </CardDescription>
-                    <Button className="w-full mt-4" variant="outline">
-                      {t('home.readMore')}
+                    <Button 
+                      className="w-full mt-4" 
+                      variant="outline"
+                      asChild
+                      aria-label={`Läs mer om ${t(`services.${service.key}.title`)}`}
+                    >
+                      <Link href={service.href}>
+                        {t('home.readMore')}
+                      </Link>
                     </Button>
                   </CardContent>
                 </Card>
@@ -238,24 +215,14 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
               </div>
               
               <div>
-                <h3 className="text-2xl font-bold font-outfit mb-4">{t('home.whyChooseUs')}</h3>
+                <h3 className="text-2xl font-bold font-outfit mb-4">{t('home.contentSection.safetyTitle')}</h3>
                 <ul className="space-y-3">
-                  <li className="flex items-start">
-                    <Shield className="h-5 w-5 text-primary mr-3 mt-0.5 flex-shrink-0" />
-                    <span>{t('home.usp.safeWater')}</span>
-                  </li>
-                  <li className="flex items-start">
-                    <Clock className="h-5 w-5 text-primary mr-3 mt-0.5 flex-shrink-0" />
-                    <span>{t('home.usp.emergency')}</span>
-                  </li>
-                  <li className="flex items-start">
-                    <Phone className="h-5 w-5 text-primary mr-3 mt-0.5 flex-shrink-0" />
-                    <span>{t('home.usp.experience')}</span>
-                  </li>
-                  <li className="flex items-start">
-                    <CheckCircle className="h-5 w-5 text-primary mr-3 mt-0.5 flex-shrink-0" />
-                    <span>{t('home.usp.insured')}</span>
-                  </li>
+                  {t.raw('home.safety.items').map((item: string, index: number) => (
+                    <li key={index} className="flex items-start">
+                      <CheckCircle className="h-5 w-5 text-primary mr-3 mt-0.5 flex-shrink-0" />
+                      <span>{item}</span>
+                    </li>
+                  ))}
                 </ul>
               </div>
             </div>
@@ -275,6 +242,24 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
                   {t('home.serviceAreas.cta')}
                 </Link>
               </Button>
+            </div>
+
+            {/* Why Choose Us Section - positioned right after the two columns */}
+            <div className="mt-12">
+              <h2 className="text-2xl font-bold font-outfit mb-6">
+                {t('home.whyChooseUs')}
+              </h2>
+              <ul className="space-y-3">
+                {t.raw('home.faq.items').map((item: any, index: number) => (
+                  <li key={index} className="flex items-start">
+                    <span className="text-primary mr-3 mt-1">-</span>
+                    <div>
+                      <span className="font-semibold text-text-900">{item.question}</span>
+                      <span className="text-text-700 ml-2">{item.answer}</span>
+                    </div>
+                  </li>
+                ))}
+              </ul>
             </div>
           </div>
         </div>

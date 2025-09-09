@@ -1,17 +1,15 @@
 import Link from 'next/link';
 import Image from 'next/image';
 import { useTranslations, useLocale } from 'next-intl';
-import { Phone, Mail, MapPin, Clock, Shield, Award } from 'lucide-react';
+import { Phone, Mail, MapPin, Shield, Award } from 'lucide-react';
 import { COMPANY } from '@/config/company';
+import { CertificationBadge } from '@/components/ui/certification-badge';
 
 export function Footer() {
   const t = useTranslations();
   const locale = useLocale();
 
-  const phoneNumbers = [
-    { name: 'Håkan', number: '070-123 45 67' },
-    { name: 'Daniel', number: '070-987 65 43' }
-  ];
+  const phoneNumber = COMPANY.phone;
 
   const services = [
     { key: 'newInstallation', href: '/nyinstallation' },
@@ -26,7 +24,7 @@ export function Footer() {
     <footer className="border-t bg-muted/20">
       <div className="container py-12">
         {/* Main Footer Content */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {/* Contact - First on mobile, third on desktop */}
           <div className="lg:order-3">
             <h3 className="font-semibold text-text-900 mb-4 flex items-center">
@@ -34,20 +32,27 @@ export function Footer() {
               {t('footer.contact')}
             </h3>
             <div className="space-y-3">
-              {phoneNumbers.map((phone, index) => (
-                <div key={index} className="text-sm">
-                  <div className="font-medium text-text-900">{phone.name}</div>
+              {phoneNumber && phoneNumber !== '+468-000000' && (
+                <div className="text-sm">
                   <a 
-                    href={`tel:${phone.number}`}
-                    className="text-text-700 hover:text-primary transition-colors"
+                    href={`tel:${phoneNumber}`}
+                    className="text-text-700 hover:text-primary transition-colors flex items-center"
+                    aria-label="Ring oss direkt"
                   >
-                    {phone.number}
+                    <Phone className="h-4 w-4 mr-2" />
+                    {phoneNumber}
                   </a>
                 </div>
-              ))}
+              )}
               <div className="text-sm text-text-700 flex items-center">
                 <Mail className="h-4 w-4 mr-2" />
-                {COMPANY.email}
+                <a 
+                  href={`mailto:${COMPANY.email}`}
+                  className="hover:text-primary transition-colors"
+                  aria-label="Skicka e-post till oss"
+                >
+                  {COMPANY.email}
+                </a>
               </div>
               <div className="text-sm text-text-700 flex items-center">
                 <MapPin className="h-4 w-4 mr-2" />
@@ -68,28 +73,13 @@ export function Footer() {
             </div>
           </div>
 
-          {/* Hours - Third on mobile, second on desktop */}
+          {/* Certificates - Third on both mobile and desktop */}
           <div className="lg:order-2">
-            <h3 className="font-semibold text-text-900 mb-4 flex items-center">
-              <Clock className="h-5 w-5 mr-2 text-primary" />
-              {t('footer.hours')}
-            </h3>
-            <div className="text-sm text-text-700 space-y-1">
-              {COMPANY.openingHours.map((hours, index) => (
-                <p key={index}>{hours}</p>
-              ))}
-              <p className="mt-2 text-xs text-text-500">
-                {t('footer.emergencyService')}
-              </p>
-            </div>
-          </div>
-
-          {/* Certificates - Fourth on both mobile and desktop */}
-          <div className="lg:order-4">
             <h3 className="font-semibold text-text-900 mb-4 flex items-center">
               <Award className="h-5 w-5 mr-2 text-primary" />
               {t('footer.certificates')}
             </h3>
+            
             <div className="text-sm text-text-700 space-y-2">
               <div className="flex items-center">
                 <Shield className="h-4 w-4 mr-2 text-primary" />
@@ -97,12 +87,17 @@ export function Footer() {
               </div>
               <div className="flex items-center">
                 <Award className="h-4 w-4 mr-2 text-primary" />
-                Försäkring
+                Ansvarsförsäkring
               </div>
               <div className="flex items-center">
                 <Shield className="h-4 w-4 mr-2 text-primary" />
-                Garanti
+                Auktorisation
               </div>
+            </div>
+            
+            {/* Certification Badge - Centered below the certificate list */}
+            <div className="mt-4 flex justify-center" style={{justifyContent: 'left'}}>
+              <CertificationBadge size="sm" showText={false} />
             </div>
           </div>
         </div>
@@ -121,6 +116,39 @@ export function Footer() {
               </Link>
             ))}
           </div>
+        </div>
+
+        {/* Partners */}
+        <div className="mt-8 pt-8 border-t text-center">
+          <p className="text-sm text-text-700 mb-2">
+            Samarbeten:{' '}
+            <a 
+              href="https://elteknik23.se" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="text-primary hover:underline transition-colors"
+            >
+              Elteknik23
+            </a>
+            {' • '}
+            <a 
+              href="https://caredab.se" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="text-primary hover:underline transition-colors"
+            >
+              Caredab
+            </a>
+            {' • '}
+            <a 
+              href="https://badrums-koncept.se" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="text-primary hover:underline transition-colors"
+            >
+              Badrums-Koncept
+            </a>
+          </p>
         </div>
 
         {/* Bottom Footer */}

@@ -34,48 +34,71 @@ export function Hero({
   priority = false
 }: HeroProps) {
   return (
-    <section className={cn('relative py-20 bg-gradient-to-b from-background to-muted/20', className)}>
-      <div className="container text-center">
-        <h1 className="text-h1 font-outfit text-text-900 mb-6">
-          {title}
-        </h1>
-        <p className="text-xl md:text-2xl text-text-700 mb-8 max-w-3xl mx-auto">
-          {lead}
-        </p>
-        {description && (
-          <p className="text-lg text-text-700 mb-12 max-w-2xl mx-auto">
-            {description}
-          </p>
-        )}
-        <div className="flex flex-col sm:flex-row gap-4 justify-center mb-12">
-          <Button size="lg" className="text-lg px-8 py-6" asChild>
-            <a href={primaryCta.href}>
-              {primaryCta.text}
-            </a>
-          </Button>
-          {secondaryCta && (
-            <Button variant="outline" size="lg" className="text-lg px-8 py-6" asChild>
-              <a href={secondaryCta.href}>
-                {secondaryCta.text}
-              </a>
-            </Button>
-          )}
-        </div>
-        
-        {/* Image with proper aspect ratios and overlay */}
-        <div className="relative max-w-6xl mx-auto">
-          <ImageOverlay className="rounded-lg overflow-hidden shadow-lg">
-            <div className="relative w-full aspect-square sm:aspect-[4/3] lg:aspect-[16/9]">
-              <Image
-                src={image.src}
-                alt={image.alt}
-                fill
-                sizes="(max-width: 640px) 100vw, (max-width: 1024px) 100vw, 1200px"
-                className="object-cover object-center"
-                priority={priority}
-              />
+    <section className={cn('relative py-20 overflow-hidden', className)}>
+      {/* Background Image */}
+      <div className="absolute inset-0 w-full h-full">
+        <Image
+          src="/pipe_background.webp"
+          alt="VVS pipes background"
+          fill
+          sizes="100vw"
+          className="object-cover object-center"
+          priority={priority}
+        />
+        {/* Dark overlay for better text contrast */}
+        <div className="absolute inset-0 bg-black/30"></div>
+      </div>
+      
+      {/* Content with glassmorphism effect */}
+      <div className="container relative z-10">
+        <div className="text-center">
+          {/* Glassmorphism container for text content */}
+          <div className="backdrop-blur-md bg-white/40 border border-white/40 rounded-2xl p-8 md:p-4 shadow-2xl max-w-4xl mx-auto">
+            <h1 className="text-h1 font-outfit text-text-900 mb-6">
+              {title}
+            </h1>
+            <p className="text-xl md:text-2xl text-text-700 mb-8 max-w-3xl mx-auto">
+              {lead}
+            </p>
+            {description && (
+              <p className="text-lg text-text-900 mb-12 max-w-2xl mx-auto">
+                {description}
+              </p>
+            )}
+            <div className="flex flex-col sm:flex-row gap-4 justify-center mb-6">
+              <Button size="lg" className="text-lg px-8 py-6" asChild>
+                <a href={primaryCta.href}>
+                  {primaryCta.text}
+                </a>
+              </Button>
+              {secondaryCta && (
+                <Button variant="outline" size="lg" className="text-lg px-8 py-6" asChild>
+                  <a href={secondaryCta.href}>
+                    {secondaryCta.text}
+                  </a>
+                </Button>
+              )}
             </div>
-          </ImageOverlay>
+            
+            {/* Simple text with divider */}
+            <p className="text-sm text-text-700 mb-12">
+              Säker Vatten • Stark ansvarsförsäkring
+            </p>
+            
+            {/* Profile Picture - Aligned with buttons, 15px to the right */}
+            <div className="hidden md:block absolute" style={{top: 'calc(100% - 120px)', left: 'calc(50% + 200px)'}}>
+              <div className="p-1">
+                <Image
+                  src={image.src}
+                  alt={image.alt}
+                  width={360}
+                  height={203}
+                  className="object-cover object-center rounded-sm"
+                  loading="lazy"
+                />
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </section>

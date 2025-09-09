@@ -5,6 +5,7 @@ import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { CheckCircle, Shield, Award, Users, Phone, MapPin } from 'lucide-react';
 import Link from 'next/link';
+import { CertificationBadgeServer } from '@/components/ui/certification-badge-server';
 
 export const metadata = generatePageMetadata({
   title: 'Komplett VVS i Sthlm AB – hantverkare du kan lita på',
@@ -156,9 +157,14 @@ export default async function AboutPage({ params }: { params: Promise<{ locale: 
                     </CardTitle>
                   </CardHeader>
                   <CardContent>
-                    <p className="text-text-700">
+                    <p className="text-text-700 mb-4">
                       {t('about.pageContent.certificationDetails.safeWater.description')}
                     </p>
+                    
+                    {/* Certification Badge */}
+                    <div className="flex justify-center">
+                      <CertificationBadgeServer size="md" showText={true} />
+                    </div>
                   </CardContent>
                 </Card>
                 <Card>

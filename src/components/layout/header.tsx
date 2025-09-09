@@ -56,8 +56,47 @@ export function Header({ LocaleSwitcher }: HeaderProps) {
   return (
     <header className="border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60 sticky top-0 z-50">
       <div className="container">
-        {/* Main Header Row */}
-        <div className="flex items-center justify-between py-4">
+        {/* Desktop: Logo spans both rows */}
+        <div className="hidden lg:flex items-start justify-between">
+          {/* Logo - spans both rows */}
+          <Link href="/" className="flex items-start space-x-2 py-4">
+            <Image
+              src="/logokomplett.webp"
+              alt={t('header.logoAlt')}
+              width={1280}
+              height={720}
+              className="h-20 w-auto shrink-0"
+              priority
+            />
+          </Link>
+          
+          {/* Right side content */}
+          <div className="flex flex-col">
+            {/* Navigation Row */}
+            <nav className="flex items-center space-x-8 py-4">
+              {navItems.map((item) => (
+                <Link
+                  key={item.key}
+                  href={item.href}
+                  className="text-sm font-medium text-text-700 hover:text-primary transition-colors"
+                >
+                  {t(`navigation.${item.key}`)}
+                </Link>
+              ))}
+            </nav>
+            
+            {/* CTA & Locale Row */}
+            <div className="flex items-center justify-end space-x-4 pb-4">
+              <div className="flex items-center space-x-2">
+                <LocaleSwitcher />
+              </div>
+              <CTAButtons />
+            </div>
+          </div>
+        </div>
+
+        {/* Mobile: Original layout */}
+        <div className="flex lg:hidden items-center justify-between py-4">
           {/* Logo */}
           <Link href="/" className="flex items-center space-x-2">
             <Image
@@ -65,26 +104,13 @@ export function Header({ LocaleSwitcher }: HeaderProps) {
               alt={t('header.logoAlt')}
               width={1280}
               height={720}
-              className="h-10 w-auto shrink-0"
+              className="h-16 w-auto shrink-0"
               priority
             />
           </Link>
 
-          {/* Desktop Navigation */}
-          <nav className="hidden lg:flex items-center space-x-8">
-            {navItems.map((item) => (
-              <Link
-                key={item.key}
-                href={item.href}
-                className="text-sm font-medium text-text-700 hover:text-primary transition-colors"
-              >
-                {t(`navigation.${item.key}`)}
-              </Link>
-            ))}
-          </nav>
-
           {/* Mobile Menu Button */}
-          <div className="flex lg:hidden items-center space-x-2">
+          <div className="flex items-center space-x-2">
             <LocaleSwitcher />
             <Sheet open={isOpen} onOpenChange={setIsOpen}>
               <SheetTrigger asChild>
@@ -122,14 +148,6 @@ export function Header({ LocaleSwitcher }: HeaderProps) {
               </SheetContent>
             </Sheet>
           </div>
-        </div>
-
-        {/* Desktop CTA & Locale Row */}
-        <div className="hidden lg:flex items-center justify-end space-x-4 pb-4">
-          <div className="flex items-center space-x-2">
-            <LocaleSwitcher />
-          </div>
-          <CTAButtons />
         </div>
       </div>
     </header>

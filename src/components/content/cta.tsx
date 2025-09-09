@@ -2,6 +2,7 @@ import { Button } from '@/components/ui/button';
 import { Phone, Mail } from 'lucide-react';
 import { cn } from '@/lib/utils';
 import { useTranslations } from 'next-intl';
+import { COMPANY } from '@/config/company';
 
 interface CTAProps {
   title: string;
@@ -33,36 +34,36 @@ export function CTA({
           {description}
         </p>
         
-        {/* Phone Numbers */}
+        {/* Action Buttons */}
         <div className="flex flex-col sm:flex-row gap-4 justify-center mb-8">
-          {phoneNumbers.map((phone, index) => (
-            <div key={index} className="flex items-center justify-center gap-2">
-              <Phone className="h-5 w-5" />
-              <div className="text-left">
-                <div className="font-semibold">{phone.name}</div>
-                <a 
-                  href={`tel:${phone.number}`}
-                  className="text-lg hover:underline"
-                >
-                  {phone.number}
-                </a>
-              </div>
-            </div>
-          ))}
+          {/* Contact Button */}
+          <Button 
+            size="lg" 
+            variant="secondary" 
+            className="text-lg px-8 py-6 btn-navy-outline"
+            asChild
+          >
+            <a href={`mailto:${COMPANY.email}`} aria-label="Kontakta oss via e-post">
+              <Mail className="h-5 w-5 mr-2" />
+              Kontakta oss
+            </a>
+          </Button>
+          
+          {/* Phone Button - only show if phone number is configured */}
+          {COMPANY.phone && COMPANY.phone !== '+468-000000' && (
+            <Button 
+              size="lg" 
+              variant="secondary" 
+              className="text-lg px-8 py-6 btn-navy-outline"
+              asChild
+            >
+              <a href={`tel:${COMPANY.phone}`} aria-label="Ring direkt">
+                <Phone className="h-5 w-5 mr-2" />
+                Ring direkt
+              </a>
+            </Button>
+          )}
         </div>
-        
-        {/* Contact Button */}
-        <Button 
-          size="lg" 
-          variant="secondary" 
-          className="text-lg px-8 py-6 btn-navy-outline"
-          asChild
-        >
-          <a href={contactHref}>
-            <Mail className="h-5 w-5 mr-2" />
-            {t('contactUs')}
-          </a>
-        </Button>
       </div>
     </section>
   );

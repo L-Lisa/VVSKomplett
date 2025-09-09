@@ -10,87 +10,109 @@
     "about": "About Us",
     "contact": "Contact"
   },
+  "certifications": {
+    "sakerVatten": {
+      "altText": "Safe Water certification - Authorized plumbing company according to industry standards",
+      "title": "Safe Water",
+      "subtitle": "Authorized Plumbing Company"
+    }
+  },
   "home": {
-    "title": "Plumbing in Stockholm – reliable solutions for home & property",
-    "subtitle": "New installation, pipe replacement, relining and service – quickly performed by certified installers",
-    "description": "We offer professional plumbing services including new installation, pipe replacement, service and relining for both private and commercial customers.",
+    "title": "Plumbing in Stockholm for contractors, housing associations, businesses and private customers",
+    "subtitle": "Komplett VVS – Everything under one roof for your water and drainage",
+    "description": "Authorized plumbing company with strong liability insurance and work according to Safe Water regulations.",
     "hero": {
-      "h1": "Plumbing in Stockholm – reliable solutions for home & property",
-      "h2": "New installation, pipe replacement, relining and service – quickly performed by certified installers",
-      "h3": "Safe Water • Insured work • Guarantee",
-      "intro1": "As certified plumbing installers in Stockholm, we offer safe and durable solutions for all your pipe and heating systems. Our team has over 20 years of experience with professional plumbing installations in Stockholm and surrounding areas.",
-      "intro2": "We follow all safety regulations and are certified according to Safe Water standards. All our work is insured and comes with full guarantee for your safety.",
-      "imageAlt": "Plumbing installation work"
+      "h1": "Plumbing in Stockholm – For everyone: contractors, housing associations, businesses and private",
+      "h2": "Komplett VVS – Everything under one roof for your water and drainage",
+      "h3": "Authorized • Safe Water • Liability Insurance",
+      "intro1": "Authorized plumbing in Greater Stockholm. Complete delivery: plumbing, relining, pipe flushing, pipe coating & service.",
+      "intro2": "From design to finished system with documentation.",
+      "imageAlt": "White and light gray pipe system as background"
     },
     "servicesTitle": "Our Services",
     "readMore": "Read more",
-    "whyChooseUs": "Why choose us?",
+    "whyChooseUs": "5 reasons to choose us",
     "testimonialsTitle": "What our customers say",
-    "footerDescription": "Your reliable plumbing partner in Stockholm",
+    "footerDescription": "Komplett VVS i Sthlm AB – reliable partner for plumbing in Greater Stockholm",
     "footerServices": "Services",
     "footerContact": "Contact",
     "footerLocation": "Stockholm, Sweden",
-    "footerPhone": "Phone: 08-123 456 78",
+    "footerPhone": "Phone: 070-123 45 67",
     "footerEmail": "Email: info@komplettvvs.se",
-    "footerCopyright": "© 2024 Komplett VVS i Stockholm AB. All rights reserved.",
+    "footerCopyright": "© 2024 Komplett VVS i Sthlm AB. All rights reserved.",
     "features": {
       "sakerVatten": {
         "title": "Safe Water",
-        "description": "Certified work according to Safe Water standards for guaranteed quality."
+        "description": "Work according to Safe Water regulations – documented and traceable."
       },
       "expertis": {
-        "title": "Expertise",
-        "description": "Over 20 years of experience with plumbing installations in Stockholm and surrounding areas."
+        "title": "Experience",
+        "description": "30+ years of combined experience from contracting to service."
       },
       "service": {
-        "title": "24/7 Service",
-        "description": "Emergency service around the clock for urgent plumbing problems that can't wait."
+        "title": "Quick and personal response",
+        "description": "We respond quickly with plan, timeline and quote."
       }
     },
     "contentSection": {
       "mainTitle": "Professional plumbing services in Stockholm",
-      "specialtiesTitle": "Our specialties"
+      "specialtiesTitle": "Our specialties",
+      "safetyTitle": "Safety & certifications"
     },
     "specialties": {
       "items": {
-        "nyinstallation": { "after": "of plumbing systems for new builds and renovations" },
-        "stambyte": { "after": "in multi-family buildings with minimal disruption" },
+        "nyinstallation": { "after": "for new construction and renovations" },
+        "stambyte": { "after": "in apartment buildings with planned disruption minimization" },
         "relining": { "after": "to renew pipes without demolition" },
-        "service": { "after": "and preventive maintenance" }
+        "service": { "after": "including troubleshooting, maintenance and repairs" }
       }
     },
     "usp": {
-      "safeWater": "Certified according to Safe Water standards",
-      "emergency": "Emergency service 24/7 for urgent issues",
-      "experience": "Over 20 years of experience in Stockholm",
-      "insured": "Insured work with full guarantee"
+      "safeWater": "Work according to Safe Water regulations",
+      "emergency": "Quick and personal response",
+      "experience": "30+ years of combined experience",
+      "insured": "Authorization and liability insurance"
     },
     "serviceAreas": {
-      "title": "We work across Stockholm",
-      "intro1": "From the city center to the outskirts – we come to you for all plumbing needs.",
-      "intro2": "Our technicians know Stockholm’s buildings and can help with everything from",
+      "title": "We work across Greater Stockholm",
+      "intro1": "From the city center to the surrounding municipalities – we come to you with the right expertise.",
+      "intro2": "We help contractors, housing associations, businesses and private customers with everything from",
       "and": "to",
       "and2": "and",
-      "cta": "Get a free quote"
+      "cta": "Contact us for a quote"
+    },
+    "safety": {
+      "title": "Safety & certifications",
+      "items": [
+        "Authorized plumbing company",
+        "Work according to Safe Water regulations",
+        "Liability insurance for all assignments",
+        "Documentation and self-inspections",
+        "Coordination with demolition/sanitation and electrical"
+      ]
     },
     "faq": {
-      "title": "Frequently Asked Questions",
+      "title": "5 reasons to choose us",
       "items": [
         {
-          "question": "How quickly can you come out for emergency service?",
-          "answer": "We offer emergency service around the clock. In Stockholm and surrounding areas, we can usually be on site within 2-4 hours for urgent problems."
+          "question": "1 – Expertise and experience",
+          "answer": "30+ years of combined experience and authorized installers who follow Safe Water regulations."
         },
         {
-          "question": "Are all your installers certified?",
-          "answer": "Yes, all our installers are certified according to Safe Water standards and have several years of experience with plumbing installations."
+          "question": "2 – Quick and personal response",
+          "answer": "You get quick response and clear plan – from first contact to finished system."
         },
         {
-          "question": "What's included in your guarantee?",
-          "answer": "All our work comes with full guarantee on materials and workmanship. The guarantee period varies depending on the type of work, but is at least 2 years."
+          "question": "3 – Competitive prices",
+          "answer": "Efficient design and procurement provide good cost control without compromising on quality."
         },
         {
-          "question": "Do you work with both private customers and businesses?",
-          "answer": "Yes, we help both private individuals with home renovations and businesses with larger plumbing projects. We have experience with everything from apartments to office buildings."
+          "question": "4 – Personal service",
+          "answer": "A dedicated contact person throughout the entire project."
+        },
+        {
+          "question": "5 – Complete under one roof",
+          "answer": "Plumbing, pipe lining/relining, demolition/sanitation and electrical in coordination – smooth coordination."
         }
       ]
     }
@@ -98,92 +120,92 @@
   "services": {
     "newInstallation": {
       "title": "New Plumbing Installation in Stockholm – right from the start",
-      "description": "Professional installation of new plumbing systems",
+      "description": "Complete new installation for contractors, housing associations, businesses and private customers.",
       "hero": {
         "h1": "New Plumbing Installation in Stockholm – right from the start",
-        "intro": "When building new or renovating, you need a reliable partner for plumbing installation. We install everything from simple bathroom renovations to complete plumbing systems in new buildings.",
+        "intro": "We design and install complete plumbing systems: heating, water, drainage and the plumbing part of ventilation. Focus on quality, timeline and documentation.",
         "features": [
-          "Complete plumbing planning and design",
+          "Complete design and material selection",
           "Installation of heating systems, hot water and drainage",
           "Bathroom renovations with modern solutions",
-          "Certified work according to Safe Water standards",
-          "Complete documentation and guarantee"
+          "Work according to Safe Water",
+          "Documentation, testing and handover"
         ]
       },
       "process": {
-        "title": "How our new installation works",
+        "title": "How we work with new installation",
         "steps": [
-          "Inspection and measurement of the premises",
-          "Detailed planning and cost estimate",
-          "Material ordering and coordination",
-          "Professional installation by certified installers",
+          "Site visit and measurement",
+          "Design and cost estimate",
+          "Material ordering and planning",
+          "Installation by certified installers",
           "Testing, documentation and handover"
         ]
       },
       "faq": [
         {
           "question": "How long does a new installation take?",
-          "answer": "The time varies depending on scope. A bathroom renovation takes 1-2 weeks, while a complete plumbing installation in new construction can take 2-4 weeks."
+          "answer": "Depends on scope. Smaller renovations often take 1–2 weeks, larger contracts longer – timeline provided in quote."
         },
         {
-          "question": "Do I need a building permit for plumbing installation?",
-          "answer": "It depends on the scope. We help you apply for necessary permits and follow all building regulations."
+          "question": "Do I need building permits?",
+          "answer": "We advise on permits and follow current building regulations and industry standards."
         },
         {
-          "question": "What guarantees do I get?",
-          "answer": "All our installations come with 2-5 years guarantee depending on the system. The material guarantee follows the manufacturer's terms."
+          "question": "What guarantees do you provide?",
+          "answer": "Material guarantees according to manufacturer and documented work according to industry regulations."
         }
       ],
       "pageContent": {
         "featuresTitle": "Our new installation services",
         "features": [
           {
-            "title": "Complete plumbing planning",
-            "description": "Detailed planning and design of the entire plumbing system"
+            "title": "Complete plumbing design",
+            "description": "Drawings, materials and capacity calculations"
           },
           {
             "title": "Bathroom renovations",
-            "description": "Modern design with functional plumbing solutions"
+            "description": "Functional solutions with clean finish"
           },
           {
-            "title": "Heating systems",
+            "title": "Heating & water",
             "description": "Installation of heating systems, hot water and drainage"
           },
           {
             "title": "Safe Water",
-            "description": "Certified work according to Safe Water standards"
+            "description": "Performed according to current industry regulations"
           }
         ],
         "whyChooseUsTitle": "Why choose us for new installation?",
         "whyChooseUs": [
-          "Over 20 years of experience with plumbing installations in Stockholm",
-          "Certified according to Safe Water standards",
-          "Insured work with full guarantee",
-          "Modern equipment and technology"
+          "Planned production and clear timeline",
+          "Authorized installers",
+          "Documentation and testing",
+          "Complete coordination with other disciplines"
         ],
         "relatedServicesTitle": "Related services",
         "relatedServices": [
           {
             "title": "Plumbing service & maintenance",
-            "description": "Regular service to keep your plumbing system in top condition"
+            "description": "Planned maintenance and repairs"
           },
           {
             "title": "Pipe replacement",
-            "description": "Complete replacement of pipe systems in apartment buildings"
+            "description": "Replacement of pipe systems in apartment buildings"
           },
           {
             "title": "Relining",
-            "description": "Modern method to renew pipes without demolition"
+            "description": "Renew pipes without demolition"
           }
         ],
-        "ctaTitle": "Ready to start your plumbing installation?",
-        "ctaDescription": "Contact us today for a free quote and consultation",
+        "ctaTitle": "Complete plumbing – from design to finished system",
+        "ctaDescription": "Contact us for quote and timeline.",
         "ctaButtons": {
           "callNow": "Call us now",
           "sendMessage": "Send message"
         },
         "buttons": {
-          "getQuote": "Get free quote",
+          "getQuote": "Contact us for quote",
           "learnMore": "Learn more about us"
         }
       }
@@ -607,7 +629,7 @@
     "ringDirect": "Call now",
     "contact": "Contact",
     "logoAlt": "Komplett VVS logo",
-    "companyName": "VVS Komplett i Sthlm AB",
+    "companyName": "Komplett VVS i Sthlm AB",
     "languageToggle": "Toggle language",
     "menuTitle": "Menu",
     "menuDescription": "Navigate to the site pages"
@@ -615,7 +637,6 @@
   "footer": {
     "contact": "Contact",
     "areas": "Areas",
-    "hours": "Hours",
     "certificates": "Certificates",
     "services": "Our Services",
     "privacyPolicy": "Privacy Policy",
@@ -629,15 +650,15 @@
       ],
       "certificates": [
         "Safe Water",
-        "Insurance",
-        "Guarantee"
+        "Liability Insurance",
+        "Authorization"
       ]
     }
   },
   
   "cta": {
     "title": "Need help?",
-    "description": "Contact us today for a free quote",
+    "description": "Quick and personal response – contact us for a quote.",
     "contactUs": "Contact us",
     "phoneNumbers": [
       { "name": "Håkan", "number": "070-123 45 67" },

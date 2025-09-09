@@ -3,7 +3,7 @@ import { generatePageMetadata } from '@/lib/metadata';
 import { generateContactPageSchema } from '@/lib/schemas';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
-import { Phone, Mail, MapPin, Clock, MessageCircle } from 'lucide-react';
+import { Phone, Mail, MapPin, MessageCircle } from 'lucide-react';
 import Link from 'next/link';
 import { COMPANY } from '@/config/company';
 import { ContactForm } from '@/components/contact-form';
@@ -36,12 +36,6 @@ export default async function ContactPage() {
       title: t('contact.address'),
       value: COMPANY.address,
       description: 'Vi arbetar i hela Stockholm'
-    },
-    {
-      icon: Clock,
-      title: t('contact.hours'),
-      value: 'Mån–Fre 08:00–17:00',
-      description: 'Akutservice dygnet runt'
     }
   ];
 
@@ -101,7 +95,7 @@ export default async function ContactPage() {
             <h2 className="text-3xl font-bold font-outfit text-center mb-12">
               Kontaktinformation
             </h2>
-            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
               {contactInfo.map((info, index) => (
                 <Card key={index} className="text-center hover:shadow-lg transition-shadow">
                   <CardHeader>

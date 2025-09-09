@@ -10,87 +10,109 @@
     "about": "Om oss",
     "contact": "Kontakt"
   },
+  "certifications": {
+    "sakerVatten": {
+      "altText": "Säker Vatten certifiering - Auktoriserat VVS-företag enligt branschregler",
+      "title": "Säker Vatten",
+      "subtitle": "Auktoriserat VVS-företag"
+    }
+  },
   "home": {
-    "title": "VVS i Stockholm – trygga lösningar för hem & fastighet",
-    "subtitle": "Nyinstallation, stambyte, relining och service – snabbt utfört av certifierade montörer",
-    "description": "Vi erbjuder professionella VVS-tjänster inklusive nyinstallation, stambyte, service och relining för både privatpersoner och företag.",
+    "title": "VVS i Stockholm för entreprenad, BRF, företag och privatpersoner",
+    "subtitle": "Komplett VVS – Allt under samma tak för ditt vatten och avlopp",
+    "description": "Auktoriserat VVS-företag med stark ansvarsförsäkring och arbeten enligt Säker Vatten-regler.",
     "hero": {
-      "h1": "VVS i Stockholm – trygga lösningar för hem & fastighet",
-      "h2": "Nyinstallation, stambyte, relining och service – snabbt utfört av certifierade montörer",
-      "h3": "Säker Vatten • Försäkrade arbeten • Garanti",
-      "intro1": "Som certifierade VVS-montörer i Stockholm erbjuder vi trygga och hållbara lösningar för alla dina rör- och värmesystem. Vårt team har över 20 års erfarenhet av professionella VVS-installationer i Stockholm och omnejd.",
-      "intro2": "Vi följer alla säkerhetsregler och är certifierade enligt Säker Vatten-standarder. Alla våra arbeten är försäkrade och kommer med full garanti för din trygghet.",
-      "imageAlt": "VVS installation work"
+      "h1": "VVS i Stockholm – För alla: entreprenad, BRF, företag och privat",
+      "h2": "Komplett VVS – Allt under samma tak för ditt vatten och avlopp",
+      "h3": "Auktoriserat • Säker Vatten • Ansvarsförsäkring",
+      "intro1": "Auktoriserad VVS i Stor-Stockholm. Helhetsleverans: VS, relining, stamspolning, stamfilmning & service.",
+      "intro2": "Från projektering till färdigt system med dokumentation.",
+      "imageAlt": "Vitt och ljusgrått rörsystem som bakgrund"
     },
     "servicesTitle": "Våra tjänster",
     "readMore": "Läs mer",
-    "whyChooseUs": "Varför välja oss?",
+    "whyChooseUs": "5 anledningar att välja oss",
     "testimonialsTitle": "Vad våra kunder säger",
-    "footerDescription": "Din pålitliga VVS-partner i Stockholm",
+    "footerDescription": "Komplett VVS i Sthlm AB – trygg partner för VVS i Stor-Stockholm",
     "footerServices": "Tjänster",
     "footerContact": "Kontakt",
     "footerLocation": "Stockholm, Sverige",
-    "footerPhone": "Telefon: 08-123 456 78",
+    "footerPhone": "Telefon: 070-123 45 67",
     "footerEmail": "E-post: info@komplettvvs.se",
-    "footerCopyright": "© 2024 Komplett VVS i Stockholm AB. Alla rättigheter förbehållna.",
+    "footerCopyright": "© 2024 Komplett VVS i Sthlm AB. Alla rättigheter förbehållna.",
     "features": {
       "sakerVatten": {
         "title": "Säker Vatten",
-        "description": "Certifierade arbeten enligt Säker Vatten-standarder för garanterad kvalitet."
+        "description": "Arbeten enligt Säker Vatten-regler – dokumenterat och spårbart."
       },
       "expertis": {
-        "title": "Expertis",
-        "description": "Över 20 års erfarenhet av VVS-installationer i Stockholm och omnejd."
+        "title": "Erfarenhet",
+        "description": "30+ års samlad erfarenhet från entreprenad till service."
       },
       "service": {
-        "title": "24/7 Service",
-        "description": "Akutservice dygnet runt för akuta VVS-problem som inte kan vänta."
+        "title": "Snabb och personlig återkoppling",
+        "description": "Vi återkommer snabbt med plan, tidslinje och offert."
       }
     },
     "contentSection": {
       "mainTitle": "Professionella VVS-tjänster i Stockholm",
-      "specialtiesTitle": "Våra specialiteter"
+      "specialtiesTitle": "Våra specialiteter",
+      "safetyTitle": "Trygghet & certifieringar"
     },
     "specialties": {
       "items": {
-        "nyinstallation": { "after": "av VVS-system för nya byggnader och renoveringar" },
-        "stambyte": { "after": "i flerbostadshus med minimal störning" },
+        "nyinstallation": { "after": "för nyproduktion och renoveringar" },
+        "stambyte": { "after": "i flerbostadshus med planerad störningsminimering" },
         "relining": { "after": "för att förnya rör utan rivning" },
-        "service": { "after": "och förebyggande underhåll" }
+        "service": { "after": "inklusive felsökning, underhåll och åtgärd" }
       }
     },
     "usp": {
-      "safeWater": "Certifierade enligt Säker Vatten-standarder",
-      "emergency": "Akutservice dygnet runt för akuta problem",
-      "experience": "Över 20 års erfarenhet i Stockholm",
-      "insured": "Försäkrade arbeten med full garanti"
+      "safeWater": "Arbetar enligt Säker Vatten-regler",
+      "emergency": "Snabb och personlig återkoppling",
+      "experience": "30+ års samlad erfarenhet",
+      "insured": "Auktorisation och ansvarsförsäkring"
     },
     "serviceAreas": {
-      "title": "Vi arbetar i hela Stockholm",
-      "intro1": "Från innerstaden till ytterområdena - vi kommer till dig för alla VVS-behov.",
-      "intro2": "Våra montörer känner till Stockholms byggnader och kan hjälpa dig med allt från",
+      "title": "Vi arbetar i hela Stor-Stockholm",
+      "intro1": "Från innerstaden till kranskommunerna – vi kommer till er med rätt kompetens.",
+      "intro2": "Vi hjälper entreprenad, BRF, företag och privatpersoner med allt från",
       "and": "till",
-      "and2": "och",
-      "cta": "Få kostnadsfri offert"
+      "and2": "samt",
+      "cta": "Kontakta oss för offert"
+    },
+    "safety": {
+      "title": "Trygghet & certifieringar",
+      "items": [
+        "Auktoriserat VVS-företag",
+        "Arbetar enligt Säker Vatten-regler",
+        "Ansvarsförsäkring för alla uppdrag",
+        "Dokumentation och egenkontroller",
+        "Koordinering med rivning/sanering och el"
+      ]
     },
     "faq": {
-      "title": "Vanliga frågor",
+      "title": "5 anledningar att välja oss",
       "items": [
         {
-          "question": "Hur snabbt kan ni komma ut för akutservice?",
-          "answer": "Vi erbjuder akutservice dygnet runt. I Stockholm och omnejd kan vi vanligtvis vara på plats inom 2-4 timmar för akuta problem."
+          "question": "1 – Expertis och erfarenhet",
+          "answer": "30+ års samlad erfarenhet och auktoriserade montörer som följer Säker Vatten-regler."
         },
         {
-          "question": "Är alla era montörer certifierade?",
-          "answer": "Ja, alla våra montörer är certifierade enligt Säker Vatten-standarder och har flera års erfarenhet av VVS-installationer."
+          "question": "2 – Snabb och personlig återkoppling",
+          "answer": "Ni får snabb respons och tydlig plan – från första kontakt till färdigt system."
         },
         {
-          "question": "Vad ingår i er garanti?",
-          "answer": "Alla våra arbeten kommer med full garanti på material och arbete. Garantitiden varierar beroende på typ av arbete, men är minst 2 år."
+          "question": "3 – Konkurrenskraftiga priser",
+          "answer": "Effektiv projektering och inköp ger god kostnadskontroll utan att kompromissa på kvalitet."
         },
         {
-          "question": "Arbetar ni med både privata kunder och företag?",
-          "answer": "Ja, vi hjälper både privatpersoner med hemrenoveringar och företag med större VVS-projekt. Vi har erfarenhet av allt från lägenheter till kontorsbyggnader."
+          "question": "4 – Personligt bemötande",
+          "answer": "En dedikerad kontaktperson genom hela uppdraget."
+        },
+        {
+          "question": "5 – Komplett under samma tak",
+          "answer": "VS, rörinfodring/relining, rivning/sanering och el i samverkan – smidig koordinering."
         }
       ]
     }
@@ -98,92 +120,92 @@
   "services": {
     "newInstallation": {
       "title": "Nyinstallation av VVS i Stockholm – rätt från början",
-      "description": "Professionell installation av nya VVS-system",
+      "description": "Komplett nyinstallation för entreprenad, BRF, företag och privatpersoner.",
       "hero": {
         "h1": "Nyinstallation av VVS i Stockholm – rätt från början",
-        "intro": "När du bygger nytt eller renoverar behöver du en pålitlig partner för VVS-installationen. Vi installerar allt från enkla badrumsrenoveringar till kompletta VVS-system i nya byggnader.",
+        "intro": "Vi projekterar och installerar hela VVS-system: värme, vatten, avlopp och ventilationens VVS-del. Fokus på kvalitet, tidsplan och dokumentation.",
         "features": [
-          "Komplett VVS-planering och projektering",
+          "Komplett projektering och materialval",
           "Installation av värmesystem, varmvatten och avlopp",
           "Badrumsrenoveringar med moderna lösningar",
-          "Certifierade arbeten enligt Säker Vatten",
-          "Fullständig dokumentation och garanti"
+          "Arbeten enligt Säker Vatten",
+          "Dokumentation, provning och överlämning"
         ]
       },
       "process": {
-        "title": "Så fungerar vår nyinstallation",
+        "title": "Så arbetar vi med nyinstallation",
         "steps": [
-          "Besiktning och mätning av lokalen",
-          "Detaljerad planering och kostnadsförslag",
-          "Beställning av material och koordinering",
-          "Professionell installation av certifierade montörer",
-          "Testning, dokumentation och överlämning"
+          "Platsbesök och inmätning",
+          "Projektering och kostnadsförslag",
+          "Materialbeställning och planering",
+          "Installation av certifierade montörer",
+          "Provning, dokumentation och överlämning"
         ]
       },
       "faq": [
         {
           "question": "Hur lång tid tar en nyinstallation?",
-          "answer": "Tiden varierar beroende på omfattning. En badrumsrenovering tar 1-2 veckor, medan en komplett VVS-installation i nybyggnation kan ta 2-4 veckor."
+          "answer": "Beror på omfattning. Mindre renoveringar tar ofta 1–2 veckor, större entreprenader längre – tidsplan lämnas i offerten."
         },
         {
-          "question": "Behöver jag bygglov för VVS-installation?",
-          "answer": "Det beror på omfattningen. Vi hjälper dig att ansöka om nödvändiga tillstånd och följer alla byggregler."
+          "question": "Behövs bygglov?",
+          "answer": "Vi rådgör kring tillstånd och följer gällande byggregler och branschstandard."
         },
         {
-          "question": "Vilka garantier får jag?",
-          "answer": "Alla våra installationer kommer med 2-5 års garanti beroende på system. Materialgarantin följer tillverkarens villkor."
+          "question": "Vilka garantier lämnar ni?",
+          "answer": "Materialgarantier enligt tillverkare och dokumenterade arbeten enligt branschregler."
         }
       ],
       "pageContent": {
         "featuresTitle": "Våra nyinstallations-tjänster",
         "features": [
           {
-            "title": "Komplett VVS-planering",
-            "description": "Detaljerad planering och projektering av hela VVS-systemet"
+            "title": "Komplett VVS-projektering",
+            "description": "Ritningar, material och kapacitetsberäkningar"
           },
           {
             "title": "Badrumsrenoveringar",
-            "description": "Modern design med funktionella VVS-lösningar"
+            "description": "Funktionella lösningar med snygg finish"
           },
           {
-            "title": "Värmesystem",
+            "title": "Värme & vatten",
             "description": "Installation av värmesystem, varmvatten och avlopp"
           },
           {
             "title": "Säker Vatten",
-            "description": "Certifierade arbeten enligt Säker Vatten-standarder"
+            "description": "Utfört enligt gällande branschregler"
           }
         ],
         "whyChooseUsTitle": "Varför välja oss för nyinstallation?",
         "whyChooseUs": [
-          "Över 20 års erfarenhet av VVS-installationer i Stockholm",
-          "Certifierade enligt Säker Vatten-standarder",
-          "Försäkrade arbeten med full garanti",
-          "Modern utrustning och teknik"
+          "Planerad produktion och tydlig tidslinje",
+          "Auktoriserade montörer",
+          "Dokumentation och provning",
+          "Komplett koordinering med övriga discipliner"
         ],
         "relatedServicesTitle": "Relaterade tjänster",
         "relatedServices": [
           {
             "title": "VVS-service & underhåll",
-            "description": "Regelbunden service för att hålla ditt VVS-system i toppskick"
+            "description": "Planerat underhåll och åtgärder"
           },
           {
             "title": "Stambyte",
-            "description": "Komplett byte av rörsystem i flerbostadshus"
+            "description": "Byte av rörsystem i flerbostadshus"
           },
           {
             "title": "Relining",
-            "description": "Modern metod för att förnya rör utan rivning"
+            "description": "Förnya rör utan rivning"
           }
         ],
-        "ctaTitle": "Redo att påbörja din VVS-installation?",
-        "ctaDescription": "Kontakta oss idag för en kostnadsfri offert och rådgivning",
+        "ctaTitle": "Komplett VVS – från projektering till färdigt system",
+        "ctaDescription": "Kontakta oss för offert och tidsplan.",
         "ctaButtons": {
           "callNow": "Ring oss nu",
           "sendMessage": "Skicka meddelande"
         },
         "buttons": {
-          "getQuote": "Få kostnadsfri offert",
+          "getQuote": "Kontakta oss för offert",
           "learnMore": "Läs mer om oss"
         }
       }
@@ -845,7 +867,7 @@
     "ringDirect": "Ring direkt",
     "contact": "Kontakt",
     "logoAlt": "Komplett VVS logotyp",
-    "companyName": "VVS Komplett i Sthlm AB",
+    "companyName": "Komplett VVS i Sthlm AB",
     "languageToggle": "Byt språk",
     "menuTitle": "Meny",
     "menuDescription": "Navigera till webbplatsens sidor"
@@ -853,7 +875,6 @@
   "footer": {
     "contact": "Kontakt",
     "areas": "Områden",
-    "hours": "Öppettider",
     "certificates": "Certifikat",
     "services": "Våra tjänster",
     "privacyPolicy": "Integritetspolicy",
@@ -862,20 +883,20 @@
     "logoAlt": "Komplett VVS logotyp",
     "pageContent": {
       "areas": [
-        "Stor Stockholm",
+        "Stor-Stockholm",
         "Stockholm med omnejd"
       ],
       "certificates": [
         "Säker Vatten",
-        "Försäkring",
-        "Garanti"
+        "Ansvarsförsäkring",
+        "Auktorisation"
       ]
     }
   },
   
   "cta": {
     "title": "Behöver du hjälp?",
-    "description": "Kontakta oss idag för en kostnadsfri offert",
+    "description": "Snabb och personlig återkoppling – kontakta oss för offert.",
     "contactUs": "Kontakta oss",
     "phoneNumbers": [
       { "name": "Håkan", "number": "070-123 45 67" },

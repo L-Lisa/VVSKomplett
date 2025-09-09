@@ -21,7 +21,6 @@ export function LocalBusinessSchema() {
       latitude: '59.3293',
       longitude: '18.0686',
     },
-    openingHours: 'Mo-Fr 08:00-17:00',
     serviceArea: {
       '@type': 'GeoCircle',
       geoMidpoint: {
