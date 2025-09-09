@@ -129,9 +129,9 @@ export function Footer() {
             <Image
                src="/logokomplett.webp"
               alt={t('footer.logoAlt')}
-              width={24}
-              height={24}
-              className="h-6 w-6"
+              width={1280}
+              height={720}
+              className="h-6 w-auto"
             />
             <span className="text-sm text-text-700">
               {t('home.footerCopyright')}

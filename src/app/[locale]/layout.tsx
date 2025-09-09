@@ -26,7 +26,12 @@ const outfit = Outfit({
 export const metadata: Metadata = {
   title: 'Komplett VVS i Sthlm AB',
   description:
-    'VVS i Stockholm – nyinstallation, stambyte, relining, stamspolning och service. Säker Vatten, försäkrade arbeten och garanti.'
+    'VVS i Stockholm – nyinstallation, stambyte, relining, stamspolning och service. Säker Vatten, försäkrade arbeten och garanti.',
+  icons: {
+    icon: '/favicon.svg',
+    shortcut: '/favicon.svg',
+    apple: '/favicon.svg',
+  },
 };
 
 export default async function RootLayout({

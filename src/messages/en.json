@@ -638,7 +638,11 @@
   "cta": {
     "title": "Need help?",
     "description": "Contact us today for a free quote",
-    "contactUs": "Contact us"
+    "contactUs": "Contact us",
+    "phoneNumbers": [
+      { "name": "Håkan", "number": "070-123 45 67" },
+      { "name": "Daniel", "number": "070-987 65 43" }
+    ]
   },
   "theme": {
     "label": "Theme",

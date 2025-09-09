@@ -36,18 +36,37 @@ export function Header({ LocaleSwitcher }: HeaderProps) {
 
   const phoneNumber = COMPANY.phone;
 
+  // Reusable CTA buttons component
+  const CTAButtons = ({ className = "", onClick }: { className?: string; onClick?: () => void }) => (
+    <>
+      <Button className={className} asChild>
+        <a href={`tel:${phoneNumber}`}>
+          <Phone className="h-4 w-4 mr-2" />
+          {t('header.ringDirect')}
+        </a>
+      </Button>
+      <Button variant="outline" className={className} asChild>
+        <Link href="/kontakt" {...(onClick && { onClick })}>
+          {t('navigation.contact')}
+        </Link>
+      </Button>
+    </>
+  );
+
   return (
     <header className="border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60 sticky top-0 z-50">
       <div className="container">
+        {/* Main Header Row */}
         <div className="flex items-center justify-between py-4">
           {/* Logo */}
           <Link href="/" className="flex items-center space-x-2">
             <Image
               src="/logokomplett.webp"
               alt={t('header.logoAlt')}
-              width={40}
-              height={40}
-              className="h-10 w-10 shrink-0"
+              width={1280}
+              height={720}
+              className="h-10 w-auto shrink-0"
+              priority
             />
           </Link>
 
@@ -64,25 +83,7 @@ export function Header({ LocaleSwitcher }: HeaderProps) {
             ))}
           </nav>
 
-          {/* Desktop CTA & Locale */}
-          <div className="hidden lg:flex items-center space-x-4">
-            <div className="flex items-center space-x-2">
-              <LocaleSwitcher />
-            </div>
-            <Button asChild>
-              <a href={`tel:${phoneNumber}`}>
-                <Phone className="h-4 w-4 mr-2" />
-                {t('header.ringDirect')}
-              </a>
-            </Button>
-            <Button variant="outline" asChild>
-              <Link href="/kontakt">
-                {t('navigation.contact')}
-              </Link>
-            </Button>
-          </div>
-
-          {/* Mobile Menu */}
+          {/* Mobile Menu Button */}
           <div className="flex lg:hidden items-center space-x-2">
             <LocaleSwitcher />
             <Sheet open={isOpen} onOpenChange={setIsOpen}>
@@ -115,22 +116,20 @@ export function Header({ LocaleSwitcher }: HeaderProps) {
                   
                   {/* Mobile CTA */}
                   <div className="pt-6 border-t">
-                    <Button className="w-full mb-4" asChild>
-                      <a href={`tel:${phoneNumber}`}>
-                        <Phone className="h-4 w-4 mr-2" />
-                        {t('header.ringDirect')}
-                      </a>
-                    </Button>
-                    <Button variant="outline" className="w-full" asChild>
-                      <Link href="/kontakt" onClick={() => setIsOpen(false)}>
-                        {t('navigation.contact')}
-                      </Link>
-                    </Button>
+                    <CTAButtons className="w-full mb-4" onClick={() => setIsOpen(false)} />
                   </div>
                 </div>
               </SheetContent>
             </Sheet>
           </div>
+        </div>
+
+        {/* Desktop CTA & Locale Row */}
+        <div className="hidden lg:flex items-center justify-end space-x-4 pb-4">
+          <div className="flex items-center space-x-2">
+            <LocaleSwitcher />
+          </div>
+          <CTAButtons />
         </div>
       </div>
     </header>

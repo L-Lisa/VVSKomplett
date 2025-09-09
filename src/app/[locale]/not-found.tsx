@@ -35,16 +35,16 @@ export default function NotFound() {
           <p>{t('commonPagesTitle')}</p>
           <div className="flex flex-wrap justify-center gap-2 mt-2">
             <Link href="/nyinstallation" className="text-primary hover:underline">
-              Nyinstallation
+              {t('navigation.newInstallation')}
             </Link>
             <Link href="/service" className="text-primary hover:underline">
-              Service
+              {t('navigation.service')}
             </Link>
             <Link href="/om-oss" className="text-primary hover:underline">
-              Om oss
+              {t('navigation.about')}
             </Link>
             <Link href="/kontakt" className="text-primary hover:underline">
-              Kontakt
+              {t('navigation.contact')}
             </Link>
           </div>
         </div>

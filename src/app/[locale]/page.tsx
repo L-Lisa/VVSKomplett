@@ -284,10 +284,7 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
       <CTA 
         title={t('cta.title')}
         description={t('cta.description')}
-        phoneNumbers={[
-          { name: 'Håkan', number: '070-123 45 67' },
-          { name: 'Daniel', number: '070-987 65 43' }
-        ]}
+        phoneNumbers={t.raw('cta.phoneNumbers')}
         contactHref="/kontakt"
       />
     </>

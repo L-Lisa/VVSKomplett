@@ -876,7 +876,11 @@
   "cta": {
     "title": "Behöver du hjälp?",
     "description": "Kontakta oss idag för en kostnadsfri offert",
-    "contactUs": "Kontakta oss"
+    "contactUs": "Kontakta oss",
+    "phoneNumbers": [
+      { "name": "Håkan", "number": "070-123 45 67" },
+      { "name": "Daniel", "number": "070-987 65 43" }
+    ]
   },
   "theme": {
     "label": "Tema",
