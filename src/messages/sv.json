@@ -22,11 +22,11 @@
     "subtitle": "Komplett VVS – Allt under samma tak för ditt vatten och avlopp",
     "description": "Auktoriserat VVS-företag med stark ansvarsförsäkring och arbeten enligt Säker Vatten-regler.",
     "hero": {
-      "h1": "VVS i Stockholm – För alla: entreprenad, BRF, företag och privat",
-      "h2": "Komplett VVS – Allt under samma tak för ditt vatten och avlopp",
-      "h3": "Auktoriserat • Säker Vatten • Ansvarsförsäkring",
-      "intro1": "Auktoriserad VVS i Stor-Stockholm. Helhetsleverans: VS, relining, stamspolning, stamfilmning & service.",
-      "intro2": "Från projektering till färdigt system med dokumentation.",
+    "h1": "VVS i Stockholm – entreprenad, BRF & företag",
+    "h2": "Komplett VVS – Allt under samma tak för ditt vatten och avlopp",
+    "h3": "Auktoriserat • Säker Vatten • Ansvarsförsäkring",
+    "intro1": "Auktoriserad VVS i Stor-Stockholm. Helhetsleverans: VS, relining, stamspolning, stamfilmning & service.",
+    "intro2": "Primärt för entreprenad, BRF och företag – vi hjälper även privatpersoner.",
       "imageAlt": "Vitt och ljusgrått rörsystem som bakgrund"
     },
     "servicesTitle": "Våra tjänster",
@@ -898,10 +898,7 @@
     "title": "Behöver du hjälp?",
     "description": "Snabb och personlig återkoppling – kontakta oss för offert.",
     "contactUs": "Kontakta oss",
-    "phoneNumbers": [
-      { "name": "Håkan", "number": "070-123 45 67" },
-      { "name": "Daniel", "number": "070-987 65 43" }
-    ]
+    "waterLeak": "Behöver du hjälp vid vattenläcka? Vi erbjuder snabb återkoppling i Stockholm."
   },
   "theme": {
     "label": "Tema",

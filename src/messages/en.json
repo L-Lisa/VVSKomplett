@@ -22,11 +22,11 @@
     "subtitle": "Komplett VVS – Everything under one roof for your water and drainage",
     "description": "Authorized plumbing company with strong liability insurance and work according to Safe Water regulations.",
     "hero": {
-      "h1": "Plumbing in Stockholm – For everyone: contractors, housing associations, businesses and private",
+      "h1": "Plumbing in Stockholm – construction, housing associations & companies",
       "h2": "Komplett VVS – Everything under one roof for your water and drainage",
       "h3": "Authorized • Safe Water • Liability Insurance",
       "intro1": "Authorized plumbing in Greater Stockholm. Complete delivery: plumbing, relining, pipe flushing, pipe coating & service.",
-      "intro2": "From design to finished system with documentation.",
+      "intro2": "Primarily for construction, housing associations and companies – we also help private individuals.",
       "imageAlt": "White and light gray pipe system as background"
     },
     "servicesTitle": "Our Services",
@@ -660,10 +660,7 @@
     "title": "Need help?",
     "description": "Quick and personal response – contact us for a quote.",
     "contactUs": "Contact us",
-    "phoneNumbers": [
-      { "name": "Håkan", "number": "070-123 45 67" },
-      { "name": "Daniel", "number": "070-987 65 43" }
-    ]
+    "waterLeak": "Need help with a water leak? We offer quick response in Stockholm."
   },
   "theme": {
     "label": "Theme",

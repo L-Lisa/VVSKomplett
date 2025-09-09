@@ -21,14 +21,14 @@ export function Footer() {
   ];
 
   return (
-    <footer className="border-t bg-muted/20">
+    <footer className="border-t bg-white">
       <div className="container py-12">
         {/* Main Footer Content */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {/* Contact - First on mobile, third on desktop */}
           <div className="lg:order-3">
-            <h3 className="font-semibold text-text-900 mb-4 flex items-center">
-              <Phone className="h-5 w-5 mr-2 text-primary" />
+            <h3 className="font-semibold text-[#1f398a] mb-4 flex items-center">
+              <Phone className="h-5 w-5 mr-2 text-[#F97316]" />
               {t('footer.contact')}
             </h3>
             <div className="space-y-3">
@@ -36,7 +36,7 @@ export function Footer() {
                 <div className="text-sm">
                   <a 
                     href={`tel:${phoneNumber}`}
-                    className="text-text-700 hover:text-primary transition-colors flex items-center"
+                    className="text-[#1f398a] hover:text-[#F97316] transition-colors flex items-center"
                     aria-label="Ring oss direkt"
                   >
                     <Phone className="h-4 w-4 mr-2" />
@@ -44,17 +44,17 @@ export function Footer() {
                   </a>
                 </div>
               )}
-              <div className="text-sm text-text-700 flex items-center">
+              <div className="text-sm text-[#1f398a] flex items-center">
                 <Mail className="h-4 w-4 mr-2" />
                 <a 
                   href={`mailto:${COMPANY.email}`}
-                  className="hover:text-primary transition-colors"
+                  className="hover:text-[#F97316] transition-colors"
                   aria-label="Skicka e-post till oss"
                 >
                   {COMPANY.email}
                 </a>
               </div>
-              <div className="text-sm text-text-700 flex items-center">
+              <div className="text-sm text-[#1f398a] flex items-center">
                 <MapPin className="h-4 w-4 mr-2" />
                 {COMPANY.address}
               </div>
@@ -63,11 +63,11 @@ export function Footer() {
 
           {/* Areas - Second on mobile, first on desktop */}
           <div className="lg:order-1">
-            <h3 className="font-semibold text-text-900 mb-4 flex items-center">
-              <MapPin className="h-5 w-5 mr-2 text-primary" />
+            <h3 className="font-semibold text-[#1f398a] mb-4 flex items-center">
+              <MapPin className="h-5 w-5 mr-2 text-[#F97316]" />
               {t('footer.areas')}
             </h3>
-            <div className="text-sm text-text-700">
+            <div className="text-sm text-[#1f398a]">
               <p>Stor Stockholm</p>
               <p className="mt-2">Stockholm med omnejd</p>
             </div>
@@ -75,22 +75,22 @@ export function Footer() {
 
           {/* Certificates - Third on both mobile and desktop */}
           <div className="lg:order-2">
-            <h3 className="font-semibold text-text-900 mb-4 flex items-center">
-              <Award className="h-5 w-5 mr-2 text-primary" />
+            <h3 className="font-semibold text-[#1f398a] mb-4 flex items-center">
+              <Award className="h-5 w-5 mr-2 text-[#F97316]" />
               {t('footer.certificates')}
             </h3>
             
-            <div className="text-sm text-text-700 space-y-2">
+            <div className="text-sm text-[#1f398a] space-y-2">
               <div className="flex items-center">
-                <Shield className="h-4 w-4 mr-2 text-primary" />
+                <Shield className="h-4 w-4 mr-2 text-[#F97316]" />
                 Säker Vatten
               </div>
               <div className="flex items-center">
-                <Award className="h-4 w-4 mr-2 text-primary" />
+                <Award className="h-4 w-4 mr-2 text-[#F97316]" />
                 Ansvarsförsäkring
               </div>
               <div className="flex items-center">
-                <Shield className="h-4 w-4 mr-2 text-primary" />
+                <Shield className="h-4 w-4 mr-2 text-[#F97316]" />
                 Auktorisation
               </div>
             </div>
@@ -103,14 +103,14 @@ export function Footer() {
         </div>
 
         {/* Services Links */}
-        <div className="mt-8 pt-8 border-t">
-          <h3 className="font-semibold text-text-900 mb-4">{t('footer.services')}</h3>
+        <div className="mt-8 pt-8 border-t border-gray-200">
+          <h3 className="font-semibold text-[#1f398a] mb-4">{t('footer.services')}</h3>
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
             {services.map((service) => (
               <Link
                 key={service.key}
                 href={service.href}
-                className="text-sm text-text-700 hover:text-primary transition-colors"
+                className="text-sm text-[#1f398a] hover:text-[#F97316] transition-colors"
               >
                 {t(`services.${service.key}.title`)}
               </Link>
@@ -119,23 +119,23 @@ export function Footer() {
         </div>
 
         {/* Partners */}
-        <div className="mt-8 pt-8 border-t text-center">
-          <p className="text-sm text-text-700 mb-2">
+        <div className="mt-8 pt-8 border-t border-gray-200 text-center">
+          <p className="text-sm text-[#1f398a] mb-2">
             Samarbeten:{' '}
             <a 
-              href="https://elteknik23.se" 
+              href="https://www.elteknik23.se" 
               target="_blank" 
               rel="noopener noreferrer"
-              className="text-primary hover:underline transition-colors"
+              className="text-[#1f398a] hover:text-[#F97316] transition-colors"
             >
               Elteknik23
             </a>
             {' • '}
             <a 
-              href="https://caredab.se" 
+              href="https://www.caredab.se" 
               target="_blank" 
               rel="noopener noreferrer"
-              className="text-primary hover:underline transition-colors"
+              className="text-[#1f398a] hover:text-[#F97316] transition-colors"
             >
               Caredab
             </a>
@@ -144,7 +144,7 @@ export function Footer() {
               href="https://badrums-koncept.se" 
               target="_blank" 
               rel="noopener noreferrer"
-              className="text-primary hover:underline transition-colors"
+              className="text-[#1f398a] hover:text-[#F97316] transition-colors"
             >
               Badrums-Koncept
             </a>
@@ -152,7 +152,7 @@ export function Footer() {
         </div>
 
         {/* Bottom Footer */}
-        <div className="mt-8 pt-8 border-t flex flex-col md:flex-row justify-between items-center">
+        <div className="mt-8 pt-8 border-t border-gray-200 flex flex-col md:flex-row justify-between items-center">
           <div className="flex items-center space-x-2 mb-4 md:mb-0">
             <Image
                src="/logokomplett.webp"
@@ -161,20 +161,20 @@ export function Footer() {
               height={720}
               className="h-6 w-auto"
             />
-            <span className="text-sm text-text-700">
+            <span className="text-sm text-[#1f398a]">
               {t('home.footerCopyright')}
             </span>
           </div>
           <div className="flex space-x-6 text-sm">
             <Link 
               href={`/${locale}/integritetspolicy`} 
-              className="text-text-700 hover:text-primary transition-colors"
+              className="text-[#1f398a] hover:text-[#F97316] transition-colors"
             >
               {t('footer.privacyPolicy')}
             </Link>
             <Link 
               href={`/${locale}/cookies`} 
-              className="text-text-700 hover:text-primary transition-colors"
+              className="text-[#1f398a] hover:text-[#F97316] transition-colors"
             >
               {t('footer.cookies')}
             </Link>

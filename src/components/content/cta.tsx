@@ -7,19 +7,12 @@ import { COMPANY } from '@/config/company';
 interface CTAProps {
   title: string;
   description: string;
-  phoneNumbers: {
-    name: string;
-    number: string;
-  }[];
-  contactHref: string;
   className?: string;
 }
 
 export function CTA({ 
   title, 
   description, 
-  phoneNumbers, 
-  contactHref, 
   className 
 }: CTAProps) {
   const t = useTranslations('cta');
@@ -27,11 +20,14 @@ export function CTA({
   return (
     <section className={cn('py-16 navy-gradient text-white', className)}>
       <div className="container text-center">
-        <h2 className="text-h2 font-outfit mb-4">
+        <h2 className="text-h2 font-outfit mb-4 text-[#F97316]">
           {title}
         </h2>
-        <p className="text-lg mb-8 max-w-2xl mx-auto opacity-90">
+        <p className="text-lg mb-4 max-w-2xl mx-auto opacity-90">
           {description}
+        </p>
+        <p className="text-sm mb-8 max-w-2xl mx-auto opacity-80">
+          {t('waterLeak')}
         </p>
         
         {/* Action Buttons */}
@@ -40,7 +36,7 @@ export function CTA({
           <Button 
             size="lg" 
             variant="secondary" 
-            className="text-lg px-8 py-6 btn-navy-outline"
+            className="text-lg px-8 py-6"
             asChild
           >
             <a href={`mailto:${COMPANY.email}`} aria-label="Kontakta oss via e-post">
@@ -54,7 +50,7 @@ export function CTA({
             <Button 
               size="lg" 
               variant="secondary" 
-              className="text-lg px-8 py-6 btn-navy-outline"
+              className="text-lg px-8 py-6"
               asChild
             >
               <a href={`tel:${COMPANY.phone}`} aria-label="Ring direkt">

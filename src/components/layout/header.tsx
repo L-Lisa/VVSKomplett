@@ -39,13 +39,13 @@ export function Header({ LocaleSwitcher }: HeaderProps) {
   // Reusable CTA buttons component
   const CTAButtons = ({ className = "", onClick }: { className?: string; onClick?: () => void }) => (
     <>
-      <Button className={className} asChild>
+      <Button variant="secondary" className={className} asChild>
         <a href={`tel:${phoneNumber}`}>
           <Phone className="h-4 w-4 mr-2" />
           {t('header.ringDirect')}
         </a>
       </Button>
-      <Button variant="outline" className={className} asChild>
+      <Button variant="secondary" className={className} asChild>
         <Link href="/kontakt" {...(onClick && { onClick })}>
           {t('navigation.contact')}
         </Link>

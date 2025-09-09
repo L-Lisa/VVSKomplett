@@ -1,6 +1,5 @@
 import Image from 'next/image';
 import { Button } from '@/components/ui/button';
-import { ImageOverlay } from '@/components/ui/image-overlay';
 import { cn } from '@/lib/utils';
 
 interface HeroProps {
@@ -45,8 +44,8 @@ export function Hero({
           className="object-cover object-center"
           priority={priority}
         />
-        {/* Dark overlay for better text contrast */}
-        <div className="absolute inset-0 bg-black/30"></div>
+        {/* Gradient overlay for better text contrast */}
+        <div className="absolute inset-0 bg-gradient-to-r from-[rgba(22,58,95,0.75)] via-[rgba(22,58,95,0.15)] to-transparent" aria-hidden="true"></div>
       </div>
       
       {/* Content with glassmorphism effect */}
@@ -72,7 +71,7 @@ export function Hero({
                 </a>
               </Button>
               {secondaryCta && (
-                <Button variant="outline" size="lg" className="text-lg px-8 py-6" asChild>
+                <Button variant="secondary" size="lg" className="text-lg px-8 py-6" asChild>
                   <a href={secondaryCta.href}>
                     {secondaryCta.text}
                   </a>
@@ -80,10 +79,10 @@ export function Hero({
               )}
             </div>
             
-            {/* Simple text with divider */}
-            <p className="text-sm text-text-700 mb-12">
-              Säker Vatten • Stark ansvarsförsäkring
-            </p>
+            {/* Chips text under CTA buttons */}
+            <div className="mt-3 inline-flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-[#1f398a]/15 to-[#F97316]/15 border border-[#1f398a]/20 text-[#1f398a] text-sm font-medium rounded-full tracking-wide hover:scale-105 transition-transform duration-300">
+              Entreprenad • BRF • Företag • Privat
+            </div>
             
             {/* Profile Picture - Aligned with buttons, 15px to the right */}
             <div className="hidden md:block absolute" style={{top: 'calc(100% - 120px)', left: 'calc(50% + 200px)'}}>

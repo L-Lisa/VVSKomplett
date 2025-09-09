@@ -15,15 +15,14 @@ import {
   Droplets,
   Paintbrush,
   CheckCircle,
-  Phone,
-  Clock,
 } from 'lucide-react';
 import { Hero } from '@/components/content/hero';
 import { Testimonials3 } from '@/components/content/testimonials3';
 import { CTA } from '@/components/content/cta';
 import { generatePageMetadata } from '@/lib/metadata';
 import { generateLocalBusinessSchema } from '@/lib/schemas';
-import { MapPin, Award, Mail } from 'lucide-react';
+import { ScrollAnimation } from '@/components/ui/scroll-animation';
+import { GeometricAccents } from '@/components/ui/geometric-accents';
 import Link from 'next/link';
 
 export const metadata = generatePageMetadata({
@@ -122,41 +121,54 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
       />
 
       {/* Services Section */}
-      <section className="py-20">
+      <section className="py-20 relative">
+        <GeometricAccents variant="corner" className="opacity-30" />
         <div className="container mx-auto px-4">
-          <h2 className="text-3xl md:text-4xl font-bold font-outfit text-center mb-12">
-            {t('home.servicesTitle')}
-          </h2>
+          <ScrollAnimation delay={0} duration={300}>
+            <h2 className="text-3xl md:text-4xl font-bold font-outfit text-center mb-12">
+              {t('home.servicesTitle')}
+            </h2>
+          </ScrollAnimation>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {services.map((service) => {
+            {services.map((service, index) => {
               const Icon = service.icon;
+              const isStambyte = service.key === 'pipeReplacement';
               return (
-                <Card
-                  key={service.key}
-                  className="hover:shadow-lg transition-shadow"
+                <ScrollAnimation 
+                  key={service.key} 
+                  delay={index * 100} 
+                  duration={300}
+                  direction="bottom"
                 >
-                  <CardHeader>
-                    <Icon className="h-12 w-12 text-primary mb-4" />
-                    <CardTitle className="text-xl font-outfit">
-                      {t(`services.${service.key}.title`)}
-                    </CardTitle>
-                  </CardHeader>
-                  <CardContent>
-                    <CardDescription className="text-base">
-                      {t(`services.${service.key}.description`)}
-                    </CardDescription>
-                    <Button 
-                      className="w-full mt-4" 
-                      variant="outline"
-                      asChild
-                      aria-label={`Läs mer om ${t(`services.${service.key}.title`)}`}
-                    >
-                      <Link href={service.href}>
+                  <Card className="group rounded-2xl border border-[#E6E9EF] bg-white shadow-[0_6px_18px_rgba(12,21,36,0.06)] hover:shadow-xl hover:-translate-y-1 transition-all duration-300 hover:border-[#1f398a]/20">
+                    <CardHeader>
+                      {isStambyte && (
+                        <span className="inline-block mb-2 text-[11px] font-semibold uppercase tracking-wide text-white bg-[#F97316] px-2 py-1 rounded">
+                          BRF & Företag
+                        </span>
+                      )}
+                      <Icon className="h-12 w-12 text-[#1f398a] mb-4 group-hover:text-[#F97316] transition-colors duration-300" />
+                      <CardTitle className="text-xl font-outfit">
+                        {t(`services.${service.key}.title`)}
+                      </CardTitle>
+                    </CardHeader>
+                    <CardContent>
+                      <CardDescription className="text-base">
+                        {t(`services.${service.key}.description`)}
+                      </CardDescription>
+                      <a 
+                        className="mt-3 inline-flex items-center gap-1 text-[#1f398a] font-medium hover:text-[#F97316] hover:underline transition-colors duration-300"
+                        href={service.href}
+                        aria-label={`Läs mer om ${t(`services.${service.key}.title`)}`}
+                      >
                         {t('home.readMore')}
-                      </Link>
-                    </Button>
-                  </CardContent>
-                </Card>
+                        <svg className="w-4 h-4 group-hover:translate-x-1 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                        </svg>
+                      </a>
+                    </CardContent>
+                  </Card>
+                </ScrollAnimation>
               );
             })}
           </div>
@@ -164,22 +176,28 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
       </section>
 
       {/* Testimonials Section */}
-      <section className="py-20 bg-muted/20">
+      <section className="py-20 bg-muted/20 relative">
+        <GeometricAccents variant="diagonal" className="opacity-20" />
         <div className="container mx-auto px-4">
-          <h2 className="text-3xl md:text-4xl font-bold font-outfit text-center mb-12">
-            {t('home.testimonialsTitle')}
-          </h2>
+          <ScrollAnimation delay={0} duration={300}>
+            <h2 className="text-3xl md:text-4xl font-bold font-outfit text-center mb-12">
+              {t('home.testimonialsTitle')}
+            </h2>
+          </ScrollAnimation>
           <Testimonials3 testimonials={testimonials} />
         </div>
       </section>
 
       {/* Content Section with Internal Linking */}
-      <section className="py-20">
+      <section className="py-20 bg-[#F7F9FC] relative">
+        <GeometricAccents variant="border" className="opacity-25" />
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto">
-            <h2 className="text-3xl md:text-4xl font-bold font-outfit text-center mb-8">
-              {t('home.contentSection.mainTitle')}
-            </h2>
+            <ScrollAnimation delay={0} duration={300}>
+              <h2 className="text-3xl md:text-4xl font-bold font-outfit text-center mb-8">
+                {t('home.contentSection.mainTitle')}
+              </h2>
+            </ScrollAnimation>
             
             <div className="prose prose-lg max-w-none text-text-700 mb-8">
               <p className="text-xl leading-relaxed mb-6">
@@ -246,18 +264,34 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
 
             {/* Why Choose Us Section - positioned right after the two columns */}
             <div className="mt-12">
-              <h2 className="text-2xl font-bold font-outfit mb-6">
-                {t('home.whyChooseUs')}
-              </h2>
-              <ul className="space-y-3">
-                {t.raw('home.faq.items').map((item: any, index: number) => (
-                  <li key={index} className="flex items-start">
-                    <span className="text-primary mr-3 mt-1">-</span>
-                    <div>
-                      <span className="font-semibold text-text-900">{item.question}</span>
-                      <span className="text-text-700 ml-2">{item.answer}</span>
-                    </div>
-                  </li>
+              <ScrollAnimation delay={0} duration={300}>
+                <h2 className="text-2xl font-bold font-outfit mb-6">
+                  {t('home.whyChooseUs')}
+                </h2>
+              </ScrollAnimation>
+              <ul className="space-y-6">
+                {t.raw('home.faq.items').map((item: { question: string; answer: string }, index: number) => (
+                  <ScrollAnimation key={index} delay={index * 200} duration={300} direction="bottom">
+                    <li className="flex items-start group">
+                      <div className="flex-shrink-0 mr-4 mt-1 group-hover:scale-110 transition-transform duration-300">
+                        <svg 
+                          className="w-6 h-6 text-[#F97316]" 
+                          fill="currentColor" 
+                          viewBox="0 0 20 20"
+                        >
+                          <path 
+                            fillRule="evenodd" 
+                            d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" 
+                            clipRule="evenodd" 
+                          />
+                        </svg>
+                      </div>
+                      <div className="flex-1">
+                        <span className="font-semibold text-text-900 text-lg">{item.question}</span>
+                        <p className="text-text-700 mt-1 leading-relaxed">{item.answer}</p>
+                      </div>
+                    </li>
+                  </ScrollAnimation>
                 ))}
               </ul>
             </div>
@@ -269,8 +303,6 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
       <CTA 
         title={t('cta.title')}
         description={t('cta.description')}
-        phoneNumbers={t.raw('cta.phoneNumbers')}
-        contactHref="/kontakt"
       />
     </>
   );

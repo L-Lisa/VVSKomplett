@@ -23,7 +23,7 @@ export function Testimonials3({ testimonials, className }: Testimonials3Props) {
           className="card-hover hover:shadow-lg transition-shadow navy-border"
         >
           <CardContent className="pt-6">
-            <Quote className="h-8 w-8 navy-text mb-4" />
+            <Quote className="h-8 w-8 text-[#F97316] mb-4" />
             <blockquote className="text-text-700 mb-4 italic">
               &quot;{testimonial.quote}&quot;
             </blockquote>
