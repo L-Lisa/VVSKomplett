@@ -250,3 +250,34 @@
     background-color: #475569;
   }
 }
+
+/* Accessibility: Respect user's motion preferences */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+  
+  /* Disable transform animations but keep opacity changes */
+  .group-hover\:scale-110,
+  .group-hover\:scale-105,
+  .hover\:scale-105 {
+    transform: none !important;
+  }
+  
+  /* Disable translate animations */
+  .group-hover\:translate-x-1,
+  .hover\:-translate-y-1,
+  .hover\:-translate-y-0\.5 {
+    transform: none !important;
+  }
+  
+  /* Disable card hover transforms */
+  .card-hover:hover {
+    transform: none !important;
+  }
+}

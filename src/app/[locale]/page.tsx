@@ -23,6 +23,7 @@ import { generatePageMetadata } from '@/lib/metadata';
 import { generateLocalBusinessSchema } from '@/lib/schemas';
 import { ScrollAnimation } from '@/components/ui/scroll-animation';
 import { GeometricAccents } from '@/components/ui/geometric-accents';
+import { ScreenReaderAnnouncement } from '@/components/ui/screen-reader-announcement';
 import Link from 'next/link';
 
 export const metadata = generatePageMetadata({
@@ -121,15 +122,15 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
       />
 
       {/* Services Section */}
-      <section className="py-20 relative">
+      <section className="py-20 relative" aria-labelledby="services-heading">
         <GeometricAccents variant="corner" className="opacity-30" />
         <div className="container mx-auto px-4">
           <ScrollAnimation delay={0} duration={300}>
-            <h2 className="text-3xl md:text-4xl font-bold font-outfit text-center mb-12">
+            <h2 id="services-heading" className="text-3xl md:text-4xl font-bold font-outfit text-center mb-12">
               {t('home.servicesTitle')}
             </h2>
           </ScrollAnimation>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6" role="list" aria-label="Våra VVS-tjänster">
             {services.map((service, index) => {
               const Icon = service.icon;
               const isStambyte = service.key === 'pipeReplacement';
@@ -140,14 +141,14 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
                   duration={300}
                   direction="bottom"
                 >
-                  <Card className="group rounded-2xl border border-[#E6E9EF] bg-white shadow-[0_6px_18px_rgba(12,21,36,0.06)] hover:shadow-xl hover:-translate-y-1 transition-all duration-300 hover:border-[#1f398a]/20">
+                  <Card className="group rounded-2xl border border-[#E6E9EF] bg-white shadow-[0_6px_18px_rgba(12,21,36,0.06)] hover:shadow-xl hover:-translate-y-1 transition-all duration-300 hover:border-[#1f398a]/20" role="listitem">
                     <CardHeader>
                       {isStambyte && (
-                        <span className="inline-block mb-2 text-[11px] font-semibold uppercase tracking-wide text-white bg-[#F97316] px-2 py-1 rounded">
+                        <span className="inline-block mb-2 text-[11px] font-semibold uppercase tracking-wide text-white bg-[#F97316] px-2 py-1 rounded" aria-label="Rekommenderas för BRF och företag">
                           BRF & Företag
                         </span>
                       )}
-                      <Icon className="h-12 w-12 text-[#1f398a] mb-4 group-hover:text-[#F97316] transition-colors duration-300" />
+                      <Icon className="h-12 w-12 text-[#1f398a] mb-4 group-hover:text-[#F97316] transition-colors duration-300" aria-hidden="true" />
                       <CardTitle className="text-xl font-outfit">
                         {t(`services.${service.key}.title`)}
                       </CardTitle>
@@ -162,7 +163,7 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
                         aria-label={`Läs mer om ${t(`services.${service.key}.title`)}`}
                       >
                         {t('home.readMore')}
-                        <svg className="w-4 h-4 group-hover:translate-x-1 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <svg className="w-4 h-4 group-hover:translate-x-1 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
                         </svg>
                       </a>
@@ -174,6 +175,12 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
           </div>
         </div>
       </section>
+
+      {/* Screen Reader Announcement for Services */}
+      <ScreenReaderAnnouncement 
+        message="Våra VVS-tjänster har laddats. Du kan navigera genom tjänstekorten med Tab-tangenten."
+        delay={1000}
+      />
 
       {/* Testimonials Section */}
       <section className="py-20 bg-muted/20 relative">
@@ -269,11 +276,11 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
                   {t('home.whyChooseUs')}
                 </h2>
               </ScrollAnimation>
-              <ul className="space-y-6">
+              <ul className="space-y-6" role="list" aria-label="5 anledningar att välja oss">
                 {t.raw('home.faq.items').map((item: { question: string; answer: string }, index: number) => (
                   <ScrollAnimation key={index} delay={index * 200} duration={300} direction="bottom">
-                    <li className="flex items-start group">
-                      <div className="flex-shrink-0 mr-4 mt-1 group-hover:scale-110 transition-transform duration-300">
+                    <li className="flex items-start group" role="listitem">
+                      <div className="flex-shrink-0 mr-4 mt-1 group-hover:scale-110 transition-transform duration-300" aria-hidden="true">
                         <svg 
                           className="w-6 h-6 text-[#F97316]" 
                           fill="currentColor" 
@@ -287,7 +294,9 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
                         </svg>
                       </div>
                       <div className="flex-1">
-                        <span className="font-semibold text-text-900 text-lg">{item.question}</span>
+                        <span className="font-semibold text-text-900 text-lg" aria-label={`Punkt ${index + 1}: ${item.question}`}>
+                          {item.question}
+                        </span>
                         <p className="text-text-700 mt-1 leading-relaxed">{item.answer}</p>
                       </div>
                     </li>

@@ -80,7 +80,7 @@ export function Hero({
             </div>
             
             {/* Chips text under CTA buttons */}
-            <div className="mt-3 inline-flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-[#1f398a]/15 to-[#F97316]/15 border border-[#1f398a]/20 text-[#1f398a] text-sm font-medium rounded-full tracking-wide hover:scale-105 transition-transform duration-300">
+            <div className="mt-3 inline-flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-[#1f398a]/25 to-[#F97316]/25 border-2 border-[#1f398a]/40 text-[#1f398a] text-sm font-medium rounded-full tracking-wide hover:scale-105 transition-transform duration-300">
               Entreprenad • BRF • Företag • Privat
             </div>
             
