@@ -4,14 +4,7 @@ import dynamic from 'next/dynamic';
 import { useTranslations } from 'next-intl';
 
 // Loading components with translations
-function ThemeSwitcherLoading() {
-  const t = useTranslations('theme');
-  return (
-    <div className="btn btn-navy" aria-label={t('loading')}>
-      <div className="h-4 w-4 animate-pulse bg-current opacity-50" />
-    </div>
-  );
-}
+// Theme switcher removed; loading placeholder no longer needed
 
 function LocaleSwitcherLoading() {
   const t = useTranslations('locale');
@@ -28,10 +21,7 @@ export const CookieBanner = dynamic(() => import('@/components/cookie-banner').t
   loading: () => null, // No loading state needed for cookie banner
 });
 
-export const ThemeSwitcher = dynamic(() => import('@/components/theme-switcher'), {
-  ssr: false,
-  loading: () => <ThemeSwitcherLoading />,
-});
+// Theme switcher removed per requirements
 
 export const LocaleSwitcher = dynamic(() => import('@/components/locale-switcher').then(mod => ({ default: mod.LocaleSwitcher })), {
   ssr: false,

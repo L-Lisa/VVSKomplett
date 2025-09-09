@@ -16,11 +16,10 @@ interface NavItem {
 }
 
 interface HeaderProps {
-  ThemeSwitcher: React.ComponentType;
   LocaleSwitcher: React.ComponentType;
 }
 
-export function Header({ ThemeSwitcher, LocaleSwitcher }: HeaderProps) {
+export function Header({ LocaleSwitcher }: HeaderProps) {
   const [isOpen, setIsOpen] = React.useState(false);
   const t = useTranslations();
   
@@ -44,15 +43,12 @@ export function Header({ ThemeSwitcher, LocaleSwitcher }: HeaderProps) {
           {/* Logo */}
           <Link href="/" className="flex items-center space-x-2">
             <Image
-              src="/logokomplett.png"
+              src="/logokomplett.webp"
               alt={t('header.logoAlt')}
               width={40}
               height={40}
-              className="h-10 w-10"
+              className="h-10 w-10 shrink-0"
             />
-            <span className="text-xl font-bold font-outfit text-text-900">
-              {t('header.companyName')}
-            </span>
           </Link>
 
           {/* Desktop Navigation */}
@@ -68,11 +64,10 @@ export function Header({ ThemeSwitcher, LocaleSwitcher }: HeaderProps) {
             ))}
           </nav>
 
-          {/* Desktop CTA & Switchers */}
+          {/* Desktop CTA & Locale */}
           <div className="hidden lg:flex items-center space-x-4">
             <div className="flex items-center space-x-2">
               <LocaleSwitcher />
-              <ThemeSwitcher />
             </div>
             <Button asChild>
               <a href={`tel:${phoneNumber}`}>
@@ -90,7 +85,6 @@ export function Header({ ThemeSwitcher, LocaleSwitcher }: HeaderProps) {
           {/* Mobile Menu */}
           <div className="flex lg:hidden items-center space-x-2">
             <LocaleSwitcher />
-            <ThemeSwitcher />
             <Sheet open={isOpen} onOpenChange={setIsOpen}>
               <SheetTrigger asChild>
                 <Button variant="outline" size="sm">

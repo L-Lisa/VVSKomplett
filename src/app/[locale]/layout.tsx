@@ -2,10 +2,9 @@ import type {Metadata} from 'next';
 import {NextIntlClientProvider} from 'next-intl';
 import {getMessages} from 'next-intl/server';
 import {Inter, Outfit} from 'next/font/google';
-import {ThemeProvider} from 'next-themes';
 import {Header} from '@/components/layout/header';
 import {Footer} from '@/components/layout/footer';
-import { CookieBanner, ThemeSwitcher, LocaleSwitcher } from '@/components/dynamic-components';
+import { CookieBanner, LocaleSwitcher } from '@/components/dynamic-components';
 import { GlobalErrorBoundary } from '@/components/global-error-boundary';
 import '../globals.css';
 
@@ -59,22 +58,14 @@ export default async function RootLayout({
           messages={messages}
         >
           <GlobalErrorBoundary>
-            <ThemeProvider
-              attribute="class"
-              defaultTheme="system"
-              enableSystem
-              disableTransitionOnChange
-            >
-              <Header 
-                ThemeSwitcher={ThemeSwitcher}
-                LocaleSwitcher={LocaleSwitcher}
-              />
-              <main className="min-h-screen">
-                {children}
-              </main>
-              <Footer />
-              <CookieBanner />
-            </ThemeProvider>
+            <Header 
+              LocaleSwitcher={LocaleSwitcher}
+            />
+            <main className="min-h-screen">
+              {children}
+            </main>
+            <Footer />
+            <CookieBanner />
           </GlobalErrorBoundary>
         </NextIntlClientProvider>
       </body>

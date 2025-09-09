@@ -127,7 +127,7 @@ export function Footer() {
         <div className="mt-8 pt-8 border-t flex flex-col md:flex-row justify-between items-center">
           <div className="flex items-center space-x-2 mb-4 md:mb-0">
             <Image
-               src="/logokomplett.png"
+               src="/logokomplett.webp"
               alt={t('footer.logoAlt')}
               width={24}
               height={24}

@@ -146,9 +146,9 @@ This project follows Next.js best practices for image optimization and brand ass
 ### Current Brand Assets
 
 **Logo Files:**
-- **Primary Logo**: `/public/logokomplett.png` (40x40px in header, 24x24px in footer)
+- **Primary Logo**: `/public/logokomplett.webp` (40x40px in header, 24x24px in footer)
 - **Usage**: Company logo used in header and footer components
-- **Format**: PNG with transparency support
+- **Format**: WebP with transparency support
 
 **Content Images:**
 - **Hero Image**: `/public/images/vvsror.jpg` (plumbing pipes image)
@@ -167,7 +167,7 @@ import Image from 'next/image';
 
 // ✅ Correct usage
 <Image
-  src="/logokomplett.png"
+  src="/logokomplett.webp"
   alt={t('header.logoAlt')}
   width={40}
   height={40}
@@ -196,7 +196,7 @@ import Image from 'next/image';
 **1. Replace Company Logo:**
 ```bash
 # Replace the logo file
-cp your-new-logo.png public/logokomplett.png
+cp your-new-logo.webp public/logokomplett.webp
 
 # Ensure dimensions are appropriate:
 # - Header: 40x40px minimum
@@ -237,7 +237,7 @@ cp your-image.jpg public/images/
 **File Structure:**
 ```
 public/
-├── logokomplett.png          # Company logo
+├── logokomplett.webp         # Company logo
 ├── images/
 │   ├── vvsror.jpg           # Hero/feature images
 │   ├── service-*.jpg        # Service-specific images
@@ -248,7 +248,7 @@ public/
 ```
 
 **Naming Rules:**
-- **Logos**: `logokomplett.png` (keep consistent for easy replacement)
+- **Logos**: `logokomplett.webp` (keep consistent for easy replacement)
 - **Content Images**: `descriptive-name.jpg` (kebab-case)
 - **Service Images**: `service-{service-name}.jpg`
 - **Team Images**: `team-{person-name}.jpg`
@@ -295,7 +295,7 @@ public/
 **Testing Image Changes:**
 ```bash
 # 1. Replace image file
-cp new-logo.png public/logokomplett.png
+cp new-logo.webp public/logokomplett.webp
 
 # 2. Test build
 pnpm build
