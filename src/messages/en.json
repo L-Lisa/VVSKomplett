@@ -1,0 +1,827 @@
+{
+  "navigation": {
+    "home": "Home",
+    "newInstallation": "New Installation",
+    "pipeReplacement": "Pipe Replacement",
+    "service": "Service",
+    "relining": "Relining",
+    "pipeFlushing": "Pipe Flushing",
+    "pipeCoating": "Pipe Coating",
+    "about": "About Us",
+    "contact": "Contact"
+  },
+  "home": {
+    "title": "Plumbing in Stockholm – reliable solutions for home & property",
+    "subtitle": "New installation, pipe replacement, relining and service – quickly performed by certified installers",
+    "description": "We offer professional plumbing services including new installation, pipe replacement, service and relining for both private and commercial customers.",
+    "hero": {
+      "h1": "Plumbing in Stockholm – reliable solutions for home & property",
+      "h2": "New installation, pipe replacement, relining and service – quickly performed by certified installers",
+      "h3": "Safe Water • Insured work • Guarantee",
+      "intro1": "As certified plumbing installers in Stockholm, we offer safe and durable solutions for all your pipe and heating systems. Our team has over 20 years of experience with professional plumbing installations in Stockholm and surrounding areas.",
+      "intro2": "We follow all safety regulations and are certified according to Safe Water standards. All our work is insured and comes with full guarantee for your safety.",
+      "imageAlt": "Plumbing installation work"
+    },
+    "servicesTitle": "Our Services",
+    "readMore": "Read more",
+    "whyChooseUs": "Why choose us?",
+    "testimonialsTitle": "What our customers say",
+    "footerDescription": "Your reliable plumbing partner in Stockholm",
+    "footerServices": "Services",
+    "footerContact": "Contact",
+    "footerLocation": "Stockholm, Sweden",
+    "footerPhone": "Phone: 08-123 456 78",
+    "footerEmail": "Email: info@komplettvvs.se",
+    "footerCopyright": "© 2024 Komplett VVS i Stockholm AB. All rights reserved.",
+    "features": {
+      "sakerVatten": {
+        "title": "Safe Water",
+        "description": "Certified work according to Safe Water standards for guaranteed quality."
+      },
+      "expertis": {
+        "title": "Expertise",
+        "description": "Over 20 years of experience with plumbing installations in Stockholm and surrounding areas."
+      },
+      "service": {
+        "title": "24/7 Service",
+        "description": "Emergency service around the clock for urgent plumbing problems that can't wait."
+      }
+    },
+    "contentSection": {
+      "mainTitle": "Professional plumbing services in Stockholm",
+      "specialtiesTitle": "Our specialties"
+    },
+    "specialties": {
+      "items": {
+        "nyinstallation": { "after": "of plumbing systems for new builds and renovations" },
+        "stambyte": { "after": "in multi-family buildings with minimal disruption" },
+        "relining": { "after": "to renew pipes without demolition" },
+        "service": { "after": "and preventive maintenance" }
+      }
+    },
+    "usp": {
+      "safeWater": "Certified according to Safe Water standards",
+      "emergency": "Emergency service 24/7 for urgent issues",
+      "experience": "Over 20 years of experience in Stockholm",
+      "insured": "Insured work with full guarantee"
+    },
+    "serviceAreas": {
+      "title": "We work across Stockholm",
+      "intro1": "From the city center to the outskirts – we come to you for all plumbing needs.",
+      "intro2": "Our technicians know Stockholm’s buildings and can help with everything from",
+      "and": "to",
+      "and2": "and",
+      "cta": "Get a free quote"
+    },
+    "faq": {
+      "title": "Frequently Asked Questions",
+      "items": [
+        {
+          "question": "How quickly can you come out for emergency service?",
+          "answer": "We offer emergency service around the clock. In Stockholm and surrounding areas, we can usually be on site within 2-4 hours for urgent problems."
+        },
+        {
+          "question": "Are all your installers certified?",
+          "answer": "Yes, all our installers are certified according to Safe Water standards and have several years of experience with plumbing installations."
+        },
+        {
+          "question": "What's included in your guarantee?",
+          "answer": "All our work comes with full guarantee on materials and workmanship. The guarantee period varies depending on the type of work, but is at least 2 years."
+        },
+        {
+          "question": "Do you work with both private customers and businesses?",
+          "answer": "Yes, we help both private individuals with home renovations and businesses with larger plumbing projects. We have experience with everything from apartments to office buildings."
+        }
+      ]
+    }
+  },
+  "services": {
+    "newInstallation": {
+      "title": "New Plumbing Installation in Stockholm – right from the start",
+      "description": "Professional installation of new plumbing systems",
+      "hero": {
+        "h1": "New Plumbing Installation in Stockholm – right from the start",
+        "intro": "When building new or renovating, you need a reliable partner for plumbing installation. We install everything from simple bathroom renovations to complete plumbing systems in new buildings.",
+        "features": [
+          "Complete plumbing planning and design",
+          "Installation of heating systems, hot water and drainage",
+          "Bathroom renovations with modern solutions",
+          "Certified work according to Safe Water standards",
+          "Complete documentation and guarantee"
+        ]
+      },
+      "process": {
+        "title": "How our new installation works",
+        "steps": [
+          "Inspection and measurement of the premises",
+          "Detailed planning and cost estimate",
+          "Material ordering and coordination",
+          "Professional installation by certified installers",
+          "Testing, documentation and handover"
+        ]
+      },
+      "faq": [
+        {
+          "question": "How long does a new installation take?",
+          "answer": "The time varies depending on scope. A bathroom renovation takes 1-2 weeks, while a complete plumbing installation in new construction can take 2-4 weeks."
+        },
+        {
+          "question": "Do I need a building permit for plumbing installation?",
+          "answer": "It depends on the scope. We help you apply for necessary permits and follow all building regulations."
+        },
+        {
+          "question": "What guarantees do I get?",
+          "answer": "All our installations come with 2-5 years guarantee depending on the system. The material guarantee follows the manufacturer's terms."
+        }
+      ],
+      "pageContent": {
+        "featuresTitle": "Our new installation services",
+        "features": [
+          {
+            "title": "Complete plumbing planning",
+            "description": "Detailed planning and design of the entire plumbing system"
+          },
+          {
+            "title": "Bathroom renovations",
+            "description": "Modern design with functional plumbing solutions"
+          },
+          {
+            "title": "Heating systems",
+            "description": "Installation of heating systems, hot water and drainage"
+          },
+          {
+            "title": "Safe Water",
+            "description": "Certified work according to Safe Water standards"
+          }
+        ],
+        "whyChooseUsTitle": "Why choose us for new installation?",
+        "whyChooseUs": [
+          "Over 20 years of experience with plumbing installations in Stockholm",
+          "Certified according to Safe Water standards",
+          "Insured work with full guarantee",
+          "Modern equipment and technology"
+        ],
+        "relatedServicesTitle": "Related services",
+        "relatedServices": [
+          {
+            "title": "Plumbing service & maintenance",
+            "description": "Regular service to keep your plumbing system in top condition"
+          },
+          {
+            "title": "Pipe replacement",
+            "description": "Complete replacement of pipe systems in apartment buildings"
+          },
+          {
+            "title": "Relining",
+            "description": "Modern method to renew pipes without demolition"
+          }
+        ],
+        "ctaTitle": "Ready to start your plumbing installation?",
+        "ctaDescription": "Contact us today for a free quote and consultation",
+        "ctaButtons": {
+          "callNow": "Call us now",
+          "sendMessage": "Send message"
+        },
+        "buttons": {
+          "getQuote": "Get free quote",
+          "learnMore": "Learn more about us"
+        }
+      }
+    },
+    "pipeReplacement": {
+      "title": "Pipe Replacement in Apartment Buildings – efficient and safe",
+      "description": "Complete replacement of pipe systems in buildings",
+      "hero": {
+        "h1": "Pipe Replacement in Apartment Buildings – efficient and safe",
+        "intro": "Old pipes can cause major problems and costs. We help property owners and housing associations with professional pipe replacement that minimizes disruption for residents.",
+        "features": [
+          "Minimal disruption for residents during work",
+          "Modern pipe technology for long-term durability",
+          "Coordination with property management",
+          "Complete documentation of the work",
+          "Insured work with full guarantee"
+        ]
+      },
+      "process": {
+        "title": "Our pipe replacement process",
+        "steps": [
+          "Thorough inspection of existing pipes",
+          "Planning and coordination with property management",
+          "Information to residents about the work",
+          "Professional execution with minimal disruption",
+          "Testing and handover with documentation"
+        ]
+      },
+      "faq": [
+        {
+          "question": "How long do residents need to be away during pipe replacement?",
+          "answer": "It depends on the scope, but we plan the work so that disruption is minimized. Often residents can stay with short interruptions in water supply."
+        },
+        {
+          "question": "What does pipe replacement cost?",
+          "answer": "The cost varies greatly depending on the building's size and the pipe system's complexity. We provide free quotes after inspection."
+        },
+        {
+          "question": "How do I know if my property needs pipe replacement?",
+          "answer": "Signs that pipe replacement is needed include low water pressure, rusty water, leaks, or pipes older than 30-40 years."
+        }
+      ],
+      "pageContent": {
+        "featuresTitle": "Our pipe replacement services",
+        "features": [
+          {
+            "title": "Minimal disruption",
+            "description": "Planned execution with minimal impact on residents"
+          },
+          {
+            "title": "Modern pipe technology",
+            "description": "Durable solutions for long-term functionality"
+          },
+          {
+            "title": "Coordination",
+            "description": "Close cooperation with property management"
+          },
+          {
+            "title": "Insured work",
+            "description": "Full guarantee and insurance on all work"
+          }
+        ],
+        "whyChooseUsTitle": "Why choose us for pipe replacement?",
+        "whyChooseUs": [
+          "Experience with pipe replacement in apartment buildings",
+          "Cooperation with property management",
+          "Minimal disruption for residents",
+          "Modern pipe technology for long-term durability"
+        ],
+        "relatedServicesTitle": "Related services",
+        "relatedServices": [
+          {
+            "title": "Relining",
+            "description": "Alternative to pipe replacement - renew pipes without demolition"
+          },
+          {
+            "title": "Pipe flushing",
+            "description": "Cleaning of existing pipes before replacement"
+          },
+          {
+            "title": "Pipe coating",
+            "description": "Camera inspection to map pipe condition"
+          }
+        ],
+        "ctaTitle": "Do you need pipe replacement in your property?",
+        "ctaDescription": "Contact us for a free inspection and quote",
+        "ctaButtons": {
+          "callNow": "Call us now",
+          "sendMessage": "Send message"
+        },
+        "buttons": {
+          "getQuote": "Get free quote",
+          "learnMore": "Learn more about us"
+        }
+      }
+    },
+    "service": {
+      "title": "Plumbing Service & Maintenance – when you need it",
+      "description": "Regular service and maintenance of plumbing systems",
+      "hero": {
+        "h1": "Plumbing Service & Maintenance – when you need it",
+        "intro": "Preventive maintenance saves money and prevents urgent problems. We offer service agreements and one-time visits for all types of plumbing systems.",
+        "features": [
+          "Preventive maintenance according to manufacturer's recommendations",
+          "Emergency service around the clock for unexpected problems",
+          "Service agreements for fixed prices and prioritized help",
+          "Modern diagnostics and troubleshooting",
+          "Documentation of all service measures"
+        ]
+      },
+      "process": {
+        "title": "Our service process",
+        "steps": [
+          "Regular inspection of plumbing systems",
+          "Identification of potential problems",
+          "Planned maintenance according to schedule",
+          "Emergency service for unexpected problems",
+          "Documentation and reporting"
+        ]
+      },
+      "faq": [
+        {
+          "question": "How often do plumbing systems need service?",
+          "answer": "It depends on the system, but we recommend annual service for most plumbing systems. Some components need more frequent inspection."
+        },
+        {
+          "question": "What's included in a service agreement?",
+          "answer": "Service agreements include regular inspection, preventive maintenance, prioritized emergency service, and discounts on repairs."
+        },
+        {
+          "question": "Can you service all brands of plumbing equipment?",
+          "answer": "Yes, we have experience with most brands and can service both modern and older plumbing systems."
+        }
+      ],
+      "pageContent": {
+        "featuresTitle": "Our service services",
+        "features": [
+          {
+            "title": "Preventive maintenance",
+            "description": "Regular inspection according to manufacturer's recommendations"
+          },
+          {
+            "title": "Emergency service 24/7",
+            "description": "Around the clock for unexpected plumbing problems"
+          },
+          {
+            "title": "Service agreements",
+            "description": "Fixed prices and prioritized help"
+          },
+          {
+            "title": "Modern diagnostics",
+            "description": "Advanced troubleshooting and documentation"
+          }
+        ],
+        "whyChooseUsTitle": "Why choose us for plumbing service?",
+        "whyChooseUs": [
+          "Experience with all brands and models",
+          "Preventive maintenance saves money",
+          "Emergency service around the clock",
+          "Service agreements with fixed prices"
+        ],
+        "relatedServicesTitle": "Related services",
+        "relatedServices": [
+          {
+            "title": "New installation",
+            "description": "Professional installation of new plumbing systems"
+          },
+          {
+            "title": "Pipe flushing",
+            "description": "Cleaning and maintenance of pipe systems"
+          },
+          {
+            "title": "Pipe coating",
+            "description": "Camera inspection for diagnostics"
+          }
+        ],
+        "ctaTitle": "Do you need plumbing service?",
+        "ctaDescription": "Contact us for service agreements or emergency service",
+        "ctaButtons": {
+          "callNow": "Call us now",
+          "sendMessage": "Send message"
+        },
+        "buttons": {
+          "getQuote": "Get free quote",
+          "learnMore": "Learn more about us"
+        }
+      }
+    },
+    "relining": {
+      "title": "Relining in Stockholm – renovate pipes without demolition",
+      "description": "Modern relining technology for existing pipes",
+      "hero": {
+        "h1": "Relining in Stockholm – renovate pipes without demolition",
+        "intro": "Relining is a modern method for renewing pipe systems without having to dig up. Perfect for historic buildings or when disruption should be minimized.",
+        "features": [
+          "No demolition or disruption of surroundings",
+          "Long-term sustainable solutions",
+          "Preserves the building's original structure",
+          "Faster execution than traditional pipe replacement",
+          "Environmentally friendly method with minimal waste"
+        ]
+      },
+      "process": {
+        "title": "How relining works",
+        "steps": [
+          "Camera inspection of existing pipes",
+          "Cleaning and preparation of pipes",
+          "Installation of new pipe liners",
+          "Quality control and testing",
+          "Documentation and handover"
+        ]
+      },
+      "faq": [
+        {
+          "question": "Which pipes can be relined?",
+          "answer": "Most drainage and water pipes can be relined, but it depends on the pipe's condition and diameter. We make a thorough assessment before work begins."
+        },
+        {
+          "question": "How long does relining last?",
+          "answer": "A well-executed relining can last 30-50 years, which is as long as traditional pipes. The material is durable and corrosion-resistant."
+        },
+        {
+          "question": "Is relining more expensive than pipe replacement?",
+          "answer": "Initially, relining may be somewhat more expensive, but when including costs for demolition and restoration, it often becomes cheaper overall."
+        }
+      ],
+      "pageContent": {
+        "featuresTitle": "Our relining services",
+        "features": [
+          {
+            "title": "No demolition",
+            "description": "Preserves the building's original structure"
+          },
+          {
+            "title": "Environmentally friendly",
+            "description": "Minimal waste and disruption to surroundings"
+          },
+          {
+            "title": "Fast execution",
+            "description": "Faster than traditional pipe replacement"
+          },
+          {
+            "title": "Long-term durable",
+            "description": "Lasts 30-50 years like traditional pipes"
+          }
+        ],
+        "whyChooseUsTitle": "Why choose relining?",
+        "whyChooseUs": [
+          "Preserves historic buildings",
+          "Minimal disruption for residents",
+          "Environmentally friendly method",
+          "Long-term sustainable result"
+        ],
+        "relatedServicesTitle": "Related services",
+        "relatedServices": [
+          {
+            "title": "Pipe replacement",
+            "description": "Traditional method for complete pipe replacement"
+          },
+          {
+            "title": "Pipe coating",
+            "description": "Camera inspection to assess pipe condition"
+          },
+          {
+            "title": "Pipe flushing",
+            "description": "Cleaning before relining for best results"
+          }
+        ],
+        "ctaTitle": "Is relining right for you?",
+        "ctaDescription": "Contact us for a free assessment and quote",
+        "ctaButtons": {
+          "callNow": "Call us now",
+          "sendMessage": "Send message"
+        },
+        "buttons": {
+          "getQuote": "Get free quote",
+          "learnMore": "Learn more about us"
+        }
+      }
+    },
+    "pipeFlushing": {
+      "title": "Pipe Flushing & Descaling – prevent blockages and water damage",
+      "description": "Professional cleaning of pipe systems",
+      "hero": {
+        "h1": "Pipe Flushing & Descaling – prevent blockages and water damage",
+        "intro": "Regular cleaning of pipe systems prevents blockages, improves water quality, and extends pipe life. We use modern methods for efficient cleaning.",
+        "features": [
+          "High-pressure flushing for deep cleaning",
+          "Descaling of hardened deposits",
+          "Camera inspection before and after work",
+          "Environmentally friendly cleaning agents",
+          "Preventive maintenance plan"
+        ]
+      },
+      "process": {
+        "title": "Our pipe flushing process",
+        "steps": [
+          "Camera inspection to map problems",
+          "High-pressure flushing with specialized equipment",
+          "Descaling of hardened deposits",
+          "Cleaning with environmentally friendly agents",
+          "Quality control and documentation"
+        ]
+      },
+      "faq": [
+        {
+          "question": "How often do pipes need flushing?",
+          "answer": "It depends on usage and water quality. We recommend annual pipe flushing for most properties, but some need more frequently."
+        },
+        {
+          "question": "Can pipe flushing solve all pipe problems?",
+          "answer": "Pipe flushing solves most problems with deposits and blockages, but serious damage or incorrect installation may require repair or replacement."
+        },
+        {
+          "question": "Is it safe for residents during pipe flushing?",
+          "answer": "Yes, we use environmentally friendly agents and coordinate the work so that disruption is minimized. Residents can usually stay."
+        }
+      ]
+    },
+    "pipeCoating": {
+      "title": "Pipe Coating with Camera – get full control of pipes",
+      "description": "Protective coating of pipe systems",
+      "hero": {
+        "h1": "Pipe Coating with Camera – get full control of pipes",
+        "intro": "With camera technology, we can inspect pipe systems thoroughly and identify problems before they become serious. Perfect for preventive maintenance and troubleshooting.",
+        "features": [
+          "High-resolution camera inspection of pipe systems",
+          "Identification of problems and damage",
+          "Documentation with photos and video",
+          "Preventive maintenance plan",
+          "Reporting with clear recommendations"
+        ]
+      },
+      "process": {
+        "title": "How pipe coating works",
+        "steps": [
+          "Preparation and safety check",
+          "Camera inspection of entire pipe system",
+          "Identification and documentation of problems",
+          "Analysis and recommendations",
+          "Report with photos and action proposals"
+        ]
+      },
+      "faq": [
+        {
+          "question": "What can camera inspection detect?",
+          "answer": "We can see blockages, leaks, corrosion, incorrect installation, root damage, and other problems that aren't visible from the outside."
+        },
+        {
+          "question": "How long does a camera inspection take?",
+          "answer": "The time depends on the pipe system's size, but a typical apartment takes 1-2 hours. We give a time estimate before work begins."
+        },
+        {
+          "question": "Do I get photos and video from the inspection?",
+          "answer": "Yes, you get a detailed report with photos and video showing the pipes' condition and any problems that need to be addressed."
+        }
+      ]
+    }
+  },
+  "about": {
+    "title": "Komplett VVS i Sthlm AB – craftsmen you can trust",
+    "description": "We are an established plumbing company in Stockholm with many years of experience in professional plumbing services.",
+    "hero": {
+      "h1": "Komplett VVS i Sthlm AB – craftsmen you can trust",
+      "intro": "For over 20 years, we've been helping customers in Stockholm with professional plumbing services. Our team of certified installers has experience with everything from simple repairs to large new construction projects.",
+      "intro2": "We're proud of our high quality and customer satisfaction. All our work follows Safe Water standards and comes with full guarantee for your safety."
+    },
+    "team": {
+      "title": "Our team",
+      "description": "Experienced installers focused on quality and customer service"
+    },
+    "certifications": {
+      "title": "Certifications and guarantees",
+      "items": [
+        "Certified according to Safe Water standards",
+        "Insured work with full coverage",
+        "Guarantee on all installations and repairs",
+        "Continuous staff training",
+        "Environmental certification according to ISO 14001"
+      ]
+    },
+    "areas": {
+      "title": "We work in",
+      "description": "Stockholm with surrounding areas - we come to you"
+    }
+  },
+  "contact": {
+    "title": "Contact us – get a free quote",
+    "description": "Contact us for a free quote",
+    "hero": {
+      "h1": "Contact us – get a free quote",
+      "intro": "Need help with plumbing problems or just want to know more about our services? We provide free quotes and advice. Call us or send a message and we'll get back to you quickly.",
+      "intro2": "We offer emergency service around the clock for urgent problems that can't wait. In Stockholm and surrounding areas, we can usually be on site within 2-4 hours."
+    },
+    "phone": "Phone",
+    "email": "Email",
+    "address": "Address",
+    "hours": "Hours",
+    "emergency": "Emergency Service",
+    "form": {
+      "name": "Name",
+      "email": "Email",
+      "phone": "Phone",
+      "message": "Message",
+      "submit": "Send message",
+      "placeholders": {
+        "name": "Your name",
+        "email": "you@email.com",
+        "phone": "070-123 45 67",
+        "message": "Describe your plumbing needs..."
+      }
+    }
+    ,
+    "feedback": {
+      "success": "Thanks for your message! We’ll get back within 24 hours.",
+      "error": "Something went wrong. Please try again or call us directly.",
+      "sending": "Sending..."
+    }
+  },
+  "header": {
+    "ringDirect": "Call now",
+    "contact": "Contact",
+    "logoAlt": "Komplett VVS logo",
+    "companyName": "VVS Komplett i Sthlm AB",
+    "languageToggle": "Toggle language",
+    "menuTitle": "Menu",
+    "menuDescription": "Navigate to the site pages"
+  },
+  "footer": {
+    "contact": "Contact",
+    "areas": "Areas",
+    "hours": "Hours",
+    "certificates": "Certificates",
+    "services": "Our Services",
+    "privacyPolicy": "Privacy Policy",
+    "cookies": "Cookies",
+    "emergencyService": "Emergency service 24/7",
+    "logoAlt": "Komplett VVS logo",
+    "pageContent": {
+      "areas": [
+        "Greater Stockholm",
+        "Stockholm region"
+      ],
+      "certificates": [
+        "Safe Water",
+        "Insurance",
+        "Guarantee"
+      ]
+    }
+  },
+  
+  "cta": {
+    "title": "Need help?",
+    "description": "Contact us today for a free quote",
+    "contactUs": "Contact us"
+  },
+  "theme": {
+    "label": "Theme",
+    "light": "Light",
+    "dark": "Dark",
+    "system": "System",
+    "loading": "Loading theme"
+  },
+  "locale": {
+    "loading": "Loading language"
+  },
+  "common": {
+    "close": "Close"
+  },
+  "sheet": {
+    "defaultTitle": "Panel",
+    "defaultDescription": "Additional content is shown in the panel"
+  },
+  "error": {
+    "title": "The page failed to load",
+    "description": "Sorry, something went wrong while loading this page. Please try again or go back to the homepage.",
+    "tryAgain": "Try again",
+    "goHome": "Go to homepage",
+    "devInfo": "Technical information (development only)"
+  },
+  "notFound": {
+    "title": "Page not found",
+    "description": "The page you are looking for doesn’t exist or has been moved. Check the URL or go back to the homepage.",
+    "goHome": "Go to homepage",
+    "contactUs": "Contact us",
+    "commonPagesTitle": "Common pages:"
+  },
+  "cookies": {
+    "banner": {
+      "title": "We use cookies",
+      "description": "We only use essential cookies to ensure our website functions correctly. No third-party scripts are loaded by default.",
+      "accept": "Accept",
+      "decline": "Decline",
+      "learnMore": "Learn more about cookies"
+    },
+    "consent": {
+      "accepted": "accepted",
+      "declined": "declined"
+    },
+    "title": "Cookie Information",
+    "lastUpdated": "Last updated: {date}",
+    "intro": "This page explains what cookies {company} uses and why.",
+    "whatAre": {
+      "title": "What are cookies?",
+      "body": "Cookies are small text files stored on your device when you visit a website. They help the website remember information about your visit, such as your language preferences and other settings."
+    },
+    "types": {
+      "title": "What cookies do we use?",
+      "essential": {
+        "title": "Essential cookies",
+        "description": "These cookies are necessary for the website to function properly. They cannot be disabled in our systems.",
+        "items": [
+          "Cookie consent: Stores your choice about cookies (accepted/declined)",
+          "Session cookies: Keep you logged in during your visit",
+          "Security cookies: Protect against security threats"
+        ]
+      },
+      "none": {
+        "title": "Analytics and marketing cookies",
+        "description": "We do NOT use analytics cookies, tracking cookies, or marketing cookies. No third-party scripts are loaded by default."
+      }
+    },
+    "management": {
+      "title": "Manage your cookie settings",
+      "banner": "You can change your cookie settings by clicking 'Accept' or 'Decline' in the cookie banner that appears when you first visit the website.",
+      "browser": "You can also manage cookies directly in your browser:",
+      "browserSteps": [
+        "Chrome: Settings > Privacy and security > Cookies",
+        "Firefox: Settings > Privacy and security > Cookies",
+        "Safari: Settings > Privacy > Manage website data",
+        "Edge: Settings > Cookies and site permissions"
+      ]
+    },
+    "consentInfo": {
+      "title": "Consent and storage",
+      "body": "Your consent is stored locally in your browser and remembers your choice on future visits. You can change your consent at any time by clearing your cookies or using the cookie banner.",
+      "withdraw": "You can withdraw your consent by clearing cookies in your browser or contacting us."
+    },
+    "contact": {
+      "title": "Questions about cookies?",
+      "body": "Do you have questions about our use of cookies? Contact us at {email}."
+    }
+  },
+  "privacy": {
+    "title": "Privacy Policy",
+    "lastUpdated": "Last updated: {date}",
+    "intro": "This policy explains how {company} processes personal data when you visit our website or contact us.",
+    "controller": {
+      "title": "Controller",
+      "body": "{company} is the data controller. Address: {address}. Email: {email}. Phone: {phone}."
+    },
+    "data": {
+      "title": "What data we process",
+      "item1": "Contact details you submit via forms (name, email, phone, city, message/attachments).",
+      "item2": "Technical information (IP address, browser, timestamps) for security and troubleshooting.",
+      "item3": "Only strictly necessary cookies. No analytics or marketing cookies."
+    },
+    "purposes": {
+      "title": "Purposes and legal bases",
+      "item1": "Handle enquiries and provide quotes (legitimate interest and/or consent).",
+      "item2": "Prepare or perform a contract when you order a service.",
+      "item3": "Comply with legal obligations (e.g., accounting) if a contract is entered."
+    },
+    "recipients": {
+      "title": "Recipients and processors",
+      "body": "We use Vercel (hosting) and Google Workspace (email). Personal data may be processed outside the EU/EEA; EU Standard Contractual Clauses (SCC) or equivalent safeguards are used."
+    },
+    "transfers": {
+      "title": "International transfers",
+      "body": "If transfers occur outside the EU/EEA, EU Standard Contractual Clauses (SCC) or equivalent safeguards are applied."
+    },
+    "retention": {
+      "title": "Retention",
+      "item1": "Contact form enquiries kept up to 12 months unless needed longer.",
+      "item2": "Technical logs up to 30 days.",
+      "item3": "Accounting records up to 7 years as required by law."
+    },
+    "rights": {
+      "title": "Your rights",
+      "items": "You have the rights of access, rectification, erasure, restriction, data portability, and to object to processing based on legitimate interest. You may withdraw consent where processing is based on consent.",
+      "complaint": "You may lodge a complaint with your data protection authority."
+    },
+    "cookies": {
+      "title": "Cookies",
+      "body": "We only use strictly necessary cookies. You can change settings in the cookie banner or in your browser."
+    },
+    "contact": {
+      "title": "Contact",
+      "body": "Questions about our data processing? Contact us at {email}."
+    },
+    "changes": {
+      "title": "Changes",
+      "body": "We may update this policy as needed. The latest version is published on this page."
+    }
+  },
+  "cookiesPage": {
+    "title": "Cookie Information",
+    "lastUpdated": "Last updated: {date}",
+    "intro": "This page explains what cookies {company} uses and why.",
+    "whatAre": {
+      "title": "What are cookies?",
+      "body": "Cookies are small text files stored on your device when you visit a website. They help the website remember information about your visit, such as your language preferences and other settings."
+    },
+    "types": {
+      "title": "What cookies do we use?",
+      "essential": {
+        "title": "Essential cookies",
+        "description": "These cookies are necessary for the website to function properly. They cannot be disabled in our systems.",
+        "items": [
+          "Cookie consent: Stores your choice about cookies (accepted/declined)",
+          "Session cookies: Keep you logged in during your visit",
+          "Security cookies: Protect against security threats"
+        ]
+      },
+      "none": {
+        "title": "Analytics and marketing cookies",
+        "description": "We do NOT use analytics cookies, tracking cookies, or marketing cookies. No third-party scripts are loaded by default."
+      }
+    },
+    "management": {
+      "title": "Manage your cookie settings",
+      "banner": "You can change your cookie settings by clicking 'Accept' or 'Decline' in the cookie banner that appears when you first visit the website.",
+      "browser": "You can also manage cookies directly in your browser:",
+      "browserSteps": [
+        "Chrome: Settings > Privacy and security > Cookies",
+        "Firefox: Settings > Privacy and security > Cookies",
+        "Safari: Settings > Privacy > Manage website data",
+        "Edge: Settings > Cookies and site permissions"
+      ]
+    },
+    "consent": {
+      "title": "Consent and storage",
+      "body": "Your consent is stored locally in your browser and remembers your choice on future visits. You can change your consent at any time by clearing your cookies or using the cookie banner.",
+      "withdraw": "You can withdraw your consent by clearing cookies in your browser or contacting us."
+    },
+    "contact": {
+      "title": "Questions about cookies?",
+      "body": "Do you have questions about our use of cookies? Contact us at {email}."
+    }
+  }
+}

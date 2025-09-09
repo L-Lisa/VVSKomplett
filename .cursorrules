@@ -1,0 +1,64 @@
+# Cursor Rules for VVS Komplett Project
+
+## Text Management Rules
+
+### NEVER hardcode text that should be translated unless:
+1. It's a technical identifier (e.g., CSS class names, API endpoints)
+2. It's a placeholder value that will be replaced later
+3. It's a development/debug message that won't be seen by users
+4. You have explicitly asked the user for permission and they approved
+
+### Always use translations for:
+- User-facing text (buttons, headings, descriptions, labels)
+- Error messages
+- Form labels and placeholders
+- Navigation items
+- Footer content
+- Any text that might need to be localized
+
+### Translation Structure:
+- Use nested objects for organization (e.g., `home.hero.title`)
+- Keep keys descriptive and consistent
+- Always add both Swedish (sv.json) and English (en.json) translations
+- Use `useTranslations()` hook with proper namespace
+
+### Translation Maintenance:
+- **CRITICAL**: When updating Swedish text in `src/messages/sv.json`, ALWAYS remind the user to update the corresponding English text in `src/messages/en.json`
+- Both languages must be kept in sync for all user-facing content
+- If adding new translation keys, add them to BOTH sv.json AND en.json
+- Before committing changes, verify both language files are updated
+
+### Before adding any hardcoded text, ask yourself:
+1. Will this text be visible to users?
+2. Might this need to be translated in the future?
+3. Is this a technical identifier or user content?
+
+If the answer to questions 1 or 2 is "yes", use translations instead.
+
+## Code Quality Rules
+
+### Component Structure:
+- Use TypeScript interfaces for all props
+- Implement proper error boundaries
+- Use semantic HTML elements
+- Follow mobile-first responsive design
+
+### Styling:
+- Use Tailwind CSS classes
+- Follow the established design system
+- Use CSS variables for consistent theming
+- Implement proper focus states and accessibility
+
+### Performance:
+- Use Next.js Image component for all images
+- Implement proper lazy loading
+- Use proper aspect ratios to prevent CLS
+- Optimize bundle size
+
+## File Organization:
+- Components go in `/src/components/`
+- Layout components in `/src/components/layout/`
+- UI components in `/src/components/ui/`
+- Content components in `/src/components/content/`
+- Translations in `/src/messages/`
+- Utilities in `/src/lib/`

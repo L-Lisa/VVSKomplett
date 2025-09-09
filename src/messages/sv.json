@@ -1,0 +1,1065 @@
+{
+  "navigation": {
+    "home": "Hem",
+    "newInstallation": "Nyinstallation",
+    "pipeReplacement": "Stambyte",
+    "service": "Service",
+    "relining": "Relining",
+    "pipeFlushing": "Stamspolning",
+    "pipeCoating": "Stamfilmning",
+    "about": "Om oss",
+    "contact": "Kontakt"
+  },
+  "home": {
+    "title": "VVS i Stockholm – trygga lösningar för hem & fastighet",
+    "subtitle": "Nyinstallation, stambyte, relining och service – snabbt utfört av certifierade montörer",
+    "description": "Vi erbjuder professionella VVS-tjänster inklusive nyinstallation, stambyte, service och relining för både privatpersoner och företag.",
+    "hero": {
+      "h1": "VVS i Stockholm – trygga lösningar för hem & fastighet",
+      "h2": "Nyinstallation, stambyte, relining och service – snabbt utfört av certifierade montörer",
+      "h3": "Säker Vatten • Försäkrade arbeten • Garanti",
+      "intro1": "Som certifierade VVS-montörer i Stockholm erbjuder vi trygga och hållbara lösningar för alla dina rör- och värmesystem. Vårt team har över 20 års erfarenhet av professionella VVS-installationer i Stockholm och omnejd.",
+      "intro2": "Vi följer alla säkerhetsregler och är certifierade enligt Säker Vatten-standarder. Alla våra arbeten är försäkrade och kommer med full garanti för din trygghet.",
+      "imageAlt": "VVS installation work"
+    },
+    "servicesTitle": "Våra tjänster",
+    "readMore": "Läs mer",
+    "whyChooseUs": "Varför välja oss?",
+    "testimonialsTitle": "Vad våra kunder säger",
+    "footerDescription": "Din pålitliga VVS-partner i Stockholm",
+    "footerServices": "Tjänster",
+    "footerContact": "Kontakt",
+    "footerLocation": "Stockholm, Sverige",
+    "footerPhone": "Telefon: 08-123 456 78",
+    "footerEmail": "E-post: info@komplettvvs.se",
+    "footerCopyright": "© 2024 Komplett VVS i Stockholm AB. Alla rättigheter förbehållna.",
+    "features": {
+      "sakerVatten": {
+        "title": "Säker Vatten",
+        "description": "Certifierade arbeten enligt Säker Vatten-standarder för garanterad kvalitet."
+      },
+      "expertis": {
+        "title": "Expertis",
+        "description": "Över 20 års erfarenhet av VVS-installationer i Stockholm och omnejd."
+      },
+      "service": {
+        "title": "24/7 Service",
+        "description": "Akutservice dygnet runt för akuta VVS-problem som inte kan vänta."
+      }
+    },
+    "contentSection": {
+      "mainTitle": "Professionella VVS-tjänster i Stockholm",
+      "specialtiesTitle": "Våra specialiteter"
+    },
+    "specialties": {
+      "items": {
+        "nyinstallation": { "after": "av VVS-system för nya byggnader och renoveringar" },
+        "stambyte": { "after": "i flerbostadshus med minimal störning" },
+        "relining": { "after": "för att förnya rör utan rivning" },
+        "service": { "after": "och förebyggande underhåll" }
+      }
+    },
+    "usp": {
+      "safeWater": "Certifierade enligt Säker Vatten-standarder",
+      "emergency": "Akutservice dygnet runt för akuta problem",
+      "experience": "Över 20 års erfarenhet i Stockholm",
+      "insured": "Försäkrade arbeten med full garanti"
+    },
+    "serviceAreas": {
+      "title": "Vi arbetar i hela Stockholm",
+      "intro1": "Från innerstaden till ytterområdena - vi kommer till dig för alla VVS-behov.",
+      "intro2": "Våra montörer känner till Stockholms byggnader och kan hjälpa dig med allt från",
+      "and": "till",
+      "and2": "och",
+      "cta": "Få kostnadsfri offert"
+    },
+    "faq": {
+      "title": "Vanliga frågor",
+      "items": [
+        {
+          "question": "Hur snabbt kan ni komma ut för akutservice?",
+          "answer": "Vi erbjuder akutservice dygnet runt. I Stockholm och omnejd kan vi vanligtvis vara på plats inom 2-4 timmar för akuta problem."
+        },
+        {
+          "question": "Är alla era montörer certifierade?",
+          "answer": "Ja, alla våra montörer är certifierade enligt Säker Vatten-standarder och har flera års erfarenhet av VVS-installationer."
+        },
+        {
+          "question": "Vad ingår i er garanti?",
+          "answer": "Alla våra arbeten kommer med full garanti på material och arbete. Garantitiden varierar beroende på typ av arbete, men är minst 2 år."
+        },
+        {
+          "question": "Arbetar ni med både privata kunder och företag?",
+          "answer": "Ja, vi hjälper både privatpersoner med hemrenoveringar och företag med större VVS-projekt. Vi har erfarenhet av allt från lägenheter till kontorsbyggnader."
+        }
+      ]
+    }
+  },
+  "services": {
+    "newInstallation": {
+      "title": "Nyinstallation av VVS i Stockholm – rätt från början",
+      "description": "Professionell installation av nya VVS-system",
+      "hero": {
+        "h1": "Nyinstallation av VVS i Stockholm – rätt från början",
+        "intro": "När du bygger nytt eller renoverar behöver du en pålitlig partner för VVS-installationen. Vi installerar allt från enkla badrumsrenoveringar till kompletta VVS-system i nya byggnader.",
+        "features": [
+          "Komplett VVS-planering och projektering",
+          "Installation av värmesystem, varmvatten och avlopp",
+          "Badrumsrenoveringar med moderna lösningar",
+          "Certifierade arbeten enligt Säker Vatten",
+          "Fullständig dokumentation och garanti"
+        ]
+      },
+      "process": {
+        "title": "Så fungerar vår nyinstallation",
+        "steps": [
+          "Besiktning och mätning av lokalen",
+          "Detaljerad planering och kostnadsförslag",
+          "Beställning av material och koordinering",
+          "Professionell installation av certifierade montörer",
+          "Testning, dokumentation och överlämning"
+        ]
+      },
+      "faq": [
+        {
+          "question": "Hur lång tid tar en nyinstallation?",
+          "answer": "Tiden varierar beroende på omfattning. En badrumsrenovering tar 1-2 veckor, medan en komplett VVS-installation i nybyggnation kan ta 2-4 veckor."
+        },
+        {
+          "question": "Behöver jag bygglov för VVS-installation?",
+          "answer": "Det beror på omfattningen. Vi hjälper dig att ansöka om nödvändiga tillstånd och följer alla byggregler."
+        },
+        {
+          "question": "Vilka garantier får jag?",
+          "answer": "Alla våra installationer kommer med 2-5 års garanti beroende på system. Materialgarantin följer tillverkarens villkor."
+        }
+      ],
+      "pageContent": {
+        "featuresTitle": "Våra nyinstallations-tjänster",
+        "features": [
+          {
+            "title": "Komplett VVS-planering",
+            "description": "Detaljerad planering och projektering av hela VVS-systemet"
+          },
+          {
+            "title": "Badrumsrenoveringar",
+            "description": "Modern design med funktionella VVS-lösningar"
+          },
+          {
+            "title": "Värmesystem",
+            "description": "Installation av värmesystem, varmvatten och avlopp"
+          },
+          {
+            "title": "Säker Vatten",
+            "description": "Certifierade arbeten enligt Säker Vatten-standarder"
+          }
+        ],
+        "whyChooseUsTitle": "Varför välja oss för nyinstallation?",
+        "whyChooseUs": [
+          "Över 20 års erfarenhet av VVS-installationer i Stockholm",
+          "Certifierade enligt Säker Vatten-standarder",
+          "Försäkrade arbeten med full garanti",
+          "Modern utrustning och teknik"
+        ],
+        "relatedServicesTitle": "Relaterade tjänster",
+        "relatedServices": [
+          {
+            "title": "VVS-service & underhåll",
+            "description": "Regelbunden service för att hålla ditt VVS-system i toppskick"
+          },
+          {
+            "title": "Stambyte",
+            "description": "Komplett byte av rörsystem i flerbostadshus"
+          },
+          {
+            "title": "Relining",
+            "description": "Modern metod för att förnya rör utan rivning"
+          }
+        ],
+        "ctaTitle": "Redo att påbörja din VVS-installation?",
+        "ctaDescription": "Kontakta oss idag för en kostnadsfri offert och rådgivning",
+        "ctaButtons": {
+          "callNow": "Ring oss nu",
+          "sendMessage": "Skicka meddelande"
+        },
+        "buttons": {
+          "getQuote": "Få kostnadsfri offert",
+          "learnMore": "Läs mer om oss"
+        }
+      }
+    },
+    "pipeReplacement": {
+      "title": "Stambyte i flerbostadshus – effektivt och säkert",
+      "description": "Komplett byte av rörsystem i fastigheter",
+      "hero": {
+        "h1": "Stambyte i flerbostadshus – effektivt och säkert",
+        "intro": "Gamla rör kan orsaka stora problem och kostnader. Vi hjälper fastighetsägare och bostadsrättsföreningar med professionellt stambyte som minimerar störningar för boende.",
+        "features": [
+          "Minimal störning för boende under arbetet",
+          "Modern rörteknik för långsiktig hållbarhet",
+          "Samordning med fastighetsförvaltning",
+          "Komplett dokumentation av arbetet",
+          "Försäkrade arbeten med full garanti"
+        ]
+      },
+      "process": {
+        "title": "Vår process för stambyte",
+        "steps": [
+          "Grundlig besiktning av befintliga rör",
+          "Planering och koordinering med fastighetsförvaltning",
+          "Information till boende om arbetet",
+          "Professionell genomförande med minimal störning",
+          "Testning och överlämning med dokumentation"
+        ]
+      },
+      "faq": [
+        {
+          "question": "Hur länge behöver boende vara borta under stambyte?",
+          "answer": "Det beror på omfattningen, men vi planerar arbetet så att störningen minimeras. Ofta kan boende stanna kvar med korta avbrott i vattentillförseln."
+        },
+        {
+          "question": "Vad kostar ett stambyte?",
+          "answer": "Kostnaden varierar kraftigt beroende på byggnadens storlek och rörsystemets komplexitet. Vi ger kostnadsfria offerter efter besiktning."
+        },
+        {
+          "question": "Hur vet jag om min fastighet behöver stambyte?",
+          "answer": "Tecken på att stambyte behövs inkluderar lågt vattentryck, rostigt vatten, läckage eller ålder på rören över 30-40 år."
+        }
+      ],
+      "pageContent": {
+        "featuresTitle": "Våra stambyte-tjänster",
+        "features": [
+          {
+            "title": "Minimal störning",
+            "description": "Planerad genomförande med minimal påverkan på boende"
+          },
+          {
+            "title": "Modern rörteknik",
+            "description": "Hållbara lösningar för långsiktig funktionalitet"
+          },
+          {
+            "title": "Samordning",
+            "description": "Täta samarbeten med fastighetsförvaltning"
+          },
+          {
+            "title": "Försäkrade arbeten",
+            "description": "Full garanti och försäkring på alla arbeten"
+          }
+        ],
+        "whyChooseUsTitle": "Varför välja oss för stambyte?",
+        "whyChooseUs": [
+          "Erfarenhet av stambyte i flerbostadshus",
+          "Samarbete med fastighetsförvaltning",
+          "Minimal störning för boende",
+          "Modern rörteknik för långsiktig hållbarhet"
+        ],
+        "relatedServicesTitle": "Relaterade tjänster",
+        "relatedServices": [
+          {
+            "title": "Relining",
+            "description": "Alternativ till stambyte - förnya rör utan rivning"
+          },
+          {
+            "title": "Stamspolning",
+            "description": "Rengöring av befintliga rör innan byte"
+          },
+          {
+            "title": "Stamfilmning",
+            "description": "Kamerainspektion för att kartlägga rörenas tillstånd"
+          }
+        ],
+        "ctaTitle": "Behöver ni stambyte i er fastighet?",
+        "ctaDescription": "Kontakta oss för en kostnadsfri besiktning och offert",
+        "ctaButtons": {
+          "callNow": "Ring oss nu",
+          "sendMessage": "Skicka meddelande"
+        },
+        "buttons": {
+          "getQuote": "Få kostnadsfri offert",
+          "learnMore": "Läs mer om oss"
+        }
+      }
+    },
+    "service": {
+      "title": "VVS-service & underhåll – när du behöver det",
+      "description": "Regelbunden service och underhåll av VVS-system",
+      "hero": {
+        "h1": "VVS-service & underhåll – när du behöver det",
+        "intro": "Förebyggande underhåll sparar pengar och förhindrar akuta problem. Vi erbjuder serviceavtal och engångsbesök för alla typer av VVS-system.",
+        "features": [
+          "Förebyggande underhåll enligt tillverkarens rekommendationer",
+          "Akutservice dygnet runt för oväntade problem",
+          "Serviceavtal för fasta priser och prioriterad hjälp",
+          "Modern diagnostik och felsökning",
+          "Dokumentation av alla serviceåtgärder"
+        ]
+      },
+      "process": {
+        "title": "Vår serviceprocess",
+        "steps": [
+          "Regelbunden kontroll av VVS-system",
+          "Identifiering av potentiella problem",
+          "Planerad underhåll enligt schema",
+          "Akutservice vid oväntade problem",
+          "Dokumentation och rapportering"
+        ]
+      },
+      "faq": [
+        {
+          "question": "Hur ofta behöver VVS-system servas?",
+          "answer": "Det beror på systemet, men vi rekommenderar årlig service för de flesta VVS-system. Vissa komponenter behöver oftare kontroll."
+        },
+        {
+          "question": "Vad ingår i ett serviceavtal?",
+          "answer": "Serviceavtal inkluderar regelbunden kontroll, förebyggande underhåll, prioriterad akutservice och rabatter på reparationer."
+        },
+        {
+          "question": "Kan ni serva alla märken av VVS-utrustning?",
+          "answer": "Ja, vi har erfarenhet av de flesta märken och kan serva både moderna och äldre VVS-system."
+        }
+      ],
+      "pageContent": {
+        "featuresTitle": "Våra service-tjänster",
+        "features": [
+          {
+            "title": "Förebyggande underhåll",
+            "description": "Regelbunden kontroll enligt tillverkarens rekommendationer"
+          },
+          {
+            "title": "Akutservice 24/7",
+            "description": "Dygnet runt för oväntade VVS-problem"
+          },
+          {
+            "title": "Serviceavtal",
+            "description": "Fasta priser och prioriterad hjälp"
+          },
+          {
+            "title": "Modern diagnostik",
+            "description": "Avancerad felsökning och dokumentation"
+          }
+        ],
+        "whyChooseUsTitle": "Varför välja oss för VVS-service?",
+        "whyChooseUs": [
+          "Erfarenhet av alla märken och modeller",
+          "Förebyggande underhåll sparar pengar",
+          "Akutservice dygnet runt",
+          "Serviceavtal med fasta priser"
+        ],
+        "relatedServicesTitle": "Relaterade tjänster",
+        "relatedServices": [
+          {
+            "title": "Nyinstallation",
+            "description": "Professionell installation av nya VVS-system"
+          },
+          {
+            "title": "Stamspolning",
+            "description": "Rengöring och underhåll av rörsystem"
+          },
+          {
+            "title": "Stamfilmning",
+            "description": "Kamerainspektion för diagnostik"
+          }
+        ],
+        "ctaTitle": "Behöver ni VVS-service?",
+        "ctaDescription": "Kontakta oss för serviceavtal eller akutservice",
+        "ctaButtons": {
+          "callNow": "Ring oss nu",
+          "sendMessage": "Skicka meddelande"
+        },
+        "buttons": {
+          "getQuote": "Få kostnadsfri offert",
+          "learnMore": "Läs mer om oss"
+        }
+      }
+    },
+    "relining": {
+      "title": "Relining i Stockholm – renovera rören utan rivning",
+      "description": "Modern relining-teknik för befintliga rör",
+      "hero": {
+        "h1": "Relining i Stockholm – renovera rören utan rivning",
+        "intro": "Relining är en modern metod för att förnya rörsystem utan att behöva riva upp. Perfekt för historiska byggnader eller när störningar ska minimeras.",
+        "features": [
+          "Ingen rivning eller störning av omgivningen",
+          "Långsiktigt hållbara lösningar",
+          "Bevarar byggnadens ursprungliga struktur",
+          "Snabbare genomförande än traditionellt stambyte",
+          "Miljövänlig metod med minimal avfall"
+        ]
+      },
+      "process": {
+        "title": "Så fungerar relining",
+        "steps": [
+          "Kamerainspektion av befintliga rör",
+          "Rengöring och förberedelse av rören",
+          "Installation av nya rörliner",
+          "Kvalitetskontroll och testning",
+          "Dokumentation och överlämning"
+        ]
+      },
+      "faq": [
+        {
+          "question": "Vilka rör kan relineras?",
+          "answer": "De flesta avloppsrör och vattenrör kan relineras, men det beror på rörens tillstånd och diameter. Vi gör en grundlig bedömning innan arbetet påbörjas."
+        },
+        {
+          "question": "Hur länge håller en relining?",
+          "answer": "En väl utförd relining kan hålla 30-50 år, vilket är lika länge som traditionella rör. Materialet är hållbart och korrosionsresistent."
+        },
+        {
+          "question": "Är relining dyrare än stambyte?",
+          "answer": "Initialt kan relining vara något dyrare, men när man räknar in kostnader för rivning och återställning blir det ofta billigare totalt."
+        }
+      ],
+      "pageContent": {
+        "featuresTitle": "Våra relining-tjänster",
+        "features": [
+          {
+            "title": "Ingen rivning",
+            "description": "Bevarar byggnadens ursprungliga struktur"
+          },
+          {
+            "title": "Miljövänlig",
+            "description": "Minimal avfall och störning av omgivningen"
+          },
+          {
+            "title": "Snabb genomförande",
+            "description": "Faster än traditionellt stambyte"
+          },
+          {
+            "title": "Långsiktigt hållbart",
+            "description": "Håller 30-50 år som traditionella rör"
+          }
+        ],
+        "whyChooseUsTitle": "Varför välja relining?",
+        "whyChooseUs": [
+          "Bevarar historiska byggnader",
+          "Minimal störning för boende",
+          "Miljövänlig metod",
+          "Långsiktigt hållbart resultat"
+        ],
+        "relatedServicesTitle": "Relaterade tjänster",
+        "relatedServices": [
+          {
+            "title": "Stambyte",
+            "description": "Traditionell metod för komplett byte av rör"
+          },
+          {
+            "title": "Stamfilmning",
+            "description": "Kamerainspektion för att bedöma rörenas tillstånd"
+          },
+          {
+            "title": "Stamspolning",
+            "description": "Rengöring innan relining för bästa resultat"
+          }
+        ],
+        "ctaTitle": "Är relining rätt för er?",
+        "ctaDescription": "Kontakta oss för en kostnadsfri bedömning och offert",
+        "ctaButtons": {
+          "callNow": "Ring oss nu",
+          "sendMessage": "Skicka meddelande"
+        },
+        "buttons": {
+          "getQuote": "Få kostnadsfri offert",
+          "learnMore": "Läs mer om oss"
+        }
+      }
+    },
+    "pipeFlushing": {
+      "title": "Stamspolning & fräsning – förebygg stopp och vattenskador",
+      "description": "Professionell rengöring av rörsystem",
+      "hero": {
+        "h1": "Stamspolning & fräsning – förebygg stopp och vattenskador",
+        "intro": "Regelbunden rengöring av rörsystem förhindrar stopp, förbättrar vattenkvaliteten och förlänger rörens livslängd. Vi använder moderna metoder för effektiv rengöring.",
+        "features": [
+          "Högtrycksspolning för djuprengöring",
+          "Fräsning av hårdnade avlagringar",
+          "Kamerainspektion före och efter arbetet",
+          "Miljövänliga rengöringsmedel",
+          "Förebyggande underhållsplan"
+        ]
+      },
+      "process": {
+        "title": "Vår stamspolningsprocess",
+        "steps": [
+          "Kamerainspektion för att kartlägga problem",
+          "Högtrycksspolning med specialiserad utrustning",
+          "Fräsning av hårdnade avlagringar",
+          "Rengöring med miljövänliga medel",
+          "Kvalitetskontroll och dokumentation"
+        ]
+      },
+      "faq": [
+        {
+          "question": "Hur ofta behöver rör spolas?",
+          "answer": "Det beror på användning och vattenkvalitet. Vi rekommenderar årlig stamspolning för de flesta fastigheter, men vissa behöver oftare."
+        },
+        {
+          "question": "Kan stamspolning lösa alla rörproblem?",
+          "answer": "Stamspolning löser de flesta problem med avlagringar och stopp, men allvarliga skador eller felaktig installation kan kräva reparation eller byte."
+        },
+        {
+          "question": "Är det säkert för boende under stamspolning?",
+          "answer": "Ja, vi använder miljövänliga medel och koordinerar arbetet så att störningen minimeras. Boende kan vanligtvis stanna kvar."
+        }
+      ],
+      "pageContent": {
+        "featuresTitle": "Våra stamspolnings-tjänster",
+        "features": [
+          {
+            "title": "Högtrycksspolning",
+            "description": "Djuprengöring med specialiserad utrustning"
+          },
+          {
+            "title": "Fräsning",
+            "description": "Borttagning av hårdnade avlagringar"
+          },
+          {
+            "title": "Kamerainspektion",
+            "description": "Kontroll före och efter arbetet"
+          },
+          {
+            "title": "Miljövänliga medel",
+            "description": "Säkra rengöringsmedel för miljön"
+          }
+        ],
+        "whyChooseUsTitle": "Varför regelbunden stamspolning?",
+        "whyChooseUs": [
+          "Förebygger stopp och vattenskador",
+          "Förbättrar vattenkvaliteten",
+          "Förlänger rörens livslängd",
+          "Sparar pengar på reparationer"
+        ],
+        "relatedServicesTitle": "Relaterade tjänster",
+        "relatedServices": [
+          {
+            "title": "Stamfilmning",
+            "description": "Kamerainspektion för att kartlägga rörenas tillstånd"
+          },
+          {
+            "title": "VVS-service",
+            "description": "Regelbunden service och underhåll"
+          },
+          {
+            "title": "Relining",
+            "description": "Förnyelse av rör efter rengöring"
+          }
+        ],
+        "ctaTitle": "Behöver ni stamspolning?",
+        "ctaDescription": "Kontakta oss för regelbunden rengöring eller akut hjälp",
+        "ctaButtons": {
+          "callNow": "Ring oss nu",
+          "sendMessage": "Skicka meddelande"
+        },
+        "buttons": {
+          "getQuote": "Få kostnadsfri offert",
+          "learnMore": "Läs mer om oss"
+        }
+      }
+    },
+    "pipeCoating": {
+      "title": "Stamfilmning med kamera – få full koll på rören",
+      "description": "Skyddande filmning av rörsystem",
+      "hero": {
+        "h1": "Stamfilmning med kamera – få full koll på rören",
+        "intro": "Med kamerateknologi kan vi inspektera rörsystem noggrant och identifiera problem innan de blir allvarliga. Perfekt för förebyggande underhåll och felsökning.",
+        "features": [
+          "Högupplöst kamerainspektion av rörsystem",
+          "Identifiering av problem och skador",
+          "Dokumentation med bilder och video",
+          "Förebyggande underhållsplan",
+          "Rapportering med tydliga rekommendationer"
+        ]
+      },
+      "process": {
+        "title": "Så fungerar stamfilmning",
+        "steps": [
+          "Förberedelse och säkerhetskontroll",
+          "Kamerainspektion av hela rörsystemet",
+          "Identifiering och dokumentation av problem",
+          "Analys och rekommendationer",
+          "Rapport med bilder och åtgärdsförslag"
+        ]
+      },
+      "faq": [
+        {
+          "question": "Vad kan kamerainspektion upptäcka?",
+          "answer": "Vi kan se stopp, läckage, korrosion, felaktig installation, rötskador och andra problem som inte syns från utsidan."
+        },
+        {
+          "question": "Hur lång tid tar en kamerainspektion?",
+          "answer": "Tiden beror på rörsystemets storlek, men en vanlig lägenhet tar 1-2 timmar. Vi ger en tidsuppskattning innan arbetet påbörjas."
+        },
+        {
+          "question": "Får jag bilder och video från inspektionen?",
+          "answer": "Ja, du får en detaljerad rapport med bilder och video som visar rörenas tillstånd och eventuella problem som behöver åtgärdas."
+        }
+      ],
+      "pageContent": {
+        "featuresTitle": "Våra stamfilmnings-tjänster",
+        "features": [
+          {
+            "title": "Högupplöst inspektion",
+            "description": "Tydlig bild av rörenas inre tillstånd"
+          },
+          {
+            "title": "Dokumentation",
+            "description": "Bilder och video för fullständig rapport"
+          },
+          {
+            "title": "Förebyggande underhåll",
+            "description": "Identifiering av problem innan de blir allvarliga"
+          },
+          {
+            "title": "Detaljerad rapport",
+            "description": "Tydliga rekommendationer och åtgärdsförslag"
+          }
+        ],
+        "whyChooseUsTitle": "Varför stamfilmning?",
+        "whyChooseUs": [
+          "Identifierar problem innan de blir allvarliga",
+          "Förebyggande underhåll",
+          "Dokumentation för försäkringar",
+          "Kostnadseffektiv diagnostik"
+        ],
+        "relatedServicesTitle": "Relaterade tjänster",
+        "relatedServices": [
+          {
+            "title": "Stamspolning",
+            "description": "Rengöring baserat på kamerainspektion"
+          },
+          {
+            "title": "Relining",
+            "description": "Förnyelse av rör efter inspektion"
+          },
+          {
+            "title": "VVS-service",
+            "description": "Regelbunden service och underhåll"
+          }
+        ],
+        "ctaTitle": "Behöver ni kamerainspektion?",
+        "ctaDescription": "Kontakta oss för professionell stamfilmning och diagnostik",
+        "ctaButtons": {
+          "callNow": "Ring oss nu",
+          "sendMessage": "Skicka meddelande"
+        },
+        "buttons": {
+          "getQuote": "Få kostnadsfri offert",
+          "learnMore": "Läs mer om oss"
+        }
+      }
+    }
+  },
+  "about": {
+    "title": "Komplett VVS i Sthlm AB – hantverkare du kan lita på",
+    "description": "Vi är en etablerad VVS-firma i Stockholm med många års erfarenhet av professionella VVS-tjänster.",
+    "hero": {
+      "h1": "Komplett VVS i Sthlm AB – hantverkare du kan lita på",
+      "intro": "Sedan över 20 år tillbaka hjälper vi kunder i Stockholm med professionella VVS-tjänster. Vårt team av certifierade montörer har erfarenhet av allt från enkla reparationer till stora nybyggnationer.",
+      "intro2": "Vi är stolta över vår höga kvalitet och kundnöjdhet. Alla våra arbeten följer Säker Vatten-standarder och kommer med full garanti för din trygghet."
+    },
+    "team": {
+      "title": "Vårt team",
+      "description": "Erfarna montörer med fokus på kvalitet och kundservice"
+    },
+    "certifications": {
+      "title": "Certifieringar och garantier",
+      "items": [
+        "Certifierade enligt Säker Vatten-standarder",
+        "Försäkrade arbeten med full täckning",
+        "Garanti på alla installationer och reparationer",
+        "Kontinuerlig utbildning av personal",
+        "Miljöcertifiering enligt ISO 14001"
+      ]
+    },
+    "areas": {
+      "title": "Vi arbetar i",
+      "description": "Stockholm med omnejd - vi kommer till dig"
+    },
+    "pageContent": {
+      "buttons": {
+        "contactUs": "Kontakta oss",
+        "ourServices": "Våra tjänster"
+      },
+      "teamMembers": [
+        {
+          "name": "Håkan Andersson",
+          "role": "VD & Grundare",
+          "experience": "25+ års erfarenhet",
+          "specialties": ["Nyinstallation", "Stambyte", "Projekthantering"]
+        },
+        {
+          "name": "Daniel Eriksson",
+          "role": "Chefsmontör",
+          "experience": "20+ års erfarenhet",
+          "specialties": ["Service", "Akutreparationer", "Relining"]
+        },
+        {
+          "name": "Maria Lindqvist",
+          "role": "Projektledare",
+          "experience": "15+ års erfarenhet",
+          "specialties": ["Kundkontakt", "Planering", "Kvalitetskontroll"]
+        }
+      ],
+      "certificationDetails": {
+        "safeWater": {
+          "title": "Säker Vatten",
+          "description": "Alla våra montörer är certifierade enligt Säker Vatten-standarder för att garantera högsta kvalitet och säkerhet."
+        },
+        "insurance": {
+          "title": "Försäkring & Garanti",
+          "description": "Alla våra arbeten är försäkrade och kommer med full garanti för din trygghet och nöjdhet."
+        }
+      },
+      "serviceAreas": [
+        "Stockholm innerstad",
+        "Stockholm omnejd",
+        "Hela Stockholms län"
+      ],
+      "specialtiesTitle": "Våra specialiteter",
+      "specialties": [
+        {
+          "title": "Nyinstallation",
+          "description": "Komplett VVS-installationer för nya byggnader och renoveringar."
+        },
+        {
+          "title": "Stambyte",
+          "description": "Professionellt byte av rörsystem i flerbostadshus."
+        },
+        {
+          "title": "VVS-service",
+          "description": "Förebyggande underhåll och akutservice dygnet runt."
+        },
+        {
+          "title": "Relining",
+          "description": "Modern metod för att förnya rör utan rivning."
+        },
+        {
+          "title": "Stamspolning",
+          "description": "Professionell rengöring av rörsystem."
+        },
+        {
+          "title": "Stamfilmning",
+          "description": "Kamerainspektion för diagnostik och dokumentation."
+        }
+      ],
+      "ctaTitle": "Redo att arbeta med oss?",
+      "ctaDescription": "Kontakta oss för en kostnadsfri offert och rådgivning",
+      "ctaButtons": {
+        "callNow": "Ring oss nu",
+        "sendMessage": "Skicka meddelande"
+      }
+    }
+  },
+  "contact": {
+    "title": "Kontakta oss – få en kostnadsfri offert",
+    "description": "Kontakta oss för en kostnadsfri offert",
+    "hero": {
+      "h1": "Kontakta oss – få en kostnadsfri offert",
+      "intro": "Behöver du hjälp med VVS-problem eller vill du bara veta mer om våra tjänster? Vi ger kostnadsfria offerter och rådgivning. Ring oss eller skicka ett meddelande så återkommer vi snabbt.",
+      "intro2": "Vi erbjuder akutservice dygnet runt för akuta problem som inte kan vänta. I Stockholm och omnejd kan vi vanligtvis vara på plats inom 2-4 timmar."
+    },
+    "phone": "Telefon",
+    "email": "E-post",
+    "address": "Adress",
+    "hours": "Öppettider",
+    "emergency": "Akutservice",
+    "form": {
+      "name": "Namn",
+      "email": "E-post",
+      "phone": "Telefon",
+      "message": "Meddelande",
+      "submit": "Skicka meddelande",
+      "placeholders": {
+        "name": "Ditt namn",
+        "email": "din@email.se",
+        "phone": "070-123 45 67",
+        "message": "Beskriv ditt VVS-behov..."
+      }
+    },
+    "feedback": {
+      "success": "Tack för ditt meddelande! Vi återkommer inom 24 timmar.",
+      "error": "Något gick fel. Vänligen försök igen eller ring oss direkt.",
+      "sending": "Skickar..."
+    },
+    "pageContent": {
+      "contactInfoTitle": "Kontaktinformation",
+      "contactInfo": [
+        {
+          "title": "Telefon",
+          "description": "Ring oss för akutservice eller offert"
+        },
+        {
+          "title": "E-post",
+          "description": "Skicka e-post för icke-akuta frågor"
+        },
+        {
+          "title": "Adress",
+          "description": "Vi arbetar i hela Stockholm"
+        },
+        {
+          "title": "Öppettider",
+          "description": "Akutservice dygnet runt"
+        }
+      ],
+      "formTitle": "Skicka oss ett meddelande",
+      "formDescription": "Fyll i formuläret så återkommer vi till dig inom 24 timmar. För akuta problem, ring oss direkt.",
+      "formPlaceholders": {
+        "name": "Ditt namn",
+        "phone": "070-123 45 67",
+        "email": "din@email.se",
+        "message": "Beskriv ditt VVS-behov..."
+      },
+      "servicesTitle": "Våra tjänster",
+      "servicesDescription": "Professionella VVS-tjänster i Stockholm",
+      "emergencyTitle": "Akutservice",
+      "emergencyDescription": "För akuta VVS-problem som inte kan vänta, ring oss direkt. Vi erbjuder akutservice dygnet runt i Stockholm.",
+      "emergencyButton": "Ring akutservice",
+      "faqTitle": "Vanliga frågor",
+      "faq": [
+        {
+          "question": "Hur snabbt kan ni komma ut för akutservice?",
+          "answer": "Vi erbjuder akutservice dygnet runt. I Stockholm och omnejd kan vi vanligtvis vara på plats inom 2-4 timmar för akuta problem."
+        },
+        {
+          "question": "Vad kostar en offert?",
+          "answer": "Alla våra offerter är helt kostnadsfria. Vi kommer ut och gör en besiktning utan någon kostnad för dig."
+        },
+        {
+          "question": "Arbetar ni med både privata kunder och företag?",
+          "answer": "Ja, vi hjälper både privatpersoner med hemrenoveringar och företag med större VVS-projekt. Vi har erfarenhet av allt från lägenheter till kontorsbyggnader."
+        }
+      ],
+      "ctaTitle": "Redo att komma igång?",
+      "ctaDescription": "Kontakta oss idag för en kostnadsfri offert och rådgivning",
+      "ctaButtons": {
+        "callNow": "Ring oss nu",
+        "sendEmail": "Skicka e-post"
+      },
+      "buttons": {
+        "callNow": "Ring oss nu",
+        "sendEmail": "Skicka e-post"
+      }
+    }
+  },
+  "header": {
+    "ringDirect": "Ring direkt",
+    "contact": "Kontakt",
+    "logoAlt": "Komplett VVS logotyp",
+    "companyName": "VVS Komplett i Sthlm AB",
+    "languageToggle": "Byt språk",
+    "menuTitle": "Meny",
+    "menuDescription": "Navigera till webbplatsens sidor"
+  },
+  "footer": {
+    "contact": "Kontakt",
+    "areas": "Områden",
+    "hours": "Öppettider",
+    "certificates": "Certifikat",
+    "services": "Våra tjänster",
+    "privacyPolicy": "Integritetspolicy",
+    "cookies": "Cookies",
+    "emergencyService": "Akutservice dygnet runt",
+    "logoAlt": "Komplett VVS logotyp",
+    "pageContent": {
+      "areas": [
+        "Stor Stockholm",
+        "Stockholm med omnejd"
+      ],
+      "certificates": [
+        "Säker Vatten",
+        "Försäkring",
+        "Garanti"
+      ]
+    }
+  },
+  
+  "cta": {
+    "title": "Behöver du hjälp?",
+    "description": "Kontakta oss idag för en kostnadsfri offert",
+    "contactUs": "Kontakta oss"
+  },
+  "theme": {
+    "label": "Tema",
+    "light": "Ljust",
+    "dark": "Mörkt",
+    "system": "System",
+    "loading": "Laddar tema"
+  },
+  "locale": {
+    "loading": "Laddar språk"
+  },
+  "common": {
+    "close": "Stäng"
+  },
+  "sheet": {
+    "defaultTitle": "Panel",
+    "defaultDescription": "Ytterligare innehåll visas i panelen"
+  },
+  "error": {
+    "title": "Sidan kunde inte laddas",
+    "description": "Vi beklagar, men det uppstod ett problem med att ladda denna sida. Försök igen eller gå tillbaka till startsidan.",
+    "tryAgain": "Försök igen",
+    "goHome": "Gå till startsidan",
+    "devInfo": "Teknisk information (endast i utvecklingsläge)"
+  },
+  "notFound": {
+    "title": "Sidan hittades inte",
+    "description": "Den sida du letar efter existerar inte eller har flyttats. Kontrollera URL:en eller gå tillbaka till startsidan.",
+    "goHome": "Gå till startsidan",
+    "contactUs": "Kontakta oss",
+    "commonPagesTitle": "Vanliga sidor:"
+  },
+  "cookies": {
+    "banner": {
+      "title": "Vi använder cookies",
+      "description": "Vi använder endast nödvändiga cookies för att säkerställa att vår webbplats fungerar korrekt. Inga tredjepartsskript laddas som standard.",
+      "accept": "Acceptera",
+      "decline": "Avvisa",
+      "learnMore": "Läs mer om cookies"
+    },
+    "consent": {
+      "accepted": "accepted",
+      "declined": "declined"
+    },
+    "title": "Cookie-information",
+    "lastUpdated": "Senast uppdaterad: {date}",
+    "intro": "Denna sida förklarar vilka cookies {company} använder och varför.",
+    "whatAre": {
+      "title": "Vad är cookies?",
+      "body": "Cookies är små textfiler som lagras på din enhet när du besöker en webbplats. De hjälper webbplatsen att komma ihåg information om ditt besök, som dina språkpreferenser och andra inställningar."
+    },
+    "types": {
+      "title": "Vilka cookies använder vi?",
+      "essential": {
+        "title": "Nödvändiga cookies",
+        "description": "Dessa cookies är nödvändiga för att webbplatsen ska fungera korrekt. De kan inte inaktiveras i våra system.",
+        "items": [
+          "Cookie-samtycke: Lagrar ditt val om cookies (accepted/declined)",
+          "Sessionscookies: Håller dig inloggad under din besök",
+          "Säkerhetscookies: Skyddar mot säkerhetshot"
+        ]
+      },
+      "none": {
+        "title": "Analys- och marknadsföringscookies",
+        "description": "Vi använder INGA analyscookies, spårningscookies eller marknadsföringscookies. Inga tredjepartsskript laddas som standard."
+      }
+    },
+    "management": {
+      "title": "Hantera dina cookie-inställningar",
+      "banner": "Du kan ändra dina cookie-inställningar genom att klicka på 'Acceptera' eller 'Avvisa' i cookie-bannern som visas när du först besöker webbplatsen.",
+      "browser": "Du kan också hantera cookies direkt i din webbläsare:",
+      "browserSteps": [
+        "Chrome: Inställningar > Sekretess och säkerhet > Cookies",
+        "Firefox: Inställningar > Sekretess och säkerhet > Cookies",
+        "Safari: Inställningar > Sekretess > Hantera webbplatsdata",
+        "Edge: Inställningar > Cookies och webbplatsbehörigheter"
+      ]
+    },
+    "consentInfo": {
+      "title": "Samtycke och lagring",
+      "body": "Ditt samtycke lagras lokalt i din webbläsare och kommer ihåg ditt val vid framtida besök. Du kan ändra ditt samtycke när som helst genom att rensa dina cookies eller använda cookie-bannern.",
+      "withdraw": "Du kan återkalla ditt samtycke genom att rensa cookies i din webbläsare eller kontakta oss."
+    },
+    "contact": {
+      "title": "Frågor om cookies?",
+      "body": "Har du frågor om vår användning av cookies? Kontakta oss på {email}."
+    }
+  },
+  "privacy": {
+    "title": "Integritetspolicy",
+    "lastUpdated": "Senast uppdaterad: {date}",
+    "intro": "Den här integritetspolicyn förklarar hur {company} behandlar personuppgifter när du besöker vår webbplats eller kontaktar oss.",
+    "controller": {
+      "title": "Personuppgiftsansvarig",
+      "body": "{company} är personuppgiftsansvarig. Adress: {address}. E-post: {email}. Telefon: {phone}."
+    },
+    "data": {
+      "title": "Vilka uppgifter vi behandlar",
+      "item1": "Kontaktuppgifter (namn, e-post, telefon, ort, meddelande/bilagor) som du skickar via formulär.",
+      "item2": "Teknisk information (IP-adress, webbläsare, tidsstämplar) i syfte att säkra drift och felsöka.",
+      "item3": "Endast nödvändiga cookies. Inga analys- eller marknadsföringscookies."
+    },
+    "purposes": {
+      "title": "Ändamål och laglig grund",
+      "item1": "Att hantera förfrågningar och ge offerter (berättigat intresse och/eller samtycke).",
+      "item2": "Att förbereda eller fullgöra avtal när du beställer en tjänst.",
+      "item3": "Att uppfylla rättsliga krav (t.ex. bokföring) om avtal ingåtts."
+    },
+    "recipients": {
+      "title": "Mottagare och personuppgiftsbiträden",
+      "body": "För drift och kommunikation använder vi Vercel (hosting) och Google Workspace (e-post). Personuppgifter kan behandlas utanför EU/EES; när det sker används EU:s standardavtalsklausuler (SCC) eller likvärdiga skydd."
+    },
+    "transfers": {
+      "title": "Överföring till tredje land",
+      "body": "Om överföring sker utanför EU/EES använder vi EU:s standardavtalsklausuler (SCC) eller likvärdiga skyddsåtgärder."
+    },
+    "retention": {
+      "title": "Lagringstid",
+      "item1": "Formulärärenden sparas i upp till 12 månader om inte ärendet kräver längre hantering.",
+      "item2": "Tekniska loggar sparas normalt i högst 30 dagar.",
+      "item3": "Bokföringsunderlag kan sparas i 7 år enligt lag."
+    },
+    "rights": {
+      "title": "Dina rättigheter",
+      "items": "Du har rätt till tillgång, rättelse, radering, begränsning, dataportabilitet och att invända mot behandling som grundas på berättigat intresse. Du kan även återkalla samtycke när behandlingen bygger på samtycke.",
+      "complaint": "Du har rätt att lämna klagomål till Integritetsskyddsmyndigheten (IMY)."
+    },
+    "cookies": {
+      "title": "Cookies",
+      "body": "Vi använder endast nödvändiga cookies. Du kan ändra inställningar i cookie-bannern eller i din webbläsare."
+    },
+    "contact": {
+      "title": "Kontakt",
+      "body": "Frågor om vår personuppgiftsbehandling? Kontakta oss på {email}."
+    },
+    "changes": {
+      "title": "Ändringar",
+      "body": "Vi kan uppdatera denna policy vid behov. Den senaste versionen publiceras på denna sida."
+    }
+  },
+  "cookiesPage": {
+    "title": "Cookie-information",
+    "lastUpdated": "Senast uppdaterad: {date}",
+    "intro": "Denna sida förklarar vilka cookies {company} använder och varför.",
+    "whatAre": {
+      "title": "Vad är cookies?",
+      "body": "Cookies är små textfiler som lagras på din enhet när du besöker en webbplats. De hjälper webbplatsen att komma ihåg information om ditt besök, som dina språkpreferenser och andra inställningar."
+    },
+    "types": {
+      "title": "Vilka cookies använder vi?",
+      "essential": {
+        "title": "Nödvändiga cookies",
+        "description": "Dessa cookies är nödvändiga för att webbplatsen ska fungera korrekt. De kan inte inaktiveras i våra system.",
+        "items": [
+          "Cookie-samtycke: Lagrar ditt val om cookies (accepted/declined)",
+          "Sessionscookies: Håller dig inloggad under din besök",
+          "Säkerhetscookies: Skyddar mot säkerhetshot"
+        ]
+      },
+      "none": {
+        "title": "Analys- och marknadsföringscookies",
+        "description": "Vi använder INGA analyscookies, spårningscookies eller marknadsföringscookies. Inga tredjepartsskript laddas som standard."
+      }
+    },
+    "management": {
+      "title": "Hantera dina cookie-inställningar",
+      "banner": "Du kan ändra dina cookie-inställningar genom att klicka på 'Acceptera' eller 'Avvisa' i cookie-bannern som visas när du först besöker webbplatsen.",
+      "browser": "Du kan också hantera cookies direkt i din webbläsare:",
+      "browserSteps": [
+        "Chrome: Inställningar > Sekretess och säkerhet > Cookies",
+        "Firefox: Inställningar > Sekretess och säkerhet > Cookies",
+        "Safari: Inställningar > Sekretess > Hantera webbplatsdata",
+        "Edge: Inställningar > Cookies och webbplatsbehörigheter"
+      ]
+    },
+    "consent": {
+      "title": "Samtycke och lagring",
+      "body": "Ditt samtycke lagras lokalt i din webbläsare och kommer ihåg ditt val vid framtida besök. Du kan ändra ditt samtycke när som helst genom att rensa dina cookies eller använda cookie-bannern.",
+      "withdraw": "Du kan återkalla ditt samtycke genom att rensa cookies i din webbläsare eller kontakta oss."
+    },
+    "contact": {
+      "title": "Frågor om cookies?",
+      "body": "Har du frågor om vår användning av cookies? Kontakta oss på {email}."
+    }
+  }
+}

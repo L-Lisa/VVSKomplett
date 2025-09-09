@@ -1,14 +1,15 @@
-import { notFound } from 'next/navigation';
-import { getRequestConfig } from 'next-intl/server';
+// src/i18n.ts
+import {getRequestConfig} from 'next-intl/server';
 
-// Can be imported from a shared config
-const locales = ['sv', 'en'];
+export const locales = ['sv', 'en'] as const;
+export type Locale = (typeof locales)[number];
+export const defaultLocale: Locale = 'sv';
 
-export default getRequestConfig(async ({ locale }) => {
-  // Validate that the incoming `locale` parameter is valid
-  if (!locales.includes(locale as any)) notFound();
-
+export default getRequestConfig(async ({locale}) => {
+  const safeLocale: Locale = locales.includes(locale as Locale) ? (locale as Locale) : defaultLocale;
+  const messages = (await import(`./messages/${safeLocale}.json`)).default;
   return {
-    messages: (await import(`../messages/${locale}.json`)).default,
+    locale: safeLocale,
+    messages
   };
 });

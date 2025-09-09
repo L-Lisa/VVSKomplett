@@ -1,53 +1,83 @@
 import { Metadata } from 'next';
+import { COMPANY } from '@/config/company';
 
-interface MetadataProps {
+interface PageMetadata {
   title: string;
   description: string;
-  locale: string;
-  path?: string;
+  keywords?: string;
+  path: string;
+  robots?: {
+    index?: boolean;
+    follow?: boolean;
+  };
 }
 
-export function generateMetadata({
+export function generatePageMetadata({
   title,
   description,
-  locale,
-  path = '',
-}: MetadataProps): Metadata {
-  const baseUrl = 'https://komplettvvs.se';
-  const url = `${baseUrl}/${locale}${path}`;
-  const imageUrl = `${baseUrl}/images/vvsror.jpg`;
+  keywords,
+  path,
+  robots,
+}: PageMetadata): Metadata {
+  const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || 'http://localhost:3000';
+  const fullUrl = `${baseUrl}${path}`;
+  const ogImageUrl = `${baseUrl}/opengraph-image?title=${encodeURIComponent(title)}&description=${encodeURIComponent(description)}`;
 
   return {
-    title,
+    title: `${title} | ${COMPANY.name}`,
     description,
+    keywords: keywords || 'VVS Stockholm, VVS-installation, stambyte, relining, VVS-service, rörmokare Stockholm',
     openGraph: {
-      title,
+      title: `${title} | ${COMPANY.name}`,
       description,
-      url,
-      siteName: 'Komplett VVS i Stockholm AB',
+      url: fullUrl,
+      siteName: COMPANY.name,
       images: [
         {
-          url: imageUrl,
+          url: ogImageUrl,
           width: 1200,
           height: 630,
           alt: title,
         },
       ],
-      locale: locale === 'sv' ? 'sv_SE' : 'en_US',
+      locale: 'sv_SE',
       type: 'website',
     },
     twitter: {
       card: 'summary_large_image',
-      title,
+      title: `${title} | ${COMPANY.name}`,
       description,
-      images: [imageUrl],
+      images: [ogImageUrl],
     },
     alternates: {
-      canonical: url,
+      canonical: fullUrl,
       languages: {
-        sv: `${baseUrl}/sv${path}`,
-        en: `${baseUrl}/en${path}`,
+        'sv': fullUrl,
+        'en': fullUrl.replace('/sv/', '/en/'),
+      },
+    },
+    robots: {
+      index: robots?.index ?? true,
+      follow: robots?.follow ?? true,
+      googleBot: {
+        index: robots?.index ?? true,
+        follow: robots?.follow ?? true,
+        'max-video-preview': -1,
+        'max-image-preview': 'large',
+        'max-snippet': -1,
       },
     },
   };
+}
+
+export function generateServiceMetadata(service: {
+  title: string;
+  description: string;
+  keywords: string;
+  path: string;
+}): Metadata {
+  return generatePageMetadata({
+    ...service,
+    keywords: `${service.keywords}, VVS Stockholm, professionell installation, certifierade montörer`,
+  });
 }
