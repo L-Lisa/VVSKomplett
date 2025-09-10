@@ -14,13 +14,12 @@ import {
   Shield,
   Droplets,
   Paintbrush,
-  CheckCircle,
   Bath,
   Zap,
   Cog,
 } from 'lucide-react';
 import { Hero } from '@/components/content/hero';
-import { Testimonials3 } from '@/components/content/testimonials3';
+import { Testimonials3Client } from '@/components/content/testimonials3.client';
 import { CTA } from '@/components/content/cta';
 import { generatePageMetadata } from '@/lib/metadata';
 import { generateLocalBusinessSchema } from '@/lib/schemas';
@@ -28,13 +27,18 @@ import { ScrollAnimation } from '@/components/ui/scroll-animation';
 import { GeometricAccents } from '@/components/ui/geometric-accents';
 import { ScreenReaderAnnouncement } from '@/components/ui/screen-reader-announcement';
 import Link from 'next/link';
+import { CheckIcon } from '@/components/ui/check-icon';
+import { IndustrialGridBackground } from '@/components/ui/industrial-grid-background';
+// (client wrapper used instead)
 
-export const metadata = generatePageMetadata({
-  title: 'VVS i Stockholm för entreprenad, BRF, företag och privatpersoner',
-  description: 'Komplett VVS i Sthlm AB levererar trygga VVS-lösningar i Stor-Stockholm: nyinstallation, stambyte, relining, stamspolning, stamfilmning och service.',
-  keywords: 'VVS Stockholm, VVS-installation, stambyte, relining, VVS-service, rörmokare Stockholm, VVS-montörer, VVS-renovering, entreprenad, BRF, företag',
-  path: '/',
-});
+export async function generateMetadata() {
+  const t = await getTranslations();
+  return generatePageMetadata({
+    title: t('home.title'),
+    description: t('home.description'),
+    path: '/',
+  });
+}
 
 export default async function HomePage({ params }: { params: Promise<{ locale: string }> }) {
   const { locale } = await params;
@@ -128,10 +132,6 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
           text: t('navigation.contact'),
           href: '/kontakt'
         }}
-        secondaryCta={{
-          text: t('navigation.about'),
-          href: '/om-oss'
-        }}
         image={{
           src: '/images/vvsror.jpg',
           alt: t('home.hero.imageAlt')
@@ -140,47 +140,51 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
       />
 
       {/* Services Section */}
-      <section className="py-20 relative" aria-labelledby="services-heading">
-        <GeometricAccents variant="corner" className="opacity-30" />
-        <div className="container mx-auto px-4">
+      <section className="py-20 relative bg-gradient-to-br from-[#1f398a]/8 via-gray-50/30 to-[#F97316]/6" aria-labelledby="services-heading">
+        {/* Simple industrial grid pattern */}
+        <IndustrialGridBackground />
+        
+        <div className="container mx-auto px-4 relative z-10">
           <ScrollAnimation delay={0} duration={300}>
-            <h2 id="services-heading" className="text-3xl md:text-4xl font-bold font-outfit text-center mb-12">
+            <h2 id="services-heading" className="text-2xl sm:text-3xl md:text-4xl font-bold font-outfit text-center mb-8 sm:mb-12">
               {t('home.servicesTitle')}
             </h2>
           </ScrollAnimation>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6" role="list" aria-label="Våra VVS-tjänster">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6" role="list" aria-label={t('home.a11y.servicesAria')}>
             {services.map((service, index) => {
               const Icon = service.icon;
               const isStambyte = service.key === 'pipeReplacement';
+              const isInitialLoad = index < 3;
+              
               return (
                 <ScrollAnimation 
                   key={service.key} 
-                  delay={index * 100} 
-                  duration={300}
+                  delay={isInitialLoad ? index * 150 : (index - 3) * 200 + 500} 
+                  duration={isInitialLoad ? 400 : 300}
                   direction="bottom"
                 >
-                  <Card className="group rounded-2xl border border-[#E6E9EF] bg-white shadow-[0_6px_18px_rgba(12,21,36,0.06)] hover:shadow-xl hover:-translate-y-1 transition-all duration-300 hover:border-[#1f398a]/20" role="listitem">
-                    <CardHeader>
-                      {isStambyte && (
-                        <span className="inline-block mb-2 text-[11px] font-semibold uppercase tracking-wide text-white bg-[#F97316] px-2 py-1 rounded" aria-label="Rekommenderas för BRF och företag">
-                          BRF & Företag
-                        </span>
-                      )}
-                      <Icon className="h-12 w-12 text-[#1f398a] mb-4 group-hover:text-[#F97316] transition-colors duration-300" aria-hidden="true" />
-                      <CardTitle className="text-xl font-outfit">
+                  <Card className="group relative rounded-2xl border border-[#E6E9EF] bg-white shadow-[0_6px_18px_rgba(12,21,36,0.06)] hover:shadow-xl hover:-translate-y-1 transition-all duration-300 hover:border-[#1f398a]/20 h-full flex flex-col" role="listitem">
+                    {isStambyte && (
+                      <span className="absolute -top-2 -right-2 z-10 text-[10px] font-semibold uppercase tracking-wide text-white bg-[#F97316] px-2 py-1 rounded-full shadow-lg" aria-label={t('home.a11y.brfBadge')}>
+                        BRF & Företag
+                      </span>
+                    )}
+                    <CardHeader className="flex-1">
+                      <Icon className="h-12 w-12 text-[#1f398a] mb-4 group-hover:text-[#F97316] group-hover:rotate-12 group-hover:scale-110 transition-all duration-300" aria-hidden="true" />
+                      <CardTitle className="text-xl font-outfit mb-3">
                         {t(`services.${service.key}.title`)}
                       </CardTitle>
                     </CardHeader>
-                    <CardContent>
-                      <CardDescription className="text-base">
+                    <CardContent className="flex flex-col flex-1">
+                      <CardDescription className="text-base flex-1 mb-4">
                         {t(`services.${service.key}.description`)}
                       </CardDescription>
                       <a 
-                        className="mt-3 inline-flex items-center gap-1 text-[#1f398a] font-medium hover:text-[#F97316] hover:underline transition-colors duration-300"
+                        className="inline-flex items-center gap-1 text-[#1f398a] font-medium hover:text-[#F97316] hover:underline transition-colors duration-300 mt-auto"
                         href={service.href}
                         aria-label={`Läs mer om ${t(`services.${service.key}.title`)}`}
                       >
-                        {t('home.readMore')}
+                        {t('home.readMore')} {t(`services.${service.key}.title`)}
                         <svg className="w-4 h-4 group-hover:translate-x-1 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
                         </svg>
@@ -196,7 +200,7 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
 
       {/* Screen Reader Announcement for Services */}
       <ScreenReaderAnnouncement 
-        message="Våra VVS-tjänster har laddats. Du kan navigera genom tjänstekorten med Tab-tangenten."
+        message={t('home.a11y.servicesLoaded')}
         delay={1000}
       />
 
@@ -209,7 +213,7 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
               {t('home.testimonialsTitle')}
             </h2>
           </ScrollAnimation>
-          <Testimonials3 testimonials={testimonials} />
+          <Testimonials3Client testimonials={testimonials} />
         </div>
       </section>
 
@@ -239,19 +243,19 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
                 <h3 className="text-2xl font-bold font-outfit mb-4">{t('home.contentSection.specialtiesTitle')}</h3>
                 <ul className="space-y-3">
                   <li className="flex items-start">
-                    <CheckCircle className="h-5 w-5 text-primary mr-3 mt-0.5 flex-shrink-0" />
+                    <CheckIcon className="h-5 w-5 text-primary mr-3 mt-0.5 flex-shrink-0" />
                     <span><Link href={`/${locale}/nyinstallation`} className="text-primary hover:underline font-medium">{t('navigation.newInstallation')}</Link> {t('home.specialties.items.nyinstallation.after')}</span>
                   </li>
                   <li className="flex items-start">
-                    <CheckCircle className="h-5 w-5 text-primary mr-3 mt-0.5 flex-shrink-0" />
+                    <CheckIcon className="h-5 w-5 text-primary mr-3 mt-0.5 flex-shrink-0" />
                     <span><Link href={`/${locale}/stambyte`} className="text-primary hover:underline font-medium">{t('navigation.pipeReplacement')}</Link> {t('home.specialties.items.stambyte.after')}</span>
                   </li>
                   <li className="flex items-start">
-                    <CheckCircle className="h-5 w-5 text-primary mr-3 mt-0.5 flex-shrink-0" />
+                    <CheckIcon className="h-5 w-5 text-primary mr-3 mt-0.5 flex-shrink-0" />
                     <span><Link href={`/${locale}/relining`} className="text-primary hover:underline font-medium">{t('navigation.relining')}</Link> {t('home.specialties.items.relining.after')}</span>
                   </li>
                   <li className="flex items-start">
-                    <CheckCircle className="h-5 w-5 text-primary mr-3 mt-0.5 flex-shrink-0" />
+                    <CheckIcon className="h-5 w-5 text-primary mr-3 mt-0.5 flex-shrink-0" />
                     <span><Link href={`/${locale}/service`} className="text-primary hover:underline font-medium">{t('navigation.service')}</Link> {t('home.specialties.items.service.after')}</span>
                   </li>
                 </ul>
@@ -262,7 +266,7 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
                 <ul className="space-y-3">
                   {t.raw('home.safety.items').map((item: string, index: number) => (
                     <li key={index} className="flex items-start">
-                      <CheckCircle className="h-5 w-5 text-primary mr-3 mt-0.5 flex-shrink-0" />
+                      <CheckIcon className="h-5 w-5 text-primary mr-3 mt-0.5 flex-shrink-0" />
                       <span>{item}</span>
                     </li>
                   ))}
@@ -294,22 +298,12 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
                   {t('home.whyChooseUs')}
                 </h2>
               </ScrollAnimation>
-              <ul className="space-y-6" role="list" aria-label="5 anledningar att välja oss">
+              <ul className="space-y-6" role="list" aria-label={t('home.a11y.whyAria')}>
                 {t.raw('home.faq.items').map((item: { question: string; answer: string }, index: number) => (
                   <ScrollAnimation key={index} delay={index * 200} duration={300} direction="bottom">
                     <li className="flex items-start group" role="listitem">
                       <div className="flex-shrink-0 mr-4 mt-1 group-hover:scale-110 transition-transform duration-300" aria-hidden="true">
-                        <svg 
-                          className="w-6 h-6 text-[#F97316]" 
-                          fill="currentColor" 
-                          viewBox="0 0 20 20"
-                        >
-                          <path 
-                            fillRule="evenodd" 
-                            d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" 
-                            clipRule="evenodd" 
-                          />
-                        </svg>
+                        <CheckIcon className="w-6 h-6 text-[#F97316]" aria-hidden="true" />
                       </div>
                       <div className="flex-1">
                         <span className="font-semibold text-text-900 text-lg" aria-label={`Punkt ${index + 1}: ${item.question}`}>

@@ -63,7 +63,7 @@ export function ContactForm() {
           id="name"
           {...register('name')}
           placeholder={t('form.placeholders.name')}
-          className={`w-full ${errors.name ? 'border-destructive' : ''}`}
+          className={`w-full bg-white ${errors.name ? 'border-destructive' : ''}`}
           aria-invalid={errors.name ? 'true' : 'false'}
         />
         {errors.name && (
@@ -84,7 +84,7 @@ export function ContactForm() {
           type="email"
           {...register('email')}
           placeholder={t('form.placeholders.email')}
-          className={`w-full ${errors.email ? 'border-destructive' : ''}`}
+          className={`w-full bg-white ${errors.email ? 'border-destructive' : ''}`}
           aria-invalid={errors.email ? 'true' : 'false'}
         />
         {errors.email && (
@@ -105,7 +105,7 @@ export function ContactForm() {
           type="tel"
           {...register('phone')}
           placeholder={t('form.placeholders.phone')}
-          className={`w-full ${errors.phone ? 'border-destructive' : ''}`}
+          className={`w-full bg-white ${errors.phone ? 'border-destructive' : ''}`}
           aria-invalid={errors.phone ? 'true' : 'false'}
         />
         {errors.phone && (
@@ -126,7 +126,7 @@ export function ContactForm() {
           {...register('message')}
           rows={6}
           placeholder={t('form.placeholders.message')}
-          className={`w-full ${errors.message ? 'border-destructive' : ''}`}
+          className={`w-full bg-white ${errors.message ? 'border-destructive' : ''}`}
           aria-invalid={errors.message ? 'true' : 'false'}
         />
         {errors.message && (
@@ -141,7 +141,7 @@ export function ContactForm() {
       <Button 
         type="submit" 
         size="lg" 
-        className="w-full" 
+        className="w-full bg-[#F97316] text-[#1f398a] hover:bg-[#e86a0a]" 
         disabled={isSubmitting || formState.status === 'loading'}
       >
         {isSubmitting || formState.status === 'loading' ? (

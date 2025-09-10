@@ -27,7 +27,9 @@
     "h3": "Auktoriserat • Säker Vatten • Ansvarsförsäkring",
     "intro1": "Auktoriserad VVS i Stor-Stockholm. Helhetsleverans: VS, relining, stamspolning, stamfilmning & service.",
     "intro2": "Primärt för entreprenad, BRF och företag – vi hjälper även privatpersoner.",
-      "imageAlt": "Vitt och ljusgrått rörsystem som bakgrund"
+      "imageAlt": "Vitt och ljusgrått rörsystem som bakgrund",
+      "ringDirect": "Ring direkt",
+      "chips": "Entreprenad • BRF • Företag • Privat"
     },
     "servicesTitle": "Våra tjänster",
     "readMore": "Läs mer",
@@ -53,6 +55,12 @@
         "title": "Snabb och personlig återkoppling",
         "description": "Vi återkommer snabbt med plan, tidslinje och offert."
       }
+    },
+    "a11y": {
+      "servicesLoaded": "Våra VVS-tjänster har laddats. Du kan navigera genom tjänstekorten med Tab-tangenten.",
+      "servicesAria": "Våra VVS-tjänster",
+      "whyAria": "5 anledningar att välja oss",
+      "brfBadge": "Rekommenderas för BRF och företag"
     },
     "contentSection": {
       "mainTitle": "Professionella VVS-tjänster i Stockholm",
@@ -112,7 +120,7 @@
         },
         {
           "question": "5 – Komplett under samma tak",
-          "answer": "VS, rörinfodring/relining, rivning/sanering och el i samverkan – smidig koordinering."
+          "answer": "VVS, rörinfodring/relining, rivning/sanering och el i samverkan – smidig koordinering."
         }
       ]
     }
@@ -140,7 +148,8 @@
           "Materialbeställning och planering",
           "Installation av certifierade montörer",
           "Provning, dokumentation och överlämning"
-        ]
+        ],
+        "imageAlt": "Verktyg och mätutrustning för VVS-nyinstallation"
       },
       "faq": [
         {
@@ -232,7 +241,8 @@
           "Information till boende om arbetet",
           "Professionell genomförande med minimal störning",
           "Testning och överlämning med dokumentation"
-        ]
+        ],
+        "imageAlt": "Verktyg och mätutrustning för stambyte"
       },
       "faq": [
         {
@@ -324,7 +334,8 @@
           "Planerad underhåll enligt schema",
           "Akutservice vid oväntade problem",
           "Dokumentation och rapportering"
-        ]
+        ],
+        "imageAlt": "Verktyg och mätutrustning för VVS-service"
       },
       "faq": [
         {
@@ -416,7 +427,8 @@
           "Installation av nya rörliner",
           "Kvalitetskontroll och testning",
           "Dokumentation och överlämning"
-        ]
+        ],
+        "imageAlt": "Verktyg och mätutrustning för relining"
       },
       "faq": [
         {
@@ -508,7 +520,8 @@
           "Fräsning av hårdnade avlagringar",
           "Rengöring med miljövänliga medel",
           "Kvalitetskontroll och dokumentation"
-        ]
+        ],
+        "imageAlt": "Verktyg och mätutrustning för stamspolning"
       },
       "faq": [
         {
@@ -600,7 +613,8 @@
           "Identifiering och dokumentation av problem",
           "Analys och rekommendationer",
           "Rapport med bilder och åtgärdsförslag"
-        ]
+        ],
+        "imageAlt": "Tekniker utför kamerainspektion av stammar"
       },
       "faq": [
         {

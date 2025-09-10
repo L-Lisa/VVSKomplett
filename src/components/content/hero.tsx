@@ -1,16 +1,13 @@
 import Image from 'next/image';
 import { Button } from '@/components/ui/button';
 import { cn } from '@/lib/utils';
+import { useTranslations } from 'next-intl';
 
 interface HeroProps {
   title: string;
   lead: string;
   description?: string;
   primaryCta: {
-    text: string;
-    href: string;
-  };
-  secondaryCta?: {
     text: string;
     href: string;
   };
@@ -27,11 +24,11 @@ export function Hero({
   lead,
   description,
   primaryCta,
-  secondaryCta,
   image,
   className,
   priority = false
 }: HeroProps) {
+  const t = useTranslations('home.hero');
   return (
     <section className={cn('relative py-20 overflow-hidden', className)}>
       {/* Background Image */}
@@ -43,6 +40,7 @@ export function Hero({
           sizes="100vw"
           className="object-cover object-center"
           priority={priority}
+          fetchPriority="high"
         />
         {/* Gradient overlay for better text contrast - from top-left corner fading toward center */}
         <div className="absolute inset-0 bg-gradient-to-br from-[rgba(22,58,95,0.6)] via-[rgba(22,58,95,0.2)] to-transparent" aria-hidden="true"></div>
@@ -73,25 +71,26 @@ export function Hero({
                 asChild
               >
                 <a href={primaryCta.href}>
-                  <span className="hidden md:block">{primaryCta.text}</span>
-                  <span className="md:hidden">Ring direkt</span>
+                  <span className="hidden md:inline">{primaryCta.text}</span>
+                  <span className="md:hidden">{t('ringDirect')}</span>
                 </a>
               </Button>
             </div>
             
             {/* Chips text under CTA buttons - plain royal blue text */}
             <div className="mt-3 text-[#1f398a] text-sm font-medium">
-              Entreprenad • BRF • Företag • Privat
+              {t('chips')}
             </div>
             
             {/* Profile Picture - Aligned with buttons, 15px to the right */}
-            <div className="hidden md:block absolute" style={{top: 'calc(100% - 120px)', left: 'calc(50% + 200px)'}}>
+            <div className="hidden md:block absolute [top:calc(100%-120px)] [left:calc(50%+200px)]">
               <div className="p-1">
                 <Image
                   src={image.src}
                   alt={image.alt}
                   width={360}
                   height={203}
+                  sizes="(max-width: 768px) 280px, 360px"
                   className="object-cover object-center rounded-sm"
                   loading="lazy"
                 />

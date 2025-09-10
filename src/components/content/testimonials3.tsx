@@ -9,7 +9,7 @@ interface Testimonial {
   company?: string;
 }
 
-interface Testimonials3Props {
+export interface Testimonials3Props {
   testimonials: Testimonial[];
   className?: string;
 }

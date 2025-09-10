@@ -3,10 +3,11 @@ import { generatePageMetadata } from '@/lib/metadata';
 import { generateLocalBusinessSchema } from '@/lib/schemas';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
-import { CheckCircle, Shield, Award, Phone, MapPin } from 'lucide-react';
+import { CheckCircle, Shield, Award, MapPin } from 'lucide-react';
 import Link from 'next/link';
 import Image from 'next/image';
 import { CertificationBadgeServer } from '@/components/ui/certification-badge-server';
+import { CTA } from '@/components/content/cta';
 
 export const metadata = generatePageMetadata({
   title: 'Komplett VVS i Sthlm AB – hantverkare du kan lita på',
@@ -358,32 +359,13 @@ export default async function AboutPage({ params }: { params: Promise<{ locale: 
         </div>
       </section>
 
-      {/* CTA Section */}
-      <section className="py-20 bg-primary text-white">
-        <div className="container mx-auto px-4">
-          <div className="max-w-4xl mx-auto text-center">
-            <h2 className="text-3xl font-bold font-outfit mb-6">
-              {t('about.pageContent.ctaTitle')}
-            </h2>
-            <p className="text-xl mb-8 opacity-90">
-              {t('about.pageContent.ctaDescription')}
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button asChild size="lg" variant="secondary">
-                <Link href={`/${locale}/kontakt`}>
-                  <Phone className="h-4 w-4 mr-2" />
-                  {t('about.pageContent.ctaButtons.callNow')}
-                </Link>
-              </Button>
-              <Button asChild size="lg" variant="outline" className="text-white border-white hover:bg-white hover:text-primary">
-                <Link href={`/${locale}/kontakt`}>
-                  {t('about.pageContent.ctaButtons.sendMessage')}
-                </Link>
-              </Button>
-            </div>
-          </div>
-        </div>
-      </section>
+      {/* CTA Section - aligned with service pages */}
+      <CTA 
+        title={t('about.pageContent.ctaTitle')} 
+        description={t('about.pageContent.ctaDescription')} 
+        orangeHeading 
+        showCorners 
+      />
     </>
   );
 }

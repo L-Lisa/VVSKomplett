@@ -29,7 +29,7 @@ export function Header({ LocaleSwitcher }: HeaderProps) {
     { key: 'service', href: '/service' },
     { key: 'relining', href: '/relining' },
     { key: 'pipeFlushing', href: '/stamspolning' },
-    { key: 'pipeCoating', href: '/stamfilmning' },
+    { key: 'pipeCoating', href: '/pipeinspection' },
     { key: 'about', href: '/om-oss' },
     { key: 'contact', href: '/kontakt' },
   ];
@@ -59,13 +59,13 @@ export function Header({ LocaleSwitcher }: HeaderProps) {
         {/* Desktop: Logo spans both rows */}
         <div className="hidden lg:flex items-start justify-between">
           {/* Logo - spans both rows */}
-          <Link href="/" className="flex items-start space-x-2 py-4">
+          <Link href="/" className="flex items-start py-4">
             <Image
               src="/logokomplett.webp"
               alt={t('header.logoAlt')}
               width={1280}
               height={720}
-              className="h-20 w-auto shrink-0"
+              className="h-20 w-auto shrink-0 scale-85"
               priority
             />
           </Link>
@@ -73,12 +73,12 @@ export function Header({ LocaleSwitcher }: HeaderProps) {
           {/* Right side content */}
           <div className="flex flex-col">
             {/* Navigation Row */}
-            <nav className="flex items-center space-x-8 py-4">
+            <nav className="flex items-center space-x-4 py-4">
               {navItems.map((item) => (
                 <Link
                   key={item.key}
                   href={item.href}
-                  className="text-sm font-medium text-text-700 hover:text-primary transition-colors"
+                  className="text-lg font-medium text-text-700 hover:text-primary hover:scale-105 active:scale-95 transition-all duration-200 ease-in-out"
                 >
                   {t(`navigation.${item.key}`)}
                 </Link>

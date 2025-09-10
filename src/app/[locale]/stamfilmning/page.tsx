@@ -6,12 +6,15 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/com
 import { CheckCircle, Camera, Video, Settings, FileText } from 'lucide-react';
 import Link from 'next/link';
 import { CTA } from '@/components/content/cta';
+import Image from 'next/image';
+import fs from 'node:fs';
+import path from 'node:path';
 
 export const metadata = generateServiceMetadata({
   title: 'Stamfilmning med kamera – få full koll på rören',
   description: 'Professionell stamfilmning med kamera i Stockholm. Högupplöst inspektion, dokumentation och förebyggande underhåll. Kostnadsfri offert.',
   keywords: 'stamfilmning Stockholm, kamerainspektion rör, VVS diagnostik, rörinspektion, VVS kamera',
-  path: '/stamfilmning',
+  path: '/pipeinspection',
 });
 
 export default async function PipeCoatingPage({ params }: { params: Promise<{ locale: string }> }) {
@@ -48,6 +51,12 @@ export default async function PipeCoatingPage({ params }: { params: Promise<{ lo
     'Analys och rekommendationer',
     'Rapport med bilder och åtgärdsförslag'
   ];
+
+  // Lightweight shimmer placeholder for blurDataURL
+  const shimmer = (w: number, h: number) =>
+    `data:image/svg+xml;base64,${Buffer.from(
+      `<svg width="${w}" height="${h}" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none"><defs><linearGradient id="g"><stop stop-color="#f6f7f8" offset="20%"/><stop stop-color="#edeef1" offset="50%"/><stop stop-color="#f6f7f8" offset="70%"/></linearGradient></defs><rect width="${w}" height="${h}" fill="#f6f7f8"/><rect id="r" width="${w}" height="${h}" fill="url(#g)"/><animate xlink:href="#r" attributeName="x" from="-${w}" to="${w}" dur="1s" repeatCount="indefinite"  /></svg>`
+    ).toString('base64')}`;
 
   return (
     <>
@@ -126,7 +135,7 @@ export default async function PipeCoatingPage({ params }: { params: Promise<{ lo
       {/* Features Section */}
       <section className="py-20">
         <div className="container mx-auto px-4">
-          <div className="max-w-6xl mx-auto">
+          <div className="max-w-5xl mx-auto">
             <h2 className="text-3xl font-bold font-outfit text-center mb-12">
               Våra stamfilmnings-tjänster
             </h2>
@@ -151,22 +160,61 @@ export default async function PipeCoatingPage({ params }: { params: Promise<{ lo
         </div>
       </section>
 
-      {/* Process Section */}
+      {/* Process Section with image */}
       <section className="py-20 bg-muted/20">
         <div className="container mx-auto px-4">
-          <div className="max-w-4xl mx-auto">
+          <div className="max-w-6xl mx-auto">
             <h2 className="text-3xl font-bold font-outfit text-center mb-12">
               {t('services.pipeCoating.process.title')}
             </h2>
-            <div className="space-y-6">
-              {processSteps.map((step, index) => (
-                <div key={index} className="flex items-start">
-                  <div className="flex-shrink-0 w-8 h-8 bg-primary text-white rounded-full flex items-center justify-center font-bold mr-4">
-                    {index + 1}
-                  </div>
-                  <p className="text-lg text-text-700 pt-1">{step}</p>
+            <div className="grid md:[grid-template-columns:auto_auto] justify-center gap-6 items-stretch">
+              {/* Steps (left on desktop, top on mobile) */}
+              <div className="md:pr-2">
+                <div className="space-y-6">
+                  {processSteps.map((step, index) => (
+                    <div key={index} className="flex items-start">
+                      <div className="flex-shrink-0 w-8 h-8 bg-primary text-white rounded-full flex items-center justify-center font-bold mr-4">
+                        {index + 1}
+                      </div>
+                      <p className="text-lg text-text-700 pt-1">{step}</p>
+                    </div>
+                  ))}
                 </div>
-              ))}
+              </div>
+
+              {/* Image (right on desktop, below on mobile) */}
+              <div className="w-full">
+                {(() => {
+                  const rel = '/placeholdertool.webp';
+                  const absolute = path.join(process.cwd(), 'public', rel);
+                  const exists = fs.existsSync(absolute);
+                  if (!exists) {
+                    return (
+                      <div className="rounded-lg h-64 md:h-80 flex items-center justify-center text-text-600">
+                        <span className="text-sm">Bild kommer här</span>
+                      </div>
+                    );
+                  }
+                  return (
+                    <div className="h-64 md:h-full flex items-center">
+                      <div className="relative w-full md:w-[460px] h-full rounded-lg overflow-hidden">
+                        <Image
+                          src={rel}
+                          alt={t('services.pipeCoating.process.imageAlt')}
+                          fill
+                          sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 600px"
+                          className="object-contain md:rotate-90"
+                          placeholder="blur"
+                          blurDataURL={shimmer(1200, 900)}
+                          loading="lazy"
+                          fetchPriority="low"
+                          decoding="async"
+                        />
+                      </div>
+                    </div>
+                  );
+                })()}
+              </div>
             </div>
           </div>
         </div>

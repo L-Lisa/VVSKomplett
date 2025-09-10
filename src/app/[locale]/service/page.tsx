@@ -6,13 +6,37 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/com
 import { CheckCircle, Clock, Settings, Shield, Calendar } from 'lucide-react';
 import Link from 'next/link';
 import { CTA } from '@/components/content/cta';
+import Image from 'next/image';
 
-export const metadata = generateServiceMetadata({
-  title: 'VVS-service & underhåll – när du behöver det',
-  description: 'Professionell VVS-service och underhåll i Stockholm. Förebyggande underhåll, akutservice dygnet runt och serviceavtal. Kostnadsfri offert.',
-  keywords: 'VVS service Stockholm, VVS underhåll, akutservice VVS, VVS serviceavtal, rörmokare Stockholm',
-  path: '/service',
-});
+// Shimmer utility for image loading
+const shimmer = (w: number, h: number) => `
+<svg width="${w}" height="${h}" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <defs>
+    <linearGradient id="g">
+      <stop stop-color="#f6f7f8" offset="20%" />
+      <stop stop-color="#edeef1" offset="50%" />
+      <stop stop-color="#f6f7f8" offset="70%" />
+    </linearGradient>
+  </defs>
+  <rect width="${w}" height="${h}" fill="#f6f7f8" />
+  <rect id="r" width="${w}" height="${h}" fill="url(#g)" />
+  <animate xlink:href="#r" attributeName="x" from="-${w}" to="${w}" dur="1s" repeatCount="indefinite"  />
+</svg>`;
+
+const toBase64 = (str: string) =>
+  typeof window === 'undefined'
+    ? Buffer.from(str).toString('base64')
+    : window.btoa(str);
+
+export async function generateMetadata() {
+  const t = await getTranslations();
+  return generateServiceMetadata({
+    title: t('services.service.title'),
+    description: t('services.service.description'),
+    keywords: t('services.service.pageContent.buttons.getQuote'),
+    path: '/service',
+  });
+}
 
 export default async function ServicePage({ params }: { params: Promise<{ locale: string }> }) {
   const { locale } = await params;
@@ -151,22 +175,45 @@ export default async function ServicePage({ params }: { params: Promise<{ locale
         </div>
       </section>
 
-      {/* Process Section */}
+      {/* Process Section with image */}
       <section className="py-20 bg-muted/20">
         <div className="container mx-auto px-4">
-          <div className="max-w-4xl mx-auto">
+          <div className="max-w-6xl mx-auto">
             <h2 className="text-3xl font-bold font-outfit text-center mb-12">
               {t('services.service.process.title')}
             </h2>
-            <div className="space-y-6">
-              {processSteps.map((step, index) => (
-                <div key={index} className="flex items-start">
-                  <div className="flex-shrink-0 w-8 h-8 bg-primary text-white rounded-full flex items-center justify-center font-bold mr-4">
-                    {index + 1}
-                  </div>
-                  <p className="text-lg text-text-700 pt-1">{step}</p>
+            <div className="grid md:[grid-template-columns:auto_auto] justify-center gap-6 items-stretch">
+              <div>
+                <div className="space-y-6">
+                  {processSteps.map((step, index) => (
+                    <div key={index} className="flex items-start">
+                      <div className="flex-shrink-0 w-8 h-8 bg-primary text-white rounded-full flex items-center justify-center font-bold mr-4">
+                        {index + 1}
+                      </div>
+                      <p className="text-lg text-text-700 pt-1">{step}</p>
+                    </div>
+                  ))}
                 </div>
-              ))}
+              </div>
+
+              <div className="w-full">
+                <div className="h-64 md:h-full flex items-center">
+                  <div className="relative w-full md:w-[460px] h-full rounded-lg overflow-hidden">
+                  <Image
+                    src="/placeholdertool.webp"
+                    alt={t('services.service.process.imageAlt')}
+                    fill
+                    sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 600px"
+                    className="object-contain md:rotate-90"
+                    loading="lazy"
+                    decoding="async"
+                    fetchPriority="low"
+                    placeholder="blur"
+                    blurDataURL={`data:image/svg+xml;base64,${toBase64(shimmer(700, 475))}`}
+                  />
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>

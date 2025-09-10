@@ -6,6 +6,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/com
 import { CheckCircle, Wrench, Home, Settings, Shield } from 'lucide-react';
 import Link from 'next/link';
 import { CTA } from '@/components/content/cta';
+import Image from 'next/image';
 
 export const metadata = generateServiceMetadata({
   title: 'Nyinstallation av VVS i Stockholm – rätt från början',
@@ -133,7 +134,7 @@ export default async function NewInstallationPage({ params }: { params: Promise<
       {/* Features Section */}
       <section className="py-20">
         <div className="container mx-auto px-4">
-          <div className="max-w-6xl mx-auto">
+          <div className="max-w-5xl mx-auto">
             <h2 className="text-3xl font-bold font-outfit text-center mb-12">
               {t('services.newInstallation.pageContent.featuresTitle')}
             </h2>
@@ -158,22 +159,43 @@ export default async function NewInstallationPage({ params }: { params: Promise<
         </div>
       </section>
 
-      {/* Process Section */}
+      {/* Process Section with image */}
       <section className="py-20 bg-muted/20">
         <div className="container mx-auto px-4">
-          <div className="max-w-4xl mx-auto">
+          <div className="max-w-6xl mx-auto">
             <h2 className="text-3xl font-bold font-outfit text-center mb-12">
               {t('services.newInstallation.process.title')}
             </h2>
-            <div className="space-y-6">
-              {processSteps.map((step, index) => (
-                <div key={index} className="flex items-start">
-                  <div className="flex-shrink-0 w-8 h-8 bg-primary text-white rounded-full flex items-center justify-center font-bold mr-4">
-                    {index + 1}
-                  </div>
-                  <p className="text-lg text-text-700 pt-1">{step}</p>
+            <div className="grid md:[grid-template-columns:auto_auto] justify-center gap-6 items-stretch">
+              <div>
+                <div className="space-y-6">
+                  {processSteps.map((step, index) => (
+                    <div key={index} className="flex items-start">
+                      <div className="flex-shrink-0 w-8 h-8 bg-primary text-white rounded-full flex items-center justify-center font-bold mr-4">
+                        {index + 1}
+                      </div>
+                      <p className="text-lg text-text-700 pt-1">{step}</p>
+                    </div>
+                  ))}
                 </div>
-              ))}
+              </div>
+
+              <div className="w-full">
+                <div className="h-64 md:h-full flex items-center">
+                  <div className="relative w-full md:w-[460px] h-full rounded-lg overflow-hidden">
+                  <Image
+                    src="/placeholdertool.webp"
+                    alt={t('services.newInstallation.process.imageAlt')}
+                    fill
+                    sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 600px"
+                    className="object-contain md:rotate-90"
+                    loading="lazy"
+                    decoding="async"
+                    fetchPriority="low"
+                  />
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
