@@ -50,7 +50,7 @@ export function Hero({
       <div className="container relative z-10">
         <div className="text-center">
           {/* Glassmorphism container for text content */}
-          <div className="backdrop-blur-md bg-white/40 border border-white/40 rounded-2xl p-8 md:p-4 shadow-2xl max-w-4xl mx-auto">
+          <div className="backdrop-blur-md bg-white/70 md:bg-white/40 border border-white/60 md:border-white/40 rounded-2xl p-8 md:p-4 shadow-2xl max-w-4xl mx-auto">
             <h1 className="text-h1 font-outfit text-text-900 mb-6">
               {title}
             </h1>
