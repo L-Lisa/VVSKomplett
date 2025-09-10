@@ -44,8 +44,8 @@ export function Hero({
           className="object-cover object-center"
           priority={priority}
         />
-        {/* Gradient overlay for better text contrast */}
-        <div className="absolute inset-0 bg-gradient-to-r from-[rgba(22,58,95,0.75)] via-[rgba(22,58,95,0.15)] to-transparent" aria-hidden="true"></div>
+        {/* Gradient overlay for better text contrast - from top-left corner fading toward center */}
+        <div className="absolute inset-0 bg-gradient-to-br from-[rgba(22,58,95,0.6)] via-[rgba(22,58,95,0.2)] to-transparent" aria-hidden="true"></div>
       </div>
       
       {/* Content with glassmorphism effect */}
@@ -64,23 +64,23 @@ export function Hero({
                 {description}
               </p>
             )}
-            <div className="flex flex-col sm:flex-row gap-4 justify-center mb-6">
-              <Button size="lg" className="text-lg px-8 py-6" asChild>
+            {/* Single CTA Button - responsive text */}
+            <div className="flex justify-center mb-6">
+              <Button 
+                variant="secondary" 
+                size="lg" 
+                className="text-lg px-8 py-6" 
+                asChild
+              >
                 <a href={primaryCta.href}>
-                  {primaryCta.text}
+                  <span className="hidden md:block">{primaryCta.text}</span>
+                  <span className="md:hidden">Ring direkt</span>
                 </a>
               </Button>
-              {secondaryCta && (
-                <Button variant="secondary" size="lg" className="text-lg px-8 py-6" asChild>
-                  <a href={secondaryCta.href}>
-                    {secondaryCta.text}
-                  </a>
-                </Button>
-              )}
             </div>
             
-            {/* Chips text under CTA buttons */}
-            <div className="mt-3 inline-flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-[#1f398a]/25 to-[#F97316]/25 border-2 border-[#1f398a]/40 text-[#1f398a] text-sm font-medium rounded-full tracking-wide hover:scale-105 transition-transform duration-300">
+            {/* Chips text under CTA buttons - plain royal blue text */}
+            <div className="mt-3 text-[#1f398a] text-sm font-medium">
               Entreprenad • BRF • Företag • Privat
             </div>
             

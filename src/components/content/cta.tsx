@@ -8,19 +8,29 @@ interface CTAProps {
   title: string;
   description: string;
   className?: string;
+  orangeHeading?: boolean;
+  showCorners?: boolean;
 }
 
 export function CTA({ 
   title, 
   description, 
-  className 
+  className,
+  orangeHeading = false,
+  showCorners = false,
 }: CTAProps) {
   const t = useTranslations('cta');
   
   return (
-    <section className={cn('py-16 navy-gradient text-white', className)}>
+    <section className={cn('py-16 navy-gradient text-white relative', className)}>
+      {showCorners && (
+        <>
+          <span aria-hidden="true" className="pointer-events-none absolute left-6 top-6 w-8 h-8 md:left-8 md:top-8 md:w-10 md:h-10 lg:left-10 lg:top-10 lg:w-12 lg:h-12 border-t-2 border-l-2 border-[#F97316]"></span>
+          <span aria-hidden="true" className="pointer-events-none absolute right-6 bottom-6 w-8 h-8 md:right-8 md:bottom-8 md:w-10 md:h-10 lg:right-10 lg:bottom-10 lg:w-12 lg:h-12 border-b-2 border-r-2 border-[#F97316]"></span>
+        </>
+      )}
       <div className="container text-center">
-        <h2 className="text-h2 font-outfit mb-4 text-[#F97316]">
+        <h2 className={cn('text-h2 font-outfit mb-4', orangeHeading ? 'text-[#F97316]' : 'text-white')}>
           {title}
         </h2>
         <p className="text-lg mb-4 max-w-2xl mx-auto opacity-90">
@@ -36,7 +46,7 @@ export function CTA({
           <Button 
             size="lg" 
             variant="secondary" 
-            className="text-lg px-8 py-6"
+            className="text-lg px-8 py-6 w-[80%] sm:w-auto self-center"
             asChild
           >
             <a href={`mailto:${COMPANY.email}`} aria-label="Kontakta oss via e-post">
@@ -50,7 +60,7 @@ export function CTA({
             <Button 
               size="lg" 
               variant="secondary" 
-              className="text-lg px-8 py-6"
+              className="text-lg px-8 py-6 w-[80%] sm:w-auto self-center"
               asChild
             >
               <a href={`tel:${COMPANY.phone}`} aria-label="Ring direkt">

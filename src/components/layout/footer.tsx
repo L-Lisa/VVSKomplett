@@ -116,39 +116,11 @@ export function Footer() {
               </Link>
             ))}
           </div>
-        </div>
-
-        {/* Partners */}
-        <div className="mt-8 pt-8 border-t border-gray-200 text-center">
-          <p className="text-sm text-[#1f398a] mb-2">
-            Samarbeten:{' '}
-            <a 
-              href="https://www.elteknik23.se" 
-              target="_blank" 
-              rel="noopener noreferrer"
-              className="text-[#1f398a] hover:text-[#F97316] transition-colors"
-            >
-              Elteknik23
-            </a>
-            {' • '}
-            <a 
-              href="https://www.caredab.se" 
-              target="_blank" 
-              rel="noopener noreferrer"
-              className="text-[#1f398a] hover:text-[#F97316] transition-colors"
-            >
-              Caredab
-            </a>
-            {' • '}
-            <a 
-              href="https://badrums-koncept.se" 
-              target="_blank" 
-              rel="noopener noreferrer"
-              className="text-[#1f398a] hover:text-[#F97316] transition-colors"
-            >
-              Badrums-Koncept
-            </a>
-          </p>
+          {/* Partners as visual chips under services */}
+          <div className="mt-6 text-center" aria-label="Samarbeten">
+            <p className="text-xs text-[#1f398a] mb-1">Samarbeten</p>
+            <p className="text-sm text-[#1f398a]">Elteknik23 • Caredab • Badrums-Koncept</p>
+          </div>
         </div>
 
         {/* Bottom Footer */}

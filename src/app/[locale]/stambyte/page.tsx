@@ -3,8 +3,9 @@ import { generateServiceMetadata } from '@/lib/metadata';
 import { generateServiceSchema } from '@/lib/schemas';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
-import { CheckCircle, Wrench, Settings, Shield, Phone, Users } from 'lucide-react';
+import { CheckCircle, Wrench, Settings, Shield, Users } from 'lucide-react';
 import Link from 'next/link';
+import { CTA } from '@/components/content/cta';
 
 export const metadata = generateServiceMetadata({
   title: 'Stambyte i flerbostadshus – effektivt och säkert',
@@ -61,26 +62,64 @@ export default async function PipeReplacementPage({ params }: { params: Promise<
       />
 
       {/* Hero Section */}
-      <section className="bg-gradient-to-br from-primary/5 to-primary/10 py-20">
-        <div className="container mx-auto px-4">
+      <section
+        className="relative py-20"
+        role="region"
+        aria-labelledby="hero-title"
+        style={{
+          backgroundImage: "url('/vvsbackground.webp')",
+          backgroundSize: 'cover',
+          backgroundPosition: 'center',
+          backgroundRepeat: 'no-repeat'
+        }}
+      >
+        <span aria-hidden="true" className="absolute inset-0 bg-white/10"></span>
+        <div className="container mx-auto px-4 relative">
           <div className="max-w-4xl mx-auto text-center">
-            <h1 className="text-4xl md:text-5xl font-bold font-outfit mb-6">
-              {t('services.pipeReplacement.hero.h1')}
-            </h1>
-            <p className="text-xl text-text-700 mb-8 leading-relaxed">
-              {t('services.pipeReplacement.hero.intro')}
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button asChild size="lg">
-                <Link href={`/${locale}/kontakt`}>
-                  Få kostnadsfri offert
-                </Link>
-              </Button>
-              <Button asChild variant="outline" size="lg">
-                <Link href={`/${locale}/om-oss`}>
-                  Läs mer om oss
-                </Link>
-              </Button>
+            <div className="inline-block rounded-md bg-white/60 backdrop-blur-sm px-4 py-6 md:px-6 md:py-8 lg:px-8 lg:py-10">
+              <h1 id="hero-title" className="text-4xl md:text-5xl font-bold font-outfit mb-4">
+                {t('services.pipeReplacement.hero.h1')}
+              </h1>
+              <p className="text-xl text-text-700 mb-8 leading-relaxed">
+                {t('services.pipeReplacement.hero.intro')}
+              </p>
+              <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                <Button asChild size="lg">
+                  <Link href={`/${locale}/kontakt`}>
+                    Få kostnadsfri offert
+                  </Link>
+                </Button>
+                <Button asChild variant="outline" size="lg">
+                  <Link href={`/${locale}/om-oss`}>
+                    Läs mer om oss
+                  </Link>
+                </Button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* About Our Stambyte Expertise */}
+      <section className="py-20 bg-gradient-to-br from-primary/5 to-primary/10">
+        <div className="container mx-auto px-4">
+          <div className="max-w-4xl mx-auto">
+            <h2 className="text-3xl font-bold font-outfit mb-8 text-primary text-center">
+              {locale === 'en'
+                ? 'Why we are experts in pipe replacement for apartment buildings'
+                : 'Varför vi är experter på stambyte i flerbostadshus'}
+            </h2>
+            <div className="prose prose-lg max-w-none text-text-700 leading-relaxed text-left">
+              <p className="mb-6">
+                {locale === 'en'
+                  ? 'Pipe replacement in apartment buildings requires more than technical skill – it demands a deep understanding of people, process and complex coordination. With 30+ years of experience, we know successful projects rest on three pillars: minimal disruption for residents, smooth coordination with property management and work performed according to Säker Vatten standards. Every detail matters – from the first planning meeting to the moment the new system goes live.'
+                  : 'Stambyte i flerbostadshus kräver mer än teknisk expertis - det kräver en djup förståelse för människor, processer och komplexa samordningskrav. Med över 30 års erfarenhet har vi lärt oss att framgångsrika stambyte-projekt bygger på tre pelare: minimal störning för boende, smidig samordning med fastighetsförvaltning, och arbeten enligt Säker Vatten-standarder. Vi vet att varje detalj räknas, från första planeringsmötet till det ögonblick när det nya systemet tas i drift.'}
+              </p>
+              <p className="mb-6">
+                {locale === 'en'
+                  ? 'What sets us apart is our ability to see the whole picture. Pipe replacement is about transforming older buildings into modern, reliable homes with improved water quality and safety. We stay engaged end‑to‑end – from needs analysis and stakeholder coordination to careful execution that allows residents to live as normally as possible. When large projects demand speed, we mobilize our entire team to deliver efficiently. This blend of technical expertise, human understanding and operational capacity makes us Stockholm’s leading partner for pipe replacement.'
+                  : 'Det som särskiljer oss är vår förmåga att se helheten - vi förstår att stambyte handlar om att förvandla äldre fastigheter till moderna, funktionella hem med förbättrad vattenkvalitet och trygghet. Vi värdesätter att vara med genom hela processen: från analys av fastighetens behov och samordning med alla parter, till den noggranna genomförandet som säkerställer att boende kan leva normalt under arbetet. När stora projekt kräver snabb genomförande mobiliserar vi hela vårt team för att säkerställa att arbetet utförs så effektivt som möjligt. Det är denna kombination av teknisk expertis, mänsklig förståelse och operativ kapacitet som gör oss till Stockholms ledande partner för stambyte.'}
+              </p>
             </div>
           </div>
         </div>
@@ -207,31 +246,12 @@ export default async function PipeReplacementPage({ params }: { params: Promise<
       </section>
 
       {/* CTA Section */}
-      <section className="py-20 bg-primary text-white">
-        <div className="container mx-auto px-4">
-          <div className="max-w-4xl mx-auto text-center">
-            <h2 className="text-3xl font-bold font-outfit mb-6">
-              Behöver ni stambyte i er fastighet?
-            </h2>
-            <p className="text-xl mb-8 opacity-90">
-              Kontakta oss för en kostnadsfri besiktning och offert
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button asChild size="lg" variant="secondary">
-                <Link href={`/${locale}/kontakt`}>
-                  <Phone className="h-4 w-4 mr-2" />
-                  Ring oss nu
-                </Link>
-              </Button>
-              <Button asChild size="lg" variant="outline" className="text-white border-white hover:bg-white hover:text-primary">
-                <Link href={`/${locale}/kontakt`}>
-                  Skicka meddelande
-                </Link>
-              </Button>
-            </div>
-          </div>
-        </div>
-      </section>
+      <CTA 
+        title={t('ctaPages.pipeReplacement.title')}
+        description={t('ctaPages.pipeReplacement.description')}
+        orangeHeading
+        showCorners
+      />
     </>
   );
 }

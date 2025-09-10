@@ -3,8 +3,9 @@ import { generateServiceMetadata } from '@/lib/metadata';
 import { generateServiceSchema } from '@/lib/schemas';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
-import { CheckCircle, Wrench, Home, Settings, Shield, Phone } from 'lucide-react';
+import { CheckCircle, Wrench, Home, Settings, Shield } from 'lucide-react';
 import Link from 'next/link';
+import { CTA } from '@/components/content/cta';
 
 export const metadata = generateServiceMetadata({
   title: 'Nyinstallation av VVS i Stockholm – rätt från början',
@@ -61,26 +62,69 @@ export default async function NewInstallationPage({ params }: { params: Promise<
       />
 
       {/* Hero Section */}
-      <section className="bg-gradient-to-br from-primary/5 to-primary/10 py-20">
-        <div className="container mx-auto px-4">
+      <section
+        className="relative py-20"
+        role="region"
+        aria-labelledby="hero-title"
+        style={{
+          backgroundImage: "url('/vvsbackground.webp')",
+          backgroundSize: 'cover',
+          backgroundPosition: 'center',
+          backgroundRepeat: 'no-repeat'
+        }}
+      >
+        <span aria-hidden="true" className="absolute inset-0 bg-white/10"></span>
+        <div className="container mx-auto px-4 relative">
           <div className="max-w-4xl mx-auto text-center">
-            <h1 className="text-4xl md:text-5xl font-bold font-outfit mb-6">
-              {t('services.newInstallation.hero.h1')}
-            </h1>
-            <p className="text-xl text-text-700 mb-8 leading-relaxed">
-              {t('services.newInstallation.hero.intro')}
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button asChild size="lg">
-                <Link href={`/${locale}/kontakt`}>
-                  {t('services.newInstallation.pageContent.buttons.getQuote')}
-                </Link>
-              </Button>
-              <Button asChild variant="outline" size="lg">
-                <Link href={`/${locale}/om-oss`}>
-                  {t('services.newInstallation.pageContent.buttons.learnMore')}
-                </Link>
-              </Button>
+            <div className="inline-block rounded-md bg-white/60 backdrop-blur-sm px-4 py-6 md:px-6 md:py-8 lg:px-8 lg:py-10">
+              <h1 id="hero-title" className="text-4xl md:text-5xl font-bold font-outfit mb-4">
+                {t('services.newInstallation.hero.h1')}
+              </h1>
+              <p className="text-xl text-text-700 mb-8 leading-relaxed">
+                {t('services.newInstallation.hero.intro')}
+              </p>
+              <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                <Button asChild size="lg">
+                  <Link href={`/${locale}/kontakt`}>
+                    {t('services.newInstallation.pageContent.buttons.getQuote')}
+                  </Link>
+                </Button>
+                <Button asChild variant="outline" size="lg">
+                  <Link href={`/${locale}/om-oss`}>
+                    {t('services.newInstallation.pageContent.buttons.learnMore')}
+                  </Link>
+                </Button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* About Our Nyinstallation Expertise */}
+      <section className="py-20 bg-gradient-to-br from-primary/5 to-primary/10">
+        <div className="container mx-auto px-4">
+          <div className="max-w-4xl mx-auto">
+            <h2 className="text-3xl font-bold font-outfit mb-8 text-primary text-center">
+              {locale === 'en'
+                ? 'Why we are experts in new VVS installations'
+                : 'Varför vi är experter på VVS-nyinstallationer'}
+            </h2>
+            <div className="prose prose-lg max-w-none text-text-700 leading-relaxed text-left">
+              <p className="mb-6">
+                {locale === 'en'
+                  ? 'With over 30 years of industry experience, we have developed a unique expertise in new VVS installations that puts us in a class of our own. We see every installation as a long-term investment – that’s why we follow Säker Vatten standards and use only high‑quality materials to ensure long-lasting reliability. For us, it’s essential to get it right from the start.'
+                  : 'Med över 30 års erfarenhet inom VVS-branschen har vi utvecklat en unik expertis inom nyinstallationer som sätter oss i en klass för oss. Vi förstår att varje nyinstallation är en investering i framtiden - därför arbetar vi enligt Säker Vatten-standarder och använder endast högkvalitativa material som garanterar långsiktig funktionalitet. För oss är det viktigt att det blir rätt gjort från början.'}
+              </p>
+              <p className="mb-6">
+                {locale === 'en'
+                  ? 'Our strength lies in seeing the whole picture from day one. We don’t just design the VVS system – we consider how it integrates with the building’s overall functionality, future maintenance needs and energy use. From the first drawing to the finished system, we execute with precision and document every step for your peace of mind.'
+                  : 'Vår styrka ligger i att vi har en bred kompetens och erfarenhet för att kunna se helheten från dag ett. Vi projekterar inte bara VVS-systemet, vi tänker på hur det integreras med byggnadens totala funktionalitet, framtida underhållsbehov och energiförbrukning. Från första skissen till färdig installation följer vi varje steg med precision och dokumenterar allt för din trygghet.'}
+              </p>
+              <p>
+                {locale === 'en'
+                  ? 'What truly drives us is seeing new projects grow from concept to completion. We value being there from the first conversation about your vision, through the engineering phase where everything takes shape, to the crucial moment when the system goes live and works flawlessly. This passion for end‑to‑end delivery is why we are Stockholm’s trusted VVS partner for new installations.'
+                  : 'Det som verkligen driver oss framåt är glädjen att se nya projekt växa från idé till färdig installation. Vi värdesätter att vara med från det första mötet där vi diskuterar dina visioner, genom projekteringsfasen där allt tar form, till det avgörande ögonblicket när systemet tas i drift och fungerar perfekt. Det är denna passion för helhetslösningar som gör oss till Stockholms ledande VVS-partner för nyinstallationer.'}
+              </p>
             </div>
           </div>
         </div>
@@ -200,31 +244,12 @@ export default async function NewInstallationPage({ params }: { params: Promise<
       </section>
 
       {/* CTA Section */}
-      <section className="py-20 bg-primary text-white">
-        <div className="container mx-auto px-4">
-          <div className="max-w-4xl mx-auto text-center">
-            <h2 className="text-3xl font-bold font-outfit mb-6">
-              {t('services.newInstallation.pageContent.ctaTitle')}
-            </h2>
-            <p className="text-xl mb-8 opacity-90">
-              {t('services.newInstallation.pageContent.ctaDescription')}
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button asChild size="lg" variant="secondary">
-                <Link href={`/${locale}/kontakt`}>
-                  <Phone className="h-4 w-4 mr-2" />
-                  {t('services.newInstallation.pageContent.ctaButtons.callNow')}
-                </Link>
-              </Button>
-              <Button asChild size="lg" variant="outline" className="text-white border-white hover:bg-white hover:text-primary">
-                <Link href={`/${locale}/kontakt`}>
-                  {t('services.newInstallation.pageContent.ctaButtons.sendMessage')}
-                </Link>
-              </Button>
-            </div>
-          </div>
-        </div>
-      </section>
+      <CTA 
+        title={t('ctaPages.newInstallation.title')}
+        description={t('ctaPages.newInstallation.description')}
+        orangeHeading
+        showCorners
+      />
     </>
   );
 }

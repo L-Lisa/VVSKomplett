@@ -15,6 +15,9 @@ import {
   Droplets,
   Paintbrush,
   CheckCircle,
+  Bath,
+  Zap,
+  Cog,
 } from 'lucide-react';
 import { Hero } from '@/components/content/hero';
 import { Testimonials3 } from '@/components/content/testimonials3';
@@ -67,6 +70,21 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
       key: 'pipeCoating',
       icon: Paintbrush,
       href: '/stamfilmning',
+    },
+    {
+      key: 'bathroomDesign',
+      icon: Bath,
+      href: '#', // Placeholder for Badrums concept
+    },
+    {
+      key: 'electricalInstallation',
+      icon: Zap,
+      href: '#', // Placeholder for elteknik23
+    },
+    {
+      key: 'allVVS',
+      icon: Cog,
+      href: '/om-oss',
     },
   ];
 

@@ -3,8 +3,9 @@ import { generatePageMetadata } from '@/lib/metadata';
 import { generateLocalBusinessSchema } from '@/lib/schemas';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
-import { CheckCircle, Shield, Award, Users, Phone, MapPin } from 'lucide-react';
+import { CheckCircle, Shield, Award, Phone, MapPin } from 'lucide-react';
 import Link from 'next/link';
+import Image from 'next/image';
 import { CertificationBadgeServer } from '@/components/ui/certification-badge-server';
 
 export const metadata = generatePageMetadata({
@@ -28,22 +29,18 @@ export default async function AboutPage({ params }: { params: Promise<{ locale: 
 
   const teamMembers = [
     {
-      name: 'Håkan Andersson',
-      role: 'VD & Grundare',
-      experience: '25+ års erfarenhet',
-      specialties: ['Nyinstallation', 'Stambyte', 'Projekthantering']
+      name: 'Håkan',
+      role: 'Projektledning',
+      experience: '30+ års erfarenhet',
+      specialties: ['Nyinstallation', 'Stambyte', 'Projekthantering'],
+      image: '/hakan.webp'
     },
     {
-      name: 'Daniel Eriksson',
-      role: 'Chefsmontör',
-      experience: '20+ års erfarenhet',
-      specialties: ['Service', 'Akutreparationer', 'Relining']
-    },
-    {
-      name: 'Maria Lindqvist',
-      role: 'Projektledare',
-      experience: '15+ års erfarenhet',
-      specialties: ['Kundkontakt', 'Planering', 'Kvalitetskontroll']
+      name: 'Daniel',
+      role: 'Projektledning',
+      experience: '30+ års erfarenhet',
+      specialties: ['Service', 'Akutreparationer', 'Relining'],
+      image: '/daniel.webp'
     }
   ];
 
@@ -95,12 +92,19 @@ export default async function AboutPage({ params }: { params: Promise<{ locale: 
             <p className="text-xl text-text-700 text-center mb-12 max-w-3xl mx-auto">
               {t('about.team.description')}
             </p>
-            <div className="grid md:grid-cols-3 gap-8">
+            <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
               {teamMembers.map((member, index) => (
                 <Card key={index} className="text-center">
                   <CardHeader>
-                    <div className="mx-auto w-20 h-20 bg-primary/10 rounded-full flex items-center justify-center mb-4">
-                      <Users className="h-10 w-10 text-primary" />
+                    <div className="mx-auto w-20 h-20 bg-primary/10 rounded-full flex items-center justify-center mb-4 overflow-hidden">
+                      <Image
+                        src={member.image}
+                        alt={`${member.name} - ${member.role}`}
+                        width={80}
+                        height={80}
+                        className="w-full h-full object-cover rounded-full scale-90 hover:scale-100 transition-transform duration-300"
+                        loading="lazy"
+                      />
                     </div>
                     <CardTitle className="text-xl">{member.name}</CardTitle>
                     <CardDescription className="text-lg font-medium text-primary">
@@ -109,6 +113,27 @@ export default async function AboutPage({ params }: { params: Promise<{ locale: 
                   </CardHeader>
                   <CardContent>
                     <p className="text-text-700 mb-4">{member.experience}</p>
+                    <div className="flex flex-col gap-2 mb-4 items-center">
+                      <Button 
+                        size="sm" 
+                        className="bg-[#F97316] text-[#1f398a] hover:bg-[#e86a0a] font-medium w-[70%]"
+                        asChild
+                      >
+                        <Link href={`tel:${process.env.NEXT_PUBLIC_PHONE ?? '+46 70-123 45 67'}`}>
+                          Ring direkt
+                        </Link>
+                      </Button>
+                      <Button 
+                        size="sm" 
+                        variant="outline"
+                        className="bg-[#F97316] text-[#1f398a] border-[#F97316] hover:bg-[#e86a0a] font-medium w-[70%]"
+                        asChild
+                      >
+                        <Link href={`/${locale}/kontakt`}>
+                          Kontakt
+                        </Link>
+                      </Button>
+                    </div>
                     <div className="space-y-2">
                       <p className="font-semibold text-sm text-text-900">Specialiteter:</p>
                       <div className="flex flex-wrap gap-2 justify-center">
@@ -125,6 +150,28 @@ export default async function AboutPage({ params }: { params: Promise<{ locale: 
                   </CardContent>
                 </Card>
               ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* About Håkan and Daniel */}
+      <section className="py-20 bg-gradient-to-br from-primary/5 to-primary/10">
+        <div className="container mx-auto px-4">
+          <div className="max-w-4xl mx-auto">
+            <h2 className="text-3xl font-bold font-outfit mb-8 text-primary text-center">
+              Våra grundare - Håkan & Daniel
+            </h2>
+            <div className="prose prose-lg max-w-none text-text-700 leading-relaxed text-left">
+              <p className="mb-6">
+                Med över 30 års erfarenhet inom VVS-branschen har Håkan och Daniel byggt upp Komplett VVS i Sthlm AB till ett certifierat företag som står för kvalitet och trygghet. Deras djupa kunskap sträcker sig från traditionell VVS-installation till modern elektrisk teknik, vilket gör dem till en komplett partner för alla dina behov.
+              </p>
+              <p className="mb-6">
+                Som certifierat VVS-företag erbjuder vi allt inom VVS under samma tak - från nyinstallation och stambyte till relining, stamspolning och service. Vi vill vara det trygga och säkra valet för våra kunder i Stockholm, med fokus på långsiktiga lösningar och kundnöjdhet.
+              </p>
+              <p>
+                Håkan och Daniels vision är att förenkla VVS-projekt genom att erbjuda helhetslösningar med transparent kommunikation, konkurrenskraftiga priser och garanterad kvalitet enligt Säker Vatten-standarder.
+              </p>
             </div>
           </div>
         </div>

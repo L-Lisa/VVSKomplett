@@ -3,8 +3,9 @@ import { generateServiceMetadata } from '@/lib/metadata';
 import { generateServiceSchema } from '@/lib/schemas';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
-import { CheckCircle, Camera, Video, Settings, Phone, FileText } from 'lucide-react';
+import { CheckCircle, Camera, Video, Settings, FileText } from 'lucide-react';
 import Link from 'next/link';
+import { CTA } from '@/components/content/cta';
 
 export const metadata = generateServiceMetadata({
   title: 'Stamfilmning med kamera – få full koll på rören',
@@ -61,26 +62,62 @@ export default async function PipeCoatingPage({ params }: { params: Promise<{ lo
       />
 
       {/* Hero Section */}
-      <section className="bg-gradient-to-br from-primary/5 to-primary/10 py-20">
-        <div className="container mx-auto px-4">
+      <section
+        className="relative py-20"
+        role="region"
+        aria-labelledby="hero-title"
+        style={{
+          backgroundImage: "url('/vvsbackground.webp')",
+          backgroundSize: 'cover',
+          backgroundPosition: 'center',
+          backgroundRepeat: 'no-repeat'
+        }}
+      >
+        <span aria-hidden="true" className="absolute inset-0 bg-white/10"></span>
+        <div className="container mx-auto px-4 relative">
           <div className="max-w-4xl mx-auto text-center">
-            <h1 className="text-4xl md:text-5xl font-bold font-outfit mb-6">
-              {t('services.pipeCoating.hero.h1')}
-            </h1>
-            <p className="text-xl text-text-700 mb-8 leading-relaxed">
-              {t('services.pipeCoating.hero.intro')}
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button asChild size="lg">
-                <Link href={`/${locale}/kontakt`}>
-                  Få kostnadsfri offert
-                </Link>
-              </Button>
-              <Button asChild variant="outline" size="lg">
-                <Link href={`/${locale}/om-oss`}>
-                  Läs mer om oss
-                </Link>
-              </Button>
+            <div className="inline-block rounded-md bg-white/60 backdrop-blur-sm px-4 py-6 md:px-6 md:py-8 lg:px-8 lg:py-10">
+              <h1 id="hero-title" className="text-4xl md:text-5xl font-bold font-outfit mb-4">
+                {t('services.pipeCoating.hero.h1')}
+              </h1>
+              <p className="text-xl text-text-700 mb-8 leading-relaxed">
+                {t('services.pipeCoating.hero.intro')}
+              </p>
+              <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                <Button asChild size="lg">
+                  <Link href={`/${locale}/kontakt`}>
+                    Få kostnadsfri offert
+                  </Link>
+                </Button>
+                <Button asChild variant="outline" size="lg">
+                  <Link href={`/${locale}/om-oss`}>
+                    Läs mer om oss
+                  </Link>
+                </Button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* About Our Stamfilmning Expertise */}
+      <section className="py-20 bg-gradient-to-br from-primary/5 to-primary/10">
+        <div className="container mx-auto px-4">
+          <div className="max-w-4xl mx-auto">
+            <h2 className="text-3xl font-bold font-outfit mb-8 text-primary text-center">
+              {locale === 'en' ? 'Why pipe inspection is the foundation of smart maintenance' : 'Varför stamfilmning är grunden för smart underhåll'}
+            </h2>
+            <div className="prose prose-lg max-w-none text-text-700 leading-relaxed text-left">
+              <p className="mb-6">
+                {locale === 'en'
+                  ? 'Camera inspection gives us the complete picture needed to make the right decisions at the right time. With high‑resolution cameras and structured documentation, we identify cracks, deposits and risk zones before issues become acute. That means fewer disruptions, more precise actions and a lower total cost over time.'
+                  : 'Stamfilmning ger oss den helhetsbild som krävs för att fatta rätt beslut i rätt tid. Med högupplösta kameror och strukturerad dokumentation kan vi identifiera sprickor, beläggningar och riskzoner innan problemen blir akuta. Det betyder färre driftstopp, mer träffsäkra åtgärder och lägre totalkostnad över tid.'}
+              </p>
+              <p className="mb-6">
+                {locale === 'en'
+                  ? 'What sets us apart is our blend of technology and process. We don’t just record – we analyze, recommend and follow up. Our documentation is clear, recommendations are prioritized and communication with management and residents is thoughtful. The result is a safe, data‑driven plan for maintenance and investment. That’s why we are Stockholm’s preferred partner for pipe inspection.'
+                  : 'Det som särskiljer oss är vår kombination av teknik och process. Vi filmar inte bara – vi analyserar, rekommenderar och följer upp. Vår dokumentation är tydlig, åtgärdsförslagen är prioriterade och kommunikationen med förvaltning och boende är genomtänkt. Resultatet är en trygg plan för underhåll och investeringar, baserad på fakta från din fastighet. Det är därför vi är Stockholms föredragna partner för stamfilmning.'}
+              </p>
             </div>
           </div>
         </div>
@@ -207,31 +244,12 @@ export default async function PipeCoatingPage({ params }: { params: Promise<{ lo
       </section>
 
       {/* CTA Section */}
-      <section className="py-20 bg-primary text-white">
-        <div className="container mx-auto px-4">
-          <div className="max-w-4xl mx-auto text-center">
-            <h2 className="text-3xl font-bold font-outfit mb-6">
-              Behöver ni kamerainspektion?
-            </h2>
-            <p className="text-xl mb-8 opacity-90">
-              Kontakta oss för professionell stamfilmning och diagnostik
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button asChild size="lg" variant="secondary">
-                <Link href={`/${locale}/kontakt`}>
-                  <Phone className="h-4 w-4 mr-2" />
-                  Ring oss nu
-                </Link>
-              </Button>
-              <Button asChild size="lg" variant="outline" className="text-white border-white hover:bg-white hover:text-primary">
-                <Link href={`/${locale}/kontakt`}>
-                  Skicka meddelande
-                </Link>
-              </Button>
-            </div>
-          </div>
-        </div>
-      </section>
+      <CTA 
+        title={t('ctaPages.pipeCoating.title')}
+        description={t('ctaPages.pipeCoating.description')}
+        orangeHeading
+        showCorners
+      />
     </>
   );
 }

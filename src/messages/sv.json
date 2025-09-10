@@ -348,8 +348,8 @@
             "description": "Regelbunden kontroll enligt tillverkarens rekommendationer"
           },
           {
-            "title": "Akutservice 24/7",
-            "description": "Dygnet runt för oväntade VVS-problem"
+            "title": "Snabb personlig service",
+            "description": "Vi förstår att det är bråttom ibland - vi är här när du behöver oss"
           },
           {
             "title": "Serviceavtal",
@@ -669,6 +669,18 @@
           "learnMore": "Läs mer om oss"
         }
       }
+    },
+    "bathroomDesign": {
+      "title": "Badrum från rivning till färdig design",
+      "description": "Vi är våtrums certifierade och sköter hela processen från planering och rivning till moderna snygga badrum."
+    },
+    "electricalInstallation": {
+      "title": "El installationer",
+      "description": "Certifierade elektiker tar hand om alla elinstallationer som behövs längs vägen."
+    },
+    "allVVS": {
+      "title": "Allt inom VVS",
+      "description": "Hör av dig så pratar vi om vad du behöver, vi har en lång erfarenhet inom branschen."
     }
   },
   "about": {
@@ -1082,6 +1094,28 @@
     "contact": {
       "title": "Frågor om cookies?",
       "body": "Har du frågor om vår användning av cookies? Kontakta oss på {email}."
+    }
+  },
+  "ctaPages": {
+    "newInstallation": {
+      "title": "Komplett VVS – från projektering till färdigt system",
+      "description": "Vi tar ansvar i varje steg – planering, installation och dokumentation enligt Säker Vatten."
+    },
+    "pipeReplacement": {
+      "title": "Behöver ni stambyte i er fastighet?",
+      "description": "Planerat, effektivt och tryggt – minimal påverkan för boende och tydlig kommunikation."
+    },
+    "relining": {
+      "title": "Relining utan rivning – smart rörrenovering",
+      "description": "Förnya rören med minimal störning och långsiktig hållbarhet."
+    },
+    "pipeFlushing": {
+      "title": "Förebygg stopp med professionell stamspolning",
+      "description": "Högtrycksspolning, fräsning och kamera – rena stammar och trygg drift."
+    },
+    "pipeCoating": {
+      "title": "Kamerainspektion och dokumentation",
+      "description": "Få full koll på rören – tydliga fynd och prioriterade åtgärdsförslag."
     }
   }
 }

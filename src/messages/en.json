@@ -563,6 +563,18 @@
           "answer": "Yes, you get a detailed report with photos and video showing the pipes' condition and any problems that need to be addressed."
         }
       ]
+    },
+    "bathroomDesign": {
+      "title": "Bathroom from demolition to finished design",
+      "description": "We are wet room certified and handle the entire process from planning and demolition to modern beautiful bathrooms."
+    },
+    "electricalInstallation": {
+      "title": "Electrical installations",
+      "description": "Certified electricians handle all electrical installations needed along the way."
+    },
+    "allVVS": {
+      "title": "Everything in plumbing",
+      "description": "Get in touch and we'll talk about what you need, we have long experience in the industry."
     }
   },
   "about": {
@@ -844,6 +856,28 @@
     "contact": {
       "title": "Questions about cookies?",
       "body": "Do you have questions about our use of cookies? Contact us at {email}."
+    }
+  },
+  "ctaPages": {
+    "newInstallation": {
+      "title": "Complete VVS – from design to finished system",
+      "description": "We take responsibility at every step – planning, installation and documentation according to Safe Water standards."
+    },
+    "pipeReplacement": {
+      "title": "Do you need pipe replacement in your property?",
+      "description": "Planned, efficient and safe – minimal disruption for residents and clear communication."
+    },
+    "relining": {
+      "title": "Relining without demolition – smart pipe renovation",
+      "description": "Renew pipes with minimal disruption and long‑term durability."
+    },
+    "pipeFlushing": {
+      "title": "Prevent blockages with professional pipe flushing",
+      "description": "High‑pressure flushing, milling and camera – clean stacks and reliable operation."
+    },
+    "pipeCoating": {
+      "title": "Camera inspection and documentation",
+      "description": "Get full control of your pipes – clear findings and prioritized actions."
     }
   }
 }

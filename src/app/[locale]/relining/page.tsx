@@ -3,8 +3,9 @@ import { generateServiceMetadata } from '@/lib/metadata';
 import { generateServiceSchema } from '@/lib/schemas';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
-import { CheckCircle, Home, Shield, Leaf, Clock, Phone } from 'lucide-react';
+import { CheckCircle, Home, Shield, Leaf, Clock } from 'lucide-react';
 import Link from 'next/link';
+import { CTA } from '@/components/content/cta';
 
 export const metadata = generateServiceMetadata({
   title: 'Relining i Stockholm – renovera rören utan rivning',
@@ -61,26 +62,62 @@ export default async function ReliningPage({ params }: { params: Promise<{ local
       />
 
       {/* Hero Section */}
-      <section className="bg-gradient-to-br from-primary/5 to-primary/10 py-20">
-        <div className="container mx-auto px-4">
+      <section
+        className="relative py-20"
+        role="region"
+        aria-labelledby="hero-title"
+        style={{
+          backgroundImage: "url('/vvsbackground.webp')",
+          backgroundSize: 'cover',
+          backgroundPosition: 'center',
+          backgroundRepeat: 'no-repeat'
+        }}
+      >
+        <span aria-hidden="true" className="absolute inset-0 bg-white/10"></span>
+        <div className="container mx-auto px-4 relative">
           <div className="max-w-4xl mx-auto text-center">
-            <h1 className="text-4xl md:text-5xl font-bold font-outfit mb-6">
-              {t('services.relining.hero.h1')}
-            </h1>
-            <p className="text-xl text-text-700 mb-8 leading-relaxed">
-              {t('services.relining.hero.intro')}
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button asChild size="lg">
-                <Link href={`/${locale}/kontakt`}>
-                  Få kostnadsfri offert
-                </Link>
-              </Button>
-              <Button asChild variant="outline" size="lg">
-                <Link href={`/${locale}/om-oss`}>
-                  Läs mer om oss
-                </Link>
-              </Button>
+            <div className="inline-block rounded-md bg-white/60 backdrop-blur-sm px-4 py-6 md:px-6 md:py-8 lg:px-8 lg:py-10">
+              <h1 id="hero-title" className="text-4xl md:text-5xl font-bold font-outfit mb-4">
+                {t('services.relining.hero.h1')}
+              </h1>
+              <p className="text-xl text-text-700 mb-8 leading-relaxed">
+                {t('services.relining.hero.intro')}
+              </p>
+              <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                <Button asChild size="lg">
+                  <Link href={`/${locale}/kontakt`}>
+                    Få kostnadsfri offert
+                  </Link>
+                </Button>
+                <Button asChild variant="outline" size="lg">
+                  <Link href={`/${locale}/om-oss`}>
+                    Läs mer om oss
+                  </Link>
+                </Button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* About Our Relining Expertise */}
+      <section className="py-20 bg-gradient-to-br from-primary/5 to-primary/10">
+        <div className="container mx-auto px-4">
+          <div className="max-w-4xl mx-auto">
+            <h2 className="text-3xl font-bold font-outfit mb-8 text-primary text-center">
+              {locale === 'en' ? 'Why relining is the future of pipe renovation' : 'Varför relining är framtiden för rörrenovering'}
+            </h2>
+            <div className="prose prose-lg max-w-none text-text-700 leading-relaxed text-left">
+              <p className="mb-6">
+                {locale === 'en'
+                  ? 'Relining represents a revolution in the VVS industry – a technique that renews pipe systems without demolition or disturbing residents. With 30+ years of experience, we’ve seen how this innovation has changed the game. Every relining project is unique and demands careful planning, modern technology and a deep understanding of both technical and practical aspects.'
+                  : 'Relining representerar en revolution inom VVS-branschen - en teknik som gör det möjligt att förnya rörsystem utan att riva upp byggnader eller störa boende. Med över 30 års erfarenhet har vi sett hur denna innovativa metod har förändrat spelreglerna för rörrenovering. Vi förstår att varje relining-projekt är unikt och kräver noggrann planering, modern teknik och djup förståelse för både tekniska och praktiska aspekter.'}
+              </p>
+              <p className="mb-6">
+                {locale === 'en'
+                  ? 'What makes us experts in relining is our combination of technical excellence and environmental awareness. Clients value solutions that are both cost‑effective and sustainable – and relining delivers exactly that. We optimize every step to minimize disruption, maximize durability and ensure the renewed system performs for decades. This passion for innovation and quality makes us Stockholm’s leading partner for relining.'
+                  : 'Det som gör oss till experter på relining är vår kombination av teknisk expertis och miljömedvetenhet. Vi vet att kunder värdesätter lösningar som är både kostnadseffektiva och hållbara - och relining levererar precis det. När vi genomför ett relining-projekt ser vi till att varje steg optimeras för att minimera störningar, maximera hållbarhet och säkerställa att det nya systemet fungerar perfekt i decennier framöver. Det är denna passion för innovation och kvalitet som gör oss till Stockholms ledande partner för relining.'}
+              </p>
             </div>
           </div>
         </div>
@@ -207,31 +244,12 @@ export default async function ReliningPage({ params }: { params: Promise<{ local
       </section>
 
       {/* CTA Section */}
-      <section className="py-20 bg-primary text-white">
-        <div className="container mx-auto px-4">
-          <div className="max-w-4xl mx-auto text-center">
-            <h2 className="text-3xl font-bold font-outfit mb-6">
-              Är relining rätt för er?
-            </h2>
-            <p className="text-xl mb-8 opacity-90">
-              Kontakta oss för en kostnadsfri bedömning och offert
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button asChild size="lg" variant="secondary">
-                <Link href={`/${locale}/kontakt`}>
-                  <Phone className="h-4 w-4 mr-2" />
-                  Ring oss nu
-                </Link>
-              </Button>
-              <Button asChild size="lg" variant="outline" className="text-white border-white hover:bg-white hover:text-primary">
-                <Link href={`/${locale}/kontakt`}>
-                  Skicka meddelande
-                </Link>
-              </Button>
-            </div>
-          </div>
-        </div>
-      </section>
+      <CTA 
+        title={t('ctaPages.relining.title')}
+        description={t('ctaPages.relining.description')}
+        orangeHeading
+        showCorners
+      />
     </>
   );
 }

@@ -3,8 +3,9 @@ import { generateServiceMetadata } from '@/lib/metadata';
 import { generateServiceSchema } from '@/lib/schemas';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
-import { CheckCircle, Clock, Settings, Shield, Phone, Calendar } from 'lucide-react';
+import { CheckCircle, Clock, Settings, Shield, Calendar } from 'lucide-react';
 import Link from 'next/link';
+import { CTA } from '@/components/content/cta';
 
 export const metadata = generateServiceMetadata({
   title: 'VVS-service & underhåll – när du behöver det',
@@ -61,26 +62,62 @@ export default async function ServicePage({ params }: { params: Promise<{ locale
       />
 
       {/* Hero Section */}
-      <section className="bg-gradient-to-br from-primary/5 to-primary/10 py-20">
-        <div className="container mx-auto px-4">
+      <section
+        className="relative py-20"
+        role="region"
+        aria-labelledby="hero-title"
+        style={{
+          backgroundImage: "url('/vvsbackground.webp')",
+          backgroundSize: 'cover',
+          backgroundPosition: 'center',
+          backgroundRepeat: 'no-repeat'
+        }}
+      >
+        <span aria-hidden="true" className="absolute inset-0 bg-white/10"></span>
+        <div className="container mx-auto px-4 relative">
           <div className="max-w-4xl mx-auto text-center">
-            <h1 className="text-4xl md:text-5xl font-bold font-outfit mb-6">
-              {t('services.service.hero.h1')}
-            </h1>
-            <p className="text-xl text-text-700 mb-8 leading-relaxed">
-              {t('services.service.hero.intro')}
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button asChild size="lg">
-                <Link href={`/${locale}/kontakt`}>
-                  {t('services.service.pageContent.buttons.getQuote')}
-                </Link>
-              </Button>
-              <Button asChild variant="outline" size="lg">
-                <Link href={`/${locale}/om-oss`}>
-                  {t('services.service.pageContent.buttons.learnMore')}
-                </Link>
-              </Button>
+            <div className="inline-block rounded-md bg-white/60 backdrop-blur-sm px-4 py-6 md:px-6 md:py-8 lg:px-8 lg:py-10">
+              <h1 id="hero-title" className="text-4xl md:text-5xl font-bold font-outfit mb-4">
+                {t('services.service.hero.h1')}
+              </h1>
+              <p className="text-xl text-text-700 mb-8 leading-relaxed">
+                {t('services.service.hero.intro')}
+              </p>
+              <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                <Button asChild size="lg">
+                  <Link href={`/${locale}/kontakt`}>
+                    {t('services.service.pageContent.buttons.getQuote')}
+                  </Link>
+                </Button>
+                <Button asChild variant="outline" size="lg">
+                  <Link href={`/${locale}/om-oss`}>
+                    {t('services.service.pageContent.buttons.learnMore')}
+                  </Link>
+                </Button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* About Our Service Expertise */}
+      <section className="py-20 bg-gradient-to-br from-primary/5 to-primary/10">
+        <div className="container mx-auto px-4">
+          <div className="max-w-4xl mx-auto">
+            <h2 className="text-3xl font-bold font-outfit mb-8 text-primary text-center">
+              {locale === 'en' ? 'Why customers trust our service' : 'Varför våra kunder litar på vår service'}
+            </h2>
+            <div className="prose prose-lg max-w-none text-text-700 leading-relaxed text-left">
+              <p className="mb-6">
+                {locale === 'en'
+                  ? 'Service is the heart of our company – this is where we build long‑term relationships. With 30+ years of experience, we know great service is about more than fixing issues when they appear. It’s about understanding your needs, communicating proactively and delivering solutions that last longer than expected.'
+                  : 'Service är hjärtat i vårt företag - det är där vi bygger långsiktiga relationer med våra kunder. Med över 30 års erfarenhet vet vi att bra service handlar om mer än att bara lösa problem när de uppstår. Det handlar om att förstå dina behov, vara proaktiv i vår kommunikation och alltid leverera lösningar som håller längre än förväntat.'}
+              </p>
+              <p className="mb-6">
+                {locale === 'en'
+                  ? 'We understand that VVS issues rarely come at convenient times. That’s why we’ve built a service culture that prioritizes fast response and personal follow‑up. Our customers know they can rely on us – whether it’s scheduled maintenance, urgent problems or complex troubleshooting. This reliability, and our passion for finding the right solution, is why we’re Stockholm’s preferred VVS partner.'
+                  : 'Vi förstår att VVS-problem ofta kommer i olämpliga stunder, och det är därför vi har byggt upp en servicekultur som prioriterar snabb respons och personlig uppföljning. Våra kunder vet att de kan räkna med oss - oavsett om det gäller planerat underhåll, akuta problem eller komplexa felsökningar. Det är denna pålitlighet och vår passion för att hitta rätt lösning som gör oss till Stockholms föredragna VVS-partner.'}
+              </p>
             </div>
           </div>
         </div>
@@ -207,31 +244,12 @@ export default async function ServicePage({ params }: { params: Promise<{ locale
       </section>
 
       {/* CTA Section */}
-      <section className="py-20 bg-primary text-white">
-        <div className="container mx-auto px-4">
-          <div className="max-w-4xl mx-auto text-center">
-            <h2 className="text-3xl font-bold font-outfit mb-6">
-              {t('services.service.pageContent.ctaTitle')}
-            </h2>
-            <p className="text-xl mb-8 opacity-90">
-              {t('services.service.pageContent.ctaDescription')}
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button asChild size="lg" variant="secondary">
-                <Link href={`/${locale}/kontakt`}>
-                  <Phone className="h-4 w-4 mr-2" />
-                  {t('services.service.pageContent.ctaButtons.callNow')}
-                </Link>
-              </Button>
-              <Button asChild size="lg" variant="outline" className="text-white border-white hover:bg-white hover:text-primary">
-                <Link href={`/${locale}/kontakt`}>
-                  {t('services.service.pageContent.ctaButtons.sendMessage')}
-                </Link>
-              </Button>
-            </div>
-          </div>
-        </div>
-      </section>
+      <CTA 
+        title={t('cta.title')}
+        description={t('cta.description')}
+        orangeHeading
+        showCorners
+      />
     </>
   );
 }
