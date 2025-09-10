@@ -29,7 +29,7 @@ export function CTA({
           <span aria-hidden="true" className="pointer-events-none absolute right-6 bottom-6 w-8 h-8 md:right-8 md:bottom-8 md:w-10 md:h-10 lg:right-10 lg:bottom-10 lg:w-12 lg:h-12 border-b-2 border-r-2 border-[#F97316]"></span>
         </>
       )}
-      <div className="container text-center">
+      <div className="container text-left md:text-center px-8 md:px-4">
         <h2 className={cn('text-h2 font-outfit mb-4', orangeHeading ? 'text-[#F97316]' : 'text-white')}>
           {title}
         </h2>

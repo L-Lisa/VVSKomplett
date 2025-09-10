@@ -160,7 +160,7 @@ export default async function NewInstallationPage({ params }: { params: Promise<
       </section>
 
       {/* Process Section with image */}
-      <section className="py-20 bg-muted/20">
+      <section className="pt-20 pb-2 md:py-20 bg-muted/20">
         <div className="container mx-auto px-4">
           <div className="max-w-6xl mx-auto">
             <h2 className="text-3xl font-bold font-outfit text-center mb-12">
