@@ -17,7 +17,7 @@ export const metadata = generateServiceMetadata({
 
 export default async function ReliningPage({ params }: { params: Promise<{ locale: string }> }) {
   const { locale } = await params;
-  const t = await getTranslations();
+  const t = await getTranslations({ locale });
 
   const features = [
     {

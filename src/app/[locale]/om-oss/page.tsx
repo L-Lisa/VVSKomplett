@@ -18,7 +18,7 @@ export const metadata = generatePageMetadata({
 
 export default async function AboutPage({ params }: { params: Promise<{ locale: string }> }) {
   const { locale } = await params;
-  const t = await getTranslations();
+  const t = await getTranslations({ locale });
 
   const certifications = [
     'Certifierade enligt Säker Vatten-standarder',

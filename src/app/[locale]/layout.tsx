@@ -42,7 +42,7 @@ export default async function RootLayout({
   params: Promise<{locale: string}>;
 }) {
   const {locale} = await params;
-  const messages = await getMessages();
+  const messages = await getMessages({locale});
 
   if (process.env.NODE_ENV !== 'production') {
     const supported = ['sv', 'en'];

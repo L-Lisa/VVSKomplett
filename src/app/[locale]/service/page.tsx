@@ -28,8 +28,9 @@ const toBase64 = (str: string) =>
     ? Buffer.from(str).toString('base64')
     : window.btoa(str);
 
-export async function generateMetadata() {
-  const t = await getTranslations();
+export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }) {
+  const { locale } = await params;
+  const t = await getTranslations({ locale });
   return generateServiceMetadata({
     title: t('services.service.title'),
     description: t('services.service.description'),
@@ -40,7 +41,7 @@ export async function generateMetadata() {
 
 export default async function ServicePage({ params }: { params: Promise<{ locale: string }> }) {
   const { locale } = await params;
-  const t = await getTranslations();
+  const t = await getTranslations({ locale });
 
   const features = [
     {

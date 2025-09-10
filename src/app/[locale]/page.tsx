@@ -14,8 +14,9 @@ import { CheckIcon } from '@/components/ui/check-icon';
 import { IndustrialGridBackground } from '@/components/ui/industrial-grid-background';
 // (client wrapper used instead)
 
-export async function generateMetadata() {
-  const t = await getTranslations();
+export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }) {
+  const { locale } = await params;
+  const t = await getTranslations({ locale });
   return generatePageMetadata({
     title: t('home.title'),
     description: t('home.description'),
@@ -25,7 +26,7 @@ export async function generateMetadata() {
 
 export default async function HomePage({ params }: { params: Promise<{ locale: string }> }) {
   const { locale } = await params;
-  const t = await getTranslations();
+  const t = await getTranslations({ locale });
 
   const services = [
     {

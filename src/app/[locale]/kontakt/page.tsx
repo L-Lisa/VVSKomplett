@@ -10,8 +10,9 @@ import { CTA } from '@/components/content/cta';
 import Image from 'next/image';
 import { ContactForm } from '@/components/contact-form';
 
-export async function generateMetadata() {
-  const t = await getTranslations();
+export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }) {
+  const { locale } = await params;
+  const t = await getTranslations({ locale });
   return generatePageMetadata({
     title: t('contact.title'),
     description: t('contact.description'),
@@ -19,8 +20,9 @@ export async function generateMetadata() {
   });
 }
 
-export default async function ContactPage() {
-  const t = await getTranslations();
+export default async function ContactPage({ params }: { params: Promise<{ locale: string }> }) {
+  const { locale } = await params;
+  const t = await getTranslations({ locale });
 
   const contactInfo = [
     {
