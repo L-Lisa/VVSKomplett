@@ -1,23 +1,6 @@
 import { getTranslations } from 'next-intl/server';
 import { Button } from '@/components/ui/button';
-import {
-  Card,
-  CardContent,
-  CardDescription,
-  CardHeader,
-  CardTitle,
-} from '@/components/ui/card';
-import {
-  Wrench,
-  Home,
-  Settings,
-  Shield,
-  Droplets,
-  Paintbrush,
-  Bath,
-  Zap,
-  Cog,
-} from 'lucide-react';
+import { ServicesGridClient } from '@/components/content/services-grid.client';
 import { Hero } from '@/components/content/hero';
 import { Testimonials3Client } from '@/components/content/testimonials3.client';
 import { CTA } from '@/components/content/cta';
@@ -47,47 +30,47 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
   const services = [
     {
       key: 'newInstallation',
-      icon: Wrench,
+      iconName: 'Wrench',
       href: '/nyinstallation',
     },
     {
       key: 'pipeReplacement',
-      icon: Home,
+      iconName: 'Home',
       href: '/stambyte',
     },
     {
       key: 'service',
-      icon: Settings,
+      iconName: 'Settings',
       href: '/service',
     },
     {
       key: 'relining',
-      icon: Shield,
+      iconName: 'Shield',
       href: '/relining',
     },
     {
       key: 'pipeFlushing',
-      icon: Droplets,
+      iconName: 'Droplets',
       href: '/stamspolning',
     },
     {
       key: 'pipeCoating',
-      icon: Paintbrush,
+      iconName: 'Paintbrush',
       href: '/stamfilmning',
     },
     {
       key: 'bathroomDesign',
-      icon: Bath,
+      iconName: 'Bath',
       href: '#', // Placeholder for Badrums concept
     },
     {
       key: 'electricalInstallation',
-      icon: Zap,
+      iconName: 'Zap',
       href: '#', // Placeholder for elteknik23
     },
     {
       key: 'allVVS',
-      icon: Cog,
+      iconName: 'Cog',
       href: '/om-oss',
     },
   ];
@@ -150,51 +133,7 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
               {t('home.servicesTitle')}
             </h2>
           </ScrollAnimation>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6" role="list" aria-label={t('home.a11y.servicesAria')}>
-            {services.map((service, index) => {
-              const Icon = service.icon;
-              const isStambyte = service.key === 'pipeReplacement';
-              const isInitialLoad = index < 3;
-              
-              return (
-                <ScrollAnimation 
-                  key={service.key} 
-                  delay={isInitialLoad ? index * 150 : (index - 3) * 200 + 500} 
-                  duration={isInitialLoad ? 400 : 300}
-                  direction="bottom"
-                >
-                  <Card className="group relative rounded-2xl border border-[#E6E9EF] bg-white shadow-[0_6px_18px_rgba(12,21,36,0.06)] hover:shadow-xl hover:-translate-y-1 transition-all duration-300 hover:border-[#1f398a]/20 h-full flex flex-col" role="listitem">
-                    {isStambyte && (
-                      <span className="absolute -top-2 -right-2 z-10 text-[10px] font-semibold uppercase tracking-wide text-white bg-[#F97316] px-2 py-1 rounded-full shadow-lg" aria-label={t('home.a11y.brfBadge')}>
-                        BRF & Företag
-                      </span>
-                    )}
-                    <CardHeader className="flex-1">
-                      <Icon className="h-12 w-12 text-[#1f398a] mb-4 group-hover:text-[#F97316] group-hover:rotate-12 group-hover:scale-110 transition-all duration-300" aria-hidden="true" />
-                      <CardTitle className="text-xl font-outfit mb-3">
-                        {t(`services.${service.key}.title`)}
-                      </CardTitle>
-                    </CardHeader>
-                    <CardContent className="flex flex-col flex-1">
-                      <CardDescription className="text-base flex-1 mb-4">
-                        {t(`services.${service.key}.description`)}
-                      </CardDescription>
-                      <a 
-                        className="inline-flex items-center gap-1 text-[#1f398a] font-medium hover:text-[#F97316] hover:underline transition-colors duration-300 mt-auto"
-                        href={service.href}
-                        aria-label={`Läs mer om ${t(`services.${service.key}.title`)}`}
-                      >
-                        {t('home.readMore')} {t(`services.${service.key}.title`)}
-                        <svg className="w-4 h-4 group-hover:translate-x-1 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                        </svg>
-                      </a>
-                    </CardContent>
-                  </Card>
-                </ScrollAnimation>
-              );
-            })}
-          </div>
+          <ServicesGridClient services={services} />
         </div>
       </section>
 
