@@ -1,3 +1,4 @@
+import React from 'react';
 import { getTranslations } from 'next-intl/server';
 import { generateServiceMetadata } from '@/lib/metadata';
 import { generateServiceSchema } from '@/lib/schemas';
@@ -14,43 +15,26 @@ export const metadata = generateServiceMetadata({
   title: 'Stamfilmning med kamera – få full koll på rören',
   description: 'Professionell stamfilmning med kamera i Stockholm. Högupplöst inspektion, dokumentation och förebyggande underhåll. Kostnadsfri offert.',
   keywords: 'stamfilmning Stockholm, kamerainspektion rör, VVS diagnostik, rörinspektion, VVS kamera',
-  path: '/pipeinspection',
+  path: '/stamfilmning',
 });
 
 export default async function PipeCoatingPage({ params }: { params: Promise<{ locale: string }> }) {
   const { locale } = await params;
   const t = await getTranslations({ locale });
 
-  const features = [
-    {
-      icon: Camera,
-      title: 'Högupplöst inspektion',
-      description: 'Tydlig bild av rörenas inre tillstånd'
-    },
-    {
-      icon: Video,
-      title: 'Dokumentation',
-      description: 'Bilder och video för fullständig rapport'
-    },
-    {
-      icon: Settings,
-      title: 'Förebyggande underhåll',
-      description: 'Identifiering av problem innan de blir allvarliga'
-    },
-    {
-      icon: FileText,
-      title: 'Detaljerad rapport',
-      description: 'Tydliga rekommendationer och åtgärdsförslag'
-    }
-  ];
+  const features = t.raw('services.pipeCoating.features').map((feature: { title: string; description: string }, index: number) => ({
+    icon: [Camera, Video, Settings, FileText][index],
+    title: feature.title,
+    description: feature.description
+  }));
 
-  const processSteps = [
-    'Förberedelse och säkerhetskontroll',
-    'Kamerainspektion av hela rörsystemet',
-    'Identifiering och dokumentation av problem',
-    'Analys och rekommendationer',
-    'Rapport med bilder och åtgärdsförslag'
-  ];
+  type Feature = {
+    icon: React.ComponentType<{ className?: string }>;
+    title: string;
+    description: string;
+  };
+
+  const processSteps = t.raw('services.pipeCoating.process.steps');
 
   // Lightweight shimmer placeholder for blurDataURL
   const shimmer = (w: number, h: number) =>
@@ -85,7 +69,7 @@ export default async function PipeCoatingPage({ params }: { params: Promise<{ lo
         <span aria-hidden="true" className="absolute inset-0 bg-white/10"></span>
         <div className="container mx-auto px-4 relative">
           <div className="max-w-4xl mx-auto text-center">
-            <div className="inline-block rounded-md border border-white/60 md:border-white/40 bg-white/70 md:bg-white/40 backdrop-blur-md md:backdrop-blur-sm px-4 py-6 md:px-6 md:py-8 lg:px-8 lg:py-10">
+            <div className="inline-block rounded-md border border-white/60 md:border-white/40 bg-white/85 md:bg-white/70 backdrop-blur-md md:backdrop-blur-sm px-4 py-6 md:px-6 md:py-8 lg:px-8 lg:py-10">
               <h1 id="hero-title" className="text-4xl md:text-5xl font-bold font-outfit mb-4">
                 {t('services.pipeCoating.hero.h1')}
               </h1>
@@ -94,14 +78,10 @@ export default async function PipeCoatingPage({ params }: { params: Promise<{ lo
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <Button asChild size="lg">
-                  <Link href={`/${locale}/kontakt`}>
-                    Få kostnadsfri offert
-                  </Link>
+                  <Link href={`/${locale}/kontakt`}>{t('hero.getQuote')}</Link>
                 </Button>
                 <Button asChild variant="outline" size="lg">
-                  <Link href={`/${locale}/om-oss`}>
-                    Läs mer om oss
-                  </Link>
+                  <Link href={`/${locale}/om-oss`}>{t('hero.readMoreAboutUs')}</Link>
                 </Button>
               </div>
             </div>
@@ -137,10 +117,10 @@ export default async function PipeCoatingPage({ params }: { params: Promise<{ lo
         <div className="container mx-auto px-4">
           <div className="max-w-5xl mx-auto">
             <h2 className="text-3xl font-bold font-outfit text-center mb-12">
-              Våra stamfilmnings-tjänster
+              {t('services.pipeCoating.featuresTitle')}
             </h2>
             <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-              {features.map((feature, index) => (
+              {features.map((feature: Feature, index: number) => (
                 <Card key={index} className="text-center">
                   <CardHeader>
                     <div className="mx-auto w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mb-4">
@@ -171,7 +151,7 @@ export default async function PipeCoatingPage({ params }: { params: Promise<{ lo
               {/* Steps (left on desktop, top on mobile) */}
               <div className="md:pr-2">
                 <div className="space-y-6">
-                  {processSteps.map((step, index) => (
+                  {processSteps.map((step: string, index: number) => (
                     <div key={index} className="flex items-start">
                       <div className="flex-shrink-0 w-8 h-8 bg-primary text-white rounded-full flex items-center justify-center font-bold mr-4">
                         {index + 1}

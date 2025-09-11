@@ -1,7 +1,6 @@
 "use client";
 
-import { useEffect, useMemo, useState } from 'react';
-import Link from 'next/link';
+import { useEffect, useState } from 'react';
 import {
   Card,
   CardContent,
@@ -142,9 +141,9 @@ export function ServicesGridClient({ services }: ServicesGridClientProps) {
                   <a 
                     className="inline-flex items-center gap-1 text-[#1f398a] font-medium hover:text-[#F97316] hover:underline transition-colors duration-300 mt-auto"
                     href={service.href}
-                    aria-label={`Läs mer om ${t(`services.${service.key}.title`)}`}
+                    aria-label={`${t('home.readMoreAbout')} ${t(`services.${service.key}.title`)}`}
                   >
-                    {t('home.readMore')} {t(`services.${service.key}.title`)}
+                    {t('home.readMoreEllipsis')}
                     <svg className="w-4 h-4 group-hover:translate-x-1 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
                     </svg>

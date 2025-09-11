@@ -33,6 +33,8 @@
     },
     "servicesTitle": "Our Services",
     "readMore": "Read more",
+    "readMoreEllipsis": "Read more...",
+    "readMoreAbout": "Read more about",
     "whyChooseUs": "5 reasons to choose us",
     "testimonialsTitle": "What our customers say",
     "footerDescription": "Komplett VVS i Sthlm AB – reliable partner for plumbing in Greater Stockholm",
@@ -195,16 +197,23 @@
     "pipeReplacement": {
       "title": "Pipe Replacement in Apartment Buildings – efficient and safe",
       "description": "Complete replacement of pipe systems in buildings",
-      "hero": {
-        "h1": "Pipe Replacement in Apartment Buildings – efficient and safe",
-        "intro": "Old pipes can cause major problems and costs. We help property owners and housing associations with professional pipe replacement that minimizes disruption for residents.",
-        "features": [
-          "Minimal disruption for residents during work",
-          "Modern pipe technology for long-term durability",
-          "Coordination with property management",
-          "Complete documentation of the work",
-          "Insured work with full guarantee"
-        ]
+      "features": {
+        "minimalDisruption": {
+          "title": "Minimal disruption",
+          "description": "Planned execution with minimal impact on residents"
+        },
+        "modernTechnology": {
+          "title": "Modern pipe technology",
+          "description": "Durable solutions for long-term functionality"
+        },
+        "coordination": {
+          "title": "Coordination",
+          "description": "Close cooperation with property management"
+        },
+        "insuredWork": {
+          "title": "Insured work",
+          "description": "Full guarantee and insurance on all work"
+        }
       },
       "process": {
         "title": "Our pipe replacement process",
@@ -216,6 +225,43 @@
           "Testing and handover with documentation"
         ],
         "imageAlt": "Tools and measuring equipment for pipe replacement"
+      },
+      "whyChooseUs": {
+        "title": "Why choose us for pipe replacement?",
+        "items": [
+          "Experience with pipe replacement in apartment buildings",
+          "Cooperation with property management",
+          "Minimal disruption for residents",
+          "Full guarantee and insurance"
+        ]
+      },
+      "relatedServices": {
+        "title": "Related services",
+        "services": [
+          {
+            "title": "Relining",
+            "description": "Alternative to pipe replacement - renew pipes without demolition"
+          },
+          {
+            "title": "Pipe flushing",
+            "description": "Cleaning of existing pipes before replacement"
+          },
+          {
+            "title": "Pipe inspection",
+            "description": "Camera inspection to map pipe condition"
+          }
+        ]
+      },
+      "hero": {
+        "h1": "Pipe Replacement in Apartment Buildings – efficient and safe",
+        "intro": "Old pipes can cause major problems and costs. We help property owners and housing associations with professional pipe replacement that minimizes disruption for residents.",
+        "features": [
+          "Minimal disruption for residents during work",
+          "Modern pipe technology for long-term durability",
+          "Coordination with property management",
+          "Complete documentation of the work",
+          "Insured work with full guarantee"
+        ]
       },
       "faq": [
         {
@@ -312,21 +358,67 @@
     "relining": {
       "title": "Relining in Stockholm – renovate pipes without demolition",
       "description": "Modern relining technology for existing pipes",
-      "hero": {
-        "h1": "Relining in Stockholm – renovate pipes without demolition",
-        "intro": "Relining is a modern method for renewing pipe systems without having to dig up. Perfect for historic buildings or when disruption should be minimized.",
-        "features": ["No demolition or disruption of surroundings", "Long-term sustainable solutions", "Preserves the building's original structure", "Faster execution than traditional pipe replacement", "Environmentally friendly method with minimal waste"]
-      },
+      "featuresTitle": "Our relining services",
+      "features": [
+        {
+          "title": "No demolition",
+          "description": "Renew pipes without breaking walls or floors"
+        },
+        {
+          "title": "Eco-friendly",
+          "description": "Environmentally friendly method with minimal waste"
+        },
+        {
+          "title": "Quick execution",
+          "description": "Fast installation with minimal disruption"
+        },
+        {
+          "title": "Long-term sustainable",
+          "description": "Durable solution that lasts for decades"
+        }
+      ],
       "process": {
         "title": "How relining works",
         "steps": [
           "Camera inspection of existing pipes",
           "Cleaning and preparation of pipes",
-          "Installation of new pipe liners",
+          "Installation of new pipe lining",
           "Quality control and testing",
           "Documentation and handover"
         ],
         "imageAlt": "Tools and measuring equipment for relining"
+      },
+      "whyTitle": "Why choose relining?",
+      "whyItems": [
+        "Preserves historical buildings",
+        "Minimal disruption for residents",
+        "Environmentally friendly method",
+        "Long-term sustainable result"
+      ],
+      "about": {
+        "title": "Why relining is the future of pipe renovation",
+        "p1": "Relining represents a revolution in the plumbing industry – a technique that renews pipe systems without demolition or disturbing residents. With 30+ years of experience, we’ve seen how this innovation has changed the game. Every relining project is unique and demands careful planning, modern technology and a deep understanding of both technical and practical aspects.",
+        "p2": "What makes us experts in relining is our combination of technical excellence and environmental awareness. Clients value solutions that are both cost‑effective and sustainable – and relining delivers exactly that. We optimize every step to minimize disruption, maximize durability and ensure the renewed system performs for decades."
+      },
+      "relatedTitle": "Related services",
+      "relatedServices": [
+        {
+          "title": "Pipe replacement",
+          "description": "Complete replacement when relining is not suitable"
+        },
+        {
+          "title": "Pipe inspection",
+          "description": "Camera inspection to assess pipe condition"
+        },
+        {
+          "title": "Pipe flushing",
+          "description": "Cleaning before relining installation"
+        }
+      ],
+      "hero": {
+        "h1": "Relining in Stockholm – renovate pipes without demolition",
+        "intro": "Relining is a modern method for renewing pipe systems without having to dig up. Perfect for historic buildings or when disruption should be minimized.",
+        "features": ["No demolition or disruption of surroundings", "Long-term sustainable solutions", "Preserves the building's original structure", "Faster execution than traditional pipe replacement", "Environmentally friendly method with minimal waste"]
       },
       "faq": [
         { "question": "Which pipes can be relined?", "answer": "Most drainage and water pipes can be relined, but it depends on the pipe's condition and diameter. We make a thorough assessment before work begins." },
@@ -363,6 +455,58 @@
     "pipeFlushing": {
       "title": "Pipe Flushing & Descaling – prevent blockages and water damage",
       "description": "Professional cleaning of pipe systems",
+      "featuresTitle": "Our pipe flushing services",
+      "features": [
+        {
+          "title": "High-pressure flushing",
+          "description": "Deep cleaning with specialized equipment"
+        },
+        {
+          "title": "Milling",
+          "description": "Removal of hardened deposits"
+        },
+        {
+          "title": "Camera inspection",
+          "description": "Control before and after work"
+        },
+        {
+          "title": "Environmentally friendly agents",
+          "description": "Safe cleaning agents for the environment"
+        }
+      ],
+      "process": {
+        "title": "Our pipe flushing process",
+        "steps": [
+          "Camera inspection to map problems",
+          "High-pressure flushing with specialized equipment",
+          "Milling of hardened deposits",
+          "Cleaning with environmentally friendly agents",
+          "Quality control and documentation"
+        ],
+        "imageAlt": "Tools and measuring equipment for pipe flushing"
+      },
+      "whyTitle": "Why regular pipe flushing?",
+      "whyItems": [
+        "Prevents blockages and water damage",
+        "Improves water quality",
+        "Extends pipe life",
+        "Saves money on repairs"
+      ],
+      "relatedTitle": "Related services",
+      "relatedServices": [
+        {
+          "title": "Pipe inspection",
+          "description": "Camera inspection to map pipe condition"
+        },
+        {
+          "title": "Plumbing service",
+          "description": "Regular service and maintenance"
+        },
+        {
+          "title": "Relining",
+          "description": "Pipe renewal after cleaning"
+        }
+      ],
       "hero": {
         "h1": "Pipe Flushing & Descaling – prevent blockages and water damage",
         "intro": "Regular cleaning of pipe systems prevents blockages, improves water quality, and extends pipe life. We use modern methods for efficient cleaning.",
@@ -374,17 +518,6 @@
           "Preventive maintenance plan"
         ]
       },
-      "process": {
-        "title": "Our pipe flushing process",
-        "steps": [
-          "Camera inspection to map problems",
-          "High-pressure flushing with specialized equipment",
-          "Descaling of hardened deposits",
-          "Cleaning with environmentally friendly agents",
-          "Quality control and documentation"
-        ],
-        "imageAlt": "Tools and measuring equipment for pipe flushing"
-      },
       "faq": [
         { "question": "How often do pipes need flushing?", "answer": "It depends on usage and water quality. We recommend annual pipe flushing for most properties, but some need more frequently." },
         { "question": "Can pipe flushing solve all pipe problems?", "answer": "Pipe flushing solves most problems with deposits and blockages, but serious damage or incorrect installation may require repair or replacement." },
@@ -394,6 +527,58 @@
     "pipeCoating": {
       "title": "Pipe inspection – get full control of pipes",
       "description": "Professional camera inspection of pipe systems",
+      "featuresTitle": "Our pipe inspection services",
+      "features": [
+        {
+          "title": "High-resolution inspection",
+          "description": "Clear image of the pipes' internal condition"
+        },
+        {
+          "title": "Documentation",
+          "description": "Images and video for a complete report"
+        },
+        {
+          "title": "Preventive maintenance",
+          "description": "Identification of problems before they become serious"
+        },
+        {
+          "title": "Detailed report",
+          "description": "Clear recommendations and action proposals"
+        }
+      ],
+      "process": {
+        "title": "How pipe inspection works",
+        "steps": [
+          "Preparation and safety control",
+          "Camera inspection of the entire pipe system",
+          "Identification and documentation of problems",
+          "Analysis and recommendations",
+          "Report with images and action proposals"
+        ],
+        "imageAlt": "Technician performing pipe camera inspection"
+      },
+      "whyTitle": "Why pipe inspection?",
+      "whyItems": [
+        "Identifies problems before they become serious",
+        "Preventive maintenance",
+        "Documentation for insurance",
+        "Cost-effective diagnostics"
+      ],
+      "relatedTitle": "Related services",
+      "relatedServices": [
+        {
+          "title": "Pipe flushing",
+          "description": "Cleaning based on camera inspection"
+        },
+        {
+          "title": "Relining",
+          "description": "Pipe renewal after inspection"
+        },
+        {
+          "title": "Plumbing service",
+          "description": "Regular service and maintenance"
+        }
+      ],
       "hero": {
         "h1": "Pipe inspection – get full control of pipes",
         "intro": "With camera technology, we inspect pipe systems thoroughly and identify problems before they become serious. Perfect for preventive maintenance and troubleshooting.",
@@ -404,17 +589,6 @@
           "Preventive maintenance plan",
           "Reporting with clear recommendations"
         ]
-      },
-      "process": {
-        "title": "How pipe inspection works",
-        "steps": [
-          "Preparation and safety check",
-          "Camera inspection of entire pipe system",
-          "Identification and documentation of problems",
-          "Analysis and recommendations",
-          "Report with photos and action proposals"
-        ],
-        "imageAlt": "Technician performing pipe camera inspection"
       },
       "faq": [
         { "question": "What can camera inspection detect?", "answer": "We can see blockages, leaks, corrosion, incorrect installation, root damage, and other problems that aren't visible from the outside." },
@@ -429,18 +603,140 @@
   "about": {
     "title": "Komplett VVS i Sthlm AB – craftsmen you can trust",
     "description": "We are an established plumbing company in Stockholm with many years of experience in professional plumbing services.",
+    "team": {
+      "title": "Our Team",
+      "description": "Meet our experienced team of certified plumbers who bring decades of expertise to every project.",
+      "role": "Project Management",
+      "experience": "30+ years of experience",
+      "bookDirect": "Book directly",
+      "callDirect": "Call directly",
+      "contact": "Contact",
+      "specialties": "Specialties"
+    },
+    "founders": {
+      "title": "Our founders - Håkan & Daniel",
+      "description": "With over 30 years of combined experience in the plumbing industry, Håkan and Daniel founded Komplett VVS i Sthlm AB with a clear vision: to provide professional, reliable, and customer-focused plumbing services in Stockholm. Their extensive experience spans everything from small repairs to large installations in apartment buildings, and they have built a reputation for quality work and excellent customer service. Today, they lead a team of skilled craftsmen who share their commitment to quality and customer satisfaction.",
+      "paragraph1": "With over 30 years of experience in the plumbing industry, Håkan and Daniel have built Komplett VVS i Sthlm AB into a certified company that stands for quality and safety. Their deep knowledge spans from traditional plumbing installation to modern electrical technology, making them a complete partner for all your needs.",
+      "paragraph2": "As a certified plumbing company, we offer everything in plumbing under one roof - from new installation and pipe replacement to relining, pipe flushing and service. We want to be the safe and secure choice for our customers in Stockholm, with a focus on long-term solutions and customer satisfaction.",
+      "paragraph3": "Håkan and Daniel's vision is to simplify plumbing projects by offering complete solutions with transparent communication, competitive prices and guaranteed quality according to Safe Water standards."
+    },
+    "certifications": {
+      "title": "Our Certifications",
+      "certifiedBy": "Certified according to Safe Water standards",
+      "insuredWork": "Insured work with full coverage",
+      "warranty": "Warranty on all installations and repairs",
+      "continuousTraining": "Continuous staff training",
+      "environmentalCert": "Environmental certification according to ISO 14001",
+      "authorizedBadgeText": "Authorized plumbing company",
+      "authorizedBadgeSubText": "Safe Water Authorized plumbing company"
+    },
     "hero": {
       "h1": "Komplett VVS i Sthlm AB – craftsmen you can trust",
       "intro": "For over 20 years, we've been helping customers in Stockholm with professional plumbing services. Our team of certified installers has experience with everything from simple repairs to large new construction projects.",
       "intro2": "We're proud of our high quality and customer satisfaction. All our work follows Safe Water standards and comes with full guarantee for your safety."
     },
-    "team": { "title": "Our team", "description": "Experienced installers focused on quality and customer service" },
-    "certifications": { "title": "Certifications and guarantees", "items": ["Certified according to Safe Water standards", "Insured work with full coverage", "Guarantee on all installations and repairs", "Continuous staff training", "Environmental certification according to ISO 14001"] },
-    "areas": { "title": "We work in", "description": "Stockholm with surrounding areas - we come to you" }
+    "areas": { "title": "We work in", "description": "Stockholm with surrounding areas - we come to you" },
+    "pageContent": {
+      "buttons": {
+        "contactUs": "Contact us",
+        "ourServices": "Our Services"
+      },
+      "teamMembers": [
+        {
+          "name": "Håkan Andersson",
+          "role": "CEO & Founder",
+          "experience": "25+ years of experience",
+          "specialties": ["New Installation", "Pipe Replacement", "Project Management"]
+        }
+      ],
+      "certificationDetails": {
+        "safeWater": {
+          "title": "Safe Water",
+          "description": "All our installers are certified according to Safe Water standards to guarantee the highest quality and safety."
+        },
+        "insurance": {
+          "title": "Insurance & Guarantee",
+          "description": "All our work is insured and comes with full guarantee for your safety and satisfaction."
+        }
+      },
+      "serviceAreas": [
+        "Stockholm city center",
+        "Stockholm region",
+        "All of Stockholm county"
+      ],
+      "specialtiesTitle": "Our specialties",
+      "specialties": [
+        {
+          "title": "New Installation",
+          "description": "Complete plumbing installations for new buildings and renovations."
+        },
+        {
+          "title": "Pipe Replacement",
+          "description": "Professional replacement of pipe systems in apartment buildings."
+        },
+        {
+          "title": "Plumbing Service",
+          "description": "Preventive maintenance with quick response."
+        },
+        {
+          "title": "Relining",
+          "description": "Modern method for renewing pipes without demolition."
+        },
+        {
+          "title": "Pipe Flushing",
+          "description": "Professional cleaning of pipe systems."
+        },
+        {
+          "title": "Pipe Inspection",
+          "description": "Camera inspection for diagnostics and documentation."
+        }
+      ],
+      "ctaTitle": "Ready to work with us?",
+      "ctaDescription": "Contact us for a free quote and advice",
+      "ctaButtons": {
+        "callNow": "Call us now",
+        "sendMessage": "Send message"
+      }
+    }
   },
   "contact": {
     "title": "Contact us – get a free quote",
     "description": "Contact us for a free quote",
+    "pageContent": {
+      "ctaTitle": "Ready to start? Get a free quote",
+      "ctaDescription": "Tell us briefly what you need. We respond quickly and usually within 24 hours."
+    },
+    "contactInfo": {
+      "phoneDescription": "Call us for quick response or quote",
+      "emailDescription": "Send email for non-urgent inquiries"
+    },
+    "form": {
+      "title": "Send us a message",
+      "description": "Fill out the form and we will get back to you within 24 hours. For urgent problems, call us directly.",
+      "name": "Name",
+      "email": "Email",
+      "phone": "Phone",
+      "message": "Message",
+      "submit": "Send message",
+      "placeholders": {
+        "name": "Your name",
+        "email": "you@email.com",
+        "phone": "070-123 45 67",
+        "message": "Describe your plumbing needs..."
+      }
+    },
+    "services": {
+      "title": "Professional VVS services in Stockholm",
+      "sidebarTitle": "Our Services",
+      "list": [
+        "New Installation",
+        "Pipe Replacement",
+        "Plumbing Service",
+        "Relining",
+        "Pipe Flushing",
+        "Pipe Inspection"
+      ]
+    },
     "hero": {
       "h1": "Contact us – get a free quote",
       "intro": "Need help with plumbing problems or just want to know more about our services? We provide free quotes and advice. Call us or send a message and we'll get back to you quickly.",
@@ -452,19 +748,51 @@
     "address": "Address",
     "hours": "Hours",
     "emergency": "Emergency Service",
-    "form": {
-      "name": "Name",
-      "email": "Email",
-      "phone": "Phone",
-      "message": "Message",
-      "submit": "Send message",
-      "placeholders": { "name": "Your name", "email": "you@email.com", "phone": "070-123 45 67", "message": "Describe your plumbing needs..." }
-    },
     "feedback": { "success": "Thanks for your message! We’ll get back within 24 hours.", "error": "Something went wrong. Please try again or call us directly.", "sending": "Sending..." }
   },
   "header": { "ringDirect": "Call now", "contact": "Contact", "logoAlt": "Komplett VVS logo", "companyName": "Komplett VVS i Sthlm AB", "languageToggle": "Toggle language", "menuTitle": "Menu", "menuDescription": "Navigate to the site pages" },
-  "footer": { "contact": "Contact", "areas": "Areas", "certificates": "Certificates", "services": "Our Services", "privacyPolicy": "Privacy Policy", "cookies": "Cookies", "emergencyService": "Emergency service 24/7", "logoAlt": "Komplett VVS logo", "pageContent": { "areas": ["Greater Stockholm", "Stockholm region"], "certificates": ["Safe Water", "Liability Insurance", "Authorization"] } },
-  "cta": { "title": "Need help?", "description": "Quick and personal response – contact us for a quote.", "contactUs": "Contact us", "waterLeak": "Need help with a water leak? We offer quick response in Stockholm." },
+  "footer": { 
+    "contact": "Contact", 
+    "areas": "Areas", 
+    "certificates": "Certificates", 
+    "services": "Our Services", 
+    "privacyPolicy": "Privacy Policy", 
+    "cookies": "Cookies", 
+    "emergencyService": "Quick response", 
+    "logoAlt": "Komplett VVS logo", 
+    "areasList": {
+      "greaterStockholm": "Greater Stockholm",
+      "stockholmRegion": "Stockholm with surrounding areas"
+    },
+    "certificatesList": {
+      "safeWater": "Safe Water",
+      "liabilityInsurance": "Liability Insurance", 
+      "authorization": "Authorization"
+    },
+    "partnerships": {
+      "title": "Partnerships",
+      "partners": "Elteknik23 • Caredab • Badrums-Koncept"
+    }
+  },
+  "cta": { "title": "Need help?", "description": "Quick and personal response – contact us for a quote.", "contactUs": "Contact us", "callNow": "Call now", "waterLeak": "Need help with a water leak? We offer quick response in Stockholm." },
+  "faq": {
+    "title": "Frequently Asked Questions",
+    "questions": {
+      "emergency": {
+        "question": "How quickly can you come out for emergency service?",
+        "answer": "We offer quick response. In Stockholm and surrounding areas, we can usually be on site within 2-4 hours for urgent problems."
+      },
+      "quote": {
+        "question": "What does a quote cost?",
+        "answer": "All our quotes are completely free. We come out and do an inspection at no cost to you."
+      },
+      "customers": {
+        "question": "Do you work with both private customers and businesses?",
+        "answer": "Yes, we help both private individuals with home renovations and businesses with larger plumbing projects. We have experience with everything from apartments to office buildings."
+      }
+    }
+  },
+  "hero": { "getQuote": "Get free quote", "readMoreAboutUs": "Read more about us" },
   "theme": { "label": "Theme", "light": "Light", "dark": "Dark", "system": "System", "loading": "Loading theme" },
   "locale": { "loading": "Loading language" },
   "common": { "close": "Close" },

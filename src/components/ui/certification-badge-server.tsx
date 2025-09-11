@@ -47,7 +47,7 @@ export async function CertificationBadgeServer({
           title="Säker Vatten - Auktoriserat VVS-företag"
           width={config.image.width}
           height={config.image.height}
-          className="object-contain"
+          className="object-contain w-full h-full"
           priority={priority}
           aria-hidden="false"
         />

@@ -1,3 +1,4 @@
+import React from 'react';
 import { getTranslations } from 'next-intl/server';
 import { generateServiceMetadata } from '@/lib/metadata';
 import { generateServiceSchema } from '@/lib/schemas';
@@ -19,36 +20,19 @@ export default async function PipeFlushingPage({ params }: { params: Promise<{ l
   const { locale } = await params;
   const t = await getTranslations({ locale });
 
-  const features = [
-    {
-      icon: Droplets,
-      title: 'Högtrycksspolning',
-      description: 'Djuprengöring med specialiserad utrustning'
-    },
-    {
-      icon: Wrench,
-      title: 'Fräsning',
-      description: 'Borttagning av hårdnade avlagringar'
-    },
-    {
-      icon: Camera,
-      title: 'Kamerainspektion',
-      description: 'Kontroll före och efter arbetet'
-    },
-    {
-      icon: Shield,
-      title: 'Miljövänliga medel',
-      description: 'Säkra rengöringsmedel för miljön'
-    }
-  ];
+  const features = t.raw('services.pipeFlushing.features').map((feature: { title: string; description: string }, index: number) => ({
+    icon: [Droplets, Wrench, Camera, Shield][index],
+    title: feature.title,
+    description: feature.description
+  }));
 
-  const processSteps = [
-    'Kamerainspektion för att kartlägga problem',
-    'Högtrycksspolning med specialiserad utrustning',
-    'Fräsning av hårdnade avlagringar',
-    'Rengöring med miljövänliga medel',
-    'Kvalitetskontroll och dokumentation'
-  ];
+  type Feature = {
+    icon: React.ComponentType<{ className?: string }>;
+    title: string;
+    description: string;
+  };
+
+  const processSteps = t.raw('services.pipeFlushing.process.steps');
 
   return (
     <>
@@ -77,7 +61,7 @@ export default async function PipeFlushingPage({ params }: { params: Promise<{ l
         <span aria-hidden="true" className="absolute inset-0 bg-white/10"></span>
         <div className="container mx-auto px-4 relative">
           <div className="max-w-4xl mx-auto text-center">
-            <div className="inline-block rounded-md border border-white/60 md:border-white/40 bg-white/70 md:bg-white/40 backdrop-blur-md md:backdrop-blur-sm px-4 py-6 md:px-6 md:py-8 lg:px-8 lg:py-10">
+            <div className="inline-block rounded-md border border-white/60 md:border-white/40 bg-white/85 md:bg-white/70 backdrop-blur-md md:backdrop-blur-sm px-4 py-6 md:px-6 md:py-8 lg:px-8 lg:py-10">
               <h1 id="hero-title" className="text-4xl md:text-5xl font-bold font-outfit mb-4">
                 {t('services.pipeFlushing.hero.h1')}
               </h1>
@@ -87,13 +71,11 @@ export default async function PipeFlushingPage({ params }: { params: Promise<{ l
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <Button asChild size="lg">
                   <Link href={`/${locale}/kontakt`}>
-                    Få kostnadsfri offert
+                    {t('hero.getQuote')}
                   </Link>
                 </Button>
                 <Button asChild variant="outline" size="lg">
-                  <Link href={`/${locale}/om-oss`}>
-                    Läs mer om oss
-                  </Link>
+                  <Link href={`/${locale}/om-oss`}>{t('hero.readMoreAboutUs')}</Link>
                 </Button>
               </div>
             </div>
@@ -129,10 +111,10 @@ export default async function PipeFlushingPage({ params }: { params: Promise<{ l
         <div className="container mx-auto px-4">
           <div className="max-w-5xl mx-auto">
             <h2 className="text-3xl font-bold font-outfit text-center mb-12">
-              Våra stamspolnings-tjänster
+              {t('services.pipeFlushing.featuresTitle')}
             </h2>
             <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-              {features.map((feature, index) => (
+              {features.map((feature: Feature, index: number) => (
                 <Card key={index} className="text-center">
                   <CardHeader>
                     <div className="mx-auto w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mb-4">
@@ -162,7 +144,7 @@ export default async function PipeFlushingPage({ params }: { params: Promise<{ l
             <div className="grid md:[grid-template-columns:auto_auto] justify-center gap-6 items-stretch">
               <div>
                 <div className="space-y-6">
-                  {processSteps.map((step, index) => (
+                  {processSteps.map((step: string, index: number) => (
                     <div key={index} className="flex items-start">
                       <div className="flex-shrink-0 w-8 h-8 bg-primary text-white rounded-full flex items-center justify-center font-bold mr-4">
                         {index + 1}
@@ -201,63 +183,35 @@ export default async function PipeFlushingPage({ params }: { params: Promise<{ l
             <div className="grid md:grid-cols-2 gap-12">
               <div>
                 <h3 className="text-2xl font-bold font-outfit mb-6">
-                  Varför regelbunden stamspolning?
+                  {t('services.pipeFlushing.whyTitle')}
                 </h3>
                 <ul className="space-y-4">
-                  <li className="flex items-start">
-                    <CheckCircle className="h-5 w-5 text-primary mr-3 mt-0.5 flex-shrink-0" />
-                    <span>Förebygger stopp och vattenskador</span>
-                  </li>
-                  <li className="flex items-start">
-                    <CheckCircle className="h-5 w-5 text-primary mr-3 mt-0.5 flex-shrink-0" />
-                    <span>Förbättrar vattenkvaliteten</span>
-                  </li>
-                  <li className="flex items-start">
-                    <CheckCircle className="h-5 w-5 text-primary mr-3 mt-0.5 flex-shrink-0" />
-                    <span>Förlänger rörens livslängd</span>
-                  </li>
-                  <li className="flex items-start">
-                    <CheckCircle className="h-5 w-5 text-primary mr-3 mt-0.5 flex-shrink-0" />
-                    <span>Sparar pengar på reparationer</span>
-                  </li>
+                  {t.raw('services.pipeFlushing.whyItems').map((item: string, index: number) => (
+                    <li key={index} className="flex items-start">
+                      <CheckCircle className="h-5 w-5 text-primary mr-3 mt-0.5 flex-shrink-0" />
+                      <span>{item}</span>
+                    </li>
+                  ))}
                 </ul>
               </div>
               
               <div>
                 <h3 className="text-2xl font-bold font-outfit mb-6">
-                  Relaterade tjänster
+                  {t('services.pipeFlushing.relatedTitle')}
                 </h3>
                 <div className="space-y-4">
-                  <div className="p-4 border rounded-lg hover:border-primary/50 transition-colors">
-                    <h4 className="font-semibold mb-2">
-                      <Link href={`/${locale}/stamfilmning`} className="text-primary hover:underline">
-                        Stamfilmning
-                      </Link>
-                    </h4>
-                    <p className="text-text-700 text-sm">
-                      Kamerainspektion för att kartlägga rörenas tillstånd
-                    </p>
-                  </div>
-                  <div className="p-4 border rounded-lg hover:border-primary/50 transition-colors">
-                    <h4 className="font-semibold mb-2">
-                      <Link href={`/${locale}/service`} className="text-primary hover:underline">
-                        VVS-service
-                      </Link>
-                    </h4>
-                    <p className="text-text-700 text-sm">
-                      Regelbunden service och underhåll
-                    </p>
-                  </div>
-                  <div className="p-4 border rounded-lg hover:border-primary/50 transition-colors">
-                    <h4 className="font-semibold mb-2">
-                      <Link href={`/${locale}/relining`} className="text-primary hover:underline">
-                        Relining
-                      </Link>
-                    </h4>
-                    <p className="text-text-700 text-sm">
-                      Förnyelse av rör efter rengöring
-                    </p>
-                  </div>
+                  {t.raw('services.pipeFlushing.relatedServices').map((service: { title: string; description: string }, index: number) => (
+                    <div key={index} className="p-4 border rounded-lg hover:border-primary/50 transition-colors">
+                      <h4 className="font-semibold mb-2">
+                        <Link href={`/${locale}/${service.title === 'Stamfilmning' ? 'stamfilmning' : service.title === 'VVS-service' ? 'service' : 'relining'}`} className="text-primary hover:underline">
+                          {service.title}
+                        </Link>
+                      </h4>
+                      <p className="text-text-700 text-sm">
+                        {service.description}
+                      </p>
+                    </div>
+                  ))}
                 </div>
               </div>
             </div>

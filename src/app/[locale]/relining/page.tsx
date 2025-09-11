@@ -1,3 +1,4 @@
+import React from 'react';
 import { getTranslations } from 'next-intl/server';
 import { generateServiceMetadata } from '@/lib/metadata';
 import { generateServiceSchema } from '@/lib/schemas';
@@ -19,36 +20,19 @@ export default async function ReliningPage({ params }: { params: Promise<{ local
   const { locale } = await params;
   const t = await getTranslations({ locale });
 
-  const features = [
-    {
-      icon: Home,
-      title: 'Ingen rivning',
-      description: 'Bevarar byggnadens ursprungliga struktur'
-    },
-    {
-      icon: Leaf,
-      title: 'Miljövänlig',
-      description: 'Minimal avfall och störning av omgivningen'
-    },
-    {
-      icon: Clock,
-      title: 'Snabb genomförande',
-      description: 'Faster än traditionellt stambyte'
-    },
-    {
-      icon: Shield,
-      title: 'Långsiktigt hållbart',
-      description: 'Håller 30-50 år som traditionella rör'
-    }
-  ];
+  const features = t.raw('services.relining.features').map((feature: { title: string; description: string }, index: number) => ({
+    icon: [Home, Leaf, Clock, Shield][index],
+    title: feature.title,
+    description: feature.description
+  }));
 
-  const processSteps = [
-    'Kamerainspektion av befintliga rör',
-    'Rengöring och förberedelse av rören',
-    'Installation av nya rörliner',
-    'Kvalitetskontroll och testning',
-    'Dokumentation och överlämning'
-  ];
+  type Feature = {
+    icon: React.ComponentType<{ className?: string }>;
+    title: string;
+    description: string;
+  };
+
+  const processSteps = t.raw('services.relining.process.steps');
 
   return (
     <>
@@ -77,7 +61,7 @@ export default async function ReliningPage({ params }: { params: Promise<{ local
         <span aria-hidden="true" className="absolute inset-0 bg-white/10"></span>
         <div className="container mx-auto px-4 relative">
           <div className="max-w-4xl mx-auto text-center">
-            <div className="inline-block rounded-md border border-white/60 md:border-white/40 bg-white/70 md:bg-white/40 backdrop-blur-md md:backdrop-blur-sm px-4 py-6 md:px-6 md:py-8 lg:px-8 lg:py-10">
+            <div className="inline-block rounded-md border border-white/60 md:border-white/40 bg-white/85 md:bg-white/70 backdrop-blur-md md:backdrop-blur-sm px-4 py-6 md:px-6 md:py-8 lg:px-8 lg:py-10">
               <h1 id="hero-title" className="text-4xl md:text-5xl font-bold font-outfit mb-4">
                 {t('services.relining.hero.h1')}
               </h1>
@@ -87,12 +71,12 @@ export default async function ReliningPage({ params }: { params: Promise<{ local
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <Button asChild size="lg">
                   <Link href={`/${locale}/kontakt`}>
-                    Få kostnadsfri offert
+                    {t('hero.getQuote')}
                   </Link>
                 </Button>
                 <Button asChild variant="outline" size="lg">
                   <Link href={`/${locale}/om-oss`}>
-                    Läs mer om oss
+                    {t('hero.readMoreAboutUs')}
                   </Link>
                 </Button>
               </div>
@@ -106,19 +90,11 @@ export default async function ReliningPage({ params }: { params: Promise<{ local
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto">
             <h2 className="text-3xl font-bold font-outfit mb-8 text-primary text-center">
-              {locale === 'en' ? 'Why relining is the future of pipe renovation' : 'Varför relining är framtiden för rörrenovering'}
+              {t('services.relining.about.title')}
             </h2>
             <div className="prose prose-lg max-w-none text-text-700 leading-relaxed text-left">
-              <p className="mb-6">
-                {locale === 'en'
-                  ? 'Relining represents a revolution in the VVS industry – a technique that renews pipe systems without demolition or disturbing residents. With 30+ years of experience, we’ve seen how this innovation has changed the game. Every relining project is unique and demands careful planning, modern technology and a deep understanding of both technical and practical aspects.'
-                  : 'Relining representerar en revolution inom VVS-branschen - en teknik som gör det möjligt att förnya rörsystem utan att riva upp byggnader eller störa boende. Med över 30 års erfarenhet har vi sett hur denna innovativa metod har förändrat spelreglerna för rörrenovering. Vi förstår att varje relining-projekt är unikt och kräver noggrann planering, modern teknik och djup förståelse för både tekniska och praktiska aspekter.'}
-              </p>
-              <p className="mb-6">
-                {locale === 'en'
-                  ? 'What makes us experts in relining is our combination of technical excellence and environmental awareness. Clients value solutions that are both cost‑effective and sustainable – and relining delivers exactly that. We optimize every step to minimize disruption, maximize durability and ensure the renewed system performs for decades. This passion for innovation and quality makes us Stockholm’s leading partner for relining.'
-                  : 'Det som gör oss till experter på relining är vår kombination av teknisk expertis och miljömedvetenhet. Vi vet att kunder värdesätter lösningar som är både kostnadseffektiva och hållbara - och relining levererar precis det. När vi genomför ett relining-projekt ser vi till att varje steg optimeras för att minimera störningar, maximera hållbarhet och säkerställa att det nya systemet fungerar perfekt i decennier framöver. Det är denna passion för innovation och kvalitet som gör oss till Stockholms ledande partner för relining.'}
-              </p>
+              <p className="mb-6">{t('services.relining.about.p1')}</p>
+              <p className="mb-6">{t('services.relining.about.p2')}</p>
             </div>
           </div>
         </div>
@@ -129,10 +105,10 @@ export default async function ReliningPage({ params }: { params: Promise<{ local
         <div className="container mx-auto px-4">
           <div className="max-w-5xl mx-auto">
             <h2 className="text-3xl font-bold font-outfit text-center mb-12">
-              Våra relining-tjänster
+              {t('services.relining.featuresTitle')}
             </h2>
             <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-              {features.map((feature, index) => (
+              {features.map((feature: Feature, index: number) => (
                 <Card key={index} className="text-center">
                   <CardHeader>
                     <div className="mx-auto w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mb-4">
@@ -162,7 +138,7 @@ export default async function ReliningPage({ params }: { params: Promise<{ local
             <div className="grid md:[grid-template-columns:auto_auto] justify-center gap-6 items-stretch">
               <div>
                 <div className="space-y-6">
-                  {processSteps.map((step, index) => (
+                  {processSteps.map((step: string, index: number) => (
                     <div key={index} className="flex items-start">
                       <div className="flex-shrink-0 w-8 h-8 bg-primary text-white rounded-full flex items-center justify-center font-bold mr-4">
                         {index + 1}
@@ -201,63 +177,35 @@ export default async function ReliningPage({ params }: { params: Promise<{ local
             <div className="grid md:grid-cols-2 gap-12">
               <div>
                 <h3 className="text-2xl font-bold font-outfit mb-6">
-                  Varför välja relining?
+                  {t('services.relining.whyTitle')}
                 </h3>
                 <ul className="space-y-4">
-                  <li className="flex items-start">
-                    <CheckCircle className="h-5 w-5 text-primary mr-3 mt-0.5 flex-shrink-0" />
-                    <span>Bevarar historiska byggnader</span>
-                  </li>
-                  <li className="flex items-start">
-                    <CheckCircle className="h-5 w-5 text-primary mr-3 mt-0.5 flex-shrink-0" />
-                    <span>Minimal störning för boende</span>
-                  </li>
-                  <li className="flex items-start">
-                    <CheckCircle className="h-5 w-5 text-primary mr-3 mt-0.5 flex-shrink-0" />
-                    <span>Miljövänlig metod</span>
-                  </li>
-                  <li className="flex items-start">
-                    <CheckCircle className="h-5 w-5 text-primary mr-3 mt-0.5 flex-shrink-0" />
-                    <span>Långsiktigt hållbart resultat</span>
-                  </li>
+                  {t.raw('services.relining.whyItems').map((item: string, index: number) => (
+                    <li key={index} className="flex items-start">
+                      <CheckCircle className="h-5 w-5 text-primary mr-3 mt-0.5 flex-shrink-0" />
+                      <span>{item}</span>
+                    </li>
+                  ))}
                 </ul>
               </div>
               
               <div>
                 <h3 className="text-2xl font-bold font-outfit mb-6">
-                  Relaterade tjänster
+                  {t('services.relining.relatedTitle')}
                 </h3>
                 <div className="space-y-4">
-                  <div className="p-4 border rounded-lg hover:border-primary/50 transition-colors">
-                    <h4 className="font-semibold mb-2">
-                      <Link href={`/${locale}/stambyte`} className="text-primary hover:underline">
-                        Stambyte
-                      </Link>
-                    </h4>
-                    <p className="text-text-700 text-sm">
-                      Traditionell metod för komplett byte av rör
-                    </p>
-                  </div>
-                  <div className="p-4 border rounded-lg hover:border-primary/50 transition-colors">
-                    <h4 className="font-semibold mb-2">
-                      <Link href={`/${locale}/stamfilmning`} className="text-primary hover:underline">
-                        Stamfilmning
-                      </Link>
-                    </h4>
-                    <p className="text-text-700 text-sm">
-                      Kamerainspektion för att bedöma rörenas tillstånd
-                    </p>
-                  </div>
-                  <div className="p-4 border rounded-lg hover:border-primary/50 transition-colors">
-                    <h4 className="font-semibold mb-2">
-                      <Link href={`/${locale}/stamspolning`} className="text-primary hover:underline">
-                        Stamspolning
-                      </Link>
-                    </h4>
-                    <p className="text-text-700 text-sm">
-                      Rengöring innan relining för bästa resultat
-                    </p>
-                  </div>
+                  {t.raw('services.relining.relatedServices').map((service: { title: string; description: string }, index: number) => (
+                    <div key={index} className="p-4 border rounded-lg hover:border-primary/50 transition-colors">
+                      <h4 className="font-semibold mb-2">
+                        <Link href={`/${locale}/${service.title === 'Pipe replacement' ? 'stambyte' : service.title === 'Pipe inspection' ? 'stamfilmning' : 'stamspolning'}`} className="text-primary hover:underline">
+                          {service.title}
+                        </Link>
+                      </h4>
+                      <p className="text-text-700 text-sm">
+                        {service.description}
+                      </p>
+                    </div>
+                  ))}
                 </div>
               </div>
             </div>

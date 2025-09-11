@@ -1,3 +1,5 @@
+'use client';
+
 import { Button } from '@/components/ui/button';
 import { Phone, Mail } from 'lucide-react';
 import { cn } from '@/lib/utils';
@@ -49,9 +51,9 @@ export function CTA({
             className="text-lg px-8 py-6 w-[80%] sm:w-auto self-center"
             asChild
           >
-            <a href={`mailto:${COMPANY.email}`} aria-label="Kontakta oss via e-post">
+            <a href={`mailto:${COMPANY.email}`} aria-label={t('contactUs')}>
               <Mail className="h-5 w-5 mr-2" />
-              Kontakta oss
+              {t('contactUs')}
             </a>
           </Button>
           
@@ -63,9 +65,9 @@ export function CTA({
               className="text-lg px-8 py-6 w-[80%] sm:w-auto self-center"
               asChild
             >
-              <a href={`tel:${COMPANY.phone}`} aria-label="Ring direkt">
+              <a href={`tel:${COMPANY.phone}`} aria-label={t('callNow')}>
                 <Phone className="h-5 w-5 mr-2" />
-                Ring direkt
+                {t('callNow')}
               </a>
             </Button>
           )}

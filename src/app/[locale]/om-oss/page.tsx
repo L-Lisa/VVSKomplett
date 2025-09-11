@@ -21,25 +21,25 @@ export default async function AboutPage({ params }: { params: Promise<{ locale: 
   const t = await getTranslations({ locale });
 
   const certifications = [
-    'Certifierade enligt Säker Vatten-standarder',
-    'Försäkrade arbeten med full täckning',
-    'Garanti på alla installationer och reparationer',
-    'Kontinuerlig utbildning av personal',
-    'Miljöcertifiering enligt ISO 14001'
+    t('about.certifications.certifiedBy'),
+    t('about.certifications.insuredWork'),
+    t('about.certifications.warranty'),
+    t('about.certifications.continuousTraining'),
+    t('about.certifications.environmentalCert')
   ];
 
   const teamMembers = [
     {
       name: 'Håkan',
-      role: 'Projektledning',
-      experience: '30+ års erfarenhet',
+      role: t('about.team.role'),
+      experience: t('about.team.experience'),
       specialties: ['Nyinstallation', 'Stambyte', 'Projekthantering'],
       image: '/hakan.webp'
     },
     {
       name: 'Daniel',
-      role: 'Projektledning',
-      experience: '30+ års erfarenhet',
+      role: t('about.team.role'),
+      experience: t('about.team.experience'),
       specialties: ['Service', 'Akutreparationer', 'Relining'],
       image: '/daniel.webp'
     }
@@ -121,7 +121,7 @@ export default async function AboutPage({ params }: { params: Promise<{ locale: 
                         asChild
                       >
                         <Link href={`tel:${process.env.NEXT_PUBLIC_PHONE ?? '+46 70-123 45 67'}`}>
-                          Ring direkt
+                          {t('about.team.callDirect')}
                         </Link>
                       </Button>
                       <Button 
@@ -131,12 +131,12 @@ export default async function AboutPage({ params }: { params: Promise<{ locale: 
                         asChild
                       >
                         <Link href={`/${locale}/kontakt`}>
-                          Kontakt
+                          {t('about.team.contact')}
                         </Link>
                       </Button>
                     </div>
                     <div className="space-y-2">
-                      <p className="font-semibold text-sm text-text-900">Specialiteter:</p>
+                      <p className="font-semibold text-sm text-text-900">{t('about.team.specialties')}:</p>
                       <div className="flex flex-wrap gap-2 justify-center">
                         {member.specialties.map((specialty, idx) => (
                           <span
@@ -161,17 +161,17 @@ export default async function AboutPage({ params }: { params: Promise<{ locale: 
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto">
             <h2 className="text-3xl font-bold font-outfit mb-8 text-primary text-center">
-              Våra grundare - Håkan & Daniel
+              {t('about.founders.title')}
             </h2>
             <div className="prose prose-lg max-w-none text-text-700 leading-relaxed text-left">
               <p className="mb-6">
-                Med över 30 års erfarenhet inom VVS-branschen har Håkan och Daniel byggt upp Komplett VVS i Sthlm AB till ett certifierat företag som står för kvalitet och trygghet. Deras djupa kunskap sträcker sig från traditionell VVS-installation till modern elektrisk teknik, vilket gör dem till en komplett partner för alla dina behov.
+                {t('about.founders.paragraph1')}
               </p>
               <p className="mb-6">
-                Som certifierat VVS-företag erbjuder vi allt inom VVS under samma tak - från nyinstallation och stambyte till relining, stamspolning och service. Vi vill vara det trygga och säkra valet för våra kunder i Stockholm, med fokus på långsiktiga lösningar och kundnöjdhet.
+                {t('about.founders.paragraph2')}
               </p>
               <p>
-                Håkan och Daniels vision är att förenkla VVS-projekt genom att erbjuda helhetslösningar med transparent kommunikation, konkurrenskraftiga priser och garanterad kvalitet enligt Säker Vatten-standarder.
+                {t('about.founders.paragraph3')}
               </p>
             </div>
           </div>

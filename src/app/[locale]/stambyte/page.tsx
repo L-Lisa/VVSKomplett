@@ -22,33 +22,27 @@ export default async function PipeReplacementPage({ params }: { params: Promise<
   const features = [
     {
       icon: Users,
-      title: 'Minimal störning',
-      description: 'Planerad genomförande med minimal påverkan på boende'
+      title: t('services.pipeReplacement.features.minimalDisruption.title'),
+      description: t('services.pipeReplacement.features.minimalDisruption.description')
     },
     {
       icon: Wrench,
-      title: 'Modern rörteknik',
-      description: 'Hållbara lösningar för långsiktig funktionalitet'
+      title: t('services.pipeReplacement.features.modernTechnology.title'),
+      description: t('services.pipeReplacement.features.modernTechnology.description')
     },
     {
       icon: Settings,
-      title: 'Samordning',
-      description: 'Täta samarbeten med fastighetsförvaltning'
+      title: t('services.pipeReplacement.features.coordination.title'),
+      description: t('services.pipeReplacement.features.coordination.description')
     },
     {
       icon: Shield,
-      title: 'Försäkrade arbeten',
-      description: 'Full garanti och försäkring på alla arbeten'
+      title: t('services.pipeReplacement.features.insuredWork.title'),
+      description: t('services.pipeReplacement.features.insuredWork.description')
     }
   ];
 
-  const processSteps = [
-    'Grundlig besiktning av befintliga rör',
-    'Planering och koordinering med fastighetsförvaltning',
-    'Information till boende om arbetet',
-    'Professionell genomförande med minimal störning',
-    'Testning och överlämning med dokumentation'
-  ];
+  const processSteps = t.raw('services.pipeReplacement.process.steps');
 
   return (
     <>
@@ -77,7 +71,7 @@ export default async function PipeReplacementPage({ params }: { params: Promise<
         <span aria-hidden="true" className="absolute inset-0 bg-white/10"></span>
         <div className="container mx-auto px-4 relative">
           <div className="max-w-4xl mx-auto text-center">
-            <div className="inline-block rounded-md border border-white/60 md:border-white/40 bg-white/70 md:bg-white/40 backdrop-blur-md md:backdrop-blur-sm px-4 py-6 md:px-6 md:py-8 lg:px-8 lg:py-10">
+            <div className="inline-block rounded-md border border-white/60 md:border-white/40 bg-white/85 md:bg-white/70 backdrop-blur-md md:backdrop-blur-sm px-4 py-6 md:px-6 md:py-8 lg:px-8 lg:py-10">
               <h1 id="hero-title" className="text-4xl md:text-5xl font-bold font-outfit mb-4">
                 {t('services.pipeReplacement.hero.h1')}
               </h1>
@@ -87,12 +81,12 @@ export default async function PipeReplacementPage({ params }: { params: Promise<
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <Button asChild size="lg">
                   <Link href={`/${locale}/kontakt`}>
-                    Få kostnadsfri offert
+                    {t('hero.getQuote')}
                   </Link>
                 </Button>
                 <Button asChild variant="outline" size="lg">
                   <Link href={`/${locale}/om-oss`}>
-                    Läs mer om oss
+                    {t('hero.readMoreAboutUs')}
                   </Link>
                 </Button>
               </div>
@@ -164,7 +158,7 @@ export default async function PipeReplacementPage({ params }: { params: Promise<
             <div className="grid md:[grid-template-columns:auto_auto] justify-center gap-6 items-stretch">
               <div>
                 <div className="space-y-6">
-                  {processSteps.map((step, index) => (
+                  {processSteps.map((step: string, index: number) => (
                     <div key={index} className="flex items-start">
                       <div className="flex-shrink-0 w-8 h-8 bg-primary text-white rounded-full flex items-center justify-center font-bold mr-4">
                         {index + 1}
@@ -203,63 +197,35 @@ export default async function PipeReplacementPage({ params }: { params: Promise<
             <div className="grid md:grid-cols-2 gap-12">
               <div>
                 <h3 className="text-2xl font-bold font-outfit mb-6">
-                  Varför välja oss för stambyte?
+                  {t('services.pipeReplacement.whyChooseUs.title')}
                 </h3>
                 <ul className="space-y-4">
-                  <li className="flex items-start">
-                    <CheckCircle className="h-5 w-5 text-primary mr-3 mt-0.5 flex-shrink-0" />
-                    <span>Erfarenhet av stambyte i flerbostadshus</span>
-                  </li>
-                  <li className="flex items-start">
-                    <CheckCircle className="h-5 w-5 text-primary mr-3 mt-0.5 flex-shrink-0" />
-                    <span>Samarbete med fastighetsförvaltning</span>
-                  </li>
-                  <li className="flex items-start">
-                    <CheckCircle className="h-5 w-5 text-primary mr-3 mt-0.5 flex-shrink-0" />
-                    <span>Minimal störning för boende</span>
-                  </li>
-                  <li className="flex items-start">
-                    <CheckCircle className="h-5 w-5 text-primary mr-3 mt-0.5 flex-shrink-0" />
-                    <span>Modern rörteknik för långsiktig hållbarhet</span>
-                  </li>
+                  {t.raw('services.pipeReplacement.whyChooseUs.items').map((item: string, index: number) => (
+                    <li key={index} className="flex items-start">
+                      <CheckCircle className="h-5 w-5 text-primary mr-3 mt-0.5 flex-shrink-0" />
+                      <span>{item}</span>
+                    </li>
+                  ))}
                 </ul>
               </div>
               
               <div>
                 <h3 className="text-2xl font-bold font-outfit mb-6">
-                  Relaterade tjänster
+                  {t('services.pipeReplacement.relatedServices.title')}
                 </h3>
                 <div className="space-y-4">
-                  <div className="p-4 border rounded-lg hover:border-primary/50 transition-colors">
-                    <h4 className="font-semibold mb-2">
-                      <Link href={`/${locale}/relining`} className="text-primary hover:underline">
-                        Relining
-                      </Link>
-                    </h4>
-                    <p className="text-text-700 text-sm">
-                      Alternativ till stambyte - förnya rör utan rivning
-                    </p>
-                  </div>
-                  <div className="p-4 border rounded-lg hover:border-primary/50 transition-colors">
-                    <h4 className="font-semibold mb-2">
-                      <Link href={`/${locale}/stamspolning`} className="text-primary hover:underline">
-                        Stamspolning
-                      </Link>
-                    </h4>
-                    <p className="text-text-700 text-sm">
-                      Rengöring av befintliga rör innan byte
-                    </p>
-                  </div>
-                  <div className="p-4 border rounded-lg hover:border-primary/50 transition-colors">
-                    <h4 className="font-semibold mb-2">
-                      <Link href={`/${locale}/stamfilmning`} className="text-primary hover:underline">
-                        Stamfilmning
-                      </Link>
-                    </h4>
-                    <p className="text-text-700 text-sm">
-                      Kamerainspektion för att kartlägga rörenas tillstånd
-                    </p>
-                  </div>
+                  {t.raw('services.pipeReplacement.relatedServices.services').map((service: { title: string; description: string }, index: number) => (
+                    <div key={index} className="p-4 border rounded-lg hover:border-primary/50 transition-colors">
+                      <h4 className="font-semibold mb-2">
+                        <Link href={`/${locale}/${service.title === 'Relining' ? 'relining' : service.title === 'Stamspolning' ? 'stamspolning' : 'stamfilmning'}`} className="text-primary hover:underline">
+                          {service.title}
+                        </Link>
+                      </h4>
+                      <p className="text-text-700 text-sm">
+                        {service.description}
+                      </p>
+                    </div>
+                  ))}
                 </div>
               </div>
             </div>

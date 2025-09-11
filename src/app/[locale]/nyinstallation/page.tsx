@@ -77,7 +77,7 @@ export default async function NewInstallationPage({ params }: { params: Promise<
         <span aria-hidden="true" className="absolute inset-0 bg-white/10"></span>
         <div className="container mx-auto px-4 relative">
           <div className="max-w-4xl mx-auto text-center">
-            <div className="inline-block rounded-md border border-white/60 md:border-white/40 bg-white/70 md:bg-white/40 backdrop-blur-md md:backdrop-blur-sm px-4 py-6 md:px-6 md:py-8 lg:px-8 lg:py-10">
+            <div className="inline-block rounded-md border border-white/60 md:border-white/40 bg-white/85 md:bg-white/70 backdrop-blur-md md:backdrop-blur-sm px-4 py-6 md:px-6 md:py-8 lg:px-8 lg:py-10">
               <h1 id="hero-title" className="text-4xl md:text-5xl font-bold font-outfit mb-4">
                 {t('services.newInstallation.hero.h1')}
               </h1>
@@ -134,7 +134,7 @@ export default async function NewInstallationPage({ params }: { params: Promise<
       {/* Features Section */}
       <section className="py-20">
         <div className="container mx-auto px-4">
-          <div className="max-w-5xl mx-auto">
+          <div className="max-w-5xl mx-auto lg:max-w-6xl">
             <h2 className="text-3xl font-bold font-outfit text-center mb-12">
               {t('services.newInstallation.pageContent.featuresTitle')}
             </h2>

@@ -68,8 +68,8 @@ export function Footer() {
               {t('footer.areas')}
             </h3>
             <div className="text-sm text-[#1f398a]">
-              <p>Stor Stockholm</p>
-              <p className="mt-2">Stockholm med omnejd</p>
+              <p>{t('footer.areasList.greaterStockholm')}</p>
+              <p className="mt-2">{t('footer.areasList.stockholmRegion')}</p>
             </div>
           </div>
 
@@ -83,15 +83,15 @@ export function Footer() {
             <div className="text-sm text-[#1f398a] space-y-2">
               <div className="flex items-center">
                 <Shield className="h-4 w-4 mr-2 text-[#F97316]" />
-                Säker Vatten
+                {t('footer.certificatesList.safeWater')}
               </div>
               <div className="flex items-center">
                 <Award className="h-4 w-4 mr-2 text-[#F97316]" />
-                Ansvarsförsäkring
+                {t('footer.certificatesList.liabilityInsurance')}
               </div>
               <div className="flex items-center">
                 <Shield className="h-4 w-4 mr-2 text-[#F97316]" />
-                Auktorisation
+                {t('footer.certificatesList.authorization')}
               </div>
             </div>
             
@@ -117,9 +117,9 @@ export function Footer() {
             ))}
           </div>
           {/* Partners as visual chips under services */}
-          <div className="mt-6 text-center" aria-label="Samarbeten">
-            <p className="text-xs text-[#1f398a] mb-1">Samarbeten</p>
-            <p className="text-sm text-[#1f398a]">Elteknik23 • Caredab • Badrums-Koncept</p>
+          <div className="mt-6 text-center" aria-label={t('footer.partnerships.title')}>
+            <p className="text-xs text-[#1f398a] mb-1">{t('footer.partnerships.title')}</p>
+            <p className="text-sm text-[#1f398a]">{t('footer.partnerships.partners')}</p>
           </div>
         </div>
 

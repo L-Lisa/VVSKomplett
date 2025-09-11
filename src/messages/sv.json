@@ -33,6 +33,8 @@
     },
     "servicesTitle": "Våra tjänster",
     "readMore": "Läs mer",
+    "readMoreEllipsis": "Läs mer...",
+    "readMoreAbout": "Läs mer om",
     "whyChooseUs": "5 anledningar att välja oss",
     "testimonialsTitle": "Vad våra kunder säger",
     "footerDescription": "Komplett VVS i Sthlm AB – trygg partner för VVS i Stor-Stockholm",
@@ -222,6 +224,51 @@
     "pipeReplacement": {
       "title": "Stambyte i flerbostadshus – effektivt och säkert",
       "description": "Komplett byte av rörsystem i fastigheter",
+      "features": {
+        "minimalDisruption": {
+          "title": "Minimal störning",
+          "description": "Planerad genomförande med minimal påverkan på boende"
+        },
+        "modernTechnology": {
+          "title": "Modern rörteknik",
+          "description": "Hållbara lösningar för långsiktig funktionalitet"
+        },
+        "coordination": {
+          "title": "Samordning",
+          "description": "Täta samarbeten med fastighetsförvaltning"
+        },
+        "insuredWork": {
+          "title": "Försäkrade arbeten",
+          "description": "Full garanti och försäkring på alla arbeten"
+        }
+      },
+      
+      "whyChooseUs": {
+        "title": "Varför välja oss för stambyte?",
+        "items": [
+          "Erfarenhet av stambyte i flerbostadshus",
+          "Samarbete med fastighetsförvaltning",
+          "Minimal störning för boende",
+          "Full garanti och försäkring"
+        ]
+      },
+      "relatedServices": {
+        "title": "Relaterade tjänster",
+        "services": [
+          {
+            "title": "Relining",
+            "description": "Alternativ till stambyte - förnya rör utan rivning"
+          },
+          {
+            "title": "Stamspolning",
+            "description": "Rengöring av befintliga rör innan byte"
+          },
+          {
+            "title": "Stamfilmning",
+            "description": "Kamerainspektion för att kartlägga rörenas tillstånd"
+          }
+        ]
+      },
       "hero": {
         "h1": "Stambyte i flerbostadshus – effektivt och säkert",
         "intro": "Gamla rör kan orsaka stora problem och kostnader. Vi hjälper fastighetsägare och bostadsrättsföreningar med professionellt stambyte som minimerar störningar för boende.",
@@ -320,7 +367,7 @@
         "intro": "Förebyggande underhåll sparar pengar och förhindrar akuta problem. Vi erbjuder serviceavtal och engångsbesök för alla typer av VVS-system.",
         "features": [
           "Förebyggande underhåll enligt tillverkarens rekommendationer",
-          "Akutservice dygnet runt för oväntade problem",
+          "Snabb återkoppling vid oväntade problem",
           "Serviceavtal för fasta priser och prioriterad hjälp",
           "Modern diagnostik och felsökning",
           "Dokumentation av alla serviceåtgärder"
@@ -332,7 +379,7 @@
           "Regelbunden kontroll av VVS-system",
           "Identifiering av potentiella problem",
           "Planerad underhåll enligt schema",
-          "Akutservice vid oväntade problem",
+          "Snabb återkoppling vid oväntade problem",
           "Dokumentation och rapportering"
         ],
         "imageAlt": "Verktyg och mätutrustning för VVS-service"
@@ -344,7 +391,7 @@
         },
         {
           "question": "Vad ingår i ett serviceavtal?",
-          "answer": "Serviceavtal inkluderar regelbunden kontroll, förebyggande underhåll, prioriterad akutservice och rabatter på reparationer."
+          "answer": "Serviceavtal inkluderar regelbunden kontroll, förebyggande underhåll, prioriterad hjälp och rabatter på reparationer."
         },
         {
           "question": "Kan ni serva alla märken av VVS-utrustning?",
@@ -375,7 +422,7 @@
         "whyChooseUs": [
           "Erfarenhet av alla märken och modeller",
           "Förebyggande underhåll sparar pengar",
-          "Akutservice dygnet runt",
+          "Snabb återkoppling",
           "Serviceavtal med fasta priser"
         ],
         "relatedServicesTitle": "Relaterade tjänster",
@@ -394,7 +441,7 @@
           }
         ],
         "ctaTitle": "Behöver ni VVS-service?",
-        "ctaDescription": "Kontakta oss för serviceavtal eller akutservice",
+        "ctaDescription": "Kontakta oss för serviceavtal och snabb återkoppling",
         "ctaButtons": {
           "callNow": "Ring oss nu",
           "sendMessage": "Skicka meddelande"
@@ -408,6 +455,53 @@
     "relining": {
       "title": "Relining i Stockholm – renovera rören utan rivning",
       "description": "Modern relining-teknik för befintliga rör",
+      "featuresTitle": "Våra relining-tjänster",
+      "features": [
+        {
+          "title": "Ingen rivning",
+          "description": "Förnya rör utan att bryta väggar eller golv"
+        },
+        {
+          "title": "Miljövänlig",
+          "description": "Miljövänlig metod med minimal avfall"
+        },
+        {
+          "title": "Snabb genomförande",
+          "description": "Snabb installation med minimal störning"
+        },
+        {
+          "title": "Långsiktigt hållbart",
+          "description": "Hållbar lösning som varar i decennier"
+        }
+      ],
+      
+      "whyTitle": "Varför välja relining?",
+      "whyItems": [
+        "Bevarar historiska byggnader",
+        "Minimal störning för boende",
+        "Miljövänlig metod",
+        "Långsiktigt hållbart resultat"
+      ],
+      "about": {
+        "title": "Varför relining är framtiden för rörrenovering",
+        "p1": "Relining representerar en revolution inom VVS‑branschen – en teknik som förnyar rörsystem utan rivning eller störning för boende. Med 30+ års erfarenhet har vi sett hur denna innovation förändrat förutsättningarna. Varje projekt är unikt och kräver noggrann planering, modern teknik och djup förståelse för både tekniska och praktiska aspekter.",
+        "p2": "Det som gör oss till experter på relining är kombinationen av teknisk excellens och miljömedvetenhet. Kunder värdesätter lösningar som är både kostnadseffektiva och hållbara – och relining levererar just det. Vi optimerar varje steg för att minimera störningar, maximera hållbarhet och säkerställa prestanda i decennier."
+      },
+      "relatedTitle": "Relaterade tjänster",
+      "relatedServices": [
+        {
+          "title": "Stambyte",
+          "description": "Komplett utbyte när relining inte är lämpligt"
+        },
+        {
+          "title": "Stamfilmning",
+          "description": "Kamerainspektion för att bedöma rörenas tillstånd"
+        },
+        {
+          "title": "Stamspolning",
+          "description": "Rengöring före relining-installation"
+        }
+      ],
       "hero": {
         "h1": "Relining i Stockholm – renovera rören utan rivning",
         "intro": "Relining är en modern metod för att förnya rörsystem utan att behöva riva upp. Perfekt för historiska byggnader eller när störningar ska minimeras.",
@@ -501,6 +595,48 @@
     "pipeFlushing": {
       "title": "Stamspolning & fräsning – förebygg stopp och vattenskador",
       "description": "Professionell rengöring av rörsystem",
+      "featuresTitle": "Våra stamspolnings-tjänster",
+      "features": [
+        {
+          "title": "Högtrycksspolning",
+          "description": "Djuprengöring med specialiserad utrustning"
+        },
+        {
+          "title": "Fräsning",
+          "description": "Borttagning av hårdnade avlagringar"
+        },
+        {
+          "title": "Kamerainspektion",
+          "description": "Kontroll före och efter arbetet"
+        },
+        {
+          "title": "Miljövänliga medel",
+          "description": "Säkra rengöringsmedel för miljön"
+        }
+      ],
+      
+      "whyTitle": "Varför regelbunden stamspolning?",
+      "whyItems": [
+        "Förebygger stopp och vattenskador",
+        "Förbättrar vattenkvaliteten",
+        "Förlänger rörens livslängd",
+        "Sparar pengar på reparationer"
+      ],
+      "relatedTitle": "Relaterade tjänster",
+      "relatedServices": [
+        {
+          "title": "Stamfilmning",
+          "description": "Kamerainspektion för att kartlägga rörenas tillstånd"
+        },
+        {
+          "title": "VVS-service",
+          "description": "Regelbunden service och underhåll"
+        },
+        {
+          "title": "Relining",
+          "description": "Förnyelse av rör efter rengöring"
+        }
+      ],
       "hero": {
         "h1": "Stamspolning & fräsning – förebygg stopp och vattenskador",
         "intro": "Regelbunden rengöring av rörsystem förhindrar stopp, förbättrar vattenkvaliteten och förlänger rörens livslängd. Vi använder moderna metoder för effektiv rengöring.",
@@ -594,6 +730,48 @@
     "pipeCoating": {
       "title": "Stamfilmning med kamera – få full koll på rören",
       "description": "Skyddande filmning av rörsystem",
+      "featuresTitle": "Våra stamfilmnings-tjänster",
+      "features": [
+        {
+          "title": "Högupplöst inspektion",
+          "description": "Tydlig bild av rörenas inre tillstånd"
+        },
+        {
+          "title": "Dokumentation",
+          "description": "Bilder och video för fullständig rapport"
+        },
+        {
+          "title": "Förebyggande underhåll",
+          "description": "Identifiering av problem innan de blir allvarliga"
+        },
+        {
+          "title": "Detaljerad rapport",
+          "description": "Tydliga rekommendationer och åtgärdsförslag"
+        }
+      ],
+      
+      "whyTitle": "Varför stamfilmning?",
+      "whyItems": [
+        "Identifierar problem innan de blir allvarliga",
+        "Förebyggande underhåll",
+        "Dokumentation för försäkringar",
+        "Kostnadseffektiv diagnostik"
+      ],
+      "relatedTitle": "Relaterade tjänster",
+      "relatedServices": [
+        {
+          "title": "Stamspolning",
+          "description": "Rengöring baserad på kamerainspektion"
+        },
+        {
+          "title": "Relining",
+          "description": "Förnyelse av rör efter inspektion"
+        },
+        {
+          "title": "VVS-service",
+          "description": "Regelbunden service och underhåll"
+        }
+      ],
       "hero": {
         "h1": "Stamfilmning med kamera – få full koll på rören",
         "intro": "Med kamerateknologi kan vi inspektera rörsystem noggrant och identifiera problem innan de blir allvarliga. Perfekt för förebyggande underhåll och felsökning.",
@@ -707,10 +885,28 @@
     },
     "team": {
       "title": "Vårt team",
-      "description": "Erfarna montörer med fokus på kvalitet och kundservice"
+      "description": "Erfarna montörer med fokus på kvalitet och kundservice",
+      "role": "Projektledning",
+      "experience": "30+ års erfarenhet",
+      "bookDirect": "Boka direkt",
+      "callDirect": "Ring direkt",
+      "contact": "Kontakt",
+      "specialties": "Specialiteter"
+    },
+    "founders": {
+      "title": "Våra grundare - Håkan & Daniel",
+      "description": "Med över 30 års kombinerad erfarenhet inom VVS-branschen grundade Håkan och Daniel Komplett VVS i Sthlm AB med en tydlig vision: att erbjuda professionella, pålitliga och kundfokuserade VVS-tjänster i Stockholm. Deras omfattande erfarenhet sträcker sig från små reparationer till stora installationer i flerbostadshus, och de har byggt upp ett rykte för kvalitetsarbete och utmärkt kundservice. Idag leder de ett team av skickliga hantverkare som delar deras engagemang för kvalitet och kundnöjdhet.",
+      "paragraph1": "Med över 30 års erfarenhet inom VVS-branschen har Håkan och Daniel byggt upp Komplett VVS i Sthlm AB till ett certifierat företag som står för kvalitet och trygghet. Deras djupa kunskap sträcker sig från traditionell VVS-installation till modern elektrisk teknik, vilket gör dem till en komplett partner för alla dina behov.",
+      "paragraph2": "Som certifierat VVS-företag erbjuder vi allt inom VVS under samma tak - från nyinstallation och stambyte till relining, stamspolning och service. Vi vill vara det trygga och säkra valet för våra kunder i Stockholm, med fokus på långsiktiga lösningar och kundnöjdhet.",
+      "paragraph3": "Håkan och Daniels vision är att förenkla VVS-projekt genom att erbjuda helhetslösningar med transparent kommunikation, konkurrenskraftiga priser och garanterad kvalitet enligt Säker Vatten-standarder."
     },
     "certifications": {
       "title": "Certifieringar och garantier",
+      "certifiedBy": "Certifierade enligt Säker Vatten-standarder",
+      "insuredWork": "Försäkrade arbeten med full täckning",
+      "warranty": "Garanti på alla installationer och reparationer",
+      "continuousTraining": "Kontinuerlig utbildning av personal",
+      "environmentalCert": "Miljöcertifiering enligt ISO 14001",
       "items": [
         "Certifierade enligt Säker Vatten-standarder",
         "Försäkrade arbeten med full täckning",
@@ -775,7 +971,7 @@
         },
         {
           "title": "VVS-service",
-          "description": "Förebyggande underhåll och akutservice dygnet runt."
+          "description": "Förebyggande underhåll med snabb återkoppling."
         },
         {
           "title": "Relining",
@@ -801,10 +997,28 @@
   "contact": {
     "title": "Kontakta oss – få en kostnadsfri offert",
     "description": "Kontakta oss för en kostnadsfri offert",
+    "contactInfo": {
+      "phoneDescription": "Ring oss för snabb återkoppling eller offert",
+      "emailDescription": "Skicka e-post för icke‑akuta frågor"
+    },
+    
+    "services": {
+      "title": "Professionella VVS-tjänster i Stockholm",
+      "sidebarTitle": "Våra tjänster",
+      "list": [
+        "Nyinstallation",
+        "Stambyte",
+        "VVS-service", 
+        "Relining",
+        "Stamspolning",
+        "Stamfilmning"
+      ]
+    },
     "hero": {
       "h1": "Kontakta oss – få en kostnadsfri offert",
       "intro": "Behöver du hjälp med VVS-problem eller vill du bara veta mer om våra tjänster? Vi ger kostnadsfria offerter och rådgivning. Ring oss eller skicka ett meddelande så återkommer vi snabbt.",
-      "intro2": "Vi erbjuder akutservice dygnet runt för akuta problem som inte kan vänta. I Stockholm och omnejd kan vi vanligtvis vara på plats inom 2-4 timmar."
+      "intro2": "Vi erbjuder snabb återkoppling och återkommer vanligtvis inom 24 timmar.",
+      "benefits": "Säker Vatten • 30+ år • Ansvarsförsäkring • Egenkontroller & dokumentation"
     },
     "phone": "Telefon",
     "email": "E-post",
@@ -812,11 +1026,13 @@
     "hours": "Öppettider",
     "emergency": "Akutservice",
     "form": {
+      "title": "Skicka oss ett meddelande",
       "name": "Namn",
       "email": "E-post",
       "phone": "Telefon",
       "message": "Meddelande",
       "submit": "Skicka meddelande",
+      "description": "Fyll i formuläret så återkommer vi med svar och offertförslag. Vid akuta problem – ring oss direkt.",
       "placeholders": {
         "name": "Ditt namn",
         "email": "din@email.se",
@@ -830,6 +1046,8 @@
       "sending": "Skickar..."
     },
     "pageContent": {
+      "ctaTitle": "Redo att komma igång? Få kostnadsfri offert",
+      "ctaDescription": "Beskriv kort vad du behöver hjälp med. Vi återkopplar snabbt, oftast inom 24 timmar.",
       "contactInfoTitle": "Kontaktinformation",
       "contactInfo": [
         {
@@ -876,17 +1094,7 @@
           "question": "Arbetar ni med både privata kunder och företag?",
           "answer": "Ja, vi hjälper både privatpersoner med hemrenoveringar och företag med större VVS-projekt. Vi har erfarenhet av allt från lägenheter till kontorsbyggnader."
         }
-      ],
-      "ctaTitle": "Redo att komma igång?",
-      "ctaDescription": "Kontakta oss idag för en kostnadsfri offert och rådgivning",
-      "ctaButtons": {
-        "callNow": "Ring oss nu",
-        "sendEmail": "Skicka e-post"
-      },
-      "buttons": {
-        "callNow": "Ring oss nu",
-        "sendEmail": "Skicka e-post"
-      }
+      ]
     }
   },
   "header": {
@@ -907,6 +1115,19 @@
     "cookies": "Cookies",
     "emergencyService": "Akutservice dygnet runt",
     "logoAlt": "Komplett VVS logotyp",
+    "areasList": {
+      "greaterStockholm": "Stor Stockholm",
+      "stockholmRegion": "Stockholm med omnejd"
+    },
+    "certificatesList": {
+      "safeWater": "Säker Vatten",
+      "liabilityInsurance": "Ansvarsförsäkring",
+      "authorization": "Auktorisation"
+    },
+    "partnerships": {
+      "title": "Samarbeten",
+      "partners": "Elteknik23 • Caredab • Badrums-Koncept"
+    },
     "pageContent": {
       "areas": [
         "Stor-Stockholm",
@@ -924,7 +1145,29 @@
     "title": "Behöver du hjälp?",
     "description": "Snabb och personlig återkoppling – kontakta oss för offert.",
     "contactUs": "Kontakta oss",
+    "callNow": "Ring direkt",
     "waterLeak": "Behöver du hjälp vid vattenläcka? Vi erbjuder snabb återkoppling i Stockholm."
+  },
+  "faq": {
+    "title": "Vanliga frågor",
+    "questions": {
+      "emergency": {
+        "question": "Hur snabbt kan ni komma ut för akutservice?",
+        "answer": "Vi erbjuder snabb återkoppling. I Stockholm och omnejd kan vi vanligtvis vara på plats inom 2-4 timmar för akuta problem."
+      },
+      "quote": {
+        "question": "Vad kostar en offert?",
+        "answer": "Alla våra offerter är helt kostnadsfria. Vi kommer ut och gör en besiktning utan någon kostnad för dig."
+      },
+      "customers": {
+        "question": "Arbetar ni med både privata kunder och företag?",
+        "answer": "Ja, vi hjälper både privatpersoner med hemrenoveringar och företag med större VVS-projekt. Vi har erfarenhet av allt från lägenheter till kontorsbyggnader."
+      }
+    }
+  },
+  "hero": {
+    "getQuote": "Få kostnadsfri offert",
+    "readMoreAboutUs": "Läs mer om oss"
   },
   "theme": {
     "label": "Tema",
@@ -1119,10 +1362,6 @@
       "title": "Behöver ni stambyte i er fastighet?",
       "description": "Planerat, effektivt och tryggt – minimal påverkan för boende och tydlig kommunikation."
     },
-    "relining": {
-      "title": "Relining utan rivning – smart rörrenovering",
-      "description": "Förnya rören med minimal störning och långsiktig hållbarhet."
-    },
     "pipeFlushing": {
       "title": "Förebygg stopp med professionell stamspolning",
       "description": "Högtrycksspolning, fräsning och kamera – rena stammar och trygg drift."
@@ -1130,6 +1369,10 @@
     "pipeCoating": {
       "title": "Kamerainspektion och dokumentation",
       "description": "Få full koll på rören – tydliga fynd och prioriterade åtgärdsförslag."
+    },
+    "relining": {
+      "title": "Renovera rör utan rivning med relining",
+      "description": "Modern metod som bevarar byggnader och minimerar störningar – hållbar lösning för framtiden."
     }
   }
 }

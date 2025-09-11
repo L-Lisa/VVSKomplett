@@ -33,7 +33,7 @@
 2. Might this need to be translated in the future?
 3. Is this a technical identifier or user content?
 
-If the answer to questions 1 or 2 is "yes", use translations instead.
+If the answer to questions 1 or 2 or 3 is "yes", use translations instead.
 
 ## Code Quality Rules
 

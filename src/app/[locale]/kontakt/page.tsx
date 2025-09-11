@@ -29,24 +29,25 @@ export default async function ContactPage({ params }: { params: Promise<{ locale
       icon: Phone,
       title: t('contact.phone'),
       value: COMPANY.phone,
-      description: 'Ring oss för akutservice eller offert'
+      description: t('contact.contactInfo.phoneDescription')
     },
     {
       icon: Mail,
       title: t('contact.email'),
       value: COMPANY.email,
-      description: 'Skicka e-post för icke-akuta frågor'
+      description: t('contact.contactInfo.emailDescription')
     }
   ];
 
-  const services = [
-    { name: 'Nyinstallation', href: '/nyinstallation' },
-    { name: 'Stambyte', href: '/stambyte' },
-    { name: 'VVS-service', href: '/service' },
-    { name: 'Relining', href: '/relining' },
-    { name: 'Stamspolning', href: '/stamspolning' },
-    { name: 'Stamfilmning', href: '/stamfilmning' }
-  ];
+  const services = t.raw('contact.services.list').map((name: string, index: number) => ({
+    name,
+    href: ['/nyinstallation', '/stambyte', '/service', '/relining', '/stamspolning', '/stamfilmning'][index]
+  }));
+
+  type Service = {
+    name: string;
+    href: string;
+  };
 
   return (
     <>
@@ -71,8 +72,8 @@ export default async function ContactPage({ params }: { params: Promise<{ locale
       >
         <span aria-hidden="true" className="absolute inset-0 bg-white/10"></span>
         <div className="container mx-auto px-4 relative">
-          <div className="max-w-4xl mx-auto text-center">
-            <div className="relative inline-block rounded-md border border-white/60 md:border-white/40 bg-white/70 md:bg-white/40 backdrop-blur-md md:backdrop-blur-sm px-4 py-6 md:px-6 md:py-8 lg:px-8 lg:py-10">
+          <div className="max-w-5xl mx-auto text-center">
+            <div className="relative inline-block rounded-md border border-white/60 md:border-white/40 bg-white/85 md:bg-white/70 backdrop-blur-md md:backdrop-blur-sm px-4 py-6 md:px-6 md:py-8 lg:px-8 lg:py-10">
               <h1 id="contact-hero-title" className="text-4xl md:text-5xl font-bold font-outfit mb-6">
                 {t('contact.hero.h1')}
               </h1>
@@ -87,13 +88,13 @@ export default async function ContactPage({ params }: { params: Promise<{ locale
                 <Button asChild size="lg" variant="secondary">
                   <a href={`tel:${COMPANY.phone}`}>
                     <Phone className="h-4 w-4 mr-2" />
-                    Ring oss nu
+                    {t('cta.callNow')}
                   </a>
                 </Button>
                 <Button asChild variant="outline" size="lg">
                   <a href={`mailto:${COMPANY.email}`}>
                     <Mail className="h-4 w-4 mr-2" />
-                    Skicka e-post
+                    {t('cta.contactUs')}
                   </a>
                 </Button>
               </div>
@@ -106,7 +107,7 @@ export default async function ContactPage({ params }: { params: Promise<{ locale
                     alt="Säker Vatten"
                     width={135}
                     height={72}
-                    className="shadow-none"
+                    className="shadow-none w-full h-auto"
                     loading="lazy"
                   />
                 </div>
@@ -157,11 +158,10 @@ export default async function ContactPage({ params }: { params: Promise<{ locale
                 ></div>
                 <div className="relative">
                   <h2 className="text-3xl font-bold font-outfit mb-6">
-                    Skicka oss ett meddelande
+                    {t('contact.form.title')}
                   </h2>
                   <p className="text-lg text-text-700 mb-8">
-                    Fyll i formuläret så återkommer vi till dig inom 24 timmar. 
-                    För akuta problem, ring oss direkt.
+                    {t('contact.form.description')}
                   </p>
                   <div className="bg-white rounded-lg p-4 md:p-6 shadow-sm ring-1 ring-black/5">
                     <ContactForm />
@@ -171,10 +171,10 @@ export default async function ContactPage({ params }: { params: Promise<{ locale
               
               <div>
                 <h3 className="text-2xl font-bold font-outfit mb-6">
-                  Våra tjänster
+                  {t('contact.services.sidebarTitle')}
                 </h3>
                 <div className="space-y-4">
-                  {services.map((service, index) => (
+                  {services.map((service: Service, index: number) => (
                     <div key={index} className="p-4 border rounded-lg hover:border-primary/50 transition-colors">
                       <h4 className="font-semibold mb-2">
                         <Link href={service.href} className="text-primary hover:underline">
@@ -182,7 +182,7 @@ export default async function ContactPage({ params }: { params: Promise<{ locale
                         </Link>
                       </h4>
                       <p className="text-text-700 text-sm">
-                        Professionella VVS-tjänster i Stockholm
+                        {t('contact.services.title')}
                       </p>
                     </div>
                   ))}
@@ -199,39 +199,36 @@ export default async function ContactPage({ params }: { params: Promise<{ locale
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto">
             <h2 className="text-3xl font-bold font-outfit text-center mb-12">
-              Vanliga frågor
+              {t('faq.title')}
             </h2>
             <div className="space-y-6">
               <Card>
                 <CardHeader>
-                  <CardTitle className="text-lg">Hur snabbt kan ni komma ut för akutservice?</CardTitle>
+                  <CardTitle className="text-lg">{t('faq.questions.emergency.question')}</CardTitle>
                 </CardHeader>
                 <CardContent>
                   <p className="text-text-700">
-                    Vi erbjuder akutservice dygnet runt. I Stockholm och omnejd kan vi vanligtvis 
-                    vara på plats inom 2-4 timmar för akuta problem.
+                    {t('faq.questions.emergency.answer')}
                   </p>
                 </CardContent>
               </Card>
               <Card>
                 <CardHeader>
-                  <CardTitle className="text-lg">Vad kostar en offert?</CardTitle>
+                  <CardTitle className="text-lg">{t('faq.questions.quote.question')}</CardTitle>
                 </CardHeader>
                 <CardContent>
                   <p className="text-text-700">
-                    Alla våra offerter är helt kostnadsfria. Vi kommer ut och gör en besiktning 
-                    utan någon kostnad för dig.
+                    {t('faq.questions.quote.answer')}
                   </p>
                 </CardContent>
               </Card>
               <Card>
                 <CardHeader>
-                  <CardTitle className="text-lg">Arbetar ni med både privata kunder och företag?</CardTitle>
+                  <CardTitle className="text-lg">{t('faq.questions.customers.question')}</CardTitle>
                 </CardHeader>
                 <CardContent>
                   <p className="text-text-700">
-                    Ja, vi hjälper både privatpersoner med hemrenoveringar och företag med större 
-                    VVS-projekt. Vi har erfarenhet av allt från lägenheter till kontorsbyggnader.
+                    {t('faq.questions.customers.answer')}
                   </p>
                 </CardContent>
               </Card>
