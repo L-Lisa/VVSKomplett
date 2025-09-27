@@ -8,7 +8,7 @@
     "pipeFlushing": "Pipe Flushing",
     "pipeCoating": "Pipe Inspection",
     "about": "About Us",
-    "contact": "Contact"
+    "contact": "Contact Us Today"
   },
   "certifications": {
     "sakerVatten": {
@@ -18,8 +18,13 @@
     }
   },
   "home": {
-    "title": "Plumbing in Stockholm for contractors, housing associations, businesses and private customers",
-    "subtitle": "Komplett VVS – Everything under one roof for your water and drainage",
+    "title": "Plumbing in Stockholm - Everything under one roof for your water and drainage",
+    "subtitle": "Komplett VVS i Sthlm AB – a small company with high ambitions. We believe in long-term thinking, professional pride and delivering quality in every step.",
+    "localArea": {
+      "title": "We come to you",
+      "description": "From the inner city to the surrounding municipalities.<br />We deliver the right expertise to contractors, housing associations, companies and private individuals – from new installations to pipe flushing and regular service.",
+      "imageAlt": "Bathroom renovation showcase"
+    },
     "description": "Authorized plumbing company with strong liability insurance and work according to Safe Water regulations.",
     "hero": {
       "h1": "Plumbing in Stockholm – construction, housing associations & companies",
@@ -36,7 +41,7 @@
     "readMoreEllipsis": "Read more...",
     "readMoreAbout": "Read more about",
     "whyChooseUs": "5 reasons to choose us",
-    "testimonialsTitle": "What our customers say",
+    "freeQuote": "Free Quote",
     "footerDescription": "Komplett VVS i Sthlm AB – reliable partner for plumbing in Greater Stockholm",
     "footerServices": "Services",
     "footerContact": "Contact",

@@ -8,7 +8,7 @@
     "pipeFlushing": "Stamspolning",
     "pipeCoating": "Stamfilmning",
     "about": "Om oss",
-    "contact": "Kontakt"
+    "contact": "Kontakta oss Idag"
   },
   "certifications": {
     "sakerVatten": {
@@ -18,8 +18,13 @@
     }
   },
   "home": {
-    "title": "VVS i Stockholm för entreprenad, BRF, företag och privatpersoner",
-    "subtitle": "Komplett VVS – Allt under samma tak för ditt vatten och avlopp",
+    "title": "VVS i Stockholm - Allt under samma tak för ditt vatten och avlopp",
+    "subtitle": "Komplett VVS i Sthlm AB – ett mindre företag med höga ambitioner. Vi tror på långsiktighet, yrkesstolthet och att leverera kvalitet i varje led.",
+    "localArea": {
+      "title": "Vi kommer till er",
+      "description": "Från innerstaden till kranskommunerna.<br />Vi levererar rätt kompetens till entreprenad, BRF, företag och privatpersoner – från nyinstallation till stamspolning och regelbunden service.",
+      "imageAlt": "Badrumsrenovering showcase"
+    },
     "description": "Auktoriserat VVS-företag med stark ansvarsförsäkring och arbeten enligt Säker Vatten-regler.",
     "hero": {
     "h1": "VVS i Stockholm – entreprenad, BRF & företag",
@@ -36,7 +41,7 @@
     "readMoreEllipsis": "Läs mer...",
     "readMoreAbout": "Läs mer om",
     "whyChooseUs": "5 anledningar att välja oss",
-    "testimonialsTitle": "Vad våra kunder säger",
+    "freeQuote": "Gratis Offert",
     "footerDescription": "Komplett VVS i Sthlm AB – trygg partner för VVS i Stor-Stockholm",
     "footerServices": "Tjänster",
     "footerContact": "Kontakt",

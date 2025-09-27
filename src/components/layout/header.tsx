@@ -59,41 +59,40 @@ export function Header({ LocaleSwitcher }: HeaderProps) {
     <header className="border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60 sticky top-0 z-50">
       <div className="container">
         {/* Desktop: Logo spans both rows */}
-        <div className="hidden lg:flex items-start justify-between">
+        <div className="hidden lg:flex items-center">
           {/* Logo - spans both rows */}
-          <Link href="/" className="flex items-start py-4 -ml-2 md:-ml-4">
+          <Link href="/" className="flex items-center py-4 -ml-2 md:-ml-4">
             <Image
               src="/logokomplett.webp"
               alt={t('header.logoAlt')}
               width={1280}
               height={720}
-              className="h-20 w-auto shrink-0 scale-85"
+              className="h-16 w-auto shrink-0 scale-85"
               priority
             />
           </Link>
           
+          {/* Spacer - 1rem space between logo and nav */}
+          <div className="w-4"></div>
+          
           {/* Right side content */}
-          <div className="flex flex-col">
-            {/* Navigation Row */}
-            <nav className={`flex items-center ${isEnglish ? 'space-x-5' : 'space-x-4'} py-4`}>
+          <div className="flex flex-col flex-1">
+            {/* Navigation Row with Language Toggle */}
+            <nav className={`flex items-center ${isEnglish ? 'space-x-5' : 'space-x-4'}`}>
               {navItems.map((item) => (
                 <Link
                   key={item.key}
                   href={item.href}
-                  className={`${isEnglish ? 'text-base' : 'text-lg'} font-medium text-text-700 hover:text-primary hover:scale-105 active:scale-95 transition-all duration-200 ease-in-out`}
+                  className={`${isEnglish ? 'text-base' : 'text-lg'} font-medium text-text-700 hover:text-primary hover:scale-105 active:scale-95 transition-all duration-200 ease-in-out whitespace-nowrap`}
                 >
-                  {t(`navigation.${item.key}`)}
+                  {item.key === 'about' ? 'Om\u00A0oss' : t(`navigation.${item.key}`)}
                 </Link>
               ))}
-            </nav>
-            
-            {/* CTA & Locale Row */}
-            <div className="flex items-center justify-end space-x-4 pb-4">
-              <div className="flex items-center space-x-2">
+              {/* Language Toggle inline with menu items */}
+              <div className="ml-4">
                 <LocaleSwitcher />
               </div>
-              <CTAButtons />
-            </div>
+            </nav>
           </div>
         </div>
 

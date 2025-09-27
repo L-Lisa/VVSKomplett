@@ -1,12 +1,11 @@
 import { getTranslations } from 'next-intl/server';
+import Image from 'next/image';
 import { Button } from '@/components/ui/button';
 import { ServicesGridClient } from '@/components/content/services-grid.client';
 import { Hero } from '@/components/content/hero';
-import { Testimonials3Client } from '@/components/content/testimonials3.client';
 import { CTA } from '@/components/content/cta';
 import { generatePageMetadata } from '@/lib/metadata';
 import { generateLocalBusinessSchema } from '@/lib/schemas';
-import { ScrollAnimation } from '@/components/ui/scroll-animation';
 import { GeometricAccents } from '@/components/ui/geometric-accents';
 import { ScreenReaderAnnouncement } from '@/components/ui/screen-reader-announcement';
 import Link from 'next/link';
@@ -77,26 +76,6 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
   ];
 
 
-  const testimonials = [
-    {
-      quote: 'Professionell service och snabb respons. Kommer definitivt att använda er igen!',
-      author: 'Anna Lindberg',
-      role: 'Husägare',
-      company: 'Södermalm'
-    },
-    {
-      quote: 'Utmärkt arbete med vår nya VVS-installation. Mycket nöjd med resultatet.',
-      author: 'Erik Johansson',
-      role: 'Fastighetsägare',
-      company: 'Östermalm'
-    },
-    {
-      quote: 'Pålitlig partner som alltid levererar kvalitet. Rekommenderas varmt!',
-      author: 'Maria Andersson',
-      role: 'Byggherre',
-      company: 'Vasastan'
-    }
-  ];
 
   return (
     <>
@@ -111,14 +90,9 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
       <Hero
         title={t('home.title')}
         lead={t('home.subtitle')}
-        description={t('home.description')}
         primaryCta={{
           text: t('navigation.contact'),
           href: '/kontakt'
-        }}
-        image={{
-          src: '/images/vvsror.jpg',
-          alt: t('home.hero.imageAlt')
         }}
         priority={true}
       />
@@ -129,11 +103,9 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
         <IndustrialGridBackground />
         
         <div className="container mx-auto px-4 relative z-10">
-          <ScrollAnimation delay={0} duration={300}>
-            <h2 id="services-heading" className="text-2xl sm:text-3xl md:text-4xl font-bold font-outfit text-center mb-8 sm:mb-12">
-              {t('home.servicesTitle')}
-            </h2>
-          </ScrollAnimation>
+          <h2 id="services-heading" className="text-2xl sm:text-3xl md:text-4xl font-bold font-outfit text-center mb-8 sm:mb-12">
+            {t('home.servicesTitle')}
+          </h2>
           <ServicesGridClient services={services} />
         </div>
       </section>
@@ -144,35 +116,21 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
         delay={1000}
       />
 
-      {/* Testimonials Section */}
-      <section className="py-20 bg-muted/20 relative">
-        <GeometricAccents variant="diagonal" className="opacity-20" />
-        <div className="container mx-auto px-4">
-          <ScrollAnimation delay={0} duration={300}>
-            <h2 className="text-3xl md:text-4xl font-bold font-outfit text-center mb-12">
-              {t('home.testimonialsTitle')}
-            </h2>
-          </ScrollAnimation>
-          <Testimonials3Client testimonials={testimonials} />
-        </div>
-      </section>
 
       {/* Content Section with Internal Linking */}
       <section className="py-20 bg-[#F7F9FC] relative">
         <GeometricAccents variant="border" className="opacity-25" />
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto">
-            <ScrollAnimation delay={0} duration={300}>
-              <h2 className="text-3xl md:text-4xl font-bold font-outfit text-center mb-8">
-                {t('home.contentSection.mainTitle')}
-              </h2>
-            </ScrollAnimation>
+            <h2 className="text-3xl md:text-4xl font-bold font-outfit text-center mb-8">
+              {t('home.contentSection.mainTitle')}
+            </h2>
             
-            <div className="prose prose-lg max-w-none text-text-700 mb-8">
-              <p className="text-xl leading-relaxed mb-6">
+            <div className="text-text-700 mb-8 text-left">
+              <p className="text-xl leading-relaxed mb-6 text-left">
                 {t('home.hero.intro1')}
               </p>
-              <p className="text-lg leading-relaxed mb-8">
+              <p className="text-lg leading-relaxed mb-8 text-left">
                 {t('home.hero.intro2')}
               </p>
             </div>
@@ -215,7 +173,7 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
             </div>
 
             {/* Service Areas */}
-            <div className="bg-muted/20 rounded-lg p-8 text-center">
+            <div className="bg-muted/20 rounded-lg p-8 text-left">
               <h3 className="text-2xl font-bold font-outfit mb-4">{t('home.serviceAreas.title')}</h3>
               <p className="text-lg text-text-700 mb-6">
                 {t('home.serviceAreas.intro1')} 
@@ -231,33 +189,60 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
               </Button>
             </div>
 
-            {/* Why Choose Us Section - positioned right after the two columns */}
-            <div className="mt-12">
-              <ScrollAnimation delay={0} duration={300}>
-                <h2 className="text-2xl font-bold font-outfit mb-6">
+            {/* Why Choose Us Section - Split Hero Layout */}
+            <div className="mt-16">
+              <div className="bg-gradient-to-br from-[#1f398a]/5 to-[#F97316]/5 rounded-2xl p-8 lg:p-12">
+                {/* Header spanning both columns */}
+                <h2 className="text-2xl lg:text-3xl font-bold font-outfit mb-8 text-[#1f398a] text-center lg:text-left">
                   {t('home.whyChooseUs')}
                 </h2>
-              </ScrollAnimation>
-              <ul className="space-y-6" role="list" aria-label={t('home.a11y.whyAria')}>
-                {t.raw('home.faq.items').map((item: { question: string; answer: string }, index: number) => (
-                  <ScrollAnimation key={index} delay={index * 200} duration={300} direction="bottom">
-                    <li className="flex items-start group" role="listitem">
-                      <div className="flex-shrink-0 mr-4 mt-1 group-hover:scale-110 transition-transform duration-300" aria-hidden="true">
-                        <CheckIcon className="w-6 h-6 text-[#F97316]" aria-hidden="true" />
+                
+                <div className="grid grid-cols-1 lg:grid-cols-[1fr_1.5fr] gap-8 lg:gap-12 items-start">
+                  {/* Left: 5 Reasons */}
+                  <div>
+                    <div className="space-y-6" role="list" aria-label={t('home.a11y.whyAria')}>
+                      {t.raw('home.faq.items').map((item: { question: string; answer: string }, index: number) => (
+                        <div key={index} className="flex items-start group" role="listitem">
+                          <div className="flex-shrink-0 mr-4 mt-1 group-hover:scale-110 transition-transform duration-200" aria-hidden="true">
+                            <div className="w-8 h-8 bg-[#F97316] rounded-full flex items-center justify-center">
+                              <span className="text-white font-bold text-sm">{index + 1}</span>
+                            </div>
+                          </div>
+                          <div className="flex-1">
+                            <h3 className="font-semibold text-text-900 text-lg mb-2 group-hover:text-[#F97316] transition-colors duration-200" aria-label={`Punkt ${index + 1}: ${item.question}`}>
+                              {item.question.replace(/^\d+\s*–\s*/, '')}
+                            </h3>
+                            <p className="text-text-700 leading-relaxed">{item.answer}</p>
+                          </div>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+
+                  {/* Right: Local Area Info */}
+                  <div className="p-8 lg:px-10 lg:pb-8 lg:pt-0 flex flex-col h-full">
+                      <h3 className="text-lg font-semibold text-text-900 mb-4">
+                        {t('home.localArea.title')}
+                      </h3>
+                      <p className="text-text-700 mb-6 leading-relaxed" dangerouslySetInnerHTML={{__html: t('home.localArea.description')}} />
+                      
+                      {/* Image Showcase - grows to fill remaining space */}
+                      <div className="rounded-2xl overflow-hidden shadow-lg flex-1">
+                        <Image 
+                          src="/fardig8.webp" 
+                          alt={t('home.localArea.imageAlt')}
+                          width={600}
+                          height={400}
+                          className="w-full h-full object-cover"
+                          priority={false}
+                        />
                       </div>
-                      <div className="flex-1">
-                        <span className="font-semibold text-text-900 text-lg" aria-label={`Punkt ${index + 1}: ${item.question}`}>
-                          {item.question}
-                        </span>
-                        <p className="text-text-700 mt-1 leading-relaxed">{item.answer}</p>
-                      </div>
-                    </li>
-                  </ScrollAnimation>
-                ))}
-              </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
-        </div>
       </section>
 
       {/* CTA Section */}

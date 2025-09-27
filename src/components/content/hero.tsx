@@ -11,10 +11,6 @@ interface HeroProps {
     text: string;
     href: string;
   };
-  image: {
-    src: string;
-    alt: string;
-  };
   className?: string;
   priority?: boolean;
 }
@@ -24,7 +20,6 @@ export function Hero({
   lead,
   description,
   primaryCta,
-  image,
   className,
   priority = false
 }: HeroProps) {
@@ -54,14 +49,9 @@ export function Hero({
             <h1 className="text-h1 font-outfit text-text-900 mb-6">
               {title}
             </h1>
-            <p className="text-xl md:text-2xl text-text-700 mb-8 max-w-3xl mx-auto">
+            <p className="text-lg md:text-xl text-text-700 mb-8 max-w-3xl mx-auto">
               {lead}
             </p>
-            {description && (
-              <p className="text-lg text-text-900 mb-12 max-w-2xl mx-auto">
-                {description}
-              </p>
-            )}
             {/* Single CTA Button - responsive text */}
             <div className="flex justify-center mb-6">
               <Button 
@@ -82,20 +72,6 @@ export function Hero({
               {t('chips')}
             </div>
             
-            {/* Profile Picture - Aligned with buttons, 15px to the right */}
-            <div className="hidden md:block absolute [top:calc(100%-120px)] [left:calc(50%+200px)]">
-              <div className="p-1">
-                <Image
-                  src={image.src}
-                  alt={image.alt}
-                  width={360}
-                  height={203}
-                  sizes="(max-width: 768px) 280px, 360px"
-                  className="object-cover object-center rounded-sm"
-                  loading="lazy"
-                />
-              </div>
-            </div>
           </div>
         </div>
       </div>
