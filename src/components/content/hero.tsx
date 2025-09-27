@@ -6,7 +6,6 @@ import { useTranslations } from 'next-intl';
 interface HeroProps {
   title: string;
   lead: string;
-  description?: string;
   primaryCta: {
     text: string;
     href: string;
@@ -18,7 +17,6 @@ interface HeroProps {
 export function Hero({
   title,
   lead,
-  description,
   primaryCta,
   className,
   priority = false
