@@ -1,7 +1,7 @@
 'use client';
 
 import { Button } from '@/components/ui/button';
-import { Phone, Mail } from 'lucide-react';
+import { Mail } from 'lucide-react';
 import { cn } from '@/lib/utils';
 import { useTranslations } from 'next-intl';
 import { COMPANY } from '@/config/company';
@@ -35,7 +35,7 @@ export function CTA({
         <h2 className={cn('text-h2 font-outfit mb-4', orangeHeading ? 'text-[#F97316]' : 'text-white')}>
           {title}
         </h2>
-        <p className="text-lg mb-4 max-w-2xl mx-auto opacity-90">
+        <p className="text-lg mb-4 max-w-2xl mx-auto opacity-90 whitespace-nowrap md:whitespace-normal">
           {description}
         </p>
         <p className="text-sm mb-8 max-w-2xl mx-auto opacity-80">
@@ -56,21 +56,6 @@ export function CTA({
               {t('contactUs')}
             </a>
           </Button>
-          
-          {/* Phone Button - only show if phone number is configured */}
-          {COMPANY.phone && COMPANY.phone !== '+468-000000' && (
-            <Button 
-              size="lg" 
-              variant="secondary" 
-              className="text-lg px-8 py-6 w-[80%] sm:w-auto self-center"
-              asChild
-            >
-              <a href={`tel:${COMPANY.phone}`} aria-label={t('callNow')}>
-                <Phone className="h-5 w-5 mr-2" />
-                {t('callNow')}
-              </a>
-            </Button>
-          )}
         </div>
       </div>
     </section>

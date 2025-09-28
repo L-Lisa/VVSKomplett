@@ -15,7 +15,8 @@ export function StickyCTA() {
       <Dialog open={isOpen} onOpenChange={setIsOpen}>
         <DialogTrigger asChild>
           <Button
-            className="bg-[#F97316] hover:bg-[#F97316]/90 text-[#1f398a] font-bold text-lg px-6 py-3 rounded-full shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-200 animate-pulse"
+            variant="secondary"
+            className="font-bold text-lg px-6 py-3 shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-200 animate-pulse"
             size="lg"
           >
             {t('freeQuote')}

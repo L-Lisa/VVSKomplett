@@ -7,9 +7,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/com
 import { CheckCircle, Camera, Video, Settings, FileText } from 'lucide-react';
 import Link from 'next/link';
 import { CTA } from '@/components/content/cta';
-import Image from 'next/image';
-import fs from 'node:fs';
-import path from 'node:path';
+import { WorkflowSection } from '@/components/content/workflow-section';
 
 export const metadata = generateServiceMetadata({
   title: 'Stamfilmning med kamera – få full koll på rören',
@@ -36,11 +34,6 @@ export default async function PipeCoatingPage({ params }: { params: Promise<{ lo
 
   const processSteps = t.raw('services.pipeCoating.process.steps');
 
-  // Lightweight shimmer placeholder for blurDataURL
-  const shimmer = (w: number, h: number) =>
-    `data:image/svg+xml;base64,${Buffer.from(
-      `<svg width="${w}" height="${h}" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none"><defs><linearGradient id="g"><stop stop-color="#f6f7f8" offset="20%"/><stop stop-color="#edeef1" offset="50%"/><stop stop-color="#f6f7f8" offset="70%"/></linearGradient></defs><rect width="${w}" height="${h}" fill="#f6f7f8"/><rect id="r" width="${w}" height="${h}" fill="url(#g)"/><animate xlink:href="#r" attributeName="x" from="-${w}" to="${w}" dur="1s" repeatCount="indefinite"  /></svg>`
-    ).toString('base64')}`;
 
   return (
     <>
@@ -60,7 +53,7 @@ export default async function PipeCoatingPage({ params }: { params: Promise<{ lo
         role="region"
         aria-labelledby="hero-title"
         style={{
-          backgroundImage: "url('/vvsbackground.webp')",
+          backgroundImage: "url('/vvsfilmning.webp')",
           backgroundSize: 'cover',
           backgroundPosition: 'center',
           backgroundRepeat: 'no-repeat'
@@ -69,7 +62,7 @@ export default async function PipeCoatingPage({ params }: { params: Promise<{ lo
         <span aria-hidden="true" className="absolute inset-0 bg-white/10"></span>
         <div className="container mx-auto px-4 relative">
           <div className="max-w-4xl mx-auto text-center">
-            <div className="inline-block rounded-md border border-white/60 md:border-white/40 bg-white/85 md:bg-white/70 backdrop-blur-md md:backdrop-blur-sm px-4 py-6 md:px-6 md:py-8 lg:px-8 lg:py-10">
+            <div className="inline-block border border-white/60 md:border-white/40 bg-white/85 md:bg-white/70 backdrop-blur-md md:backdrop-blur-sm px-4 py-6 md:px-6 md:py-8 lg:px-8 lg:py-10">
               <h1 id="hero-title" className="text-4xl md:text-5xl font-bold font-outfit mb-4">
                 {t('services.pipeCoating.hero.h1')}
               </h1>
@@ -77,7 +70,7 @@ export default async function PipeCoatingPage({ params }: { params: Promise<{ lo
                 {t('services.pipeCoating.hero.intro')}
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <Button asChild size="lg">
+                <Button asChild variant="secondary" size="lg">
                   <Link href={`/${locale}/kontakt`}>{t('hero.getQuote')}</Link>
                 </Button>
                 <Button asChild variant="outline" size="lg">
@@ -123,7 +116,7 @@ export default async function PipeCoatingPage({ params }: { params: Promise<{ lo
               {features.map((feature: Feature, index: number) => (
                 <Card key={index} className="text-center">
                   <CardHeader>
-                    <div className="mx-auto w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mb-4">
+                    <div className="mx-auto w-12 h-12 bg-primary/10 flex items-center justify-center mb-4">
                       <feature.icon className="h-6 w-6 text-primary" />
                     </div>
                     <CardTitle className="text-xl">{feature.title}</CardTitle>
@@ -141,64 +134,14 @@ export default async function PipeCoatingPage({ params }: { params: Promise<{ lo
       </section>
 
       {/* Process Section with image */}
-      <section className="pt-20 pb-2 md:py-20 bg-muted/20">
-        <div className="container mx-auto px-4">
-          <div className="max-w-6xl mx-auto">
-            <h2 className="text-3xl font-bold font-outfit text-center mb-12">
-              {t('services.pipeCoating.process.title')}
-            </h2>
-            <div className="grid md:[grid-template-columns:auto_auto] justify-center gap-6 items-stretch">
-              {/* Steps (left on desktop, top on mobile) */}
-              <div className="md:pr-2">
-                <div className="space-y-6">
-                  {processSteps.map((step: string, index: number) => (
-                    <div key={index} className="flex items-start">
-                      <div className="flex-shrink-0 w-8 h-8 bg-primary text-white rounded-full flex items-center justify-center font-bold mr-4">
-                        {index + 1}
-                      </div>
-                      <p className="text-lg text-text-700 pt-1">{step}</p>
-                    </div>
-                  ))}
-                </div>
-              </div>
-
-              {/* Image (right on desktop, below on mobile) */}
-              <div className="w-full">
-                {(() => {
-                  const rel = '/placeholdertool.webp';
-                  const absolute = path.join(process.cwd(), 'public', rel);
-                  const exists = fs.existsSync(absolute);
-                  if (!exists) {
-                    return (
-                      <div className="rounded-lg h-64 md:h-80 flex items-center justify-center text-text-600">
-                        <span className="text-sm">Bild kommer här</span>
-                      </div>
-                    );
-                  }
-                  return (
-                    <div className="h-64 md:h-full flex items-center">
-                      <div className="relative w-full md:w-[460px] h-full rounded-lg overflow-hidden">
-                        <Image
-                          src={rel}
-                          alt={t('services.pipeCoating.process.imageAlt')}
-                          fill
-                          sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 600px"
-                          className="object-contain md:rotate-90"
-                          placeholder="blur"
-                          blurDataURL={shimmer(1200, 900)}
-                          loading="lazy"
-                          fetchPriority="low"
-                          decoding="async"
-                        />
-                      </div>
-                    </div>
-                  );
-                })()}
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
+      <WorkflowSection
+        title={t('services.pipeCoating.process.title')}
+        steps={processSteps}
+        imageSrc="/industrialpipe.webp"
+        imageAlt={t('services.pipeCoating.process.imageAlt')}
+        backgroundGradient="bg-gradient-to-br from-[#1f398a]/20 via-gray-50/50 to-[#F97316]/15"
+        showGrid={true}
+      />
 
       {/* Content Section */}
       <section className="py-20">
@@ -234,7 +177,7 @@ export default async function PipeCoatingPage({ params }: { params: Promise<{ lo
                   Relaterade tjänster
                 </h3>
                 <div className="space-y-4">
-                  <div className="p-4 border rounded-lg hover:border-primary/50 transition-colors">
+                  <div className="p-4 border hover:border-primary/50 transition-colors">
                     <h4 className="font-semibold mb-2">
                       <Link href={`/${locale}/stamspolning`} className="text-primary hover:underline">
                         Stamspolning
@@ -244,7 +187,7 @@ export default async function PipeCoatingPage({ params }: { params: Promise<{ lo
                       Rengöring baserat på kamerainspektion
                     </p>
                   </div>
-                  <div className="p-4 border rounded-lg hover:border-primary/50 transition-colors">
+                  <div className="p-4 border hover:border-primary/50 transition-colors">
                     <h4 className="font-semibold mb-2">
                       <Link href={`/${locale}/relining`} className="text-primary hover:underline">
                         Relining
@@ -254,7 +197,7 @@ export default async function PipeCoatingPage({ params }: { params: Promise<{ lo
                       Förnyelse av rör efter inspektion
                     </p>
                   </div>
-                  <div className="p-4 border rounded-lg hover:border-primary/50 transition-colors">
+                  <div className="p-4 border hover:border-primary/50 transition-colors">
                     <h4 className="font-semibold mb-2">
                       <Link href={`/${locale}/service`} className="text-primary hover:underline">
                         VVS-service

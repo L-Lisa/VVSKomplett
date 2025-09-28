@@ -7,8 +7,11 @@
     "relining": "Relining",
     "pipeFlushing": "Stamspolning",
     "pipeCoating": "Stamfilmning",
+    "bathroomDesign": "Badrumsdesign",
+    "electricalInstallation": "Elinstallationer",
     "about": "Om oss",
-    "contact": "Kontakta oss Idag"
+    "careers": "Jobba hos oss",
+    "contact": "Kontakt"
   },
   "certifications": {
     "sakerVatten": {
@@ -31,12 +34,10 @@
     "h2": "Komplett VVS – Allt under samma tak för ditt vatten och avlopp",
     "h3": "Auktoriserat • Säker Vatten • Ansvarsförsäkring",
     "intro1": "Auktoriserad VVS i Stor-Stockholm. Helhetsleverans: VS, relining, stamspolning, stamfilmning & service.",
-    "intro2": "Primärt för entreprenad, BRF och företag – vi hjälper även privatpersoner.",
+    "intro2": "",
       "imageAlt": "Vitt och ljusgrått rörsystem som bakgrund",
-      "ringDirect": "Ring direkt",
       "chips": "Entreprenad • BRF • Företag • Privat"
     },
-    "servicesTitle": "Våra tjänster",
     "readMore": "Läs mer",
     "readMoreEllipsis": "Läs mer...",
     "readMoreAbout": "Läs mer om",
@@ -64,7 +65,6 @@
       }
     },
     "a11y": {
-      "servicesLoaded": "Våra VVS-tjänster har laddats. Du kan navigera genom tjänstekorten med Tab-tangenten.",
       "servicesAria": "Våra VVS-tjänster",
       "whyAria": "5 anledningar att välja oss",
       "brfBadge": "Rekommenderas för BRF och företag"
@@ -79,7 +79,12 @@
         "nyinstallation": { "after": "för nyproduktion och renoveringar" },
         "stambyte": { "after": "i flerbostadshus med planerad störningsminimering" },
         "relining": { "after": "för att förnya rör utan rivning" },
-        "service": { "after": "inklusive felsökning, underhåll och åtgärd" }
+        "service": { "after": "inklusive felsökning, underhåll och åtgärd" },
+        "stamspolning": { "after": "och fräsning för förebyggande underhåll" },
+        "stamfilmning": { "after": "med kamera för diagnostik och dokumentation" },
+        "bathroomDesign": { "after": "från rivning till färdig design" },
+        "electricalInstallation": { "after": "certifierade elektriker för alla elbehov" },
+        "allVVS": { "after": "komplett VVS-lösningar under samma tak" }
       }
     },
     "usp": {
@@ -100,11 +105,51 @@
       "title": "Trygghet & certifieringar",
       "items": [
         "Auktoriserat VVS-företag",
-        "Arbetar enligt Säker Vatten-regler",
+        "Arbetar enligt Säker Vatten standard",
         "Ansvarsförsäkring för alla uppdrag",
         "Dokumentation och egenkontroller",
         "Koordinering med rivning/sanering och el"
       ]
+    },
+    "projects": {
+      "title": "Våra färdiga projekt",
+      "subtitle": "Allt under samma tak från industriell VVS projekt till lyxiga badrum",
+      "cta": "Se fler projekt",
+      "foreGolv": {
+        "title": "Före Service",
+        "description": "Låt oss ta hand om underhållet innan det blir en säkerhetsrisk",
+        "altText": "Före service - underhåll och inspektion"
+      },
+      "efterGolv": {
+        "title": "Efter Service",
+        "description": "Rent, städat, strukturerat - det är så vi jobbar och det är vad vi vill lämna efter oss",
+        "altText": "Efter service - rent och strukturerat resultat"
+      },
+      "fardig6": {
+        "title": "Badrum från basic till lyx",
+        "description": "Se vårt partnerföretag @https://www.badrums-koncept.se/",
+        "altText": "Badrum från basic till lyx"
+      },
+      "fore2": {
+        "title": "Badrum på gång",
+        "description": "Bra grundarbete ger vackra resultat",
+        "altText": "Badrum på gång - grundarbete"
+      },
+      "fardig7": {
+        "title": "Inbyggda och vägghängda detaljer",
+        "description": "Vi ser till att det blir rätt och att det fungerar",
+        "altText": "Inbyggda och vägghängda lösningar"
+      },
+      "system": {
+        "title": "Behöver du nya system?",
+        "description": "Vi jobbar mot BRF och Entrepenad",
+        "altText": "Nya VVS-system för BRF och entrepenad"
+      },
+      "vaxlare": {
+        "title": "Nyinstallation eller underhåll och rådgivning",
+        "description": "Vi vet vad som funkar",
+        "altText": "Nyinstallation och underhåll"
+      }
     },
     "faq": {
       "title": "5 anledningar att välja oss",
@@ -359,7 +404,7 @@
           "sendMessage": "Skicka meddelande"
         },
         "buttons": {
-          "getQuote": "Få kostnadsfri offert",
+          "getQuote": "Kontakta oss",
           "learnMore": "Läs mer om oss"
         }
       }
@@ -452,7 +497,7 @@
           "sendMessage": "Skicka meddelande"
         },
         "buttons": {
-          "getQuote": "Få kostnadsfri offert",
+          "getQuote": "Kontakta oss",
           "learnMore": "Läs mer om oss"
         }
       }
@@ -592,7 +637,7 @@
           "sendMessage": "Skicka meddelande"
         },
         "buttons": {
-          "getQuote": "Få kostnadsfri offert",
+          "getQuote": "Kontakta oss",
           "learnMore": "Läs mer om oss"
         }
       }
@@ -727,7 +772,7 @@
           "sendMessage": "Skicka meddelande"
         },
         "buttons": {
-          "getQuote": "Få kostnadsfri offert",
+          "getQuote": "Kontakta oss",
           "learnMore": "Läs mer om oss"
         }
       }
@@ -862,7 +907,7 @@
           "sendMessage": "Skicka meddelande"
         },
         "buttons": {
-          "getQuote": "Få kostnadsfri offert",
+          "getQuote": "Kontakta oss",
           "learnMore": "Läs mer om oss"
         }
       }
@@ -885,18 +930,28 @@
     "description": "Vi är en etablerad VVS-firma i Stockholm med många års erfarenhet av professionella VVS-tjänster.",
     "hero": {
       "h1": "Komplett VVS i Sthlm AB – hantverkare du kan lita på",
-      "intro": "Sedan över 20 år tillbaka hjälper vi kunder i Stockholm med professionella VVS-tjänster. Vårt team av certifierade montörer har erfarenhet av allt från enkla reparationer till stora nybyggnationer.",
+      "intro": "Sedan över 30 år tillbaka hjälper vi kunder i Stockholm med professionella VVS-tjänster. Vårt team av certifierade montörer har erfarenhet av allt från enkla reparationer till stora nybyggnationer.",
       "intro2": "Vi är stolta över vår höga kvalitet och kundnöjdhet. Alla våra arbeten följer Säker Vatten-standarder och kommer med full garanti för din trygghet."
     },
     "team": {
-      "title": "Vårt team",
+      "title": "Kontakta vårt team",
       "description": "Erfarna montörer med fokus på kvalitet och kundservice",
       "role": "Projektledning",
       "experience": "30+ års erfarenhet",
       "bookDirect": "Boka direkt",
-      "callDirect": "Ring direkt",
       "contact": "Kontakt",
       "specialties": "Specialiteter"
+    },
+    "process": {
+      "title": "Så arbetar vi",
+      "steps": [
+        "Konsultation och behovsanalys",
+        "Detaljerad planering och kostnadsförslag",
+        "Professionell genomförande med kvalitetskontroll",
+        "Testning och dokumentation",
+        "Uppföljning och garanti"
+      ],
+      "imageAlt": "Komplett VVS team i arbete"
     },
     "founders": {
       "title": "Våra grundare - Håkan & Daniel",
@@ -961,7 +1016,6 @@
       },
       "serviceAreas": [
         "Stockholm innerstad",
-        "Stockholm omnejd",
         "Hela Stockholms län"
       ],
       "specialtiesTitle": "Våra specialiteter",
@@ -991,8 +1045,8 @@
           "description": "Kamerainspektion för diagnostik och dokumentation."
         }
       ],
-      "ctaTitle": "Redo att arbeta med oss?",
-      "ctaDescription": "Kontakta oss för en kostnadsfri offert och rådgivning",
+      "ctaTitle": "Vill ni veta mer om vårt team?",
+      "ctaDescription": "Kontakta oss för att diskutera ert projekt eller ställa frågor om våra tjänster",
       "ctaButtons": {
         "callNow": "Ring oss nu",
         "sendMessage": "Skicka meddelande"
@@ -1022,7 +1076,7 @@
     "hero": {
       "h1": "Kontakta oss – få en kostnadsfri offert",
       "intro": "Behöver du hjälp med VVS-problem eller vill du bara veta mer om våra tjänster? Vi ger kostnadsfria offerter och rådgivning. Ring oss eller skicka ett meddelande så återkommer vi snabbt.",
-      "intro2": "Vi erbjuder snabb återkoppling och återkommer vanligtvis inom 24 timmar.",
+      "intro2": "Vi erbjuder snabb återkoppling och återkommer vanligtvis inom 24\u00A0timmar.",
       "benefits": "Säker Vatten • 30+ år • Ansvarsförsäkring • Egenkontroller & dokumentation"
     },
     "phone": "Telefon",
@@ -1046,13 +1100,19 @@
       }
     },
     "feedback": {
-      "success": "Tack för ditt meddelande! Vi återkommer inom 24 timmar.",
+      "success": "Tack för ditt meddelande! Vi återkommer inom 24\u00A0timmar.",
       "error": "Något gick fel. Vänligen försök igen eller ring oss direkt.",
       "sending": "Skickar..."
     },
     "pageContent": {
-      "ctaTitle": "Redo att komma igång? Få kostnadsfri offert",
-      "ctaDescription": "Beskriv kort vad du behöver hjälp med. Vi återkopplar snabbt, oftast inom 24 timmar.",
+      "ctaTitle": "Redo att komma igång? Kontakta oss",
+      "ctaDescription": "Beskriv kort vad du behöver hjälp med. Vi återkopplar snabbt, oftast inom 24\u00A0timmar.",
+      "careers": {
+        "title": "Vill du jobba hos oss?",
+        "description": "Vi söker alltid engagerade VVS-montörer som vill vara en del av vårt växande team.",
+        "cta": "Se lediga jobb",
+        "contact": "Kontakta oss"
+      },
       "contactInfoTitle": "Kontaktinformation",
       "contactInfo": [
         {
@@ -1073,14 +1133,13 @@
         }
       ],
       "formTitle": "Skicka oss ett meddelande",
-      "formDescription": "Fyll i formuläret så återkommer vi till dig inom 24 timmar. För akuta problem, ring oss direkt.",
+      "formDescription": "Fyll i formuläret så återkommer vi till dig inom 24\u00A0timmar. För akuta problem, ring oss direkt.",
       "formPlaceholders": {
         "name": "Ditt namn",
         "phone": "070-123 45 67",
         "email": "din@email.se",
         "message": "Beskriv ditt VVS-behov..."
       },
-      "servicesTitle": "Våra tjänster",
       "servicesDescription": "Professionella VVS-tjänster i Stockholm",
       "emergencyTitle": "Akutservice",
       "emergencyDescription": "För akuta VVS-problem som inte kan vänta, ring oss direkt. Vi erbjuder akutservice dygnet runt i Stockholm.",
@@ -1103,7 +1162,6 @@
     }
   },
   "header": {
-    "ringDirect": "Ring direkt",
     "contact": "Kontakt",
     "logoAlt": "Komplett VVS logotyp",
     "companyName": "Komplett VVS i Sthlm AB",
@@ -1116,13 +1174,15 @@
     "areas": "Områden",
     "certificates": "Certifikat",
     "services": "Våra tjänster",
+    "company": "Företag",
     "privacyPolicy": "Integritetspolicy",
     "cookies": "Cookies",
     "emergencyService": "Akutservice dygnet runt",
+    "callDirect": "Ring oss direkt",
     "logoAlt": "Komplett VVS logotyp",
     "areasList": {
       "greaterStockholm": "Stor Stockholm",
-      "stockholmRegion": "Stockholm med omnejd"
+      "stockholmRegion": "Stockholm Innerstad"
     },
     "certificatesList": {
       "safeWater": "Säker Vatten",
@@ -1131,7 +1191,7 @@
     },
     "partnerships": {
       "title": "Samarbeten",
-      "partners": "Elteknik23 • Caredab • Badrums-Koncept"
+      "partners": "Elteknik23 • Caredab • Badrums-Koncept • Infodringsteknik"
     },
     "pageContent": {
       "areas": [
@@ -1150,7 +1210,6 @@
     "title": "Behöver du hjälp?",
     "description": "Snabb och personlig återkoppling – kontakta oss för offert.",
     "contactUs": "Kontakta oss",
-    "callNow": "Ring direkt",
     "waterLeak": "Behöver du hjälp vid vattenläcka? Vi erbjuder snabb återkoppling i Stockholm."
   },
   "faq": {
@@ -1171,7 +1230,7 @@
     }
   },
   "hero": {
-    "getQuote": "Få kostnadsfri offert",
+    "getQuote": "Kontakta oss",
     "readMoreAboutUs": "Läs mer om oss"
   },
   "theme": {
@@ -1203,7 +1262,13 @@
     "description": "Den sida du letar efter existerar inte eller har flyttats. Kontrollera URL:en eller gå tillbaka till startsidan.",
     "goHome": "Gå till startsidan",
     "contactUs": "Kontakta oss",
-    "commonPagesTitle": "Vanliga sidor:"
+    "commonPagesTitle": "Vanliga sidor:",
+    "navigation": {
+      "newInstallation": "Nyinstallation",
+      "service": "Service",
+      "about": "Om oss",
+      "contact": "Kontakt"
+    }
   },
   "cookies": {
     "banner": {
@@ -1378,6 +1443,113 @@
     "relining": {
       "title": "Renovera rör utan rivning med relining",
       "description": "Modern metod som bevarar byggnader och minimerar störningar – hållbar lösning för framtiden."
+    }
+  },
+  "careers": {
+    "title": "Jobba hos oss - VVS-montörer sökes",
+    "description": "Komplett VVS i Sthlm AB söker erfarna VVS-montörer. Bli en del av vårt växande team med konkurrenskraftig lön och utvecklingsmöjligheter.",
+    "hero": {
+      "title": "Jobba hos oss",
+      "subtitle": "Bli en del av vårt växande VVS-team",
+      "cta": "Ansök nu",
+      "learnMore": "Läs mer om oss"
+    },
+    "intro": {
+      "paragraph1": "Komplett VVS i Sthlm AB söker erfarna VVS-montörer. Är du en yrkesskicklig VVS-montör som söker ett företag där du får utvecklas, ta ansvar och bli uppskattad för det du gör? Då är du välkommen till Komplett VVS i Sthlm AB – ett växande installationsföretag med högt ställda krav på kvalitet, service och yrkesstolthet.",
+      "paragraph2": "Vi arbetar med både nyproduktion, ombyggnad och service inom värme och sanitet – och levererar lösningar som håller. Just nu söker vi fler engagerade montörer som vill vara en del av ett företag som satsar långsiktigt på sina medarbetare.",
+      "paragraph3": "Vi är ett företag som ser våra anställda som vår viktigaste resurs. Därför lägger vi stor vikt vid att skapa en arbetsmiljö där du trivs, utvecklas och stannar kvar.",
+      "paragraph4": "Komplett VVS i Sthlm AB – ett mindre företag med höga ambitioner. Vi tror på långsiktighet, yrkesstolthet och att leverera kvalitet i varje led."
+    },
+    "offer": {
+      "title": "Vad vi erbjuder dig",
+      "employment": {
+        "title": "Anställning & Lön",
+        "description": "Anställning med kollektivavtal och konkurrenskraftig lön"
+      },
+      "environment": {
+        "title": "Trygg Arbetsmiljö",
+        "description": "Trygg arbetsmiljö med ordning, struktur och professionellt ledarskap"
+      },
+      "projects": {
+        "title": "Varierande Projekt",
+        "description": "Varierande projekt inom både bostäder och kommersiella fastigheter"
+      },
+      "development": {
+        "title": "Utveckling",
+        "description": "Möjlighet till vidareutbildning och teknisk fördjupning"
+      },
+      "tools": {
+        "title": "Moderna Verktyg",
+        "description": "Moderna arbetsverktyg och tydlig planering"
+      },
+      "team": {
+        "title": "Sammansvetsat Team",
+        "description": "Ett sammansvetsat team med hög yrkeskompetens och stark laganda"
+      }
+    },
+    "requirements": {
+      "title": "Vi söker dig som",
+      "qualifications": "Kvalifikationer",
+      "education": "Är utbildad och certifierad VVS-montör",
+      "experience": "Har minst 3 års erfarenhet i branschen",
+      "independence": "Är självständig i din roll men arbetar bra i team",
+      "qualities": "Är noggrann, ansvarsfull och serviceinriktad",
+      "requirements": "Krav",
+      "license": "Har B-körkort",
+      "language": "Talar och skriver svenska",
+      "note": "Obs:",
+      "apprentices": "Vi söker även personer med mindre erfarenhet, exempelvis lärlingar."
+    },
+    "role": {
+      "title": "Din roll hos oss",
+      "description": "Som montör hos Komplett VVS i Sthlm AB kommer du att arbeta med installationer och service i olika typer av fastigheter, i projekt där du får möjlighet att påverka resultatet. Du kommer vara en viktig del av vårt arbetslag och ha direkt kontakt med både arbetsledning och kunder."
+    },
+    "application": {
+      "title": "Ansökan",
+      "subtitle": "Skicka ditt CV, ett kort personligt brev och eventuella certifikat till:",
+      "email": {
+        "title": "E-post"
+      },
+      "phone": {
+        "title": "Telefon"
+      },
+      "documents": "Inkludera följande dokument:",
+      "personalLetter": "Personligt brev",
+      "certificates": "Certifikat",
+      "process": "Urval och intervjuer sker löpande. Alla ansökningar behandlas konfidentiellt.",
+      "cta": "Skicka ansökan",
+      "contact": "Kontakta oss"
+    }
+  },
+  "validation": {
+    "name": {
+      "minLength": "Namnet måste vara minst 2 tecken",
+      "maxLength": "Namnet får inte vara längre än 50 tecken",
+      "invalidCharacters": "Namnet får endast innehålla bokstäver, mellanslag och bindestreck"
+    },
+    "email": {
+      "required": "E-postadress krävs",
+      "invalid": "Ogiltig e-postadress",
+      "maxLength": "E-postadressen får inte vara längre än 100 tecken"
+    },
+    "phone": {
+      "required": "Telefonnummer krävs",
+      "invalid": "Ogiltigt telefonnummer. Använd formatet 070-123 45 67"
+    },
+    "message": {
+      "minLength": "Meddelandet måste vara minst 10 tecken",
+      "maxLength": "Meddelandet får inte vara längre än 1000 tecken",
+      "invalidCharacters": "Meddelandet innehåller ogiltiga tecken"
+    },
+    "service": {
+      "required": "Välj en tjänst"
+    },
+    "description": {
+      "minLength": "Beskrivningen måste vara minst 20 tecken",
+      "maxLength": "Beskrivningen får inte vara längre än 500 tecken"
+    },
+    "urgency": {
+      "required": "Välj brådska"
     }
   }
 }

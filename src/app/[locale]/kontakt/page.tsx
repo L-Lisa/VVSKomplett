@@ -2,7 +2,7 @@ import { getTranslations } from 'next-intl/server';
 import { generatePageMetadata } from '@/lib/metadata';
 import { generateContactPageSchema } from '@/lib/schemas';
 import { Button } from '@/components/ui/button';
-import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
+import { Card, CardContent } from '@/components/ui/card';
 import { Phone, Mail } from 'lucide-react';
 import Link from 'next/link';
 import { COMPANY } from '@/config/company';
@@ -17,6 +17,7 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
     title: t('contact.title'),
     description: t('contact.description'),
     path: '/kontakt',
+    locale: locale === 'en' ? 'en_US' : 'sv_SE',
   });
 }
 
@@ -73,7 +74,7 @@ export default async function ContactPage({ params }: { params: Promise<{ locale
         <span aria-hidden="true" className="absolute inset-0 bg-white/10"></span>
         <div className="container mx-auto px-4 relative">
           <div className="max-w-5xl mx-auto text-center">
-            <div className="relative inline-block rounded-md border border-white/60 md:border-white/40 bg-white/85 md:bg-white/70 backdrop-blur-md md:backdrop-blur-sm px-4 py-6 md:px-6 md:py-8 lg:px-8 lg:py-10">
+            <div className="relative inline-block border border-white/60 md:border-white/40 bg-white/85 md:bg-white/70 backdrop-blur-md md:backdrop-blur-sm px-4 py-6 md:px-6 md:py-8 lg:px-8 lg:py-10">
               <h1 id="contact-hero-title" className="text-4xl md:text-5xl font-bold font-outfit mb-6">
                 {t('contact.hero.h1')}
               </h1>
@@ -85,12 +86,6 @@ export default async function ContactPage({ params }: { params: Promise<{ locale
               </p>
               <p className="text-sm md:text-base text-text-700 mb-6">{t('contact.hero.benefits')}</p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <Button asChild size="lg" variant="secondary">
-                  <a href={`tel:${COMPANY.phone}`}>
-                    <Phone className="h-4 w-4 mr-2" />
-                    {t('cta.callNow')}
-                  </a>
-                </Button>
                 <Button asChild variant="outline" size="lg">
                   <a href={`mailto:${COMPANY.email}`}>
                     <Mail className="h-4 w-4 mr-2" />
@@ -101,7 +96,7 @@ export default async function ContactPage({ params }: { params: Promise<{ locale
 
               {/* Säker Vatten badge (above the fold) */}
               <div className="hidden md:block absolute right-3 -bottom-6">
-                <div className="bg-white/70 backdrop-blur-sm px-3 py-2 rounded-md shadow-sm">
+                <div className="bg-white/70 backdrop-blur-sm px-3 py-2 shadow-sm">
                   <Image
                     src="/saker-vatten.webp"
                     alt="Säker Vatten"
@@ -129,7 +124,7 @@ export default async function ContactPage({ params }: { params: Promise<{ locale
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                   {contactInfo.map((info, index) => (
                     <div key={index} className="flex items-start gap-4">
-                      <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center">
+                      <div className="w-12 h-12 bg-primary/10 flex items-center justify-center">
                         <info.icon className="h-6 w-6 text-primary" />
                       </div>
                       <div>
@@ -153,7 +148,7 @@ export default async function ContactPage({ params }: { params: Promise<{ locale
             <div className="grid md:grid-cols-[1.15fr_420px] lg:grid-cols-[1.15fr_460px] gap-10 items-start">
               <div className="relative">
                 <div
-                  className="absolute -inset-3 md:-inset-4 rounded-xl bg-gradient-to-br from-[#F97316]/10 via-white/50 to-[#1f398a]/10 backdrop-blur-sm ring-1 ring-[#1f398a]/10 shadow-sm"
+                  className="absolute -inset-3 md:-inset-4 bg-gradient-to-br from-[#F97316]/10 via-white/50 to-[#1f398a]/10 backdrop-blur-sm ring-1 ring-[#1f398a]/10 shadow-sm"
                   aria-hidden="true"
                 ></div>
                 <div className="relative">
@@ -163,7 +158,7 @@ export default async function ContactPage({ params }: { params: Promise<{ locale
                   <p className="text-lg text-text-700 mb-8">
                     {t('contact.form.description')}
                   </p>
-                  <div className="bg-white rounded-lg p-4 md:p-6 shadow-sm ring-1 ring-black/5">
+                  <div className="bg-white p-4 md:p-6 shadow-sm ring-1 ring-black/5">
                     <ContactForm />
                   </div>
                 </div>
@@ -175,7 +170,7 @@ export default async function ContactPage({ params }: { params: Promise<{ locale
                 </h3>
                 <div className="space-y-4">
                   {services.map((service: Service, index: number) => (
-                    <div key={index} className="p-4 border rounded-lg hover:border-primary/50 transition-colors">
+                    <div key={index} className="p-4 border hover:border-primary/50 transition-colors">
                       <h4 className="font-semibold mb-2">
                         <Link href={service.href} className="text-primary hover:underline">
                           {service.name}
@@ -194,48 +189,6 @@ export default async function ContactPage({ params }: { params: Promise<{ locale
         </div>
       </section>
 
-      {/* FAQ Section */}
-      <section className="py-20">
-        <div className="container mx-auto px-4">
-          <div className="max-w-4xl mx-auto">
-            <h2 className="text-3xl font-bold font-outfit text-center mb-12">
-              {t('faq.title')}
-            </h2>
-            <div className="space-y-6">
-              <Card>
-                <CardHeader>
-                  <CardTitle className="text-lg">{t('faq.questions.emergency.question')}</CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <p className="text-text-700">
-                    {t('faq.questions.emergency.answer')}
-                  </p>
-                </CardContent>
-              </Card>
-              <Card>
-                <CardHeader>
-                  <CardTitle className="text-lg">{t('faq.questions.quote.question')}</CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <p className="text-text-700">
-                    {t('faq.questions.quote.answer')}
-                  </p>
-                </CardContent>
-              </Card>
-              <Card>
-                <CardHeader>
-                  <CardTitle className="text-lg">{t('faq.questions.customers.question')}</CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <p className="text-text-700">
-                    {t('faq.questions.customers.answer')}
-                  </p>
-                </CardContent>
-              </Card>
-            </div>
-          </div>
-        </div>
-      </section>
 
       {/* CTA Section - aligned with service pages */}
       <CTA 

@@ -7,8 +7,11 @@
     "relining": "Relining",
     "pipeFlushing": "Pipe Flushing",
     "pipeCoating": "Pipe Inspection",
+    "bathroomDesign": "Bathroom Design",
+    "electricalInstallation": "Electrical Installation",
     "about": "About Us",
-    "contact": "Contact Us Today"
+    "careers": "Work with us",
+    "contact": "Contact"
   },
   "certifications": {
     "sakerVatten": {
@@ -31,12 +34,10 @@
       "h2": "Komplett VVS – Everything under one roof for your water and drainage",
       "h3": "Authorized • Safe Water • Liability Insurance",
       "intro1": "Authorized plumbing in Greater Stockholm. Complete delivery: plumbing, relining, pipe flushing, pipe inspection & service.",
-      "intro2": "Primarily for construction, housing associations and companies – we also help private individuals.",
+      "intro2": "",
       "imageAlt": "White and light gray pipe system as background",
-      "ringDirect": "Call directly",
       "chips": "Contracting • BRF • Companies • Private"
     },
-    "servicesTitle": "Our Services",
     "readMore": "Read more",
     "readMoreEllipsis": "Read more...",
     "readMoreAbout": "Read more about",
@@ -64,7 +65,6 @@
       }
     },
     "a11y": {
-      "servicesLoaded": "Our plumbing services have loaded. You can navigate the service cards with the Tab key.",
       "servicesAria": "Our plumbing services",
       "whyAria": "5 reasons to choose us",
       "brfBadge": "Recommended for BRF and companies"
@@ -79,7 +79,12 @@
         "nyinstallation": { "after": "for new construction and renovations" },
         "stambyte": { "after": "in apartment buildings with planned disruption minimization" },
         "relining": { "after": "to renew pipes without demolition" },
-        "service": { "after": "including troubleshooting, maintenance and repairs" }
+        "service": { "after": "including troubleshooting, maintenance and repairs" },
+        "stamspolning": { "after": "and flushing for preventive maintenance" },
+        "stamfilmning": { "after": "with camera for diagnostics and documentation" },
+        "bathroomDesign": { "after": "from demolition to finished design" },
+        "electricalInstallation": { "after": "certified electricians for all electrical needs" },
+        "allVVS": { "after": "complete plumbing solutions under one roof" }
       }
     },
     "usp": {
@@ -100,11 +105,51 @@
       "title": "Safety & certifications",
       "items": [
         "Authorized plumbing company",
-        "Work according to Safe Water regulations",
+        "Work according to Safe Water standards",
         "Liability insurance for all assignments",
         "Documentation and self-inspections",
         "Coordination with demolition/sanitation and electrical"
       ]
+    },
+    "projects": {
+      "title": "Our completed projects",
+      "subtitle": "Everything under one roof from industrial plumbing projects to luxury bathrooms",
+      "cta": "See more projects",
+      "foreGolv": {
+        "title": "Before Service",
+        "description": "Let us take care of maintenance before it becomes a safety risk",
+        "altText": "Before service - maintenance and inspection"
+      },
+      "efterGolv": {
+        "title": "After Service",
+        "description": "Clean, tidy, structured - that's how we work and what we want to leave behind",
+        "altText": "After service - clean and structured result"
+      },
+      "fardig6": {
+        "title": "Bathroom from basic to luxury",
+        "description": "See our partner company @https://www.badrums-koncept.se/",
+        "altText": "Bathroom from basic to luxury"
+      },
+      "fore2": {
+        "title": "Bathroom in progress",
+        "description": "Good foundation work gives beautiful results",
+        "altText": "Bathroom in progress - foundation work"
+      },
+      "fardig7": {
+        "title": "Do you also like built-in and wall-mounted things?",
+        "description": "Here it's important to choose the right method and installation",
+        "altText": "Built-in and wall-mounted solutions"
+      },
+      "system": {
+        "title": "Do you need new systems?",
+        "description": "We work with housing associations and contractors",
+        "altText": "New plumbing systems for housing associations and contractors"
+      },
+      "vaxlare": {
+        "title": "New installation or maintenance and advice",
+        "description": "We know what works",
+        "altText": "New installation and maintenance"
+      }
     },
     "faq": {
       "title": "5 reasons to choose us",
@@ -196,7 +241,7 @@
         "ctaTitle": "Complete plumbing – from design to finished system",
         "ctaDescription": "Contact us for quote and timeline.",
         "ctaButtons": { "callNow": "Call us now", "sendMessage": "Send message" },
-        "buttons": { "getQuote": "Contact us for quote", "learnMore": "Learn more about us" }
+        "buttons": { "getQuote": "Contact us", "learnMore": "Learn more about us" }
       }
     },
     "pipeReplacement": {
@@ -300,7 +345,7 @@
         "ctaTitle": "Do you need pipe replacement in your property?",
         "ctaDescription": "Contact us for a free inspection and quote",
         "ctaButtons": { "callNow": "Call us now", "sendMessage": "Send message" },
-        "buttons": { "getQuote": "Get free quote", "learnMore": "Learn more about us" }
+        "buttons": { "getQuote": "Contact us", "learnMore": "Learn more about us" }
       }
     },
     "service": {
@@ -357,7 +402,7 @@
         "ctaTitle": "Do you need plumbing service?",
         "ctaDescription": "Contact us for service agreements or support",
         "ctaButtons": { "callNow": "Call us now", "sendMessage": "Send message" },
-        "buttons": { "getQuote": "Get free quote", "learnMore": "Learn more about us" }
+        "buttons": { "getQuote": "Contact us", "learnMore": "Learn more about us" }
       }
     },
     "relining": {
@@ -454,7 +499,7 @@
         "ctaTitle": "Is relining right for you?",
         "ctaDescription": "Contact us for a free assessment and quote",
         "ctaButtons": { "callNow": "Call us now", "sendMessage": "Send message" },
-        "buttons": { "getQuote": "Get free quote", "learnMore": "Learn more about us" }
+        "buttons": { "getQuote": "Contact us", "learnMore": "Learn more about us" }
       }
     },
     "pipeFlushing": {
@@ -609,14 +654,24 @@
     "title": "Komplett VVS i Sthlm AB – craftsmen you can trust",
     "description": "We are an established plumbing company in Stockholm with many years of experience in professional plumbing services.",
     "team": {
-      "title": "Our Team",
+      "title": "Contact Our Team",
       "description": "Meet our experienced team of certified plumbers who bring decades of expertise to every project.",
       "role": "Project Management",
       "experience": "30+ years of experience",
       "bookDirect": "Book directly",
-      "callDirect": "Call directly",
       "contact": "Contact",
       "specialties": "Specialties"
+    },
+    "process": {
+      "title": "How we work",
+      "steps": [
+        "Consultation and needs analysis",
+        "Detailed planning and cost proposal",
+        "Professional execution with quality control",
+        "Testing and documentation",
+        "Follow-up and warranty"
+      ],
+      "imageAlt": "Komplett VVS team at work"
     },
     "founders": {
       "title": "Our founders - Håkan & Daniel",
@@ -637,7 +692,7 @@
     },
     "hero": {
       "h1": "Komplett VVS i Sthlm AB – craftsmen you can trust",
-      "intro": "For over 20 years, we've been helping customers in Stockholm with professional plumbing services. Our team of certified installers has experience with everything from simple repairs to large new construction projects.",
+      "intro": "For over 30 years, we've been helping customers in Stockholm with professional plumbing services. Our team of certified installers has experience with everything from simple repairs to large new construction projects.",
       "intro2": "We're proud of our high quality and customer satisfaction. All our work follows Safe Water standards and comes with full guarantee for your safety."
     },
     "areas": { "title": "We work in", "description": "Stockholm with surrounding areas - we come to you" },
@@ -666,7 +721,6 @@
       },
       "serviceAreas": [
         "Stockholm city center",
-        "Stockholm region",
         "All of Stockholm county"
       ],
       "specialtiesTitle": "Our specialties",
@@ -696,8 +750,8 @@
           "description": "Camera inspection for diagnostics and documentation."
         }
       ],
-      "ctaTitle": "Ready to work with us?",
-      "ctaDescription": "Contact us for a free quote and advice",
+      "ctaTitle": "Want to know more about our team?",
+      "ctaDescription": "Contact us to discuss your project or ask questions about our services",
       "ctaButtons": {
         "callNow": "Call us now",
         "sendMessage": "Send message"
@@ -708,8 +762,14 @@
     "title": "Contact us – get a free quote",
     "description": "Contact us for a free quote",
     "pageContent": {
-      "ctaTitle": "Ready to start? Get a free quote",
-      "ctaDescription": "Tell us briefly what you need. We respond quickly and usually within 24 hours."
+      "ctaTitle": "Ready to start? Contact us",
+      "ctaDescription": "Tell us briefly what you need. We respond quickly and usually within 24 hours.",
+      "careers": {
+        "title": "Want to work with us?",
+        "description": "We are always looking for committed plumbers who want to be part of our growing team.",
+        "cta": "View open positions",
+        "contact": "Contact us"
+      }
     },
     "contactInfo": {
       "phoneDescription": "Call us for quick response or quote",
@@ -755,19 +815,21 @@
     "emergency": "Emergency Service",
     "feedback": { "success": "Thanks for your message! We’ll get back within 24 hours.", "error": "Something went wrong. Please try again or call us directly.", "sending": "Sending..." }
   },
-  "header": { "ringDirect": "Call now", "contact": "Contact", "logoAlt": "Komplett VVS logo", "companyName": "Komplett VVS i Sthlm AB", "languageToggle": "Toggle language", "menuTitle": "Menu", "menuDescription": "Navigate to the site pages" },
+  "header": { "contact": "Contact", "logoAlt": "Komplett VVS logo", "companyName": "Komplett VVS i Sthlm AB", "languageToggle": "Toggle language", "menuTitle": "Menu", "menuDescription": "Navigate to the site pages" },
   "footer": { 
     "contact": "Contact", 
     "areas": "Areas", 
     "certificates": "Certificates", 
-    "services": "Our Services", 
-    "privacyPolicy": "Privacy Policy", 
-    "cookies": "Cookies", 
+    "services": "Our Services",
+    "company": "Company",
+    "privacyPolicy": "Privacy Policy",
+    "cookies": "Cookies",
     "emergencyService": "Quick response", 
+    "callDirect": "Call us directly",
     "logoAlt": "Komplett VVS logo", 
     "areasList": {
       "greaterStockholm": "Greater Stockholm",
-      "stockholmRegion": "Stockholm with surrounding areas"
+      "stockholmRegion": "Stockholm City Center"
     },
     "certificatesList": {
       "safeWater": "Safe Water",
@@ -776,10 +838,10 @@
     },
     "partnerships": {
       "title": "Partnerships",
-      "partners": "Elteknik23 • Caredab • Badrums-Koncept"
+      "partners": "Elteknik23 • Caredab • Badrums-Koncept • Infodringsteknik"
     }
   },
-  "cta": { "title": "Need help?", "description": "Quick and personal response – contact us for a quote.", "contactUs": "Contact us", "callNow": "Call now", "waterLeak": "Need help with a water leak? We offer quick response in Stockholm." },
+  "cta": { "title": "Need help?", "description": "Quick and personal response – contact us for a quote.", "contactUs": "Contact us", "waterLeak": "Need help with a water leak? We offer quick response in Stockholm." },
   "faq": {
     "title": "Frequently Asked Questions",
     "questions": {
@@ -797,15 +859,134 @@
       }
     }
   },
-  "hero": { "getQuote": "Get free quote", "readMoreAboutUs": "Read more about us" },
+  "hero": { "getQuote": "Contact us", "readMoreAboutUs": "Read more about us" },
   "theme": { "label": "Theme", "light": "Light", "dark": "Dark", "system": "System", "loading": "Loading theme" },
   "locale": { "loading": "Loading language" },
   "common": { "close": "Close" },
   "sheet": { "defaultTitle": "Panel", "defaultDescription": "Additional content is shown in the panel" },
   "error": { "title": "The page failed to load", "description": "Sorry, something went wrong while loading this page. Please try again or go back to the homepage.", "tryAgain": "Try again", "goHome": "Go to homepage", "devInfo": "Technical information (development only)" },
-  "notFound": { "title": "Page not found", "description": "The page you are looking for doesn’t exist or has been moved. Check the URL or go back to the homepage.", "goHome": "Go to homepage", "contactUs": "Contact us", "commonPagesTitle": "Common pages:" },
+  "notFound": { 
+    "title": "Page not found", 
+    "description": "The page you are looking for doesn't exist or has been moved. Check the URL or go back to the homepage.", 
+    "goHome": "Go to homepage", 
+    "contactUs": "Contact us", 
+    "commonPagesTitle": "Common pages:",
+    "navigation": {
+      "newInstallation": "New Installation",
+      "service": "Service",
+      "about": "About Us",
+      "contact": "Contact"
+    }
+  },
   "cookies": { "banner": { "title": "We use cookies", "description": "We only use essential cookies to ensure our website functions correctly. No third-party scripts are loaded by default.", "accept": "Accept", "decline": "Decline", "learnMore": "Learn more about cookies" }, "consent": { "accepted": "accepted", "declined": "declined" }, "title": "Cookie Information", "lastUpdated": "Last updated: {date}", "intro": "This page explains what cookies {company} uses and why.", "whatAre": { "title": "What are cookies?", "body": "Cookies are small text files stored on your device when you visit a website. They help the website remember information about your visit, such as your language preferences and other settings." }, "types": { "title": "What cookies do we use?", "essential": { "title": "Essential cookies", "description": "These cookies are necessary for the website to function properly. They cannot be disabled in our systems.", "items": ["Cookie consent: Stores your choice about cookies (accepted/declined)", "Session cookies: Keep you logged in during your visit", "Security cookies: Protect against security threats"] }, "none": { "title": "Analytics and marketing cookies", "description": "We do NOT use analytics cookies, tracking cookies, or marketing cookies. No third-party scripts are loaded by default." } }, "management": { "title": "Manage your cookie settings", "banner": "You can change your cookie settings by clicking 'Accept' or 'Decline' in the cookie banner that appears when you first visit the website.", "browser": "You can also manage cookies directly in your browser:", "browserSteps": ["Chrome: Settings > Privacy and security > Cookies", "Firefox: Settings > Privacy and security > Cookies", "Safari: Settings > Privacy > Manage website data", "Edge: Settings > Cookies and site permissions"] }, "consentInfo": { "title": "Consent and storage", "body": "Your consent is stored locally in your browser and remembers your choice on future visits. You can change your consent at any time by clearing your cookies or using the cookie banner.", "withdraw": "You can withdraw your consent by clearing cookies in your browser or contacting us." }, "contact": { "title": "Questions about cookies?", "body": "Do you have questions about our use of cookies? Contact us at {email}." } },
   "privacy": { "title": "Privacy Policy", "lastUpdated": "Last updated: {date}", "intro": "This policy explains how {company} processes personal data when you visit our website or contact us.", "controller": { "title": "Controller", "body": "{company} is the data controller. Address: {address}. Email: {email}. Phone: {phone}." }, "data": { "title": "What data we process", "item1": "Contact details you submit via forms (name, email, phone, city, message/attachments).", "item2": "Technical information (IP address, browser, timestamps) for security and troubleshooting.", "item3": "Only strictly necessary cookies. No analytics or marketing cookies." }, "purposes": { "title": "Purposes and legal bases", "item1": "Handle enquiries and provide quotes (legitimate interest and/or consent).", "item2": "Prepare or perform a contract when you order a service.", "item3": "Comply with legal obligations (e.g., accounting) if a contract is entered." }, "recipients": { "title": "Recipients and processors", "body": "We use Vercel (hosting) and Google Workspace (email). Personal data may be processed outside the EU/EEA; EU Standard Contractual Clauses (SCC) or equivalent safeguards are used." }, "transfers": { "title": "International transfers", "body": "If transfers occur outside the EU/EEA, EU Standard Contractual Clauses (SCC) or equivalent safeguards are applied." }, "retention": { "title": "Retention", "item1": "Contact form enquiries kept up to 12 months unless needed longer.", "item2": "Technical logs up to 30 days.", "item3": "Accounting records up to 7 years as required by law." }, "rights": { "title": "Your rights", "items": "You have the rights of access, rectification, erasure, restriction, data portability, and to object to processing based on legitimate interest. You may withdraw consent where processing is based on consent.", "complaint": "You may lodge a complaint with your data protection authority." }, "cookies": { "title": "Cookies", "body": "We only use strictly necessary cookies. You can change settings in the cookie banner or in your browser." }, "contact": { "title": "Contact", "body": "Questions about our data processing? Contact us at {email}." }, "changes": { "title": "Changes", "body": "We may update this policy as needed. The latest version is published on this page." } },
   "cookiesPage": { "title": "Cookie Information", "lastUpdated": "Last updated: {date}", "intro": "This page explains what cookies {company} uses and why.", "whatAre": { "title": "What are cookies?", "body": "Cookies are small text files stored on your device when you visit a website. They help the website remember information about your visit, such as your language preferences and other settings." }, "types": { "title": "What cookies do we use?", "essential": { "title": "Essential cookies", "description": "These cookies are necessary for the website to function properly. They cannot be disabled in our systems.", "items": ["Cookie consent: Stores your choice about cookies (accepted/declined)", "Session cookies: Keep you logged in during your visit", "Security cookies: Protect against security threats"] }, "none": { "title": "Analytics and marketing cookies", "description": "We do NOT use analytics cookies, tracking cookies, or marketing cookies. No third-party scripts are loaded by default." } }, "management": { "title": "Manage your cookie settings", "banner": "You can change your cookie settings by clicking 'Accept' or 'Decline' in the cookie banner that appears when you first visit the website.", "browser": "You can also manage cookies directly in your browser:", "browserSteps": ["Chrome: Settings > Privacy and security > Cookies", "Firefox: Settings > Privacy and security > Cookies", "Safari: Settings > Privacy > Manage website data", "Edge: Settings > Cookies and site permissions"] }, "consent": { "title": "Consent and storage", "body": "Your consent is stored locally in your browser and remembers your choice on future visits. You can change your consent at any time by clearing your cookies or using the cookie banner.", "withdraw": "You can withdraw your consent by clearing cookies in your browser or contacting us." }, "contact": { "title": "Questions about cookies?", "body": "Do you have questions about our use of cookies? Contact us at {email}." } },
-  "ctaPages": { "newInstallation": { "title": "Complete VVS – from design to finished system", "description": "We take responsibility at every step – planning, installation and documentation according to Safe Water standards." }, "pipeReplacement": { "title": "Do you need pipe replacement in your property?", "description": "Planned, efficient and safe – minimal disruption for residents and clear communication." }, "relining": { "title": "Relining without demolition – smart pipe renovation", "description": "Renew pipes with minimal disruption and long‑term durability." }, "pipeFlushing": { "title": "Prevent blockages with professional pipe flushing", "description": "High‑pressure flushing, milling and camera – clean stacks and reliable operation." }, "pipeCoating": { "title": "Camera inspection and documentation", "description": "Get full control of your pipes – clear findings and prioritized actions." } }
+  "ctaPages": { "newInstallation": { "title": "Complete VVS – from design to finished system", "description": "We take responsibility at every step – planning, installation and documentation according to Safe Water standards." }, "pipeReplacement": { "title": "Do you need pipe replacement in your property?", "description": "Planned, efficient and safe – minimal disruption for residents and clear communication." }, "relining": { "title": "Relining without demolition – smart pipe renovation", "description": "Renew pipes with minimal disruption and long‑term durability." }, "pipeFlushing": { "title": "Prevent blockages with professional pipe flushing", "description": "High‑pressure flushing, milling and camera – clean stacks and reliable operation." }, "pipeCoating": { "title": "Camera inspection and documentation", "description": "Get full control of your pipes – clear findings and prioritized actions." } },
+  "careers": {
+    "title": "Work with us - Plumbers wanted",
+    "description": "Komplett VVS i Sthlm AB is looking for experienced plumbers. Join our growing team with competitive salary and development opportunities.",
+    "hero": {
+      "title": "Work with us",
+      "subtitle": "Join our growing plumbing team",
+      "cta": "Apply now",
+      "learnMore": "Learn more about us"
+    },
+    "intro": {
+      "paragraph1": "Komplett VVS i Sthlm AB is looking for experienced plumbers. Are you a skilled plumber looking for a company where you can develop, take responsibility and be appreciated for what you do? Then you are welcome to Komplett VVS i Sthlm AB – a growing installation company with high standards for quality, service and professional pride.",
+      "paragraph2": "We work with both new construction, renovation and service in heating and sanitation – and deliver solutions that last. Right now we are looking for more committed installers who want to be part of a company that invests long-term in its employees.",
+      "paragraph3": "We are a company that sees our employees as our most important resource. That's why we place great emphasis on creating a work environment where you thrive, develop and stay.",
+      "paragraph4": "Komplett VVS i Sthlm AB – a small company with high ambitions. We believe in long-term thinking, professional pride and delivering quality in every step."
+    },
+    "offer": {
+      "title": "What we offer you",
+      "employment": {
+        "title": "Employment & Salary",
+        "description": "Employment with collective agreement and competitive salary"
+      },
+      "environment": {
+        "title": "Safe Work Environment",
+        "description": "Safe work environment with order, structure and professional leadership"
+      },
+      "projects": {
+        "title": "Varied Projects",
+        "description": "Varied projects in both residential and commercial properties"
+      },
+      "development": {
+        "title": "Development",
+        "description": "Opportunity for further education and technical deepening"
+      },
+      "tools": {
+        "title": "Modern Tools",
+        "description": "Modern work tools and clear planning"
+      },
+      "team": {
+        "title": "Close-knit Team",
+        "description": "A close-knit team with high professional competence and strong team spirit"
+      }
+    },
+    "requirements": {
+      "title": "We are looking for you who",
+      "qualifications": "Qualifications",
+      "education": "Are educated and certified plumber",
+      "experience": "Have at least 3 years of experience in the industry",
+      "independence": "Are independent in your role but work well in a team",
+      "qualities": "Are careful, responsible and service-oriented",
+      "requirements": "Requirements",
+      "license": "Have B driver's license",
+      "language": "Speak and write Swedish",
+      "note": "Note:",
+      "apprentices": "We are also looking for people with less experience, for example apprentices."
+    },
+    "role": {
+      "title": "Your role with us",
+      "description": "As an installer at Komplett VVS i Sthlm AB, you will work with installations and service in different types of properties, in projects where you get the opportunity to influence the result. You will be an important part of our work team and have direct contact with both management and customers."
+    },
+    "application": {
+      "title": "Application",
+      "subtitle": "Send your CV, a short personal letter and any certificates to:",
+      "email": {
+        "title": "Email"
+      },
+      "phone": {
+        "title": "Phone"
+      },
+      "documents": "Include the following documents:",
+      "personalLetter": "Personal letter",
+      "certificates": "Certificates",
+      "process": "Selection and interviews take place continuously. All applications are treated confidentially.",
+      "cta": "Send application",
+      "contact": "Contact us"
+    }
+  },
+  "validation": {
+    "name": {
+      "minLength": "Name must be at least 2 characters",
+      "maxLength": "Name cannot be longer than 50 characters",
+      "invalidCharacters": "Name can only contain letters, spaces and hyphens"
+    },
+    "email": {
+      "required": "Email address is required",
+      "invalid": "Invalid email address",
+      "maxLength": "Email address cannot be longer than 100 characters"
+    },
+    "phone": {
+      "required": "Phone number is required",
+      "invalid": "Invalid phone number. Use format 070-123 45 67"
+    },
+    "message": {
+      "minLength": "Message must be at least 10 characters",
+      "maxLength": "Message cannot be longer than 1000 characters",
+      "invalidCharacters": "Message contains invalid characters"
+    },
+    "service": {
+      "required": "Please select a service"
+    },
+    "description": {
+      "minLength": "Description must be at least 20 characters",
+      "maxLength": "Description cannot be longer than 500 characters"
+    },
+    "urgency": {
+      "required": "Please select urgency level"
+    }
+  }
 }

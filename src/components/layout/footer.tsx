@@ -1,3 +1,5 @@
+'use client';
+
 import Link from 'next/link';
 import Image from 'next/image';
 import { useTranslations, useLocale } from 'next-intl';
@@ -37,7 +39,7 @@ export function Footer() {
                   <a 
                     href={`tel:${phoneNumber}`}
                     className="text-[#1f398a] hover:text-[#F97316] transition-colors flex items-center"
-                    aria-label="Ring oss direkt"
+                    aria-label={t('footer.callDirect')}
                   >
                     <Phone className="h-4 w-4 mr-2" />
                     {phoneNumber}
@@ -119,9 +121,50 @@ export function Footer() {
           {/* Partners as visual chips under services */}
           <div className="mt-6 text-center" aria-label={t('footer.partnerships.title')}>
             <p className="text-xs text-[#1f398a] mb-1">{t('footer.partnerships.title')}</p>
-            <p className="text-sm text-[#1f398a]">{t('footer.partnerships.partners')}</p>
+            <div className="text-sm text-[#1f398a]">
+              <a 
+                href="https://www.elteknik23.se/" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="hover:text-[#F97316] transition-colors"
+                aria-label="Visit Elteknik23 website (opens in new tab)"
+              >
+                Elteknik23
+              </a>
+              <span className="mx-2" aria-hidden="true">•</span>
+              <a 
+                href="https://www.caredab.se/" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="hover:text-[#F97316] transition-colors"
+                aria-label="Visit Caredab website (opens in new tab)"
+              >
+                Caredab
+              </a>
+              <span className="mx-2" aria-hidden="true">•</span>
+              <a 
+                href="https://www.badrums-koncept.se/" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="hover:text-[#F97316] transition-colors"
+                aria-label="Visit Badrums-Koncept website (opens in new tab)"
+              >
+                Badrums-Koncept
+              </a>
+              <span className="mx-2" aria-hidden="true">•</span>
+              <a 
+                href="https://www.infodringsteknik.se/" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="hover:text-[#F97316] transition-colors"
+                aria-label="Visit Infodringsteknik website (opens in new tab)"
+              >
+                Infodringsteknik
+              </a>
+            </div>
           </div>
         </div>
+
 
         {/* Bottom Footer */}
         <div className="mt-8 pt-8 border-t border-gray-200 flex flex-col md:flex-row justify-between items-center">

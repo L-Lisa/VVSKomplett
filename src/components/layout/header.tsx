@@ -7,8 +7,7 @@ import { useLocale, useTranslations } from 'next-intl';
 import { Button } from '@/components/ui/button';
 import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet';
 // Dynamic components will be passed as props
-import { Menu, Phone } from 'lucide-react';
-import { COMPANY } from '@/config/company';
+import { Menu } from 'lucide-react';
 
 interface NavItem {
   key: string;
@@ -33,20 +32,14 @@ export function Header({ LocaleSwitcher }: HeaderProps) {
     { key: 'pipeFlushing', href: '/stamspolning' },
     { key: 'pipeCoating', href: '/stamfilmning' },
     { key: 'about', href: '/om-oss' },
+    { key: 'careers', href: '/jobba-hos-oss' },
     { key: 'contact', href: '/kontakt' },
   ];
 
-  const phoneNumber = COMPANY.phone;
 
   // Reusable CTA buttons component
   const CTAButtons = ({ className = "", onClick }: { className?: string; onClick?: () => void }) => (
     <>
-      <Button variant="secondary" className={className} asChild>
-        <a href={`tel:${phoneNumber}`}>
-          <Phone className="h-4 w-4 mr-2" />
-          {t('header.ringDirect')}
-        </a>
-      </Button>
       <Button variant="secondary" className={className} asChild>
         <Link href="/kontakt" {...(onClick && { onClick })}>
           {t('navigation.contact')}
@@ -67,7 +60,7 @@ export function Header({ LocaleSwitcher }: HeaderProps) {
               alt={t('header.logoAlt')}
               width={1280}
               height={720}
-              className="h-16 w-auto shrink-0 scale-85"
+              className="h-16 w-auto shrink-0 scale-85 min-w-[120px]"
               priority
             />
           </Link>
@@ -77,17 +70,18 @@ export function Header({ LocaleSwitcher }: HeaderProps) {
           
           {/* Right side content */}
           <div className="flex flex-col flex-1">
-            {/* Navigation Row with Language Toggle */}
-            <nav className={`flex items-center ${isEnglish ? 'space-x-5' : 'space-x-4'}`}>
-              {navItems.map((item) => (
-                <Link
-                  key={item.key}
-                  href={item.href}
-                  className={`${isEnglish ? 'text-base' : 'text-lg'} font-medium text-text-700 hover:text-primary hover:scale-105 active:scale-95 transition-all duration-200 ease-in-out whitespace-nowrap`}
-                >
-                  {item.key === 'about' ? 'Om\u00A0oss' : t(`navigation.${item.key}`)}
-                </Link>
-              ))}
+                        {/* Navigation Row with Language Toggle */}
+                        <nav className={`flex items-center ${isEnglish ? 'space-x-5' : 'space-x-4'}`} role="navigation" aria-label="Main navigation">
+                          {navItems.map((item) => (
+                            <Link
+                              key={item.key}
+                              href={item.href}
+                              className={`${isEnglish ? 'text-base' : 'text-lg'} font-medium text-text-700 hover:text-primary hover:scale-105 active:scale-95 transition-all duration-200 ease-in-out whitespace-nowrap`}
+                              aria-current={item.href === '/om-oss' ? 'page' : undefined}
+                            >
+                              {t(`navigation.${item.key}`)}
+                            </Link>
+                          ))}
               {/* Language Toggle inline with menu items */}
               <div className="ml-4">
                 <LocaleSwitcher />
@@ -105,7 +99,7 @@ export function Header({ LocaleSwitcher }: HeaderProps) {
               alt={t('header.logoAlt')}
               width={1280}
               height={720}
-              className="h-16 w-auto shrink-0"
+              className="h-16 w-auto shrink-0 min-w-[120px]"
               priority
             />
           </Link>
@@ -120,21 +114,23 @@ export function Header({ LocaleSwitcher }: HeaderProps) {
                   <span className="sr-only">Toggle menu</span>
                 </Button>
               </SheetTrigger>
-              <SheetContent side="right" className="w-80">
-                {/* Accessible title/description for the sheet */}
-                <div className="sr-only">
-                  <h2>{t('header.menuTitle')}</h2>
-                  <p>{t('header.menuDescription')}</p>
-                </div>
-                <div className="flex flex-col space-y-6 mt-6">
+            <SheetContent side="right" className="w-80">
+              <div className="flex flex-col space-y-6 mt-6">
+                  {/* Accessible title/description for the sheet */}
+                  <div className="sr-only">
+                    <h2>{t('header.menuTitle')}</h2>
+                    <p>{t('header.menuDescription')}</p>
+                  </div>
+
                   {/* Mobile Navigation */}
-                  <nav className="flex flex-col space-y-4">
+                  <nav className="flex flex-col space-y-4" role="navigation" aria-label="Main navigation">
                     {navItems.map((item) => (
                       <Link
                         key={item.key}
                         href={item.href}
-                        className="text-lg font-medium text-text-700 hover:text-primary transition-colors"
+                        className="text-lg font-medium text-text-700 hover:text-primary transition-colors pl-4"
                         onClick={() => setIsOpen(false)}
+                        aria-current={item.href === '/om-oss' ? 'page' : undefined}
                       >
                         {t(`navigation.${item.key}`)}
                       </Link>
@@ -144,6 +140,17 @@ export function Header({ LocaleSwitcher }: HeaderProps) {
                   {/* Mobile CTA */}
                   <div className="pt-6 border-t">
                     <CTAButtons className="w-full mb-4" onClick={() => setIsOpen(false)} />
+                    
+                    {/* Logo */}
+                    <div className="flex justify-center mt-6">
+                      <Image
+                        src="/logokomplett.webp"
+                        alt={t('header.logoAlt')}
+                        width={1280}
+                        height={720}
+                        className="h-12 w-auto opacity-60"
+                      />
+                    </div>
                   </div>
                 </div>
               </SheetContent>

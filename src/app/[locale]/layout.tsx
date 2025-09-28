@@ -40,10 +40,10 @@ export default async function RootLayout({
   params
 }: {
   children: React.ReactNode;
-  params: Promise<{locale: string}>;
+  params: Promise<{ locale: string }>;
 }) {
-  const {locale} = await params;
-  const messages = await getMessages({locale});
+  const { locale } = await params;
+  const messages = await getMessages({ locale });
 
   if (process.env.NODE_ENV !== 'production') {
     const supported = ['sv', 'en'];

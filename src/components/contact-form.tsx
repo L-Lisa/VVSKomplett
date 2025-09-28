@@ -7,16 +7,19 @@ import { Send, CheckCircle, AlertCircle, Loader2 } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
-import { contactFormSchema, type ContactFormData } from '@/lib/validations';
+import { createContactFormSchema, type ContactFormData } from '@/lib/validations-i18n';
 import { useTranslations } from 'next-intl';
+import { ContactFormErrorBoundary } from '@/components/contact-form-error-boundary';
+import { FormSubmissionErrorBoundary } from '@/components/form-submission-error-boundary';
 
 interface FormState {
   status: 'idle' | 'loading' | 'success' | 'error';
   message?: string;
 }
 
-export function ContactForm() {
+function ContactFormComponent() {
   const t = useTranslations('contact');
+  const tValidation = useTranslations('validation');
   const [formState, setFormState] = useState<FormState>({ status: 'idle' });
 
   const {
@@ -25,7 +28,7 @@ export function ContactForm() {
     formState: { errors, isSubmitting },
     reset,
   } = useForm<ContactFormData>({
-    resolver: zodResolver(contactFormSchema),
+    resolver: zodResolver(createContactFormSchema(tValidation)),
     mode: 'onBlur',
   });
 
@@ -67,8 +70,8 @@ export function ContactForm() {
           aria-invalid={errors.name ? 'true' : 'false'}
         />
         {errors.name && (
-          <p className="mt-1 text-sm text-destructive flex items-center">
-            <AlertCircle className="h-4 w-4 mr-1" />
+          <p className="mt-1 text-sm text-destructive flex items-center" role="alert" aria-live="polite">
+            <AlertCircle className="h-4 w-4 mr-1" aria-hidden="true" />
             {errors.name.message}
           </p>
         )}
@@ -88,8 +91,8 @@ export function ContactForm() {
           aria-invalid={errors.email ? 'true' : 'false'}
         />
         {errors.email && (
-          <p className="mt-1 text-sm text-destructive flex items-center">
-            <AlertCircle className="h-4 w-4 mr-1" />
+          <p className="mt-1 text-sm text-destructive flex items-center" role="alert" aria-live="polite">
+            <AlertCircle className="h-4 w-4 mr-1" aria-hidden="true" />
             {errors.email.message}
           </p>
         )}
@@ -109,8 +112,8 @@ export function ContactForm() {
           aria-invalid={errors.phone ? 'true' : 'false'}
         />
         {errors.phone && (
-          <p className="mt-1 text-sm text-destructive flex items-center">
-            <AlertCircle className="h-4 w-4 mr-1" />
+          <p className="mt-1 text-sm text-destructive flex items-center" role="alert" aria-live="polite">
+            <AlertCircle className="h-4 w-4 mr-1" aria-hidden="true" />
             {errors.phone.message}
           </p>
         )}
@@ -130,8 +133,8 @@ export function ContactForm() {
           aria-invalid={errors.message ? 'true' : 'false'}
         />
         {errors.message && (
-          <p className="mt-1 text-sm text-destructive flex items-center">
-            <AlertCircle className="h-4 w-4 mr-1" />
+          <p className="mt-1 text-sm text-destructive flex items-center" role="alert" aria-live="polite">
+            <AlertCircle className="h-4 w-4 mr-1" aria-hidden="true" />
             {errors.message.message}
           </p>
         )}
@@ -140,8 +143,9 @@ export function ContactForm() {
       {/* Submit Button */}
       <Button 
         type="submit" 
+        variant="secondary"
         size="lg" 
-        className="w-full bg-[#F97316] text-[#1f398a] hover:bg-[#e86a0a]" 
+        className="w-full" 
         disabled={isSubmitting || formState.status === 'loading'}
       >
         {isSubmitting || formState.status === 'loading' ? (
@@ -159,22 +163,32 @@ export function ContactForm() {
 
       {/* Status Messages */}
       {formState.status === 'success' && (
-        <div className="p-4 bg-green-50 border border-green-200 rounded-md">
+        <div className="p-4 bg-green-50 border border-green-200" role="alert" aria-live="polite">
           <div className="flex items-center">
-            <CheckCircle className="h-5 w-5 text-green-600 mr-2" />
+            <CheckCircle className="h-5 w-5 text-green-600 mr-2" aria-hidden="true" />
             <p className="text-sm text-green-800">{formState.message}</p>
           </div>
         </div>
       )}
 
       {formState.status === 'error' && (
-        <div className="p-4 bg-red-50 border border-red-200 rounded-md">
+        <div className="p-4 bg-red-50 border border-red-200" role="alert" aria-live="polite">
           <div className="flex items-center">
-            <AlertCircle className="h-5 w-5 text-red-600 mr-2" />
+            <AlertCircle className="h-5 w-5 text-red-600 mr-2" aria-hidden="true" />
             <p className="text-sm text-red-800">{formState.message}</p>
           </div>
         </div>
       )}
     </form>
+  );
+}
+
+export function ContactForm() {
+  return (
+    <ContactFormErrorBoundary>
+      <FormSubmissionErrorBoundary>
+        <ContactFormComponent />
+      </FormSubmissionErrorBoundary>
+    </ContactFormErrorBoundary>
   );
 }

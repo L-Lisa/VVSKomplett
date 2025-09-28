@@ -6,6 +6,7 @@ interface PageMetadata {
   description: string;
   keywords?: string;
   path: string;
+  locale?: string;
   robots?: {
     index?: boolean;
     follow?: boolean;
@@ -17,6 +18,7 @@ export function generatePageMetadata({
   description,
   keywords,
   path,
+  locale = 'sv_SE',
   robots,
 }: PageMetadata): Metadata {
   const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || 'http://localhost:3000';
@@ -40,7 +42,7 @@ export function generatePageMetadata({
           alt: title,
         },
       ],
-      locale: 'sv_SE',
+      locale: locale,
       type: 'website',
     },
     twitter: {

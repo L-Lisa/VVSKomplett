@@ -6,27 +6,8 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/com
 import { CheckCircle, Clock, Settings, Shield, Calendar } from 'lucide-react';
 import Link from 'next/link';
 import { CTA } from '@/components/content/cta';
-import Image from 'next/image';
+import { WorkflowSection } from '@/components/content/workflow-section';
 
-// Shimmer utility for image loading
-const shimmer = (w: number, h: number) => `
-<svg width="${w}" height="${h}" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-  <defs>
-    <linearGradient id="g">
-      <stop stop-color="#f6f7f8" offset="20%" />
-      <stop stop-color="#edeef1" offset="50%" />
-      <stop stop-color="#f6f7f8" offset="70%" />
-    </linearGradient>
-  </defs>
-  <rect width="${w}" height="${h}" fill="#f6f7f8" />
-  <rect id="r" width="${w}" height="${h}" fill="url(#g)" />
-  <animate xlink:href="#r" attributeName="x" from="-${w}" to="${w}" dur="1s" repeatCount="indefinite"  />
-</svg>`;
-
-const toBase64 = (str: string) =>
-  typeof window === 'undefined'
-    ? Buffer.from(str).toString('base64')
-    : window.btoa(str);
 
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }) {
   const { locale } = await params;
@@ -92,7 +73,7 @@ export default async function ServicePage({ params }: { params: Promise<{ locale
         role="region"
         aria-labelledby="hero-title"
         style={{
-          backgroundImage: "url('/vvsbackground.webp')",
+          backgroundImage: "url('/serviceperson.webp')",
           backgroundSize: 'cover',
           backgroundPosition: 'center',
           backgroundRepeat: 'no-repeat'
@@ -101,7 +82,7 @@ export default async function ServicePage({ params }: { params: Promise<{ locale
         <span aria-hidden="true" className="absolute inset-0 bg-white/10"></span>
         <div className="container mx-auto px-4 relative">
           <div className="max-w-4xl mx-auto text-center">
-            <div className="inline-block rounded-md border border-white/60 md:border-white/40 bg-white/85 md:bg-white/70 backdrop-blur-md md:backdrop-blur-sm px-4 py-6 md:px-6 md:py-8 lg:px-8 lg:py-10">
+            <div className="inline-block border border-white/60 md:border-white/40 bg-white/85 md:bg-white/70 backdrop-blur-md md:backdrop-blur-sm px-4 py-6 md:px-6 md:py-8 lg:px-8 lg:py-10">
               <h1 id="hero-title" className="text-4xl md:text-5xl font-bold font-outfit mb-4">
                 {t('services.service.hero.h1')}
               </h1>
@@ -109,7 +90,7 @@ export default async function ServicePage({ params }: { params: Promise<{ locale
                 {t('services.service.hero.intro')}
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <Button asChild size="lg">
+                <Button asChild variant="secondary" size="lg">
                   <Link href={`/${locale}/kontakt`}>
                     {t('services.service.pageContent.buttons.getQuote')}
                   </Link>
@@ -159,7 +140,7 @@ export default async function ServicePage({ params }: { params: Promise<{ locale
               {features.map((feature, index) => (
                 <Card key={index} className="text-center">
                   <CardHeader>
-                    <div className="mx-auto w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mb-4">
+                    <div className="mx-auto w-12 h-12 bg-primary/10 flex items-center justify-center mb-4">
                       <feature.icon className="h-6 w-6 text-primary" />
                     </div>
                     <CardTitle className="text-xl">{feature.title}</CardTitle>
@@ -177,48 +158,14 @@ export default async function ServicePage({ params }: { params: Promise<{ locale
       </section>
 
       {/* Process Section with image */}
-      <section className="pt-20 pb-2 md:py-20 bg-muted/20">
-        <div className="container mx-auto px-4">
-          <div className="max-w-6xl mx-auto">
-            <h2 className="text-3xl font-bold font-outfit text-center mb-12">
-              {t('services.service.process.title')}
-            </h2>
-            <div className="grid md:[grid-template-columns:auto_auto] justify-center gap-6 items-stretch">
-              <div>
-                <div className="space-y-6">
-                  {processSteps.map((step, index) => (
-                    <div key={index} className="flex items-start">
-                      <div className="flex-shrink-0 w-8 h-8 bg-primary text-white rounded-full flex items-center justify-center font-bold mr-4">
-                        {index + 1}
-                      </div>
-                      <p className="text-lg text-text-700 pt-1">{step}</p>
-                    </div>
-                  ))}
-                </div>
-              </div>
-
-              <div className="w-full">
-                <div className="h-64 md:h-full flex items-center">
-                  <div className="relative w-full md:w-[460px] h-full rounded-lg overflow-hidden">
-                  <Image
-                    src="/placeholdertool.webp"
-                    alt={t('services.service.process.imageAlt')}
-                    fill
-                    sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 600px"
-                    className="object-contain md:rotate-90"
-                    loading="lazy"
-                    decoding="async"
-                    fetchPriority="low"
-                    placeholder="blur"
-                    blurDataURL={`data:image/svg+xml;base64,${toBase64(shimmer(700, 475))}`}
-                  />
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
+      <WorkflowSection
+        title={t('services.service.process.title')}
+        steps={processSteps}
+        imageSrc="/placeholdertool.webp"
+        imageAlt={t('services.service.process.imageAlt')}
+        backgroundGradient="bg-gradient-to-br from-[#1f398a]/20 via-gray-50/50 to-[#F97316]/15"
+        showGrid={true}
+      />
 
       {/* Content Section */}
       <section className="py-20">
@@ -254,7 +201,7 @@ export default async function ServicePage({ params }: { params: Promise<{ locale
                   {t('services.service.pageContent.relatedServicesTitle')}
                 </h3>
                 <div className="space-y-4">
-                  <div className="p-4 border rounded-lg hover:border-primary/50 transition-colors">
+                  <div className="p-4 border hover:border-primary/50 transition-colors">
                     <h4 className="font-semibold mb-2">
                       <Link href={`/${locale}/nyinstallation`} className="text-primary hover:underline">
                         {t('services.service.pageContent.relatedServices.0.title')}
@@ -264,7 +211,7 @@ export default async function ServicePage({ params }: { params: Promise<{ locale
                       {t('services.service.pageContent.relatedServices.0.description')}
                     </p>
                   </div>
-                  <div className="p-4 border rounded-lg hover:border-primary/50 transition-colors">
+                  <div className="p-4 border hover:border-primary/50 transition-colors">
                     <h4 className="font-semibold mb-2">
                       <Link href={`/${locale}/stamspolning`} className="text-primary hover:underline">
                         {t('services.service.pageContent.relatedServices.1.title')}
@@ -274,7 +221,7 @@ export default async function ServicePage({ params }: { params: Promise<{ locale
                       {t('services.service.pageContent.relatedServices.1.description')}
                     </p>
                   </div>
-                  <div className="p-4 border rounded-lg hover:border-primary/50 transition-colors">
+                  <div className="p-4 border hover:border-primary/50 transition-colors">
                     <h4 className="font-semibold mb-2">
                       <Link href={`/${locale}/stamfilmning`} className="text-primary hover:underline">
                         {t('services.service.pageContent.relatedServices.2.title')}

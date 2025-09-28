@@ -1,8 +1,20 @@
-"use client";
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
 import { Home, Search } from 'lucide-react';
 import { useTranslations } from 'next-intl';
+import { generatePageMetadata } from '@/lib/metadata';
+import { Metadata } from 'next';
+
+export const metadata: Metadata = generatePageMetadata({
+  title: 'Sidan hittades inte',
+  description: 'Sidan du letar efter finns inte. Navigera till våra VVS-tjänster eller kontakta oss för hjälp.',
+  keywords: '404, sidan hittades inte, VVS Stockholm, kontakta oss',
+  path: '/not-found',
+  robots: {
+    index: false,
+    follow: true,
+  },
+});
 
 export default function NotFound() {
   const t = useTranslations('notFound');

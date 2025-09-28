@@ -18,6 +18,11 @@ export const colors = {
     900: 'oklch(0.15 0.05 250)',
     950: 'oklch(0.1 0.03 250)',
   },
+  // Brand Colors
+  brand: {
+    royalBlue: '#1f398a',
+    orange: '#F97316',
+  },
   accent: {
     50: 'oklch(0.95 0.05 45)',
     100: 'oklch(0.9 0.1 45)',

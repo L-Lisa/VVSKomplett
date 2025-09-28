@@ -3,11 +3,12 @@ import { generatePageMetadata } from '@/lib/metadata';
 import { generateLocalBusinessSchema } from '@/lib/schemas';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
-import { CheckCircle, Shield, Award, MapPin } from 'lucide-react';
+import { CheckCircle, Shield, MapPin } from 'lucide-react';
 import Link from 'next/link';
 import Image from 'next/image';
 import { CertificationBadgeServer } from '@/components/ui/certification-badge-server';
 import { CTA } from '@/components/content/cta';
+import { IndustrialGridBackground } from '@/components/ui/industrial-grid-background';
 
 export const metadata = generatePageMetadata({
   title: 'Komplett VVS i Sthlm AB – hantverkare du kan lita på',
@@ -33,14 +34,14 @@ export default async function AboutPage({ params }: { params: Promise<{ locale: 
       name: 'Håkan',
       role: t('about.team.role'),
       experience: t('about.team.experience'),
-      specialties: ['Nyinstallation', 'Stambyte', 'Projekthantering'],
+      specialties: [],
       image: '/hakan.webp'
     },
     {
       name: 'Daniel',
       role: t('about.team.role'),
       experience: t('about.team.experience'),
-      specialties: ['Service', 'Akutreparationer', 'Relining'],
+      specialties: [],
       image: '/daniel.webp'
     }
   ];
@@ -55,9 +56,19 @@ export default async function AboutPage({ params }: { params: Promise<{ locale: 
       />
 
       {/* Hero Section */}
-      <section className="bg-gradient-to-br from-primary/5 to-primary/10 py-20">
-        <div className="container mx-auto px-4">
+      <section 
+        className="relative py-20"
+        style={{
+          backgroundImage: "url('/komplettvvs-bakgrund.webp')",
+          backgroundSize: 'cover',
+          backgroundPosition: 'center',
+          backgroundRepeat: 'no-repeat'
+        }}
+      >
+        <span aria-hidden="true" className="absolute inset-0 bg-white/10"></span>
+        <div className="container mx-auto px-4 relative">
           <div className="max-w-4xl mx-auto text-center">
+            <div className="inline-block border border-white/60 md:border-white/40 bg-white/85 md:bg-white/70 backdrop-blur-md md:backdrop-blur-sm px-4 py-6 md:px-6 md:py-8 lg:px-8 lg:py-10">
             <h1 className="text-4xl md:text-5xl font-bold font-outfit mb-6">
               {t('about.hero.h1')}
             </h1>
@@ -68,7 +79,7 @@ export default async function AboutPage({ params }: { params: Promise<{ locale: 
               {t('about.hero.intro2')}
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button asChild size="lg">
+              <Button asChild variant="secondary" size="lg">
                 <Link href={`/${locale}/kontakt`}>
                   {t('about.pageContent.buttons.contactUs')}
                 </Link>
@@ -79,82 +90,11 @@ export default async function AboutPage({ params }: { params: Promise<{ locale: 
                 </Link>
               </Button>
             </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Team Section */}
-      <section className="py-20">
-        <div className="container mx-auto px-4">
-          <div className="max-w-6xl mx-auto">
-            <h2 className="text-3xl font-bold font-outfit text-center mb-12">
-              {t('about.team.title')}
-            </h2>
-            <p className="text-xl text-text-700 text-center mb-12 max-w-3xl mx-auto">
-              {t('about.team.description')}
-            </p>
-            <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
-              {teamMembers.map((member, index) => (
-                <Card key={index} className="text-center">
-                  <CardHeader>
-                    <div className="mx-auto w-20 h-20 bg-primary/10 rounded-full flex items-center justify-center mb-4 overflow-hidden">
-                      <Image
-                        src={member.image}
-                        alt={`${member.name} - ${member.role}`}
-                        width={80}
-                        height={80}
-                        className="w-full h-full object-cover rounded-full scale-90 hover:scale-100 transition-transform duration-300"
-                        loading="lazy"
-                      />
-                    </div>
-                    <CardTitle className="text-xl">{member.name}</CardTitle>
-                    <CardDescription className="text-lg font-medium text-primary">
-                      {member.role}
-                    </CardDescription>
-                  </CardHeader>
-                  <CardContent>
-                    <p className="text-text-700 mb-4">{member.experience}</p>
-                    <div className="flex flex-col gap-2 mb-4 items-center">
-                      <Button 
-                        size="sm" 
-                        className="bg-[#F97316] text-[#1f398a] hover:bg-[#e86a0a] font-medium w-[70%]"
-                        asChild
-                      >
-                        <Link href={`tel:${process.env.NEXT_PUBLIC_PHONE ?? '+46 70-123 45 67'}`}>
-                          {t('about.team.callDirect')}
-                        </Link>
-                      </Button>
-                      <Button 
-                        size="sm" 
-                        variant="outline"
-                        className="bg-[#F97316] text-[#1f398a] border-[#F97316] hover:bg-[#e86a0a] font-medium w-[70%]"
-                        asChild
-                      >
-                        <Link href={`/${locale}/kontakt`}>
-                          {t('about.team.contact')}
-                        </Link>
-                      </Button>
-                    </div>
-                    <div className="space-y-2">
-                      <p className="font-semibold text-sm text-text-900">{t('about.team.specialties')}:</p>
-                      <div className="flex flex-wrap gap-2 justify-center">
-                        {member.specialties.map((specialty, idx) => (
-                          <span
-                            key={idx}
-                            className="px-3 py-1 bg-muted text-sm rounded-full"
-                          >
-                            {specialty}
-                          </span>
-                        ))}
-                      </div>
-                    </div>
-                  </CardContent>
-                </Card>
-              ))}
             </div>
           </div>
         </div>
       </section>
+
 
       {/* About Håkan and Daniel */}
       <section className="py-20 bg-gradient-to-br from-primary/5 to-primary/10">
@@ -173,6 +113,75 @@ export default async function AboutPage({ params }: { params: Promise<{ locale: 
               <p>
                 {t('about.founders.paragraph3')}
               </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Team Section */}
+      <section className="py-20 relative bg-gradient-to-br from-[#1f398a]/20 via-gray-50/50 to-[#F97316]/15">
+        <IndustrialGridBackground />
+        <div className="container mx-auto px-4 relative z-10">
+          <div className="flex justify-center">
+            <div className="bg-white/60 backdrop-blur-lg px-4 py-6 lg:px-6 lg:py-8 shadow-2xl border border-white/30 w-fit max-w-6xl">
+            <h2 className="text-3xl font-bold font-outfit text-center mb-12">
+              {t('about.team.title')}
+            </h2>
+            <p className="text-xl text-text-700 text-center mb-12 max-w-3xl mx-auto">
+              {t('about.team.description')}
+            </p>
+            <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+              {teamMembers.map((member, index) => (
+                <Card key={index} className="text-center">
+                  <CardHeader>
+                    <div className="mx-auto w-20 h-20 bg-primary/10 flex items-center justify-center mb-4 overflow-hidden">
+                      <Image
+                        src={member.image}
+                        alt={`${member.name} - ${member.role}`}
+                        width={80}
+                        height={80}
+                        className="w-full h-full object-cover scale-90 hover:scale-100 transition-transform duration-300"
+                        loading="lazy"
+                      />
+                    </div>
+                    <CardTitle className="text-xl">{member.name}</CardTitle>
+                    <CardDescription className="text-lg font-medium text-primary">
+                      {member.role}
+                    </CardDescription>
+                  </CardHeader>
+                  <CardContent>
+                    <p className="text-text-700 mb-4">{member.experience}</p>
+                    <div className="flex flex-col gap-2 mb-4 items-center">
+                      <div className="text-sm text-text-600 mb-2">
+                        <strong>Telefon:</strong> {process.env.NEXT_PUBLIC_PHONE ?? '+46 70-123 45 67'}
+                      </div>
+                      <Button 
+                        size="sm" 
+                        variant="secondary"
+                        className="font-medium w-[70%]"
+                        asChild
+                      >
+                        <Link href={`/${locale}/kontakt`}>
+                          {t('about.team.contact')}
+                        </Link>
+                      </Button>
+                    </div>
+                    <div className="space-y-2">
+                      <div className="flex flex-wrap gap-2 justify-center">
+                        {member.specialties.map((specialty, idx) => (
+                          <span
+                            key={idx}
+                            className="px-3 py-1 bg-primary/10 text-primary text-sm"
+                          >
+                            {specialty}
+                          </span>
+                        ))}
+                      </div>
+                    </div>
+                  </CardContent>
+                </Card>
+              ))}
+            </div>
             </div>
           </div>
         </div>
@@ -215,19 +224,6 @@ export default async function AboutPage({ params }: { params: Promise<{ locale: 
                     </div>
                   </CardContent>
                 </Card>
-                <Card>
-                  <CardHeader>
-                    <CardTitle className="flex items-center">
-                      <Award className="h-5 w-5 text-primary mr-2" />
-                      {t('about.pageContent.certificationDetails.insurance.title')}
-                    </CardTitle>
-                  </CardHeader>
-                  <CardContent>
-                    <p className="text-text-700">
-                      {t('about.pageContent.certificationDetails.insurance.description')}
-                    </p>
-                  </CardContent>
-                </Card>
               </div>
             </div>
           </div>
@@ -244,18 +240,14 @@ export default async function AboutPage({ params }: { params: Promise<{ locale: 
             <p className="text-xl text-text-700 mb-8">
               {t('about.areas.description')}
             </p>
-            <div className="grid md:grid-cols-3 gap-8">
-              <div className="flex items-center justify-center p-6 border rounded-lg">
+            <div className="grid md:grid-cols-2 gap-8">
+              <div className="flex items-center justify-center p-6 border">
                 <MapPin className="h-8 w-8 text-primary mr-3" />
                 <span className="text-lg font-medium">{t('about.pageContent.serviceAreas.0')}</span>
               </div>
-              <div className="flex items-center justify-center p-6 border rounded-lg">
+              <div className="flex items-center justify-center p-6 border">
                 <MapPin className="h-8 w-8 text-primary mr-3" />
                 <span className="text-lg font-medium">{t('about.pageContent.serviceAreas.1')}</span>
-              </div>
-              <div className="flex items-center justify-center p-6 border rounded-lg">
-                <MapPin className="h-8 w-8 text-primary mr-3" />
-                <span className="text-lg font-medium">{t('about.pageContent.serviceAreas.2')}</span>
               </div>
             </div>
           </div>
@@ -358,6 +350,7 @@ export default async function AboutPage({ params }: { params: Promise<{ locale: 
           </div>
         </div>
       </section>
+
 
       {/* CTA Section - aligned with service pages */}
       <CTA 

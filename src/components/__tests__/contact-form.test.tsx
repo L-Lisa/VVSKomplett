@@ -15,7 +15,7 @@ jest.mock('next-intl', () => ({
       'form.placeholders.email': 'din@email.se',
       'form.placeholders.phone': '070-123 45 67',
       'form.placeholders.message': 'Beskriv ditt VVS-behov...',
-      'feedback.success': 'Tack för ditt meddelande! Vi återkommer inom 24 timmar.',
+      'feedback.success': 'Tack för ditt meddelande! Vi återkommer inom 24\u00A0timmar.',
       'feedback.error': 'Något gick fel. Vänligen försök igen eller ring oss direkt.',
       'feedback.sending': 'Skickar...',
     }
@@ -104,7 +104,7 @@ describe('ContactForm', () => {
     
     // Wait for success message
     await waitFor(() => {
-      expect(screen.getByText('Tack för ditt meddelande! Vi återkommer inom 24 timmar.')).toBeInTheDocument()
+      expect(screen.getByText('Tack för ditt meddelande! Vi återkommer inom 24\u00A0timmar.')).toBeInTheDocument()
     }, { timeout: 3000 })
   })
 
@@ -122,7 +122,7 @@ describe('ContactForm', () => {
     
     // Wait for success message
     await waitFor(() => {
-      expect(screen.getByText('Tack för ditt meddelande! Vi återkommer inom 24 timmar.')).toBeInTheDocument()
+      expect(screen.getByText('Tack för ditt meddelande! Vi återkommer inom 24\u00A0timmar.')).toBeInTheDocument()
     }, { timeout: 3000 })
   })
 })

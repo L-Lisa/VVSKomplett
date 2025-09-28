@@ -7,7 +7,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/com
 import { CheckCircle, Home, Shield, Leaf, Clock } from 'lucide-react';
 import Link from 'next/link';
 import { CTA } from '@/components/content/cta';
-import Image from 'next/image';
+import { WorkflowSection } from '@/components/content/workflow-section';
 
 export const metadata = generateServiceMetadata({
   title: 'Relining i Stockholm – renovera rören utan rivning',
@@ -52,7 +52,7 @@ export default async function ReliningPage({ params }: { params: Promise<{ local
         role="region"
         aria-labelledby="hero-title"
         style={{
-          backgroundImage: "url('/vvsbackground.webp')",
+          backgroundImage: "url('/pipeline.webp')",
           backgroundSize: 'cover',
           backgroundPosition: 'center',
           backgroundRepeat: 'no-repeat'
@@ -61,7 +61,7 @@ export default async function ReliningPage({ params }: { params: Promise<{ local
         <span aria-hidden="true" className="absolute inset-0 bg-white/10"></span>
         <div className="container mx-auto px-4 relative">
           <div className="max-w-4xl mx-auto text-center">
-            <div className="inline-block rounded-md border border-white/60 md:border-white/40 bg-white/85 md:bg-white/70 backdrop-blur-md md:backdrop-blur-sm px-4 py-6 md:px-6 md:py-8 lg:px-8 lg:py-10">
+            <div className="inline-block border border-white/60 md:border-white/40 bg-white/85 md:bg-white/70 backdrop-blur-md md:backdrop-blur-sm px-4 py-6 md:px-6 md:py-8 lg:px-8 lg:py-10">
               <h1 id="hero-title" className="text-4xl md:text-5xl font-bold font-outfit mb-4">
                 {t('services.relining.hero.h1')}
               </h1>
@@ -69,7 +69,7 @@ export default async function ReliningPage({ params }: { params: Promise<{ local
                 {t('services.relining.hero.intro')}
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <Button asChild size="lg">
+                <Button asChild variant="secondary" size="lg">
                   <Link href={`/${locale}/kontakt`}>
                     {t('hero.getQuote')}
                   </Link>
@@ -111,7 +111,7 @@ export default async function ReliningPage({ params }: { params: Promise<{ local
               {features.map((feature: Feature, index: number) => (
                 <Card key={index} className="text-center">
                   <CardHeader>
-                    <div className="mx-auto w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mb-4">
+                    <div className="mx-auto w-12 h-12 bg-primary/10 flex items-center justify-center mb-4">
                       <feature.icon className="h-6 w-6 text-primary" />
                     </div>
                     <CardTitle className="text-xl">{feature.title}</CardTitle>
@@ -129,46 +129,14 @@ export default async function ReliningPage({ params }: { params: Promise<{ local
       </section>
 
       {/* Process Section with image */}
-      <section className="pt-20 pb-2 md:py-20 bg-muted/20">
-        <div className="container mx-auto px-4">
-          <div className="max-w-6xl mx-auto">
-            <h2 className="text-3xl font-bold font-outfit text-center mb-12">
-              {t('services.relining.process.title')}
-            </h2>
-            <div className="grid md:[grid-template-columns:auto_auto] justify-center gap-6 items-stretch">
-              <div>
-                <div className="space-y-6">
-                  {processSteps.map((step: string, index: number) => (
-                    <div key={index} className="flex items-start">
-                      <div className="flex-shrink-0 w-8 h-8 bg-primary text-white rounded-full flex items-center justify-center font-bold mr-4">
-                        {index + 1}
-                      </div>
-                      <p className="text-lg text-text-700 pt-1">{step}</p>
-                    </div>
-                  ))}
-                </div>
-              </div>
-
-              <div className="w-full">
-                <div className="h-64 md:h-full flex items-center">
-                  <div className="relative w-full md:w-[460px] h-full rounded-lg overflow-hidden">
-                    <Image
-                      src="/placeholdertool.webp"
-                      alt={t('services.relining.process.imageAlt')}
-                      fill
-                      sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 600px"
-                      className="object-contain md:rotate-90"
-                      loading="lazy"
-                      decoding="async"
-                      fetchPriority="low"
-                    />
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
+      <WorkflowSection
+        title={t('services.relining.process.title')}
+        steps={processSteps}
+        imageSrc="/relining.webp"
+        imageAlt={t('services.relining.process.imageAlt')}
+        backgroundGradient="bg-gradient-to-br from-[#1f398a]/20 via-gray-50/50 to-[#F97316]/15"
+        showGrid={true}
+      />
 
       {/* Content Section */}
       <section className="py-20">
@@ -195,7 +163,7 @@ export default async function ReliningPage({ params }: { params: Promise<{ local
                 </h3>
                 <div className="space-y-4">
                   {t.raw('services.relining.relatedServices').map((service: { title: string; description: string }, index: number) => (
-                    <div key={index} className="p-4 border rounded-lg hover:border-primary/50 transition-colors">
+                    <div key={index} className="p-4 border hover:border-primary/50 transition-colors">
                       <h4 className="font-semibold mb-2">
                         <Link href={`/${locale}/${service.title === 'Pipe replacement' ? 'stambyte' : service.title === 'Pipe inspection' ? 'stamfilmning' : 'stamspolning'}`} className="text-primary hover:underline">
                           {service.title}

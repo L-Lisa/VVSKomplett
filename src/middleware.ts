@@ -5,7 +5,7 @@ import {locales, defaultLocale} from './i18n';
 export default createMiddleware({
   locales,
   defaultLocale,
-  localePrefix: 'as-needed' // /sv, /en, och redirectar / -> /sv
+  localePrefix: 'always' // ensure every locale, including sv, is prefixed to avoid redirect loops
 });
 
 export const config = {

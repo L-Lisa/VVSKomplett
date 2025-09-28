@@ -1,16 +1,14 @@
 import { getTranslations } from 'next-intl/server';
 import Image from 'next/image';
 import { Button } from '@/components/ui/button';
-import { ServicesGridClient } from '@/components/content/services-grid.client';
 import { Hero } from '@/components/content/hero';
 import { CTA } from '@/components/content/cta';
 import { generatePageMetadata } from '@/lib/metadata';
-import { generateLocalBusinessSchema } from '@/lib/schemas';
+import { generateLocalBusinessSchema, generateFAQSchema } from '@/lib/schemas';
 import { GeometricAccents } from '@/components/ui/geometric-accents';
-import { ScreenReaderAnnouncement } from '@/components/ui/screen-reader-announcement';
 import Link from 'next/link';
 import { CheckIcon } from '@/components/ui/check-icon';
-import { IndustrialGridBackground } from '@/components/ui/industrial-grid-background';
+import { ImageSlider } from '@/components/ui/image-slider';
 // (client wrapper used instead)
 
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }) {
@@ -20,6 +18,7 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
     title: t('home.title'),
     description: t('home.description'),
     path: '/',
+    locale: locale === 'en' ? 'en_US' : 'sv_SE',
   });
 }
 
@@ -27,55 +26,12 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
   const { locale } = await params;
   const t = await getTranslations({ locale });
 
-  const services = [
-    {
-      key: 'newInstallation',
-      iconName: 'Wrench',
-      href: '/nyinstallation',
-    },
-    {
-      key: 'pipeReplacement',
-      iconName: 'Home',
-      href: '/stambyte',
-    },
-    {
-      key: 'service',
-      iconName: 'Settings',
-      href: '/service',
-    },
-    {
-      key: 'relining',
-      iconName: 'Shield',
-      href: '/relining',
-    },
-    {
-      key: 'pipeFlushing',
-      iconName: 'Droplets',
-      href: '/stamspolning',
-    },
-    {
-      key: 'pipeCoating',
-      iconName: 'Paintbrush',
-      href: '/stamfilmning',
-    },
-    {
-      key: 'bathroomDesign',
-      iconName: 'Bath',
-      href: '#', // Placeholder for Badrums concept
-    },
-    {
-      key: 'electricalInstallation',
-      iconName: 'Zap',
-      href: '#', // Placeholder for elteknik23
-    },
-    {
-      key: 'allVVS',
-      iconName: 'Cog',
-      href: '/om-oss',
-    },
-  ];
-
-
+  // FAQ data for structured data
+  const faqItems = t.raw('home.faq.items') as Array<{ question: string; answer: string }>;
+  const faqData = faqItems.map((item) => ({
+    question: item.question,
+    answer: item.answer,
+  }));
 
   return (
     <>
@@ -83,6 +39,12 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
         type="application/ld+json"
         dangerouslySetInnerHTML={{
           __html: JSON.stringify(generateLocalBusinessSchema()),
+        }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(generateFAQSchema(faqData)),
         }}
       />
       
@@ -95,25 +57,6 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
           href: '/kontakt'
         }}
         priority={true}
-      />
-
-      {/* Services Section */}
-      <section className="py-20 relative bg-gradient-to-br from-[#1f398a]/8 via-gray-50/30 to-[#F97316]/6" aria-labelledby="services-heading">
-        {/* Simple industrial grid pattern */}
-        <IndustrialGridBackground />
-        
-        <div className="container mx-auto px-4 relative z-10">
-          <h2 id="services-heading" className="text-2xl sm:text-3xl md:text-4xl font-bold font-outfit text-center mb-8 sm:mb-12">
-            {t('home.servicesTitle')}
-          </h2>
-          <ServicesGridClient services={services} />
-        </div>
-      </section>
-
-      {/* Screen Reader Announcement for Services */}
-      <ScreenReaderAnnouncement 
-        message={t('home.a11y.servicesLoaded')}
-        delay={1000}
       />
 
 
@@ -140,21 +83,37 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
               <div>
                 <h3 className="text-2xl font-bold font-outfit mb-4">{t('home.contentSection.specialtiesTitle')}</h3>
                 <ul className="space-y-3">
-                  <li className="flex items-start">
-                    <CheckIcon className="h-5 w-5 text-primary mr-3 mt-0.5 flex-shrink-0" />
-                    <span><Link href={`/${locale}/nyinstallation`} className="text-primary hover:underline font-medium">{t('navigation.newInstallation')}</Link> {t('home.specialties.items.nyinstallation.after')}</span>
+                  <li className="flex items-start group hover:scale-105 transition-transform duration-200 cursor-pointer">
+                    <CheckIcon className="h-5 w-5 text-primary mr-3 mt-0.5 flex-shrink-0 group-hover:text-[#F97316] transition-colors duration-200" />
+                    <span><Link href={`/${locale}/nyinstallation`} className="text-primary hover:text-[#F97316] hover:underline font-medium transition-colors duration-200">{t('navigation.newInstallation')}</Link> {t('home.specialties.items.nyinstallation.after')}</span>
                   </li>
-                  <li className="flex items-start">
-                    <CheckIcon className="h-5 w-5 text-primary mr-3 mt-0.5 flex-shrink-0" />
-                    <span><Link href={`/${locale}/stambyte`} className="text-primary hover:underline font-medium">{t('navigation.pipeReplacement')}</Link> {t('home.specialties.items.stambyte.after')}</span>
+                  <li className="flex items-start group hover:scale-105 transition-transform duration-200 cursor-pointer">
+                    <CheckIcon className="h-5 w-5 text-primary mr-3 mt-0.5 flex-shrink-0 group-hover:text-[#F97316] transition-colors duration-200" />
+                    <span><Link href={`/${locale}/stambyte`} className="text-primary hover:text-[#F97316] hover:underline font-medium transition-colors duration-200">{t('navigation.pipeReplacement')}</Link> {t('home.specialties.items.stambyte.after')}</span>
                   </li>
-                  <li className="flex items-start">
-                    <CheckIcon className="h-5 w-5 text-primary mr-3 mt-0.5 flex-shrink-0" />
-                    <span><Link href={`/${locale}/relining`} className="text-primary hover:underline font-medium">{t('navigation.relining')}</Link> {t('home.specialties.items.relining.after')}</span>
+                  <li className="flex items-start group hover:scale-105 transition-transform duration-200 cursor-pointer">
+                    <CheckIcon className="h-5 w-5 text-primary mr-3 mt-0.5 flex-shrink-0 group-hover:text-[#F97316] transition-colors duration-200" />
+                    <span><Link href={`/${locale}/relining`} className="text-primary hover:text-[#F97316] hover:underline font-medium transition-colors duration-200">{t('navigation.relining')}</Link> {t('home.specialties.items.relining.after')}</span>
                   </li>
-                  <li className="flex items-start">
-                    <CheckIcon className="h-5 w-5 text-primary mr-3 mt-0.5 flex-shrink-0" />
-                    <span><Link href={`/${locale}/service`} className="text-primary hover:underline font-medium">{t('navigation.service')}</Link> {t('home.specialties.items.service.after')}</span>
+                  <li className="flex items-start group hover:scale-105 transition-transform duration-200 cursor-pointer">
+                    <CheckIcon className="h-5 w-5 text-primary mr-3 mt-0.5 flex-shrink-0 group-hover:text-[#F97316] transition-colors duration-200" />
+                    <span><Link href={`/${locale}/service`} className="text-primary hover:text-[#F97316] hover:underline font-medium transition-colors duration-200">{t('navigation.service')}</Link> {t('home.specialties.items.service.after')}</span>
+                  </li>
+                  <li className="flex items-start group hover:scale-105 transition-transform duration-200 cursor-pointer">
+                    <CheckIcon className="h-5 w-5 text-primary mr-3 mt-0.5 flex-shrink-0 group-hover:text-[#F97316] transition-colors duration-200" />
+                    <span><Link href={`/${locale}/stamspolning`} className="text-primary hover:text-[#F97316] hover:underline font-medium transition-colors duration-200">{t('navigation.pipeFlushing')}</Link> {t('home.specialties.items.stamspolning.after')}</span>
+                  </li>
+                  <li className="flex items-start group hover:scale-105 transition-transform duration-200 cursor-pointer">
+                    <CheckIcon className="h-5 w-5 text-primary mr-3 mt-0.5 flex-shrink-0 group-hover:text-[#F97316] transition-colors duration-200" />
+                    <span><Link href={`/${locale}/stamfilmning`} className="text-primary hover:text-[#F97316] hover:underline font-medium transition-colors duration-200">{t('navigation.pipeCoating')}</Link> {t('home.specialties.items.stamfilmning.after')}</span>
+                  </li>
+                  <li className="flex items-start group hover:scale-105 transition-transform duration-200 cursor-pointer">
+                    <CheckIcon className="h-5 w-5 text-primary mr-3 mt-0.5 flex-shrink-0 group-hover:text-[#F97316] transition-colors duration-200" />
+                    <span><Link href={`/${locale}/bathroomDesign`} className="text-primary hover:text-[#F97316] hover:underline font-medium transition-colors duration-200">{t('navigation.bathroomDesign')}</Link> {t('home.specialties.items.bathroomDesign.after')}</span>
+                  </li>
+                  <li className="flex items-start group hover:scale-105 transition-transform duration-200 cursor-pointer">
+                    <CheckIcon className="h-5 w-5 text-primary mr-3 mt-0.5 flex-shrink-0 group-hover:text-[#F97316] transition-colors duration-200" />
+                    <span><Link href={`/${locale}/electricalInstallation`} className="text-primary hover:text-[#F97316] hover:underline font-medium transition-colors duration-200">{t('navigation.electricalInstallation')}</Link> {t('home.specialties.items.electricalInstallation.after')}</span>
                   </li>
                 </ul>
               </div>
@@ -169,11 +128,23 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
                     </li>
                   ))}
                 </ul>
+                
+                {/* Säker Vatten Logo */}
+                <div className="mt-6 flex justify-start">
+                  <Image
+                    src="/saker-vatten.webp"
+                    alt={t('certifications.sakerVatten.altText')}
+                    width={200}
+                    height={80}
+                    className="w-full max-w-[200px] h-auto"
+                    priority={false}
+                  />
+                </div>
               </div>
             </div>
 
             {/* Service Areas */}
-            <div className="bg-muted/20 rounded-lg p-8 text-left">
+            <div className="bg-muted/20 p-8 text-left">
               <h3 className="text-2xl font-bold font-outfit mb-4">{t('home.serviceAreas.title')}</h3>
               <p className="text-lg text-text-700 mb-6">
                 {t('home.serviceAreas.intro1')} 
@@ -182,7 +153,7 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
                 {t('home.serviceAreas.and')} <Link href={`/${locale}/stamspolning`} className="text-primary hover:underline font-medium mx-1">{t('navigation.pipeFlushing')}</Link> 
                 {t('home.serviceAreas.and2')} <Link href={`/${locale}/stamfilmning`} className="text-primary hover:underline font-medium mx-1">{t('navigation.pipeCoating')}</Link>.
               </p>
-              <Button asChild size="lg">
+              <Button asChild variant="secondary" size="lg">
                 <Link href={`/${locale}/kontakt`}>
                   {t('home.serviceAreas.cta')}
                 </Link>
@@ -191,7 +162,7 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
 
             {/* Why Choose Us Section - Split Hero Layout */}
             <div className="mt-16">
-              <div className="bg-gradient-to-br from-[#1f398a]/5 to-[#F97316]/5 rounded-2xl p-8 lg:p-12">
+              <div className="bg-gradient-to-br from-[#1f398a]/5 to-[#F97316]/5 p-8 lg:p-12">
                 {/* Header spanning both columns */}
                 <h2 className="text-2xl lg:text-3xl font-bold font-outfit mb-8 text-[#1f398a] text-center lg:text-left">
                   {t('home.whyChooseUs')}
@@ -204,7 +175,7 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
                       {t.raw('home.faq.items').map((item: { question: string; answer: string }, index: number) => (
                         <div key={index} className="flex items-start group" role="listitem">
                           <div className="flex-shrink-0 mr-4 mt-1 group-hover:scale-110 transition-transform duration-200" aria-hidden="true">
-                            <div className="w-8 h-8 bg-[#F97316] rounded-full flex items-center justify-center">
+                            <div className="w-8 h-8 bg-[#F97316] flex items-center justify-center">
                               <span className="text-white font-bold text-sm">{index + 1}</span>
                             </div>
                           </div>
@@ -227,7 +198,7 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
                       <p className="text-text-700 mb-6 leading-relaxed" dangerouslySetInnerHTML={{__html: t('home.localArea.description')}} />
                       
                       {/* Image Showcase - grows to fill remaining space */}
-                      <div className="rounded-2xl overflow-hidden shadow-lg flex-1">
+                      <div className="overflow-hidden shadow-lg flex-1">
                         <Image 
                           src="/fardig8.webp" 
                           alt={t('home.localArea.imageAlt')}
@@ -243,6 +214,70 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
               </div>
             </div>
           </div>
+      </section>
+
+      {/* Image Slider Section */}
+      <section className="py-16 bg-gray-50">
+        <div className="container mx-auto px-4">
+          <div className="max-w-6xl mx-auto">
+            <h2 className="text-3xl font-bold font-outfit text-center mb-8 text-[#1f398a]">
+              {t('home.projects.title')}
+            </h2>
+            <p className="text-lg text-center text-gray-600 mb-12 max-w-3xl mx-auto">
+              {t('home.projects.subtitle')}
+            </p>
+            
+            <ImageSlider
+              images={[
+                {
+                  src: '/fore-golv.webp',
+                  alt: t('home.projects.foreGolv.altText'),
+                  title: t('home.projects.foreGolv.title'),
+                  description: t('home.projects.foreGolv.description')
+                },
+                {
+                  src: '/efter-golv.webp',
+                  alt: t('home.projects.efterGolv.altText'),
+                  title: t('home.projects.efterGolv.title'),
+                  description: t('home.projects.efterGolv.description')
+                },
+                {
+                  src: '/fardig6.webp',
+                  alt: t('home.projects.fardig6.altText'),
+                  title: t('home.projects.fardig6.title'),
+                  description: t('home.projects.fardig6.description')
+                },
+                {
+                  src: '/fore2.webp',
+                  alt: t('home.projects.fore2.altText'),
+                  title: t('home.projects.fore2.title'),
+                  description: t('home.projects.fore2.description')
+                },
+                {
+                  src: '/fardig7.webp',
+                  alt: t('home.projects.fardig7.altText'),
+                  title: t('home.projects.fardig7.title'),
+                  description: t('home.projects.fardig7.description')
+                },
+                {
+                  src: '/system.webp',
+                  alt: t('home.projects.system.altText'),
+                  title: t('home.projects.system.title'),
+                  description: t('home.projects.system.description')
+                },
+                {
+                  src: '/komplettvvs-vaxlare.webp',
+                  alt: t('home.projects.vaxlare.altText'),
+                  title: t('home.projects.vaxlare.title'),
+                  description: t('home.projects.vaxlare.description')
+                }
+              ]}
+              slidesToShow={1}
+              slidesToScroll={1}
+              className="mb-8"
+            />
+          </div>
+        </div>
       </section>
 
       {/* CTA Section */}

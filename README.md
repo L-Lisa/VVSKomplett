@@ -35,16 +35,11 @@ See "Auto-Translation Setup" section below for automated translation workflow.
 
 ## Getting Started
 
-First, run the development server:
+First, ensure you're on Node.js 20 (the exact version lives in `.nvmrc`) and install dependencies with pnpm:
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
+pnpm install
 pnpm dev
-# or
-bun dev
 ```
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
