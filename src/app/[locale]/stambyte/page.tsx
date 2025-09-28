@@ -148,15 +148,6 @@ export default async function PipeReplacementPage({ params }: { params: Promise<
         </div>
       </section>
 
-      {/* Process Section with image */}
-        <WorkflowSection
-          title={t('services.pipeReplacement.process.title')}
-          steps={processSteps}
-          imageSrc="/fore5.webp"
-          imageAlt={t('services.pipeReplacement.process.imageAlt')}
-          backgroundGradient="bg-gradient-to-br from-[#1f398a]/20 via-gray-50/50 to-[#F97316]/15"
-          showGrid={true}
-        />
 
       {/* Content Section */}
       <section className="py-20">

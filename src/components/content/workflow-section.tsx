@@ -23,6 +23,7 @@ export function WorkflowSection({
   backgroundImage,
   showGrid = true,
 }: WorkflowSectionProps) {
+  console.log('WorkflowSection props:', { title, imageSrc, imageAlt, steps });
   const [isScrolling, setIsScrolling] = useState(false);
   const [scrollTimeout, setScrollTimeout] = useState<NodeJS.Timeout | null>(null);
 
@@ -80,41 +81,34 @@ export function WorkflowSection({
               {title}
             </h2>
             
-            <div className="grid md:[grid-template-columns:auto_auto] justify-center gap-6 items-stretch">
+            <div className="grid md:grid-cols-2 gap-6 items-start">
               {/* Steps List */}
               <div className="w-full">
-                <div className="h-64 md:h-full flex items-center">
-                  <div className="space-y-6 w-full">
-                    {steps.map((step, index) => (
-                      <div key={index} className="flex items-start gap-4">
-                        <div className="flex-shrink-0 w-8 h-8 bg-primary flex items-center justify-center text-white font-bold text-sm">
-                          {index + 1}
-                        </div>
-                        <p className="text-lg text-text-700 pt-1">{step}</p>
+                <div className="space-y-6 w-full">
+                  {steps.map((step, index) => (
+                    <div key={index} className="flex items-start gap-4">
+                      <div className="flex-shrink-0 w-8 h-8 bg-primary flex items-center justify-center text-white font-bold text-sm">
+                        {index + 1}
                       </div>
-                    ))}
-                  </div>
+                      <p className="text-lg text-text-700 pt-1">{step}</p>
+                    </div>
+                  ))}
                 </div>
               </div>
 
               {/* Image */}
-              <div className="w-full flex justify-center">
-                <div className="w-full md:h-full flex items-center justify-center">
-                  <div className="relative w-[90%] md:max-w-md lg:max-w-lg">
-                    <Image
+              {imageSrc && imageSrc.trim() !== '' && (
+                <div className="w-full flex justify-center">
+                  <div className="relative w-full max-w-md">
+                    <img
                       src={imageSrc}
                       alt={imageAlt}
-                      width={400}
-                      height={300}
-                      sizes="(max-width: 768px) 90vw, (max-width: 1024px) 448px, 512px"
                       className="object-contain w-full h-auto"
                       loading="lazy"
-                      decoding="async"
-                      fetchPriority="low"
                     />
                   </div>
                 </div>
-              </div>
+              )}
             </div>
           </div>
         </div>

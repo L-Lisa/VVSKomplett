@@ -11,12 +11,12 @@ export function StickyCTA() {
   const t = useTranslations('home');
 
   return (
-    <div className="fixed bottom-6 right-6 z-50">
+    <div className="fixed bottom-4 right-2 sm:bottom-6 sm:right-6 z-50">
       <Dialog open={isOpen} onOpenChange={setIsOpen}>
         <DialogTrigger asChild>
           <Button
             variant="secondary"
-            className="font-bold text-lg px-6 py-3 shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-200 animate-pulse"
+            className="font-bold text-sm sm:text-lg px-4 py-2 sm:px-6 sm:py-3 shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-200 animate-pulse whitespace-nowrap"
             size="lg"
           >
             {t('freeQuote')}
