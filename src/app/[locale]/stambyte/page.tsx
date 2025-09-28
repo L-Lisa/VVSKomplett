@@ -6,7 +6,6 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/com
 import { CheckCircle, Wrench, Settings, Shield, Users } from 'lucide-react';
 import Link from 'next/link';
 import { CTA } from '@/components/content/cta';
-import { WorkflowSection } from '@/components/content/workflow-section';
 
 export const metadata = generateServiceMetadata({
   title: 'Stambyte i flerbostadshus – effektivt och säkert',
@@ -42,7 +41,6 @@ export default async function PipeReplacementPage({ params }: { params: Promise<
     }
   ];
 
-  const processSteps = t.raw('services.pipeReplacement.process.steps');
 
   return (
     <>

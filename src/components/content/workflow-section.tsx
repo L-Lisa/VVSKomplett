@@ -100,9 +100,11 @@ export function WorkflowSection({
               {imageSrc && imageSrc.trim() !== '' && (
                 <div className="w-full flex justify-center">
                   <div className="relative w-full max-w-md">
-                    <img
+                    <Image
                       src={imageSrc}
                       alt={imageAlt}
+                      width={400}
+                      height={300}
                       className="object-contain w-full h-auto"
                       loading="lazy"
                     />
