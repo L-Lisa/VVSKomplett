@@ -15,7 +15,7 @@ export function StickyCTA() {
       <Dialog open={isOpen} onOpenChange={setIsOpen}>
         <DialogTrigger asChild>
           <button 
-            className="bg-[#F97316] text-white px-4 py-3 rounded-full shadow-lg hover:shadow-xl hover:scale-105 transition-all duration-200 flex items-center gap-2 font-semibold text-sm sm:text-base"
+            className="bg-[#F97316] text-[#1f398a] px-4 py-3 shadow-lg hover:shadow-xl hover:scale-105 transition-all duration-200 flex items-center gap-2 font-bold text-sm sm:text-base"
             aria-label="Kontakta oss för offert"
           >
             <MessageCircle className="h-4 w-4 sm:h-5 sm:w-5" />
