@@ -99,7 +99,7 @@ export function Header({ LocaleSwitcher }: HeaderProps) {
               alt={t('header.logoAlt')}
               width={1280}
               height={720}
-              className="h-16 w-auto shrink-0 min-w-[120px]"
+              className="h-16 w-auto shrink-0 max-w-[120px]"
               priority
             />
           </Link>

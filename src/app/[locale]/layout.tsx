@@ -6,7 +6,7 @@ import {Header} from '@/components/layout/header';
 import {Footer} from '@/components/layout/footer';
 import { CookieBanner, LocaleSwitcher } from '@/components/dynamic-components';
 import { GlobalErrorBoundary } from '@/components/global-error-boundary';
-import { StickyCTA } from '@/components/sticky-cta';
+import { StickyCTA } from '@/components/sticky-cog';
 import '../globals.css';
 
 const inter = Inter({
