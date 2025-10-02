@@ -19,8 +19,7 @@ export function StickyCTA() {
             aria-label="Kontakta oss för offert"
           >
             <MessageCircle className="h-4 w-4 sm:h-5 sm:w-5" />
-            <span className="hidden sm:inline">{t('freeQuote')}</span>
-            <span className="sm:hidden">Kontakt</span>
+            <span>Kontakt</span>
           </button>
         </DialogTrigger>
         <DialogContent className="max-w-md mx-auto">
