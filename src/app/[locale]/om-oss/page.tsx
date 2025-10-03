@@ -3,10 +3,11 @@ import { generatePageMetadata } from '@/lib/metadata';
 import { generateLocalBusinessSchema } from '@/lib/schemas';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
-import { CheckCircle, Shield, MapPin } from 'lucide-react';
+import { CheckCircle, Shield } from 'lucide-react';
 import Link from 'next/link';
 import Image from 'next/image';
 import { CertificationBadgeServer } from '@/components/ui/certification-badge-server';
+import { ImageSlider } from '@/components/ui/image-slider';
 import { CTA } from '@/components/content/cta';
 import { IndustrialGridBackground } from '@/components/ui/industrial-grid-background';
 
@@ -230,26 +231,27 @@ export default async function AboutPage({ params }: { params: Promise<{ locale: 
         </div>
       </section>
 
-      {/* Service Areas */}
-      <section className="py-20">
+      {/* Projects Carousel Section (moved from Home) */}
+      <section id="projects-carousel" className="py-16 bg-gray-50">
         <div className="container mx-auto px-4">
-          <div className="max-w-4xl mx-auto text-center">
-            <h2 className="text-3xl font-bold font-outfit mb-6">
-              {t('about.areas.title')}
+          <div className="max-w-6xl mx-auto">
+            <h2 className="text-3xl font-bold font-outfit text-center mb-8 text-[#1f398a]">
+              {t('about.projects.heading')}
             </h2>
-            <p className="text-xl text-text-700 mb-8">
-              {t('about.areas.description')}
-            </p>
-            <div className="grid md:grid-cols-2 gap-8">
-              <div className="flex items-center justify-center p-6 border">
-                <MapPin className="h-8 w-8 text-primary mr-3" />
-                <span className="text-lg font-medium">{t('about.pageContent.serviceAreas.0')}</span>
-              </div>
-              <div className="flex items-center justify-center p-6 border">
-                <MapPin className="h-8 w-8 text-primary mr-3" />
-                <span className="text-lg font-medium">{t('about.pageContent.serviceAreas.1')}</span>
-              </div>
-            </div>
+             <ImageSlider
+               images={[
+                 { src: '/fardig.webp', alt: t('home.projects.fardig.altText') },
+                 { src: '/fardig6.webp', alt: t('home.projects.fardig6.altText') },
+                 { src: '/fardig7.webp', alt: t('home.projects.fardig7.altText') },
+                 { src: '/fardig8.webp', alt: t('home.projects.fardig8.altText') },
+                 { src: '/fardig9.webp', alt: t('home.projects.fardig9.altText') },
+                 { src: '/fardig10.webp', alt: t('home.projects.fardig10.altText') },
+                 { src: '/fardigt.webp', alt: t('home.projects.fardigt.altText') }
+               ]}
+              slidesToShow={1}
+              slidesToScroll={1}
+              className="mb-8"
+            />
           </div>
         </div>
       </section>

@@ -6,9 +6,11 @@ import { CTA } from '@/components/content/cta';
 import { generatePageMetadata } from '@/lib/metadata';
 import { generateLocalBusinessSchema, generateFAQSchema } from '@/lib/schemas';
 import { GeometricAccents } from '@/components/ui/geometric-accents';
+// import { IndustrialGridBackground } from '@/components/ui/industrial-grid-background';
 import Link from 'next/link';
 import { CheckIcon } from '@/components/ui/check-icon';
-import { ImageSlider } from '@/components/ui/image-slider';
+// import { ImageSlider } from '@/components/ui/image-slider';
+import { ForeEfter } from '@/components/content/fore-efter';
 // (client wrapper used instead)
 
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }) {
@@ -216,69 +218,17 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
           </div>
       </section>
 
-      {/* Image Slider Section */}
-      <section className="py-16 bg-gray-50">
-        <div className="container mx-auto px-4">
-          <div className="max-w-6xl mx-auto">
-            <h2 className="text-3xl font-bold font-outfit text-center mb-8 text-[#1f398a]">
-              {t('home.projects.title')}
-            </h2>
-            <p className="text-lg text-center text-gray-600 mb-12 max-w-3xl mx-auto">
-              {t('home.projects.subtitle')}
-            </p>
-            
-            <ImageSlider
-              images={[
-                {
-                  src: '/fore-golv.webp',
-                  alt: t('home.projects.foreGolv.altText'),
-                  title: t('home.projects.foreGolv.title'),
-                  description: t('home.projects.foreGolv.description')
-                },
-                {
-                  src: '/efter-golv.webp',
-                  alt: t('home.projects.efterGolv.altText'),
-                  title: t('home.projects.efterGolv.title'),
-                  description: t('home.projects.efterGolv.description')
-                },
-                {
-                  src: '/fardig6.webp',
-                  alt: t('home.projects.fardig6.altText'),
-                  title: t('home.projects.fardig6.title'),
-                  description: t('home.projects.fardig6.description')
-                },
-                {
-                  src: '/fore2.webp',
-                  alt: t('home.projects.fore2.altText'),
-                  title: t('home.projects.fore2.title'),
-                  description: t('home.projects.fore2.description')
-                },
-                {
-                  src: '/fardig7.webp',
-                  alt: t('home.projects.fardig7.altText'),
-                  title: t('home.projects.fardig7.title'),
-                  description: t('home.projects.fardig7.description')
-                },
-                {
-                  src: '/system.webp',
-                  alt: t('home.projects.system.altText'),
-                  title: t('home.projects.system.title'),
-                  description: t('home.projects.system.description')
-                },
-                {
-                  src: '/komplettvvs-vaxlare.webp',
-                  alt: t('home.projects.vaxlare.altText'),
-                  title: t('home.projects.vaxlare.title'),
-                  description: t('home.projects.vaxlare.description')
-                }
-              ]}
-              slidesToShow={1}
-              slidesToScroll={1}
-              className="mb-8"
-            />
-          </div>
-        </div>
-      </section>
+      {/* Image Slider Section removed from Home (moved to About) */}
+
+      {/* Fore/Efter Section */}
+      <ForeEfter
+        pairs={[
+          { beforeSrc: '/fore-golv.webp', afterSrc: '/efter-golv.webp' },
+          { beforeSrc: '/fore.webp', afterSrc: '/komplettvvs-vaxlare.webp' },
+          { beforeSrc: '/fore2.webp', afterSrc: '/badrum-efter2.webp' },
+          { beforeSrc: '/system.webp', afterSrc: '/efter-vaxlare.webp' },
+        ]}
+      />
 
       {/* CTA Section */}
       <CTA 

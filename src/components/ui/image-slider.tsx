@@ -63,9 +63,14 @@ function ImageSliderComponent({
         ]}
         className="glider-contain"
       >
-        {images.map((image, index) => (
+        {images.map((image, index) => {
+          const isWideLogo = image.src.includes('saker-vatten.webp');
+          const containerAspect = isWideLogo
+            ? 'aspect-[16/10] sm:aspect-[16/10] lg:aspect-[16/10]'
+            : 'aspect-[3/4] sm:aspect-[4/5] lg:aspect-[3/4]';
+          return (
           <div key={index} className="px-1 sm:px-2" role="group" aria-label={`Image ${index + 1} of ${images.length}`}>
-            <div className="relative aspect-[3/4] sm:aspect-[4/5] lg:aspect-[3/4] overflow-hidden shadow-lg">
+            <div className={`relative ${containerAspect} overflow-hidden shadow-lg`}>
               <Image
                 src={image.src}
                 alt={image.alt}
@@ -74,23 +79,10 @@ function ImageSliderComponent({
                 sizes="(max-width: 640px) 100vw, (max-width: 768px) 50vw, (max-width: 1024px) 33vw, 25vw"
                 priority={index < 2}
               />
-                     {(image.title || image.description) && (
-                       <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent">
-                         <div className="absolute bottom-0 left-0 right-0 p-3 sm:p-4">
-                           <div className="backdrop-blur-md bg-[#1f398a]/35 p-3 sm:p-4 border border-white/10 shadow-lg">
-                             {image.title && (
-                               <h3 className="font-semibold text-sm sm:text-base lg:text-lg mb-1 text-white">{image.title}</h3>
-                             )}
-                             {image.description && (
-                               <p className="text-xs sm:text-sm text-white/90 line-clamp-2">{image.description}</p>
-                             )}
-                           </div>
-                         </div>
-                       </div>
-                     )}
+                     {/* Removed overlay title/description by request */}
             </div>
           </div>
-        ))}
+        );})}
       </Glider>
     </div>
   );

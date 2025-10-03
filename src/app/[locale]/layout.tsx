@@ -67,7 +67,7 @@ export default async function RootLayout({
             <Header 
               LocaleSwitcher={LocaleSwitcher}
             />
-            <main className="min-h-screen">
+            <main className="min-h-screen pt-20 lg:pt-24">
               {children}
             </main>
             <Footer />

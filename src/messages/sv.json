@@ -1,6 +1,7 @@
 {
   "navigation": {
     "home": "Hem",
+    "vvs": "VVS",
     "newInstallation": "Nyinstallation",
     "pipeReplacement": "Stambyte",
     "service": "Service",
@@ -135,7 +136,7 @@
         "description": "Bra grundarbete ger vackra resultat",
         "altText": "Badrum på gång - grundarbete"
       },
-      "fardig7": {
+      "fardig7_old": {
         "title": "Inbyggda och vägghängda detaljer",
         "description": "Vi ser till att det blir rätt och att det fungerar",
         "altText": "Inbyggda och vägghängda lösningar"
@@ -149,7 +150,45 @@
         "title": "Nyinstallation eller underhåll och rådgivning",
         "description": "Vi vet vad som funkar",
         "altText": "Nyinstallation och underhåll"
+      },
+      "fardig": {
+        "title": "Färdigt projekt",
+        "description": "Slutresultat med hög finish",
+        "altText": "Färdigt projekt – slutresultat"
+      },
+      "fardig8": {
+        "title": "Färdigt projekt 8",
+        "description": "Visar slutresultat efter åtgärd",
+        "altText": "Färdigt projekt 8 – slutresultat"
+      },
+      "fardig10": {
+        "title": "Färdigt projekt 10",
+        "description": "Detaljerat arbete och finish",
+        "altText": "Färdigt projekt 10 – slutresultat"
+      },
+      "fardig7": {
+        "title": "Färdigt projekt 7",
+        "description": "Genomtänkt design och funktion",
+        "altText": "Färdigt projekt 7 – slutresultat"
+      },
+      "fardig9": {
+        "title": "Färdigt projekt 9",
+        "description": "Modern lösning med hög finish",
+        "altText": "Färdigt projekt 9 – slutresultat"
+      },
+      "fardigt": {
+        "title": "Färdigt projekt",
+        "description": "Slutresultat",
+        "altText": "Färdigt projekt – slutresultat"
       }
+    },
+    "gallery": {
+      "heading": "Före och efter KomplettVVS",
+      "subheading": "Dokumenterade projekt – från behov till färdig lösning.",
+      "beforeCaption": "Före KomplettVVS",
+      "afterCaption": "Efter KomplettVVS",
+      "moreImages": "Fler bilder..",
+      "moreImagesShort": "Fler bilder"
     },
     "faq": {
       "title": "5 anledningar att välja oss",
@@ -1051,6 +1090,9 @@
         "callNow": "Ring oss nu",
         "sendMessage": "Skicka meddelande"
       }
+    },
+    "projects": {
+      "heading": "Våra färdiga VVS‑projekt i Stockholm"
     }
   },
   "contact": {

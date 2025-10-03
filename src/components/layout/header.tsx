@@ -4,10 +4,17 @@ import * as React from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import { useLocale, useTranslations } from 'next-intl';
+import { usePathname } from 'next/navigation';
 import { Button } from '@/components/ui/button';
 import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet';
 // Dynamic components will be passed as props
 import { Menu } from 'lucide-react';
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuTrigger,
+} from '@/components/ui/dropdown-menu';
 
 interface NavItem {
   key: string;
@@ -23,6 +30,7 @@ export function Header({ LocaleSwitcher }: HeaderProps) {
   const t = useTranslations();
   const locale = useLocale();
   const isEnglish = locale === 'en';
+  const pathname = usePathname();
   
   const navItems: NavItem[] = [
     { key: 'newInstallation', href: '/nyinstallation' },
@@ -35,6 +43,13 @@ export function Header({ LocaleSwitcher }: HeaderProps) {
     { key: 'careers', href: '/jobba-hos-oss' },
     { key: 'contact', href: '/kontakt' },
   ];
+
+  // Desktop-only: group three items under VVS dropdown
+  const groupedKeys = new Set(['newInstallation', 'pipeReplacement', 'service']);
+  const desktopTopNavItems = navItems.filter((item) => !groupedKeys.has(item.key));
+  const vvsChildren = navItems.filter((item) => groupedKeys.has(item.key));
+
+  const isChildActive = vvsChildren.some((child) => pathname.startsWith(child.href));
 
 
   // Reusable CTA buttons component
@@ -49,7 +64,7 @@ export function Header({ LocaleSwitcher }: HeaderProps) {
   );
 
   return (
-    <header className="border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60 sticky top-0 z-50">
+    <header className="border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60 fixed top-0 left-0 right-0 z-50">
       <div className="container">
         {/* Desktop: Logo spans both rows */}
         <div className="hidden lg:flex items-center">
@@ -71,13 +86,36 @@ export function Header({ LocaleSwitcher }: HeaderProps) {
           {/* Right side content */}
           <div className="flex flex-col flex-1">
                         {/* Navigation Row with Language Toggle */}
-                        <nav className={`flex items-center ${isEnglish ? 'space-x-5' : 'space-x-4'}`} role="navigation" aria-label="Main navigation">
-                          {navItems.map((item) => (
+                        <nav className={`flex items-center justify-end ${isEnglish ? 'space-x-5' : 'space-x-4'}`} role="navigation" aria-label="Main navigation">
+                          {/* VVS dropdown (desktop only) */}
+                          <DropdownMenu>
+                            <DropdownMenuTrigger asChild>
+                              <button
+                                className={`${isEnglish ? 'text-base' : 'text-lg'} font-medium whitespace-nowrap transition-all duration-200 ease-in-out ${isChildActive ? 'text-primary' : 'text-text-700 hover:text-primary hover:scale-105 active:scale-95'}`}
+                                aria-haspopup="menu"
+                                aria-expanded={isChildActive}
+                              >
+                                {t('navigation.vvs')}
+                              </button>
+                            </DropdownMenuTrigger>
+                            <DropdownMenuContent align="start" className="p-2 border-0 rounded-none outline-none focus-visible:ring-0">
+                              {vvsChildren.map((child) => (
+                                <DropdownMenuItem key={child.key} className="px-2 py-1.5 rounded-none">
+                                  <Link href={child.href} className="block w-full">
+                                    {t(`navigation.${child.key}`)}
+                                  </Link>
+                                </DropdownMenuItem>
+                              ))}
+                            </DropdownMenuContent>
+                          </DropdownMenu>
+
+                          {/* Remaining top-level items (excluding grouped) */}
+                          {desktopTopNavItems.map((item) => (
                             <Link
                               key={item.key}
                               href={item.href}
                               className={`${isEnglish ? 'text-base' : 'text-lg'} font-medium text-text-700 hover:text-primary hover:scale-105 active:scale-95 transition-all duration-200 ease-in-out whitespace-nowrap`}
-                              aria-current={item.href === '/om-oss' ? 'page' : undefined}
+                              aria-current={item.href === pathname ? 'page' : undefined}
                             >
                               {t(`navigation.${item.key}`)}
                             </Link>

@@ -1,6 +1,7 @@
 {
   "navigation": {
     "home": "Home",
+    "vvs": "VVS",
     "newInstallation": "New Installation",
     "pipeReplacement": "Pipe Replacement",
     "service": "Service",
@@ -135,7 +136,7 @@
         "description": "Good foundation work gives beautiful results",
         "altText": "Bathroom in progress - foundation work"
       },
-      "fardig7": {
+      "fardig7_old": {
         "title": "Do you also like built-in and wall-mounted things?",
         "description": "Here it's important to choose the right method and installation",
         "altText": "Built-in and wall-mounted solutions"
@@ -149,7 +150,45 @@
         "title": "New installation or maintenance and advice",
         "description": "We know what works",
         "altText": "New installation and maintenance"
+      },
+      "fardig": {
+        "title": "Finished project",
+        "description": "Final result with high finish",
+        "altText": "Finished project – final result"
+      },
+      "fardig8": {
+        "title": "Finished project 8",
+        "description": "Shows the result after work",
+        "altText": "Finished project 8 – final result"
+      },
+      "fardig10": {
+        "title": "Finished project 10",
+        "description": "Detailed workmanship and finish",
+        "altText": "Finished project 10 – final result"
+      },
+      "fardig7": {
+        "title": "Finished project 7",
+        "description": "Thoughtful design and function",
+        "altText": "Finished project 7 – final result"
+      },
+      "fardig9": {
+        "title": "Finished project 9",
+        "description": "Modern solution with high finish",
+        "altText": "Finished project 9 – final result"
+      },
+      "fardigt": {
+        "title": "Finished project",
+        "description": "Final result",
+        "altText": "Finished project – final result"
       }
+    },
+    "gallery": {
+      "heading": "Before and after KomplettVVS",
+      "subheading": "Documented projects – from need to complete solution.",
+      "beforeCaption": "Before KomplettVVS",
+      "afterCaption": "After KomplettVVS",
+      "moreImages": "More images..",
+      "moreImagesShort": "More images"
     },
     "faq": {
       "title": "5 reasons to choose us",
@@ -756,6 +795,9 @@
         "callNow": "Call us now",
         "sendMessage": "Send message"
       }
+    },
+    "projects": {
+      "heading": "Our completed plumbing projects in Stockholm"
     }
   },
   "contact": {
