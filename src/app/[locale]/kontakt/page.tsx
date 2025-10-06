@@ -4,7 +4,6 @@ import { generateContactPageSchema } from '@/lib/schemas';
 import { Button } from '@/components/ui/button';
 import { Mail } from 'lucide-react';
 import Link from 'next/link';
-import { COMPANY } from '@/config/company';
 import { CTA } from '@/components/content/cta';
 import Image from 'next/image';
 import { ContactForm } from '@/components/contact-form';
