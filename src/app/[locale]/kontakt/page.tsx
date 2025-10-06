@@ -2,8 +2,7 @@ import { getTranslations } from 'next-intl/server';
 import { generatePageMetadata } from '@/lib/metadata';
 import { generateContactPageSchema } from '@/lib/schemas';
 import { Button } from '@/components/ui/button';
-import { Card, CardContent } from '@/components/ui/card';
-import { Phone, Mail } from 'lucide-react';
+import { Mail } from 'lucide-react';
 import Link from 'next/link';
 import { COMPANY } from '@/config/company';
 import { CTA } from '@/components/content/cta';
@@ -25,20 +24,7 @@ export default async function ContactPage({ params }: { params: Promise<{ locale
   const { locale } = await params;
   const t = await getTranslations({ locale });
 
-  const contactInfo = [
-    {
-      icon: Phone,
-      title: t('contact.phone'),
-      value: COMPANY.phone,
-      description: t('contact.contactInfo.phoneDescription')
-    },
-    {
-      icon: Mail,
-      title: t('contact.email'),
-      value: COMPANY.email,
-      description: t('contact.contactInfo.emailDescription')
-    }
-  ];
+  
 
   const services = t.raw('contact.services.list').map((name: string, index: number) => ({
     name,
@@ -112,34 +98,7 @@ export default async function ContactPage({ params }: { params: Promise<{ locale
         </div>
       </section>
 
-      {/* Contact Info Section - enterprise grouping */}
-      <section className="py-16">
-        <div className="container mx-auto px-4">
-          <div className="max-w-4xl mx-auto">
-            <h2 className="text-3xl font-bold font-outfit text-center mb-8">
-              Kontaktinformation
-            </h2>
-            <Card className="hover:shadow-md transition-shadow">
-              <CardContent className="p-6">
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                  {contactInfo.map((info, index) => (
-                    <div key={index} className="flex items-start gap-4">
-                      <div className="w-12 h-12 bg-primary/10 flex items-center justify-center">
-                        <info.icon className="h-6 w-6 text-primary" />
-                      </div>
-                      <div>
-                        <p className="text-sm text-text-600">{info.title}</p>
-                        <p className="text-lg font-semibold text-primary">{info.value}</p>
-                        <p className="text-sm text-text-600">{info.description}</p>
-                      </div>
-                    </div>
-                  ))}
-                </div>
-              </CardContent>
-            </Card>
-          </div>
-        </div>
-      </section>
+      
 
       {/* Contact Form Section */}
       <section className="py-16 bg-muted/20">

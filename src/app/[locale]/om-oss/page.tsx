@@ -36,14 +36,20 @@ export default async function AboutPage({ params }: { params: Promise<{ locale: 
       role: t('about.team.role'),
       experience: t('about.team.experience'),
       specialties: [],
-      image: '/hakan.webp'
+      image: '/hakan.webp',
+      phone: '+46760275720',
+      displayPhone: '+46 76 027 57 20',
+      email: 'hakan@komplettvvs.se'
     },
     {
       name: 'Daniel',
       role: t('about.team.role'),
       experience: t('about.team.experience'),
       specialties: [],
-      image: '/daniel.webp'
+      image: '/daniel.webp',
+      phone: '+46707488664',
+      displayPhone: '+46 70 748 86 64',
+      email: 'daniel@komplettvvs.se'
     }
   ];
 
@@ -153,9 +159,18 @@ export default async function AboutPage({ params }: { params: Promise<{ locale: 
                   <CardContent>
                     <p className="text-text-700 mb-4">{member.experience}</p>
                     <div className="flex flex-col gap-2 mb-4 items-center">
-                      <div className="text-sm text-text-600 mb-2">
-                        <strong>Telefon:</strong> {process.env.NEXT_PUBLIC_PHONE ?? '+46 70-123 45 67'}
+                      <div className="text-sm text-text-600 mb-1">
+                        <strong>{t('contact.phone')}:</strong> {member.phone ? (
+                          <a href={`tel:${member.phone}`} className="underline text-primary hover:text-[#F97316]">{member.displayPhone ?? member.phone}</a>
+                        ) : (
+                          process.env.NEXT_PUBLIC_PHONE ?? '+46 70-123 45 67'
+                        )}
                       </div>
+                      {member.email && (
+                        <div className="text-sm text-text-600 mb-2 break-all">
+                          <strong>{t('contact.email')}:</strong> <a href={`mailto:${member.email}`} className="underline text-primary hover:text-[#F97316]">{member.email}</a>
+                        </div>
+                      )}
                       <Button 
                         size="sm" 
                         variant="secondary"
