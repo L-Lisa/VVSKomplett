@@ -6,6 +6,7 @@ import { CTA } from '@/components/content/cta';
 import { generatePageMetadata } from '@/lib/metadata';
 import { generateLocalBusinessSchema, generateFAQSchema } from '@/lib/schemas';
 import { GeometricAccents } from '@/components/ui/geometric-accents';
+import { IndustrialGridBackground } from '@/components/ui/industrial-grid-background';
 // import { IndustrialGridBackground } from '@/components/ui/industrial-grid-background';
 import Link from 'next/link';
 import { CheckIcon } from '@/components/ui/check-icon';
@@ -220,15 +221,18 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
 
       {/* Image Slider Section removed from Home (moved to About) */}
 
-      {/* Fore/Efter Section */}
-      <ForeEfter
-        pairs={[
-          { beforeSrc: '/fore-golv.webp', afterSrc: '/efter-golv.webp' },
-          { beforeSrc: '/fore.webp', afterSrc: '/komplettvvs-vaxlare.webp' },
-          { beforeSrc: '/fore2.webp', afterSrc: '/badrum-efter2.webp' },
-          { beforeSrc: '/system.webp', afterSrc: '/efter-vaxlare.webp' },
-        ]}
-      />
+      {/* Fore/Efter Section with server-rendered background */}
+      <section className="relative">
+        <IndustrialGridBackground className="-z-10" opacityClassName="opacity-20" />
+        <ForeEfter
+          pairs={[
+            { beforeSrc: '/fore-golv.webp', afterSrc: '/efter-golv.webp' },
+            { beforeSrc: '/fore.webp', afterSrc: '/komplettvvs-vaxlare.webp' },
+            { beforeSrc: '/fore2.webp', afterSrc: '/badrum-efter2.webp' },
+            { beforeSrc: '/system.webp', afterSrc: '/efter-vaxlare.webp' },
+          ]}
+        />
+      </section>
 
       {/* CTA Section */}
       <CTA 

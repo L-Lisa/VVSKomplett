@@ -185,6 +185,8 @@
     "gallery": {
       "heading": "Before and after KomplettVVS",
       "subheading": "Documented projects – from need to complete solution.",
+      "beforeShort": "Before",
+      "afterShort": "After",
       "beforeCaption": "Before KomplettVVS",
       "afterCaption": "After KomplettVVS",
       "moreImages": "More images..",

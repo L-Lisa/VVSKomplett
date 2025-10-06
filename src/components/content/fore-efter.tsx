@@ -3,6 +3,8 @@
 import * as React from 'react';
 import Image from 'next/image';
 import { useTranslations, useLocale } from 'next-intl';
+import Glider from 'react-glider';
+import 'glider-js/glider.min.css';
 
 interface Pair {
   beforeSrc: string;
@@ -16,6 +18,12 @@ interface ForeEfterProps {
 export function ForeEfter({ pairs }: ForeEfterProps) {
   const t = useTranslations();
   const locale = useLocale();
+  const images = React.useMemo(() => {
+    return pairs.flatMap((p, idx) => [
+      { src: p.beforeSrc, alt: t('home.gallery.beforeCaption'), key: `${idx}-before` },
+      { src: p.afterSrc, alt: t('home.gallery.afterCaption'), key: `${idx}-after` },
+    ]);
+  }, [pairs, t]);
 
   return (
     <section className="py-12 sm:py-16">
@@ -29,66 +37,57 @@ export function ForeEfter({ pairs }: ForeEfterProps) {
           </p>
         </div>
 
-        <div className="flex flex-col lg:flex-row gap-6 lg:gap-8 items-center lg:items-start">
-          {pairs.map((p, idx) => {
-            const isPortraitDesktop = idx === 1 || idx === 2;
-            const isMiddle = idx === 1 || idx === 2;
-            const wrapper = `w-full ${isMiddle ? 'overflow-visible' : 'overflow-hidden'} max-w-[300px] mx-auto lg:max-w-none`;
-            const fit = isPortraitDesktop ? 'object-cover lg:object-contain' : 'object-cover';
-            return (
-              <div
-                key={`${p.beforeSrc}-${p.afterSrc}`}
-                className={`min-w-0 flex-1 lg:basis-1/4 ${isMiddle ? 'lg:basis-[17.5%]' : ''}`}
-              >
-                {/* Before */}
-                <div className="p-0">
-                  <div className={wrapper}>
-                    <Image
-                      src={p.beforeSrc}
-                      alt={t('home.gallery.beforeCaption')}
-                      width={1200}
-                      height={800}
-                      sizes="(max-width: 1024px) 100vw, 25vw"
-                      className={`${fit} w-full h-auto max-w-[300px] mx-auto lg:max-w-none`}
-                      priority={idx === 0}
-                      decoding="async"
-                    />
+        <div>
+          <Glider
+            className="glider-contain"
+            draggable
+            hasArrows
+            hasDots
+            slidesToShow={1}
+            slidesToScroll={1}
+            responsive={[
+              {
+                breakpoint: 640,
+                settings: { slidesToShow: 1, slidesToScroll: 1 }
+              },
+              {
+                breakpoint: 768,
+                settings: { slidesToShow: 2, slidesToScroll: 1 }
+              },
+              {
+                breakpoint: 1024,
+                settings: { slidesToShow: 3, slidesToScroll: 1 }
+              }
+            ]}
+          >
+            {images.map((image, index) => (
+              <div key={image.key} className="px-1 sm:px-2" role="group" aria-label={`Bild ${index + 1} av ${images.length}`}>
+                <div className="relative aspect-[3/4] sm:aspect-[4/5] lg:aspect-[3/4] overflow-hidden shadow-lg">
+                  <Image
+                    src={image.src}
+                    alt={image.alt}
+                    fill
+                    className="object-cover"
+                    sizes="(max-width: 640px) 100vw, (max-width: 768px) 50vw, (max-width: 1024px) 33vw, 25vw"
+                    priority={index < 2}
+                  />
+                  <div className="absolute inset-x-0 bottom-0 py-1.5 sm:py-2 text-center backdrop-blur-sm bg-[#1f398a]/70">
+                    <span className="text-[#F97316] text-xs sm:text-sm font-semibold tracking-wide">
+                      {image.key.endsWith('before') ? t('home.gallery.beforeShort') : t('home.gallery.afterShort')}
+                    </span>
                   </div>
                 </div>
-                {/* Separator */}
-                <div className="flex items-center justify-center py-2" aria-hidden="true">
-                  <div className="w-0 h-0 border-l-4 border-r-4 border-l-transparent border-r-transparent border-t-8 border-t-[#F97316]" />
-                </div>
-                {/* After */}
-                <div className="p-0">
-                  <div className={wrapper}>
-                    <Image
-                      src={p.afterSrc}
-                      alt={t('home.gallery.afterCaption')}
-                      width={1200}
-                      height={800}
-                      sizes="(max-width: 1024px) 100vw, 25vw"
-                      className={`${fit} w-full h-auto max-w-[300px] mx-auto lg:max-w-none`}
-                      priority={false}
-                      decoding="async"
-                    />
-                  </div>
-                </div>
-
-                {/* CTA only on the last pair */}
-                {idx === 3 && (
-                  <div className="pt-3 pb-1 flex justify-center lg:justify-end">
-                    <a
-                      href={`/${locale}/om-oss#projects-carousel`}
-                      className="inline-flex items-center justify-center px-4 py-2 bg-[#F97316] text-white font-medium hover:bg-[#e86a0a] transition-colors"
-                    >
-                      {t('home.gallery.moreImagesShort')}
-                    </a>
-                  </div>
-                )}
               </div>
-            );
-          })}
+            ))}
+          </Glider>
+          <div className="pt-4 flex justify-center lg:justify-end">
+            <a
+              href={`/${locale}/om-oss#projects-carousel`}
+              className="inline-flex items-center justify-center px-4 py-2 bg-[#F97316] text-white font-medium hover:bg-[#e86a0a] transition-colors"
+            >
+              {t('home.gallery.moreImagesShort')}
+            </a>
+          </div>
         </div>
       </div>
     </section>

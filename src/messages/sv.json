@@ -185,6 +185,8 @@
     "gallery": {
       "heading": "Före och efter KomplettVVS",
       "subheading": "Dokumenterade projekt – från behov till färdig lösning.",
+      "beforeShort": "Före",
+      "afterShort": "Efter",
       "beforeCaption": "Före KomplettVVS",
       "afterCaption": "Efter KomplettVVS",
       "moreImages": "Fler bilder..",
