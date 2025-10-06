@@ -9,6 +9,7 @@ import { MessageCircle } from 'lucide-react';
 export function StickyCTA() {
   const [isOpen, setIsOpen] = useState(false);
   const t = useTranslations('home');
+  const tRoot = useTranslations();
 
   return (
     <div className="fixed bottom-4 right-4 z-50">
@@ -16,10 +17,10 @@ export function StickyCTA() {
         <DialogTrigger asChild>
           <button 
             className="bg-[#F97316] text-[#1f398a] px-4 py-3 shadow-lg hover:shadow-xl hover:scale-105 transition-all duration-200 flex items-center gap-2 font-bold text-sm sm:text-base"
-            aria-label="Kontakta oss för offert"
+            aria-label={tRoot('cta.description')}
           >
             <MessageCircle className="h-4 w-4 sm:h-5 sm:w-5" />
-            <span>Kontakt</span>
+            <span>{tRoot('footer.contact')}</span>
           </button>
         </DialogTrigger>
         <DialogContent className="max-w-md mx-auto">

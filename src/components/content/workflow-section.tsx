@@ -23,7 +23,6 @@ export function WorkflowSection({
   backgroundImage,
   showGrid = true,
 }: WorkflowSectionProps) {
-  console.log('WorkflowSection props:', { title, imageSrc, imageAlt, steps });
   const [isScrolling, setIsScrolling] = useState(false);
   const [scrollTimeout, setScrollTimeout] = useState<NodeJS.Timeout | null>(null);
 

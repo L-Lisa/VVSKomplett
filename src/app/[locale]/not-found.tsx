@@ -1,23 +1,27 @@
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
 import { Home, Search } from 'lucide-react';
-import { useTranslations } from 'next-intl';
+import { useTranslations, useLocale } from 'next-intl';
 import { generatePageMetadata } from '@/lib/metadata';
 import { Metadata } from 'next';
+import { getTranslations } from 'next-intl/server';
 
-export const metadata: Metadata = generatePageMetadata({
-  title: 'Sidan hittades inte',
-  description: 'Sidan du letar efter finns inte. Navigera till våra VVS-tjänster eller kontakta oss för hjälp.',
-  keywords: '404, sidan hittades inte, VVS Stockholm, kontakta oss',
-  path: '/not-found',
-  robots: {
-    index: false,
-    follow: true,
-  },
-});
+export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
+  const { locale } = await params;
+  const t = await getTranslations({ locale, namespace: 'notFound' });
+  return generatePageMetadata({
+    title: t('title'),
+    description: t('description'),
+    keywords: locale === 'en' ? '404, page not found, plumbing Stockholm, contact us' : '404, sidan hittades inte, VVS Stockholm, kontakta oss',
+    path: '/not-found',
+    locale: locale === 'en' ? 'en_US' : 'sv_SE',
+    robots: { index: false, follow: true },
+  });
+}
 
 export default function NotFound() {
   const t = useTranslations('notFound');
+  const locale = useLocale();
   return (
     <div className="min-h-screen flex items-center justify-center bg-background">
       <div className="max-w-md mx-auto text-center p-6">
@@ -29,14 +33,14 @@ export default function NotFound() {
         
         <div className="space-y-4">
           <Button asChild className="w-full">
-            <Link href="/">
+            <Link href={`/${locale}`}>
               <Home className="h-4 w-4 mr-2" />
               {t('goHome')}
             </Link>
           </Button>
           
           <Button variant="outline" asChild className="w-full">
-            <Link href="/kontakt">
+            <Link href={`/${locale}/kontakt`}>
               <Search className="h-4 w-4 mr-2" />
               {t('contactUs')}
             </Link>
@@ -46,16 +50,16 @@ export default function NotFound() {
         <div className="mt-8 text-sm text-text-600">
           <p>{t('commonPagesTitle')}</p>
           <div className="flex flex-wrap justify-center gap-2 mt-2">
-            <Link href="/nyinstallation" className="text-primary hover:underline">
+            <Link href={`/${locale}/nyinstallation`} className="text-primary hover:underline">
               {t('navigation.newInstallation')}
             </Link>
-            <Link href="/service" className="text-primary hover:underline">
+            <Link href={`/${locale}/service`} className="text-primary hover:underline">
               {t('navigation.service')}
             </Link>
-            <Link href="/om-oss" className="text-primary hover:underline">
+            <Link href={`/${locale}/om-oss`} className="text-primary hover:underline">
               {t('navigation.about')}
             </Link>
-            <Link href="/kontakt" className="text-primary hover:underline">
+            <Link href={`/${locale}/kontakt`} className="text-primary hover:underline">
               {t('navigation.contact')}
             </Link>
           </div>

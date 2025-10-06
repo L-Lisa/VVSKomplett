@@ -9,12 +9,18 @@ import { CTA } from '@/components/content/cta';
 import { WorkflowSection } from '@/components/content/workflow-section';
 import { Breadcrumb } from '@/components/ui/breadcrumb';
 
-export const metadata = generateServiceMetadata({
-  title: 'Nyinstallation av VVS i Stockholm – rätt från början',
-  description: 'Komplett nyinstallation för entreprenad, BRF, företag och privatpersoner. Vi projekterar och installerar hela VVS-system: värme, vatten, avlopp och ventilationens VVS-del.',
-  keywords: 'VVS nyinstallation Stockholm, VVS-installation, badrumsrenovering, VVS-montörer, Säker Vatten, entreprenad, BRF, företag',
-  path: '/nyinstallation',
-});
+export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }) {
+  const { locale } = await params;
+  const t = await getTranslations({ locale, namespace: 'services.newInstallation' });
+  return generateServiceMetadata({
+    title: t('title'),
+    description: t('description'),
+    keywords: locale === 'en'
+      ? 'VVS new installation Stockholm, plumbing installation, bathroom renovation, plumbers, Safe Water, contractors, BRF, business'
+      : 'VVS nyinstallation Stockholm, VVS-installation, badrumsrenovering, VVS-montörer, Säker Vatten, entreprenad, BRF, företag',
+    path: '/nyinstallation',
+  });
+}
 
 export default async function NewInstallationPage({ params }: { params: Promise<{ locale: string }> }) {
   const { locale } = await params;

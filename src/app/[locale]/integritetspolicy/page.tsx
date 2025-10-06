@@ -29,7 +29,7 @@ export default async function IntegritetspolicyPage() {
           company: COMPANY.name,
           address: COMPANY.address,
           email: COMPANY.email,
-          phone: COMPANY.phone
+          phone: '+46 70 748 86 64'
         })}</p>
 
         <h2>{t('privacy.data.title')}</h2>

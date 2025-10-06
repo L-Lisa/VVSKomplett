@@ -9,12 +9,18 @@ import Link from 'next/link';
 import { CTA } from '@/components/content/cta';
 import { WorkflowSection } from '@/components/content/workflow-section';
 
-export const metadata = generateServiceMetadata({
-  title: 'Relining i Stockholm – renovera rören utan rivning',
-  description: 'Modern relining-teknik för befintliga rör i Stockholm. Ingen rivning, minimal störning och långsiktigt hållbara lösningar. Kostnadsfri offert.',
-  keywords: 'relining Stockholm, rör relining, VVS relining, rörrenovering, miljövänlig VVS',
-  path: '/relining',
-});
+export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }) {
+  const { locale } = await params;
+  const t = await getTranslations({ locale, namespace: 'services.relining' });
+  return generateServiceMetadata({
+    title: t('title'),
+    description: t('description'),
+    keywords: locale === 'en'
+      ? 'relining Stockholm, pipe relining, plumbing relining, pipe renovation, eco-friendly plumbing'
+      : 'relining Stockholm, rör relining, VVS relining, rörrenovering, miljövänlig VVS',
+    path: '/relining',
+  });
+}
 
 export default async function ReliningPage({ params }: { params: Promise<{ locale: string }> }) {
   const { locale } = await params;

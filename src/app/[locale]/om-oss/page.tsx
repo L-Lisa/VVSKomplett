@@ -11,12 +11,19 @@ import { ImageSlider } from '@/components/ui/image-slider';
 import { CTA } from '@/components/content/cta';
 import { IndustrialGridBackground } from '@/components/ui/industrial-grid-background';
 
-export const metadata = generatePageMetadata({
-  title: 'Komplett VVS i Sthlm AB – hantverkare du kan lita på',
-  description: 'Lär känna vårt team av certifierade VVS-montörer i Stockholm. Över 20 års erfarenhet, Säker Vatten-certifiering och full garanti på alla arbeten.',
-  keywords: 'VVS företag Stockholm, VVS-montörer, Säker Vatten, VVS certifiering, rörmokare Stockholm',
-  path: '/om-oss',
-});
+export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }) {
+  const { locale } = await params;
+  const t = await getTranslations({ locale, namespace: 'about' });
+  return generatePageMetadata({
+    title: t('title'),
+    description: t('description'),
+    keywords: locale === 'en'
+      ? 'plumbing company Stockholm, plumbers, Safe Water, VVS certification, plumber Stockholm'
+      : 'VVS företag Stockholm, VVS-montörer, Säker Vatten, VVS certifiering, rörmokare Stockholm',
+    path: '/om-oss',
+    locale: locale === 'en' ? 'en_US' : 'sv_SE',
+  });
+}
 
 export default async function AboutPage({ params }: { params: Promise<{ locale: string }> }) {
   const { locale } = await params;

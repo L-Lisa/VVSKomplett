@@ -9,12 +9,18 @@ import Link from 'next/link';
 import { CTA } from '@/components/content/cta';
 import { WorkflowSection } from '@/components/content/workflow-section';
 
-export const metadata = generateServiceMetadata({
-  title: 'Stamfilmning med kamera – få full koll på rören',
-  description: 'Professionell stamfilmning med kamera i Stockholm. Högupplöst inspektion, dokumentation och förebyggande underhåll. Kostnadsfri offert.',
-  keywords: 'stamfilmning Stockholm, kamerainspektion rör, VVS diagnostik, rörinspektion, VVS kamera',
-  path: '/stamfilmning',
-});
+export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }) {
+  const { locale } = await params;
+  const t = await getTranslations({ locale, namespace: 'services.pipeCoating' });
+  return generateServiceMetadata({
+    title: t('title'),
+    description: t('description'),
+    keywords: locale === 'en'
+      ? 'pipe inspection Stockholm, camera inspection, plumbing diagnostics, pipe inspection, camera'
+      : 'stamfilmning Stockholm, kamerainspektion rör, VVS diagnostik, rörinspektion, VVS kamera',
+    path: '/stamfilmning',
+  });
+}
 
 export default async function PipeCoatingPage({ params }: { params: Promise<{ locale: string }> }) {
   const { locale } = await params;
@@ -150,63 +156,38 @@ export default async function PipeCoatingPage({ params }: { params: Promise<{ lo
             <div className="grid md:grid-cols-2 gap-12">
               <div>
                 <h3 className="text-2xl font-bold font-outfit mb-6">
-                  Varför stamfilmning?
+                  {t('services.pipeCoating.whyTitle')}
                 </h3>
                 <ul className="space-y-4">
-                  <li className="flex items-start">
-                    <CheckCircle className="h-5 w-5 text-primary mr-3 mt-0.5 flex-shrink-0" />
-                    <span>Identifierar problem innan de blir allvarliga</span>
-                  </li>
-                  <li className="flex items-start">
-                    <CheckCircle className="h-5 w-5 text-primary mr-3 mt-0.5 flex-shrink-0" />
-                    <span>Förebyggande underhåll</span>
-                  </li>
-                  <li className="flex items-start">
-                    <CheckCircle className="h-5 w-5 text-primary mr-3 mt-0.5 flex-shrink-0" />
-                    <span>Dokumentation för försäkringar</span>
-                  </li>
-                  <li className="flex items-start">
-                    <CheckCircle className="h-5 w-5 text-primary mr-3 mt-0.5 flex-shrink-0" />
-                    <span>Kostnadseffektiv diagnostik</span>
-                  </li>
+                  {t.raw('services.pipeCoating.whyItems').map((reason: string, idx: number) => (
+                    <li key={idx} className="flex items-start">
+                      <CheckCircle className="h-5 w-5 text-primary mr-3 mt-0.5 flex-shrink-0" />
+                      <span>{reason}</span>
+                    </li>
+                  ))}
                 </ul>
               </div>
               
               <div>
                 <h3 className="text-2xl font-bold font-outfit mb-6">
-                  Relaterade tjänster
+                  {t('services.pipeCoating.relatedTitle')}
                 </h3>
                 <div className="space-y-4">
-                  <div className="p-4 border hover:border-primary/50 transition-colors">
-                    <h4 className="font-semibold mb-2">
-                      <Link href={`/${locale}/stamspolning`} className="text-primary hover:underline">
-                        Stamspolning
-                      </Link>
-                    </h4>
-                    <p className="text-text-700 text-sm">
-                      Rengöring baserat på kamerainspektion
-                    </p>
-                  </div>
-                  <div className="p-4 border hover:border-primary/50 transition-colors">
-                    <h4 className="font-semibold mb-2">
-                      <Link href={`/${locale}/relining`} className="text-primary hover:underline">
-                        Relining
-                      </Link>
-                    </h4>
-                    <p className="text-text-700 text-sm">
-                      Förnyelse av rör efter inspektion
-                    </p>
-                  </div>
-                  <div className="p-4 border hover:border-primary/50 transition-colors">
-                    <h4 className="font-semibold mb-2">
-                      <Link href={`/${locale}/service`} className="text-primary hover:underline">
-                        VVS-service
-                      </Link>
-                    </h4>
-                    <p className="text-text-700 text-sm">
-                      Regelbunden service och underhåll
-                    </p>
-                  </div>
+                  {t.raw('services.pipeCoating.relatedServices').map((svc: { title: string; description: string }, idx: number) => (
+                    <div key={idx} className="p-4 border hover:border-primary/50 transition-colors">
+                      <h4 className="font-semibold mb-2">
+                        <Link
+                          href={`/${locale}${['/stamspolning','/relining','/service'][idx]}`}
+                          className="text-primary hover:underline"
+                        >
+                          {svc.title}
+                        </Link>
+                      </h4>
+                      <p className="text-text-700 text-sm">
+                        {svc.description}
+                      </p>
+                    </div>
+                  ))}
                 </div>
               </div>
             </div>

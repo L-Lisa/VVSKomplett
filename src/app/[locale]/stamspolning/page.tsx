@@ -9,12 +9,18 @@ import Link from 'next/link';
 import { CTA } from '@/components/content/cta';
 import { WorkflowSection } from '@/components/content/workflow-section';
 
-export const metadata = generateServiceMetadata({
-  title: 'Stamspolning & fräsning – förebygg stopp och vattenskador',
-  description: 'Professionell stamspolning och fräsning i Stockholm. Högtrycksspolning, kamerainspektion och förebyggande underhåll. Kostnadsfri offert.',
-  keywords: 'stamspolning Stockholm, rörspolning, VVS rengöring, rörfräsning, VVS underhåll',
-  path: '/stamspolning',
-});
+export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }) {
+  const { locale } = await params;
+  const t = await getTranslations({ locale, namespace: 'services.pipeFlushing' });
+  return generateServiceMetadata({
+    title: t('title'),
+    description: t('description'),
+    keywords: locale === 'en'
+      ? 'pipe flushing Stockholm, drain cleaning, plumbing cleaning, milling, maintenance'
+      : 'stamspolning Stockholm, rörspolning, VVS rengöring, rörfräsning, VVS underhåll',
+    path: '/stamspolning',
+  });
+}
 
 export default async function PipeFlushingPage({ params }: { params: Promise<{ locale: string }> }) {
   const { locale } = await params;

@@ -51,12 +51,15 @@ export function Header({ LocaleSwitcher }: HeaderProps) {
 
   const isChildActive = vvsChildren.some((child) => pathname.startsWith(child.href));
 
+  // Ensure all internal links preserve the active locale
+  const withLocale = (href: string) => `/${locale}${href}`;
+
 
   // Reusable CTA buttons component
   const CTAButtons = ({ className = "", onClick }: { className?: string; onClick?: () => void }) => (
     <>
       <Button variant="secondary" className={className} asChild>
-        <Link href="/kontakt" {...(onClick && { onClick })}>
+        <Link href={`/${locale}/kontakt`} {...(onClick && { onClick })}>
           {t('navigation.contact')}
         </Link>
       </Button>
@@ -69,7 +72,7 @@ export function Header({ LocaleSwitcher }: HeaderProps) {
         {/* Desktop: Logo spans both rows */}
         <div className="hidden lg:flex items-center">
           {/* Logo - spans both rows */}
-          <Link href="/" className="flex items-center py-4 -ml-2 md:-ml-4">
+          <Link href={`/${locale}`} className="flex items-center py-4 -ml-2 md:-ml-4">
             <Image
               src="/logokomplett.webp"
               alt={t('header.logoAlt')}
@@ -101,7 +104,7 @@ export function Header({ LocaleSwitcher }: HeaderProps) {
                             <DropdownMenuContent align="start" className="p-2 border-0 rounded-none outline-none focus-visible:ring-0">
                               {vvsChildren.map((child) => (
                                 <DropdownMenuItem key={child.key} className="px-2 py-1.5 rounded-none">
-                                  <Link href={child.href} className="block w-full">
+                                  <Link href={withLocale(child.href)} className="block w-full">
                                     {t(`navigation.${child.key}`)}
                                   </Link>
                                 </DropdownMenuItem>
@@ -113,7 +116,7 @@ export function Header({ LocaleSwitcher }: HeaderProps) {
                           {desktopTopNavItems.map((item) => (
                             <Link
                               key={item.key}
-                              href={item.href}
+                              href={withLocale(item.href)}
                               className={`${isEnglish ? 'text-base' : 'text-lg'} font-medium text-text-700 hover:text-primary hover:scale-105 active:scale-95 transition-all duration-200 ease-in-out whitespace-nowrap`}
                               aria-current={item.href === pathname ? 'page' : undefined}
                             >
@@ -131,7 +134,7 @@ export function Header({ LocaleSwitcher }: HeaderProps) {
         {/* Mobile: Original layout */}
         <div className="flex lg:hidden items-center justify-between py-4">
           {/* Logo */}
-          <Link href="/" className="flex items-center space-x-2">
+          <Link href={`/${locale}`} className="flex items-center space-x-2">
             <Image
               src="/logokomplett.webp"
               alt={t('header.logoAlt')}
@@ -165,7 +168,7 @@ export function Header({ LocaleSwitcher }: HeaderProps) {
                     {navItems.map((item) => (
                       <Link
                         key={item.key}
-                        href={item.href}
+                        href={withLocale(item.href)}
                         className="text-lg font-medium text-text-700 hover:text-primary transition-colors pl-4"
                         onClick={() => setIsOpen(false)}
                         aria-current={item.href === '/om-oss' ? 'page' : undefined}

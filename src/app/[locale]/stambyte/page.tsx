@@ -7,12 +7,18 @@ import { CheckCircle, Wrench, Settings, Shield, Users } from 'lucide-react';
 import Link from 'next/link';
 import { CTA } from '@/components/content/cta';
 
-export const metadata = generateServiceMetadata({
-  title: 'Stambyte i flerbostadshus – effektivt och säkert',
-  description: 'Professionellt stambyte i Stockholm med minimal störning för boende. Certifierade montörer, modern rörteknik och full garanti. Kostnadsfri offert.',
-  keywords: 'stambyte Stockholm, rörbyte flerbostadshus, VVS stambyte, rörmokare Stockholm, bostadsrättsförening',
-  path: '/stambyte',
-});
+export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }) {
+  const { locale } = await params;
+  const t = await getTranslations({ locale, namespace: 'services.pipeReplacement' });
+  return generateServiceMetadata({
+    title: t('title'),
+    description: t('description'),
+    keywords: locale === 'en'
+      ? 'pipe replacement Stockholm, plumbing replacement apartment buildings, VVS pipe replacement, plumber Stockholm, housing association'
+      : 'stambyte Stockholm, rörbyte flerbostadshus, VVS stambyte, rörmokare Stockholm, bostadsrättsförening',
+    path: '/stambyte',
+  });
+}
 
 export default async function PipeReplacementPage({ params }: { params: Promise<{ locale: string }> }) {
   const { locale } = await params;

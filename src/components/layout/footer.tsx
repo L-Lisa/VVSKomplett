@@ -11,7 +11,7 @@ export function Footer() {
   const t = useTranslations();
   const locale = useLocale();
 
-  const phoneNumber = COMPANY.phone;
+  // Phone number intentionally not displayed in footer
 
   const services = [
     { key: 'newInstallation', href: '/nyinstallation' },
@@ -34,18 +34,6 @@ export function Footer() {
               {t('footer.contact')}
             </h3>
             <div className="space-y-3">
-              {phoneNumber && phoneNumber !== '+468-000000' && (
-                <div className="text-sm">
-                  <a 
-                    href={`tel:${phoneNumber}`}
-                    className="text-[#1f398a] hover:text-[#F97316] transition-colors flex items-center"
-                    aria-label={t('footer.callDirect')}
-                  >
-                    <Phone className="h-4 w-4 mr-2" />
-                    {phoneNumber}
-                  </a>
-                </div>
-              )}
               <div className="text-sm text-[#1f398a] flex items-center">
                 <Mail className="h-4 w-4 mr-2" />
                 <a 
@@ -111,7 +99,7 @@ export function Footer() {
             {services.map((service) => (
               <Link
                 key={service.key}
-                href={service.href}
+                href={`/${locale}${service.href}`}
                 className="text-sm text-[#1f398a] hover:text-[#F97316] transition-colors"
               >
                 {t(`services.${service.key}.title`)}

@@ -7,6 +7,7 @@ import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Users, Briefcase, Award, Wrench } from 'lucide-react';
 import Link from 'next/link';
 import Image from 'next/image';
+import { COMPANY } from '@/config/company';
 
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }) {
   const { locale } = await params;
@@ -262,20 +263,20 @@ export default async function CareersPage({ params }: { params: Promise<{ locale
         <div className="container px-8 md:px-4">
           <div className="max-w-2xl mx-auto bg-white/10 backdrop-blur-sm p-8 text-left">
             <h2 className="text-h2 font-outfit mb-4 text-[#F97316]">
-              Ansökan
+              {t('careers.application.title')}
             </h2>
             <p className="text-lg mb-6 opacity-90">
-              Skicka ditt CV, ett kort personligt brev och eventuella certifikat till:
+              {t('careers.application.subtitle')}
             </p>
-            
+
             <div className="text-lg space-y-2">
-              <p><strong>E-post:</strong> info@komplettvvs.se</p>
-              <p><strong>Telefon:</strong> 0737 22 49 62</p>
+              <p><strong>{t('careers.application.email.title')}:</strong> {COMPANY.email}</p>
+              <p><strong>{t('careers.application.phone.title')}:</strong> 0737 22 49 62</p>
             </div>
-            
+
             <div className="mt-8 text-sm space-y-2 opacity-80">
-              <p>Urval och intervjuer sker löpande. Alla ansökningar behandlas konfidentiellt.</p>
-              <p>Vi söker även personer med mindre erfarenhet, exempelvis lärlingar.</p>
+              <p>{t('careers.application.process')}</p>
+              <p>{t('careers.requirements.apprentices')}</p>
             </div>
           </div>
         </div>

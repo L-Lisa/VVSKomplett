@@ -28,7 +28,7 @@ export default async function ContactPage({ params }: { params: Promise<{ locale
 
   const services = t.raw('contact.services.list').map((name: string, index: number) => ({
     name,
-    href: ['/nyinstallation', '/stambyte', '/service', '/relining', '/stamspolning', '/stamfilmning'][index]
+    href: `/${locale}${['/nyinstallation', '/stambyte', '/service', '/relining', '/stamspolning', '/stamfilmning'][index]}`
   }));
 
   type Service = {
