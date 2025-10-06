@@ -57,8 +57,9 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
         lead={t('home.subtitle')}
         primaryCta={{
           text: t('navigation.contact'),
-          href: '/kontakt'
+          href: `/${locale}/kontakt`
         }}
+        useDialogCTA
         priority={true}
       />
 

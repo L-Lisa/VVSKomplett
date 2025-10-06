@@ -72,8 +72,8 @@ export default async function ContactPage({ params }: { params: Promise<{ locale
               </p>
               <p className="text-sm md:text-base text-text-700 mb-6">{t('contact.hero.benefits')}</p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <Button asChild variant="outline" size="lg">
-                  <a href={`mailto:${COMPANY.email}`}>
+                <Button variant="outline" size="lg" asChild>
+                  <a href="#contact-form">
                     <Mail className="h-4 w-4 mr-2" />
                     {t('cta.contactUs')}
                   </a>
@@ -101,7 +101,7 @@ export default async function ContactPage({ params }: { params: Promise<{ locale
       
 
       {/* Contact Form Section */}
-      <section className="py-16 bg-muted/20">
+      <section id="contact-form" className="py-16 bg-muted/20">
         <div className="container mx-auto px-4">
           <div className="max-w-6xl mx-auto">
             <div className="grid md:grid-cols-[1.15fr_420px] lg:grid-cols-[1.15fr_460px] gap-10 items-start">

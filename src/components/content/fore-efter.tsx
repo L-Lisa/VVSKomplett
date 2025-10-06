@@ -69,7 +69,8 @@ export function ForeEfter({ pairs }: ForeEfterProps) {
                     fill
                     className="object-cover"
                     sizes="(max-width: 640px) 100vw, (max-width: 768px) 50vw, (max-width: 1024px) 33vw, 25vw"
-                    priority={index < 2}
+                    quality={60}
+                    priority={index === 0}
                   />
                   <div className="absolute inset-x-0 bottom-0 py-1.5 sm:py-2 text-center backdrop-blur-sm bg-[#1f398a]/70">
                     <span className="text-[#F97316] text-xs sm:text-sm font-semibold tracking-wide">

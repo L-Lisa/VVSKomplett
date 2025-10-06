@@ -4,16 +4,18 @@ import Image from 'next/image';
 import { Button } from '@/components/ui/button';
 import { cn } from '@/lib/utils';
 import { useTranslations } from 'next-intl';
+import { ContactDialogButton } from '@/components/ui/contact-dialog-button';
 
 interface HeroProps {
   title: string;
   lead: string;
   primaryCta: {
     text: string;
-    href: string;
+    href?: string;
   };
   className?: string;
   priority?: boolean;
+  useDialogCTA?: boolean;
 }
 
 export function Hero({
@@ -21,7 +23,8 @@ export function Hero({
   lead,
   primaryCta,
   className,
-  priority = false
+  priority = false,
+  useDialogCTA = false
 }: HeroProps) {
   const t = useTranslations('home.hero');
   return (
@@ -54,16 +57,20 @@ export function Hero({
             </p>
             {/* Single CTA Button */}
             <div className="flex justify-center mb-6">
-              <Button 
-                variant="secondary" 
-                size="lg" 
-                className="text-lg px-8 py-6" 
-                asChild
-              >
-                <a href={primaryCta.href}>
-                  {primaryCta.text}
-                </a>
-              </Button>
+              {useDialogCTA ? (
+                <ContactDialogButton label={primaryCta.text} />
+              ) : (
+                <Button 
+                  variant="secondary" 
+                  size="lg" 
+                  className="text-lg px-8 py-6" 
+                  asChild
+                >
+                  <a href={primaryCta.href}>
+                    {primaryCta.text}
+                  </a>
+                </Button>
+              )}
             </div>
             
             {/* Chips text under CTA buttons - plain royal blue text */}

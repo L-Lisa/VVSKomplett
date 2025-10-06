@@ -4,7 +4,8 @@ import { Button } from '@/components/ui/button';
 import { Mail } from 'lucide-react';
 import { cn } from '@/lib/utils';
 import { useTranslations } from 'next-intl';
-import { COMPANY } from '@/config/company';
+import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from '@/components/ui/dialog';
+import { ContactForm } from '@/components/contact-form';
 
 interface CTAProps {
   title: string;
@@ -44,18 +45,28 @@ export function CTA({
         
         {/* Action Buttons */}
         <div className="flex flex-col sm:flex-row gap-4 justify-center mb-8">
-          {/* Contact Button */}
-          <Button 
-            size="lg" 
-            variant="secondary" 
-            className="text-lg px-8 py-6 w-[80%] sm:w-auto self-center"
-            asChild
-          >
-            <a href={`mailto:${COMPANY.email}`} aria-label={t('contactUs')}>
-              <Mail className="h-5 w-5 mr-2" />
-              {t('contactUs')}
-            </a>
-          </Button>
+          {/* Contact Button opens dialog with ContactForm */}
+          <Dialog>
+            <DialogTrigger asChild>
+              <Button 
+                size="lg" 
+                variant="secondary" 
+                className="text-lg px-8 py-6 w-[80%] sm:w-auto self-center"
+                aria-label={t('contactUs')}
+              >
+                <Mail className="h-5 w-5 mr-2" />
+                {t('contactUs')}
+              </Button>
+            </DialogTrigger>
+            <DialogContent className="max-w-md mx-auto">
+              <DialogHeader>
+                <DialogTitle className="text-xl font-bold text-center text-[#1f398a]">
+                  {t('title')}
+                </DialogTitle>
+              </DialogHeader>
+              <ContactForm />
+            </DialogContent>
+          </Dialog>
         </div>
       </div>
     </section>

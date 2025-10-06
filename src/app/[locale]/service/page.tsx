@@ -2,6 +2,7 @@ import { getTranslations } from 'next-intl/server';
 import { generateServiceMetadata } from '@/lib/metadata';
 import { generateServiceSchema } from '@/lib/schemas';
 import { Button } from '@/components/ui/button';
+import { ContactDialogButton } from '@/components/ui/contact-dialog-button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { CheckCircle, Clock, Settings, Shield, Calendar } from 'lucide-react';
 import Link from 'next/link';
@@ -90,11 +91,7 @@ export default async function ServicePage({ params }: { params: Promise<{ locale
                 {t('services.service.hero.intro')}
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <Button asChild variant="secondary" size="lg">
-                  <Link href={`/${locale}/kontakt`}>
-                    {t('services.service.pageContent.buttons.getQuote')}
-                  </Link>
-                </Button>
+                <ContactDialogButton label={t('services.service.pageContent.buttons.getQuote')} />
                 <Button asChild variant="outline" size="lg">
                   <Link href={`/${locale}/om-oss`}>
                     {t('services.service.pageContent.buttons.learnMore')}

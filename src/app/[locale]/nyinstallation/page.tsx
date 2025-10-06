@@ -2,6 +2,7 @@ import { getTranslations } from 'next-intl/server';
 import { generateServiceMetadata } from '@/lib/metadata';
 import { generateServiceSchema, generateBreadcrumbSchema } from '@/lib/schemas';
 import { Button } from '@/components/ui/button';
+import { ContactDialogButton } from '@/components/ui/contact-dialog-button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { CheckCircle, Wrench, Home, Settings, Shield } from 'lucide-react';
 import Link from 'next/link';
@@ -112,11 +113,7 @@ export default async function NewInstallationPage({ params }: { params: Promise<
                 {t('services.newInstallation.hero.intro')}
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <Button asChild variant="secondary" size="lg">
-                  <Link href={`/${locale}/kontakt`}>
-                    {t('services.newInstallation.pageContent.buttons.getQuote')}
-                  </Link>
-                </Button>
+                <ContactDialogButton label={t('services.newInstallation.pageContent.buttons.getQuote')} />
                 <Button asChild variant="outline" size="lg">
                   <Link href={`/${locale}/om-oss`}>
                     {t('services.newInstallation.pageContent.buttons.learnMore')}
